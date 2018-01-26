@@ -1,0 +1,285 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SunNet Solutions Project Management system</title>
+    <link href="/content/styles/public.css" rel="stylesheet" type="text/css" />
+    <link href="/content/styles/forms.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&subset=latin">
+</head>
+
+<body>
+    <div class="toploginInfo">Wecome David<span>|</span><a href="#">Logout</a></div>
+    <div class="topBox">
+        <div class="topBox_logo">
+            <img src="/images/sunnet_logo.png" />
+        </div>
+        <div class="topBox_menu">
+            <ul class="topmenu">
+                <a href="#">
+                    <li class="ticketsOn">
+                        <div class="ticketToparrow">
+                            <img src="/images/ticket_toparrow.png" />
+                        </div>
+                        <img src="/images/icons/tickets_on.png"><br />
+                        Tickets</li>
+                </a>
+                <a href="#">
+                    <li class="documentsout">
+                        <img src="/images/icons/documents_white.png"><br />
+                        Documents</li>
+                </a>
+                <li class="eventsout">
+                    <img src="/images/icons/events_white.png"><br />
+                    Events</li>
+                <li class="forumsout">
+                    <img src="/images/icons/forums_white.png"><br />
+                    Forums</li>
+                <li class="profileout">
+                    <img src="/images/icons/profile_white.png" /><br />
+                    Profile</li>
+            </ul>
+        </div>
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+        <tr>
+            <td class="mainleftTd">
+                <div class="leftmenuBox">
+                    <ul class="newticketBtn">
+                        <a href="#">
+                            <li>New Ticket</li>
+                        </a>
+                    </ul>
+                    <ul class="leftMenu">
+                        <a href="#">
+                            <li>
+                                <img src="/images/icons/dashboard_grey.png" />Dashboard</li>
+                        </a>
+                        <li>
+                            <img src="/images/icons/waiting_grey.png" />Waiting for Response </li>
+                        <a href="#">
+                            <li class="leftmenuOn">
+                                <div class="leftArrow">
+                                    <img src="/images/leftarrow.png" />
+                                </div>
+                                <img src="/images/icons/ongoing_on.png" />Ongoing Tickets </li>
+                        </a>
+                        <li>
+                            <img src="/images/icons/draft_grey.png" />Draft Tickets</li>
+                        <li>
+                            <img src="/images/icons/completed_grey.png" />Completed Tickets</li>
+                        <li>
+                            <img src="/images/icons/cancelled_grey.png" />Cancelled Tickets</li>
+                        <li>
+                            <img src="/images/icons/reports_grey.png" />Tickets Report</li>
+
+                    </ul>
+                </div>
+            </td>
+            <td class="mainrightTd">
+                <div class="mainrightBox">
+                    <div class="ProcessBox">
+                        <ul class="ticketProcess">
+                            <li class="roundicon completed"></li>
+                            <li class="processtext completedtext">Draft</li>
+                            <li class="roundicon completed"></li>
+                            <li class="processtext completedtext">Submit </li>
+                            <li class="roundicon completed"></li>
+                            <li class="processtext completedtext">PM Review</li>
+                            <li class="roundicon ongoing"></li>
+                            <li class="processtext ongoingtext">Developing</li>
+                            <li class="roundicon nofinish"></li>
+                            <li class="processtext nofinishtext">Testing </li>
+                            <li class="roundicon nofinish"></li>
+                            <li class="processtext nofinishtext">Client Confirm </li>
+                            <li class="roundicon nofinish"></li>
+                            <li class="processtext nofinishtext">Completed</li>
+                            <li class="roundicon nofinish"></li>
+                        </ul>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Projects:</label>
+                        <div class="col-right-1 righttext">SunNet.PM	      </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Type:</label>
+                        <div class="col-right-1 righttext">
+                            Request
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Priority:</label>
+                        <div class="col-right-1 righttext">
+                            <span class="rightItem">
+                                <input name="" type="radio">Low</span><span class="rightItem">
+                                    <input name="" type="radio">
+                                    Medium</span><span class="rightItem">
+                                        <input name="" type="radio">High</span><span class="rightItem"><input name="" type="radio">Emergency</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Estimation:</label>
+                        <div class="col-right-1 righttext">
+                            <span class="rightItem">
+                                <input name="" type="checkbox">Needed</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext col-left-status">Status:</label>
+                        <div class="col-right-1 righttext">
+                            <table border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td>Waiting for Response</td>
+                                    <td width="60">&nbsp;</td>
+                                    <td>
+                                        <input name="button22" type="button" class="inlineBtn2" value="Approve" /></td>
+                                    <td width="40" align="center">or</td>
+                                    <td>
+                                        <input name="button2" type="button" class="inlineBtn2" value="Deny" /></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Title:</label><div class="col-right-1 righttext">Redesign SunNet Solutions website</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">URL:</span></label>
+                        <div class="col-right-1 righttext"><a href="#">http://www.sunnet.us</a></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Description:</label>
+                        <div class="col-right-1 righttext">
+                            SunNet Solutions, headquartered in Houston, has established a stellar reputation as a premier Web application development 
+and information technology provider.  We have a commitment to serve our clients with quality IT solutions.We provide a full 
+range of services in the areas of software development
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Upload a Files:</label>
+                        <div class="col-right-1 righttext">
+                            <ul class="fileList">
+                                <li><a href="#">&raquo; File1.jpg</a></li>
+                                <li><a href="#">&raquo; SunNet Solutions headquartered in HoustonSunNet Solutions n.jpg</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="sepline1"></div>
+                    <div class="feedbackBox">
+                        <ul class="fdItembox">
+                            <li class="fdmessageDate">04/09/2014</li>
+                            <li class="otherbox">
+                                <table border="0" cellspacing="0" cellpadding="4">
+                                    <tr>
+                                        <td class="fdtdLeft">
+                                            <div class="fdUser">Justin1</div>
+                                            <div class="fdDate">14:55:20</div>
+                                        </td>
+                                        <td class="fdcontentBox1 fdcontent">
+                                            <div class="fdarrowboxleft">
+                                                <img src="/images/fdarrow1.png">
+                                            </div>
+                                            <span class="fdNotice">Waiting for Client feedback-</span>-Integrat</td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li class="myselfbox">
+                                <table border="0" cellpadding="4" cellspacing="0">
+                                    <tr>
+
+                                        <td class="fdcontentBox2 fdcontent">
+                                            <div class="rightClose" title="Delete">×</div>
+                                            <span class="fdNotice">Waiting for Client feedback- </span>Integrates with GPS systems, centralizes projectinfo</td>
+                                        <td class="fdtdright">
+                                            <div class="fdarrowbox">
+                                                <img src="/images/fdarrow2.png">
+                                            </div>
+                                            <div class="fdUser">Justin1</div>
+                                            <div class="fdDate">14:55:20</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li class="fdmessageDate">04/10/2014</li>
+                            <li class="myselfbox">
+                                <table border="0" cellpadding="4" cellspacing="0">
+                                    <tr>
+                                        <td class="fdcontentBox2 fdcontent">
+                                            <div class="rightClose" title="Delete">×</div>
+                                            Integrates with GPS systems, centralizes 
+          <div class="fdfileBox"><span class="fdfile"><a href="#">&raquo; PMFeedback.docx</a></span><span class="fdfile"><a href="#">&raquo; PMFeedback.docx</a></span><span class="fdfile"><a href="#">&raquo; PMFe sdfsadfedback.docx</a></span></div>
+                                        </td>
+                                        <td class="fdtdright">
+                                            <div class="fdarrowbox">
+                                                <img src="/images/fdarrow2.png">
+                                            </div>
+                                            <div class="fdUser">Justin1</div>
+                                            <div class="fdDate">14:55:20</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                            <li class="otherbox">
+                                <table border="0" cellspacing="0" cellpadding="4">
+                                    <tr>
+                                        <td class="fdtdLeft">
+                                            <div class="fdUser">Justin1</div>
+                                            <div class="fdDate">14:55:20</div>
+                                        </td>
+                                        <td class="fdcontent fdcontentBox1">
+
+                                            <div class="fdarrowboxleft">
+                                                <img src="/images/fdarrow1.png">
+                                            </div>
+
+                                            Integrates with GPS systems, centralizes projectinformation (assets, parts and documentation),monitors real-time budget/AFE 
+          <div class="fdfileBox"><span class="fdfile"><a href="#">&raquo; PMFeedback.docx</a></span><span class="fdfile"><a href="#">&raquo; PMFeedback.docx</a></span><span class="fdfile"><a href="#">&raquo; PMFesfafdsafsadfaf safssafasfasdfasfasdfsadfedback.docx</a></span></div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="fdshowmore">>> Show More Feedback</div>
+                    <div class="feedbackBox">
+                        <table border="0" cellspacing="0" cellpadding="4" width="100%">
+                            <tr>
+                                <td colspan="3">
+                                    <textarea name="textarea" rows="3" class="inputfd">Enter your message...
+    </textarea></td>
+                            </tr>
+                            <tr>
+                                <td width="46%" valign="top">
+                                    <input name="Input" type="checkbox" value="" />
+                                    IsWaitPMFeedback </td>
+                                <td width="46%" valign="top">
+                                    <input name="button" type="button" class="inlineBtn1" value="Choose Files" />
+                                    No file chosen<br />
+                                    <ul class="fileList">
+                                        <li><a href="#">&raquo; File1.jpg</a></li>
+                                        <li><a href="#">&raquo; SunNet Solutions headquarn Houstons n.jpg</a></li>
+                                    </ul>
+                                </td>
+                                <td width="8%" align="right" valign="top">
+                                    <input name="Submit" type="submit" class="addfeedbackBtn1 mainbutton" value="Submit"></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                    <div class="contentTitle titleeventlist">Client Feedback </div>
+                    <div class="form-group">
+                        <div class="col-right-fdapprove righttext">
+                            <img src="/images/icons/star_orange.png" /><img src="/images/icons/star_grey.png" /><img src="/images/icons/star_grey.png" /><img src="/images/icons/star_grey.png" /><img src="/images/icons/star_grey.png" />
+                            Poor
+                        </div>
+                    </div>
+                </div>
+                <div class="footerBox">
+                    <div class="footerBox_left"><a href="faq.html">FAQ</a> <span>|</span><a href="survey.html">Survey</a><span>|</span><a href="contact_us.html">Contact Us</a></div>
+                    <div class="footerBox_right">Copyright &copy; 2014 <a href="http://www.sunnet.us" target="_blank">SunNet Solutions</a>. </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

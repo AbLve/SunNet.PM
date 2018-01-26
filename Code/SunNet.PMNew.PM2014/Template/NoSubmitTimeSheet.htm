@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <style>
+        html, body, div, span, h1, h2, a, img, dl, dt, dd, ol, ul, li, lable, table, tr, th, td, tbody, input
+        {
+            margin: 0;
+            padding: 0;
+            border: 0;
+        }
+        .emailTable
+        {
+            border: 1px solid #5e8ccb;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+        .emailTable th
+        {
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+        .bordRD
+        {
+            border-right: #5e8ccb solid 1px;
+            border-bottom: #5e8ccb solid 1px;
+        }
+        .blueBg
+        {
+            background-color: #f0f7ff;
+        }
+        .yellowBg
+        {
+            background-color: #fbfcc1;
+        }
+        .bordBottom
+        {
+            border-bottom: #5e8ccb solid 1px;
+        }
+        .bordRight
+        {
+            border-right: #5e8ccb solid 1px;
+        }
+        .bordLeft
+        {
+            border-left: #5e8ccb solid 1px;
+        }
+        .pd
+        {
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="emailTable">
+        <tr>
+            <th class="bordRD pd" width="20%">
+                &nbsp;&nbsp;Date
+            </th>
+            <th height="25" class="bordRD pd" width="20%">
+                &nbsp;&nbsp;Name
+            </th>
+            <th class="bordBottom pd" width="60%">
+                Status
+            </th>
+        </tr>
+        <!--begin_tr-->
+        <tr>
+            <td colspan="3">
+                <table width="100%" border="0" cellpadding="0" class="emailTable" cellspacing="0">
+                    <tr class="blueBg" valign="middle">
+                        <td class="bordRD  pd" width="20%">
+                            {Date}
+                        </td>
+                        <td valign="top" class="bordRD pd" width="20%">
+                            {Name}
+                        </td>
+                        <td valign="middle" class="bordRD " width="60%">
+                            {Title}
+                        </td>
+                    </tr>
+                    {EmailContent}
+                </table>
+            </td>
+        </tr>
+        <!--end_tr-->
+    </table>
+</body>
+</html>

@@ -1,0 +1,569 @@
+﻿body{
+    margin:0;
+    padding:0;
+    font-family:"Open Sans",Arial,sans-serif;
+    color:#333;
+    background:#f4f4f4;
+    font-size:20px;
+}
+*{
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+    list-style:none;
+}
+.clearfix { 
+    *zoom: 1; 
+} 
+.clearfix:before,.clearfix:after { 
+    display: table; 
+    line-height: 0; 
+    content: ""; 
+} 
+.clearfix:after { 
+    clear: both; 
+} 
+.header-app{
+    position:relative;
+}
+.header{
+    height:130px;
+    background:linear-gradient(top,#F78B59,#DF5C1F);
+    background:-moz-linear-gradient(top,#F78B59,#DF5C1F);
+    background:-o-linear-gradient(top,#F78B59,#DF5C1F);
+    background:-webkit-linear-gradient(top,#F78B59,#DF5C1F);
+    position:relative;
+}
+.header img{
+    width:60px;
+}
+.left-back{
+    position:absolute;
+    left:0;
+    top:0;
+    height:100%;
+    padding-top:35px;
+    margin-left:10px;
+    z-index:1;
+}
+.right-menu{
+    position:absolute;
+    right:0;
+    top:0;
+    height:100%;
+    padding-top:35px;
+    margin-right:20px;
+    z-index:1;
+}
+.center-title{
+    color:#fff;
+    font-size:34px;
+    text-align:center;
+    line-height:130px;
+    margin:0 70px;
+}
+.app-nav-list{
+    width:100%;
+    top:130px;
+    background:#fff;
+    padding:15px;
+    font-size:20px;
+    display:none;
+}
+.app-nav-list ul{
+    padding:0;
+    margin:0;
+}
+.app-nav-list li{
+    padding:10px 0;
+}
+.app-nav-list li img{
+    vertical-align:-2px;
+    margin-right:8px;
+    width:22px;
+}
+.content-app{
+    margin-bottom:140px;
+    padding:15px;
+}
+.footer-app{
+    position:fixed;
+    left:0;
+    bottom:0;
+    height:130px;
+    width:100%;
+    border-top:1px solid #ccc;
+    background:#fff;
+    padding:10px 0;
+}
+.footer-app li{
+    text-align:center;
+    float:left;
+    width:14.28%;
+    list-style:none;
+}
+.footer-app img{
+    width:40px;
+}
+.footer-app p{
+    font-size:20px;
+    margin:0;
+    line-height:40px;
+    font-weight:700;
+    color:#aaa;
+}
+.footer-app p.cur{
+    color:#DF5C1F;
+}
+.search{
+    background:#fff;
+    padding:15px 0 0;
+}
+.search-div{
+    width:50%;
+    float:left;
+    padding:0 15px;
+    margin-bottom:15px;
+}
+.search-div label{
+    float:left;
+    width:40%;
+    font-size:20px;
+    line-height:38px;
+    font-weight:700;
+}
+.search-input {
+    float: left;
+    width:60%;
+}
+.search-input input{
+    width:100%;
+    border-radius:5px;
+    height:38px;
+    background:#fff;
+    border:1px solid #ccc;
+    padding:0 10px;
+    font-size:18px;
+}
+.search-input button{
+    width:38px;
+    height:38px;
+    border-radius:5px;
+    border:0;
+    background:#DF5C1F;
+}
+.search-input button img{
+    width:22px;
+}
+.priority-app{
+    padding:15px;
+    background:#fff;
+}
+.priority-app ul{
+    padding:0;
+    margin:0;
+}
+.priority-app li{
+    float:left;
+    margin-right:30px;
+}
+.priority-app li span{
+    display:inline-block;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    margin-right:5px;
+}
+.table-app{
+    overflow-x:auto;
+    margin-top:15px;
+}
+.table-app table{
+    min-width:100%;
+    font-size:16px;
+}
+.table-app table tr:nth-child(even){
+    background:#fff;
+}
+.table-app table td,.table-app table th{
+    padding:10px 5px;
+    border-bottom:1px solid #ccc;
+    line-height:26px;
+    text-align:left;
+}
+.table-app table .acticon{
+    text-align:center;
+}
+.table-app table .acticon img{
+    vertical-align:middle;
+}
+.low,.medium,.high,.emergency{
+    display:block;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+}
+.low{
+    background:#00A519;
+}
+.medium{
+    background:#E7E073;
+}
+.high{
+    background:#F37F03;
+}
+.emergency{
+    background:#D14343;
+}
+.Process-app{
+    position:relative;
+}
+.Process-app ul{
+    padding:0;
+    margin:0;
+}
+.Process-app li{
+    float:left;
+    border-bottom:3px solid #999;
+    text-align:center;
+    width:11.25%;
+    font-size:8px;
+    line-height:14px;
+}
+.Process-app li.cur{
+    border-bottom-color:#083583;
+    color:#083583;
+}
+.Process-app li.active{
+    border-bottom-color:#DF5C1F;
+    color:#DF5C1F;
+}
+.Process-app .process-key{
+    border:3px solid #999;
+    border-radius:50%;
+    background:#fff;
+    position:absolute;
+    width:25px;
+    height:25px;
+    position:relative;
+    top:12px;
+}
+.process-key:after{
+    content:'';
+    position:absolute;
+    top:2px;
+    left:2px;
+    width:15px;
+    height:15px;
+    background:#999;
+    border-radius:50%;
+}
+.Process-app .process-key.cur{
+    border-color:#083583;
+}
+.Process-app .process-key.cur:after{
+    background:#6894E0;
+}
+.Process-app .process-key.active{
+    border-color:#DF5C1F;
+}
+.Process-app .process-key.active:after{
+    background:#F68E5E;
+}
+.status-app{
+    background:#DBE4F3;
+    border-radius:5px;
+    margin-top:30px;
+    padding:0 15px;
+    height:50px;
+    font-size:22px;
+    margin-bottom:15px;
+}
+.status-app-text{
+    float:left;
+}
+.status-app-text span{
+    padding-right:8px;
+    line-height:50px;
+}
+.status-app-btn{
+    float:right;
+}
+.status-app-btn1{
+    border:0;
+    background:#DF5C1F;
+    color:#fff;
+    border-radius:5px;
+    padding:8px 12px;
+    font-size:18px;
+    margin-top:5px;
+}
+.ticket-detail-app{
+    background:#fff;
+    padding:15px 0;
+}
+.detail-div{
+    margin-bottom:15px;
+}
+.detail-title{
+    width:25%;
+    font-weight:700;
+    font-size:20px;
+    float:left;
+    padding:0 15px;
+    line-height:30px;
+}
+.detail-text{
+    width:75%;
+    float:left;
+    font-size:20px;
+    padding:0 15px;
+    word-break:break-all;
+    line-height:30px;
+}
+.line{
+    margin:0 15px;
+    height:1px;
+    background:#ccc;
+}
+.detail-div-small{
+    width:50%;
+    float:left;
+    margin-top:15px;
+}
+.detail-div-small .detail-title{
+    width:50%;
+}
+.detail-div-small .detail-text{
+    width:50%;
+}
+.history-app-title,.chat-app-title{
+    font-size:26px;
+    color:#DF5C1F;
+    margin-bottom:15px;
+}
+.chat-app-title img{
+    margin-right:10px;
+    vertical-align:-3px;
+}
+.chat-app-window{
+    background:#fff;
+    padding:15px;
+}
+.chat-app-window-text{
+    font-size:20px;
+    color:#999;
+    margin:0 0 15px;
+    line-height:26px;
+}
+.chat-app-content{
+    background:#F5F5F5;
+    position:relative;
+    padding:15px;
+    text-align:center;
+    margin-bottom:15px;
+}
+.chat-app-content-load{
+    padding:6px 20px;
+    background:#ddd;
+    color:#999;
+    border-radius:100px;
+}
+.app-left-message{
+    text-align:left !important;
+    margin-top:20px;
+    float:left;
+    width:100%;
+}
+.leftmeaasage-name{
+    width:100%;
+    float:left;
+}
+.leftmeaasage-name p{
+    display:inline-block;
+    font-weight:700;
+    margin:0 15px 10px 0;
+}
+.leftmeaasage-name span{
+    color:#999;
+    font-size:18px;
+}
+.left-message-content{
+    max-width:95%;
+    background:#fff;
+    padding:15px;
+    float:left;
+    line-height:25px;
+}
+.app-right-message{
+    text-align:right !important;
+    margin-top:20px;
+    float:right;
+    width:100%;
+}
+.rightmeaasage-name{
+    float:right;
+    width:100%;
+}
+.rightmeaasage-name p{
+    display:inline-block;
+    margin:0 15px 10px 0;
+    font-weight:700;
+}
+.rightmeaasage-name span{
+    color:#999;
+    font-size:18px;
+}
+.right-message-content{
+    max-width:95%;
+    background:#fff;
+    padding:15px;
+    float:right;
+    line-height:25px;
+}
+.enter-message-window{
+    float:left;
+    width:75%;
+}
+.enter-message-window textarea{
+    width:100%;
+    border-radius:5px;
+    border:1px solid #ccc;
+    height:80px;
+    font-size:20px;
+}
+.enter-message-btn{
+    width:25%;
+    float:right;
+    text-align:right;
+}
+.enter-message-btnsend{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:#083583;
+    border:0;
+    margin-right:15px;
+    padding:0;
+}
+.enter-message-btnlink{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    background:#DF5C1F;
+    border:0;
+    margin-right:15px;
+    padding:0;
+}
+.data-div label{
+    float:left;
+    width:15%;
+    line-height:38px;
+    font-weight:700;
+}
+.data-input{
+    float:left;
+    width:30%;
+}
+.data-input input{
+    width:100%;
+    border:1px solid #ccc;
+    border-radius:5px;
+    height:38px;
+    background:#fff;
+    padding:0 10px;
+    font-size:18px;
+}
+.timesheetList-app{
+    margin-top:15px;
+}
+.timesheetList-app-time{
+    color:#335797;
+    margin:0;
+}
+.table-app-time{
+    margin-top:0;
+}
+.timesheetList-app-time span{
+    color:#DF5C1F;
+    font-weight:700;
+}
+.newtimesheet-app{
+    padding:15px 0;
+    background:#fff;
+    margin-top:15px;
+}
+.newtimesheet-app-div{
+    float:left;
+    width:50%;
+    margin-bottom:15px;
+}
+.newtimesheet-app-div label{
+    width:40%;
+    float:left;
+    line-height:38px;
+    padding:0 15px;
+    font-weight:700;
+}
+.newtimesheet-app-input{
+    float:left;
+    width:60%;
+    padding:0 15px;
+}
+.newtimesheet-app-input select{
+    width:100%;
+    border-radius:5px;
+    border:1px solid #ccc;
+    height:38px;
+    background:#fff;
+    padding:0 10px;
+    font-size:18px;
+}
+.newtimesheet-app-div2{
+    margin-bottom:15px;
+}
+.newtimesheet-app-div2 label{
+    width:20%;
+    padding:0 15px;
+    float:left;
+    font-weight:700;
+}
+.newtimesheet-app-div2 .newtimesheet-app-input{
+    width:80%;
+}
+.newtimesheet-app-input input,.newtimesheet-app-input textarea{
+    width:100%;
+    background:#fff;
+    border:1px solid #ccc;
+    border-radius:5px;
+    padding:0 10px;
+    height:38px;
+    font-size:18px;
+}
+.newtimesheet-app-input textarea{
+    height:80px;
+}
+.newtimesheet-app-div button{
+    padding:6px 20px;
+    border:1px solid #ccc;
+    border-radius:5px;
+    background:#fff;
+    display:inline-block;
+    height:38px;
+    font-size:18px;
+    margin-right:10px;
+}
+.newtimesheet-app-div button img{
+    margin-left:5px;
+    width:20px;
+    vertical-align:middle;
+}
+.newtimesheet-app-div .new-app{
+    background:#083583;
+    color:#fff;
+    border-color:#03275F;
+}
+.newtimesheet-app-div .delete-app{
+    background:#DF5C1F;
+    color:#fff;
+    border-color:#AF3B05;
+}

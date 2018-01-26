@@ -1,0 +1,10 @@
+﻿
+
+Dear [ClientName],<br/>
+
+&nbsp;&nbsp;你申请使用以下公章失败。<br/>
+
+[content]<br/>
+
+Thank you.<br/>
+

@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<style>
+    .big_td
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        border-bottom: 1px solid #0099CC;
+        border-top: 1px solid #0099CC;
+        border-left: 1px solid #0099CC;
+        border: 1px solid #0099CC;
+    }
+    .big_td th
+    {
+        background-color: #f0f0f0;
+        padding: 8px;
+        text-align: center;
+        border-right: 1px solid #0099CC;
+        border-bottom: 1px solid #0099CC;
+    }
+    .td_blue
+    {
+        background-color: #f0f7ff;
+    }
+    .td_blue td
+    {
+        padding: 0px 8px 0px 8px;
+        height: 30px;
+        border-bottom: 1px solid #a6d5ee;
+        border-right: 1px solid #0099CC;
+    }
+    .td_yellow
+    {
+        background-color: #fbfcc1;
+    }
+    .td_yellow td
+    {
+        padding: 0px 8px 0px 8px;
+        height: 30px;
+        border-bottom: 1px solid #a6d5ee;
+        border-right: 1px solid #0099CC;
+    }
+    .text_align
+    {
+        text-align: center;
+    }
+</style>
+<body>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td colspan="4" style="color: Red; height: 33px; text-align: right; font-size: 12;
+                font-family: Arial, Helvetica, sans-serif;">
+                Note: Yellow background indicates that the work is less than 8.0 hours a day.
+            </td>
+        </tr>
+    </table>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="big_td">
+        <tr>
+            <th width="10%">
+                Date
+            </th>
+            <th width="10%">
+                Name
+            </th>
+            <th width="10%">
+                Project
+            </th>
+            <th width="20%">
+                Ticket
+            </th>
+            <th width="30%">
+                Descripition
+            </th>
+            <th width="10%">
+                Percentage
+            </th>
+            <th width="5%">
+                Hour
+            </th>
+            <th width="5%">
+                Total
+            </th>
+        </tr>
+        <!--BEGIN-->
+        <!--DateSection-->
+        <tr class="td_blue" emailtag="dateSection">
+            <td width="10%" rowspan="{Sum_Rowspan}" class="text_align td_blue">
+                {Date}
+            </td>
+        </tr>
+        <!--DateSectionEnd-->
+        <!--UserSectioin-->
+        <tr class="{BackgroundColor_Css}" emailtag="userfirstrowSection">
+            <td width="10%" rowspan="{Rowspan}" class="text_align">
+                {UserName}
+            </td>
+            <td width="10%">
+                {Project}
+            </td>
+            <td width="20%">
+                {Ticket}
+            </td>
+            <td width="30%">
+                {Description}
+            </td>
+            <td width="10%" class="text_align">
+                {Percent}%
+            </td>
+            <td width="5%" class="text_align">
+                {Hour}H
+            </td>
+            <td width="5%" class="text_align" rowspan="{Rowspan}">
+                {TotalHour}
+            </td>
+        </tr>
+        <tr class="{BackgroundColor_Css}" emailtag="usercontentSection">
+            <td>
+                {Project}
+            </td>
+            <td>
+                {Ticket}
+            </td>
+            <td>
+                {Description}
+            </td>
+            <td class="text_align">
+                {Percent}%
+            </td>
+            <td class="text_align">
+                {Hour}H
+            </td>
+        </tr>
+        <tr class="td_yellow" emailtag="usernoticketSection">
+            <td class="text_align">
+                {UserName}
+            </td>
+            <td colspan="6">
+                User haven't uploaded timesheet yet.
+            </td>
+        </tr>
+        <!--UserSectioinEnd-->
+        {EmailContent}
+        <!--END-->
+    </table>
+</body>
+</html>

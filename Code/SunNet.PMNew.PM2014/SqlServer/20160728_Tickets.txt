@@ -1,0 +1,7 @@
+alter table Tickets 
+	add Accounting int null 
+go
+
+update Tickets set Accounting = 0
+go
+

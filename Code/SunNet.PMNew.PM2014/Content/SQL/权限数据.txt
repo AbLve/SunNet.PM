@@ -1,0 +1,982 @@
+﻿/*
+RoleID	RoleName	Description	Status	CreatedOn	CreatedBy
+1	ADMIN	admin	1	2012-09-26 09:36:37.907	1
+2	PM	pm	1	2012-09-26 09:54:11.860	1
+3	DEV	developers	1	2012-10-10 11:22:10.923	1
+4	QA	tester	1	2012-10-10 11:22:56.907	1
+5	CLIENT	clients	1	2012-10-10 11:23:17.657	1
+6	Sales	Sales	1	2012-10-10 11:23:34.187	1
+7	Leader	team leader	1	2012-10-26 15:39:42.407	1
+10	Contactor	Contactor DEV	1	2013-10-11 11:53:13.107	65
+16	Supervisor	Supervisor	1	2014-03-16 18:49:04.797	92
+
+*/
+GO
+SET IDENTITY_INSERT [dbo].[Modules] ON 
+
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (1, N'Root', N'/', N'', 0, 0, 0, 1, N'', 0)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (2, N'Tickets', N'/SunnetTicket/', N'dashboard.aspx', 0, 99, 1, 1, N'sunnet', 1)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (3, N'Admin', N'/Admin/', N'users/users.aspx', 0, 20, 1, 1, N'admin', 1)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (4, N'Tickets', N'/Ticket/', N'Dashboard.aspx', 0, 10, 1, 1, N'client', 1)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (5, N'Reports', N'/Report/MyTimeSheetReport/', N'MyTimesheetReport.aspx', 0, 50, 1, 1, N'report', 1)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (6, N'Profile', N'/Account/', N'Profile.aspx', 0, 60, 1, 1, N'profile', 1)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (7, N'Default Page', N'/Default.aspx', N'Default.aspx', 0, 100, 0, 0, N'', 1)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (8, N'Events', N'/Event/', N'Index.aspx', 0, 30, 1, 1, N'event', 1)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (9, N'Forums', N'/forums/login/pm/finish', N'', 0, 70, 1, 1, N'forum', 1)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (10, N'Documents', N'/document/DocManagement/', N'', 0, 40, 1, 1, N'document', 1)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (11, N'OA', N'/OA/', N'Timesheet/Date.aspx', 0, 80, 1, 1, N'oa', 1)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (12, N'Coordinating Tickets', N'/SunnetTicket/MyTicket.aspx', N'', 0, 600, 1, 0, N'myticket', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (13, N'Ticket Detail', N'/SunnetTicket/Detail.aspx', N'', 0, 250, 0, 0, N'', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (14, N'Knowledge Share', N'/SunnetTicket/Knowledge.aspx', N'', 0, 700, 1, 0, N'knowledge', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (15, N'New Category', N'/SunnetTickets/NewCategory.aspx', N'', 0, 799, 0, 0, N'', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (16, N'New Ticket', N'/SunnetTickets/New.aspx', N'', 0, 251, 0, 0, N'', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (17, N'Dev Review', N'/SunnetTickets/DevReview.aspx', N'', 0, 249, 0, 0, N'', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (18, N'Developing Tickets', N'/SunnetTicket/MyTicket.aspx', N'', 0, 400, 1, 0, N'myticket', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (19, N'My Tickets', N'/SunnetTicket/MyTicket.aspx', N'', 0, 399, 1, 0, N'myticket', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (20, N'All Tickets', N'/SunnetTicket/Index.aspx', N'', 0, 300, 1, 0, N'allticket', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (21, N'Testing Tickets', N'/SunnetTicket/MyTicket.aspx', N'', 0, 500, 1, 0, N'myticket', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (22, N'Qa Review', N'/SunnetTicket/QAReview.aspx', N'', 0, 247, 0, 0, N'', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (23, N'Dashboard', N'/SunnetTicket/Dashboard.aspx', N'', 0, 900, 1, 0, N'sunnetdashboard', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (24, N'My Categories', N'/SunnetTicket/MyCategory.aspx', N'', 0, 800, 1, 0, N'mycategory', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (25, N'PM Review', N'/SunnetTickets/PMReview.aspx', N'', 0, 248, 0, 0, N'', 2)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (26, N'Edit Client User', N'/Admin/Users/ClientUserDetail.aspx', N'', 0, 398, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (27, N'Company Detail', N'/Admin/CompanyDetail.aspx', N'', 0, 898, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (28, N'Seals', N'/Admin/Seals.aspx', N'', 0, 600, 1, 0, N'seal', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (29, N'Users', N'/Admin/Users/Users.aspx', N'', 0, 400, 1, 0, N'user', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (30, N'New Seal', N'/Admin/NewSeal.aspx', N'', 0, 599, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (31, N'Roles', N'/Admin/Roles/Roles.aspx', N'', 0, 100, 1, 0, N'role', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (32, N'Modules', N'/Admin/Modules/Modules.aspx', N'', 0, 200, 1, 0, N'module', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (33, N'New Company', N'/Admin/NewCompany.aspx', N'', 0, 899, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (34, N'Edit Sunneter', N'/Admin/Users/SunnetUserDetail.aspx', N'', 0, 396, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (35, N'New Module', N'/Admin/Modules/AddModule.aspx', N'', 0, 199, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (36, N'Edit Module', N'/Admin/Modules/EditModule.aspx', N'', 0, 198, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (37, N'New Role', N'/Admin/Roles/AddRole.aspx', N'', 0, 99, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (38, N'Edit Role', N'/Admin/Roles/EditRole.aspx', N'', 0, 98, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (39, N'New Sunneter', N'/Admin/Users/NewSunneter.aspx', N'', 0, 397, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (40, N'Assign Project To User', N'/Admin/Users/AssignProjectToUser.aspx', N'', 0, 395, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (41, N'Set Roles Permissions', N'/Admin/Roles/RolePages.aspx', N'', 0, 97, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (42, N'Companies', N'/Admin/Companies.aspx', N'', 0, 900, 1, 0, N'companies', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (43, N'Projects', N'/Admin/Projects/Projects.aspx', N'', 0, 800, 1, 0, N'project', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (44, N'New Project', N'/Admin/Projects/AddProject.aspx', N'', 0, 799, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (45, N'Edit Project', N'/Admin/Projects/EditProject.aspx', N'', 0, 798, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (46, N'Add Project File', N'/Admin/Projects/AddProjectFile.aspx', N'', 0, 797, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (47, N'Add Project Principal', N'/Admin/Projects/AddProjectPrincipal.aspx', N'', 0, 796, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (48, N'Edit Project Principal', N'/Admin/Projects/EditProjectPrincipal.aspx', N'', 0, 795, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (49, N'Edit Seal', N'/Admin/SealDetail.aspx', N'', 0, 598, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (50, N'New Client User', N'/Admin/Users/NewClientUser.aspx', N'', 0, 399, 0, 0, N'', 3)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (51, N'Ticket Comparison', N'/Report/Comparison.aspx', N'', 0, 600, 1, 0, N'comparisonrpt', 5)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (52, N'Ticket Analysis', N'/Report/Analysis.aspx', N'', 0, 500, 1, 0, N'ticketanalysisrpt', 5)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (53, N'Ticket Rating', N'/Report/Ratings.aspx', N'', 0, 400, 1, 0, N'ticketratingrpt', 5)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (54, N'My Timesheet', N'/Report/MyTimeSheetReport/MyTimesheetReport.aspx', N'', 0, 900, 1, 0, N'mytimesheetrpt', 5)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (55, N'Timesheet', N'/Report/TimesheetReport/TimesheetReport.aspx', N'', 0, 800, 1, 0, N'timesheetreport', 5)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (56, N'Consuming', N'/Report/TimesheetReport/TimesheetReport.aspx', N'', 0, 700, 1, 0, N'consuming', 5)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (91, N'My Profile', N'/Account/Profile.aspx', N'', 0, 30, 1, 0, N'myprofile', 6)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (94, N'Dashboard', N'/Ticket/Dashboard.aspx', N'', 0, 90, 1, 0, N'dashboard', 4)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (95, N'Waiting for Response', N'/Ticket/Waiting.aspx', N'', 0, 80, 1, 0, N'waitting', 4)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (92, N'My Company', N'/Account/Company.aspx', N'', 0, 20, 0, 0, N'mycompany', 6)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (93, N'Change Password', N'/Account/ChangePassword.aspx', N'', 0, 10, 1, 0, N'changepwd', 6)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (106, N'Calendar', N'/Event/Index.aspx', N'', 0, 50, 1, 0, N'calendar', 8)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (107, N'List', N'/Event/List.aspx', N'', 0, 40, 1, 0, N'eventlist', 8)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (108, N'New Event', N'/Event/Add.aspx', N'', 0, 39, 0, 0, N'', 8)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (109, N'Edit Event', N'/Event/Edit.aspx', N'', 0, 38, 0, 0, N'', 8)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (110, N'View Event', N'/Event/View.aspx', N'', 0, 37, 0, 0, N'', 8)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (111, N'Day Events', N'/Event/DayEvent.aspx', N'', 0, 36, 0, 0, N'', 8)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (119, N'New Seal Request', N'/OA/Seals/AddSealRequest.aspx', N'', 0, 49, 0, 0, N'', 11)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (120, N'Add Seal File', N'/OA/Seals/AddSealFile.aspx', N'', 0, 48, 0, 0, N'', 11)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (121, N'Add Seal Note', N'/OA/Seals/AddSealNote.aspx', N'', 0, 48, 0, 0, N'', 11)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (122, N'Edit Seal Request', N'/OA/Seals/EditSealRequest.aspx', N'', 0, 47, 0, 0, N'', 11)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (123, N'Waiting Process', N'/OA/Seals/WaitingProcessSeal.aspx', N'', 0, 40, 1, 0, N'watingprocess', 11)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (124, N'Calendar', N'/OA/Calendar/Index.aspx', N'', 0, 30, 1, 0, N'oacalendar', 11)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (96, N'Ongoing Tickets', N'/Ticket/Ongoing.aspx', N'', 0, 70, 1, 0, N'ongoing', 4)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (97, N'Draft Tickets', N'/Ticket/Draft.aspx', N'', 0, 60, 1, 0, N'draft', 4)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (98, N'Completed Tickets', N'/Ticket/Completed.aspx', N'', 0, 50, 1, 0, N'completed', 4)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (99, N'Cancelled Tickets', N'/Ticket/Cancelled.aspx', N'', 0, 40, 1, 0, N'cancelled', 4)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (100, N'Tickets Report', N'/Ticket/Report.aspx', N'', 0, 30, 1, 0, N'reports', 4)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (101, N'Approve Ticket', N'/Ticket/Approve.aspx', N'', 0, 29, 0, 0, N'', 4)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (102, N'Deny Ticket', N'/Ticket/Deny.aspx', N'', 0, 28, 0, 0, N'', 4)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (103, N'New Ticket', N'/Ticket/New.aspx', N'', 0, 27, 0, 0, N'', 4)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (104, N'Ticket Detail', N'/Ticket/Detail.aspx', N'', 0, 26, 0, 0, N'', 4)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (105, N'Adjust Priority', N'/Ticket/AdjustPriority.aspx', N'', 0, 25, 0, 0, N'', 4)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (112, N'Add Timesheet', N'/OA/Timesheet/Date.aspx', N'', 0, 90, 1, 0, N'addtimesheet', 11)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (113, N'My Timesheet', N'/OA/Timesheet/Index.aspx', N'', 0, 80, 1, 0, N'timesheet', 11)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (114, N'Week Plan', N'/OA/WeekPlan/Index.aspx', N'', 0, 70, 0, 0, N'weekplan', 11)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (115, N'Work Request', N'/OA/WorkRequest/Index.aspx', N'', 0, 60, 1, 0, N'workrequest', 11)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (116, N'New Work Request', N'/OA/WorkRequest/AddWorkRequest.aspx', N'', 0, 59, 0, 0, N'', 11)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (117, N'Edit Work Request', N'/OA/WorkRequest/EditWorkRequest.aspx', N'', 0, 58, 0, 0, N'', 11)
+GO
+INSERT [dbo].[Modules] ([ModuleID], [ModuleTitle], [ModulePath], [DefaultPage], [Status], [Orders], [ShowInMenu], [PageOrModule], [ClickFunctioin], [ParentID]) VALUES (118, N'Seal Requests', N'/OA/Seals/SealRequests.aspx', N'', 0, 50, 1, 0, N'sealrequest', 11)
+GO
+SET IDENTITY_INSERT [dbo].[Modules] OFF
+GO
+SET IDENTITY_INSERT [dbo].[RoleModules] ON 
+
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (231, 5, 1)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (232, 5, 7)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (233, 5, 9)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (234, 5, 6)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (235, 5, 91)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (236, 5, 92)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (237, 5, 93)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (238, 5, 10)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (239, 5, 8)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (240, 5, 106)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (241, 5, 107)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (242, 5, 108)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (243, 5, 109)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (244, 5, 110)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (245, 5, 111)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (246, 5, 4)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (247, 5, 94)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (248, 5, 95)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (249, 5, 96)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (250, 5, 97)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (251, 5, 98)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (252, 5, 99)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (253, 5, 100)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (254, 5, 101)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (255, 5, 102)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (256, 5, 103)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (257, 5, 104)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (258, 5, 105)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (764, 3, 1)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (765, 3, 7)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (766, 3, 2)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (767, 3, 23)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (768, 3, 24)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (769, 3, 15)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (770, 3, 14)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (771, 3, 18)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (772, 3, 19)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (773, 3, 20)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (774, 3, 13)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (775, 3, 17)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (776, 3, 11)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (777, 3, 112)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (778, 3, 113)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (779, 3, 114)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (384, 1, 1)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (385, 1, 7)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (386, 1, 2)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (387, 1, 23)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (388, 1, 24)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (389, 1, 15)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (390, 1, 14)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (391, 1, 12)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (392, 1, 21)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (393, 1, 18)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (394, 1, 19)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (395, 1, 20)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (396, 1, 16)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (397, 1, 13)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (398, 1, 17)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (399, 1, 25)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (400, 1, 22)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (401, 1, 11)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (402, 1, 112)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (403, 1, 113)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (404, 1, 114)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (405, 1, 115)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (406, 1, 116)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (407, 1, 117)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (408, 1, 118)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (409, 1, 119)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (410, 1, 121)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (411, 1, 120)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (412, 1, 122)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (413, 1, 123)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (414, 1, 124)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (415, 1, 9)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (416, 1, 6)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (417, 1, 91)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (418, 1, 92)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (419, 1, 93)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (420, 1, 5)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (421, 1, 54)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (422, 1, 55)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (423, 1, 56)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (424, 1, 51)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (425, 1, 52)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (426, 1, 53)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (427, 1, 10)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (428, 1, 8)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (429, 1, 106)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (430, 1, 107)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (431, 1, 108)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (432, 1, 109)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (433, 1, 110)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (434, 1, 111)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (435, 1, 3)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (436, 1, 42)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (437, 1, 33)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (438, 1, 27)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (439, 1, 43)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (440, 1, 44)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (441, 1, 45)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (442, 1, 46)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (443, 1, 47)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (444, 1, 48)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (445, 1, 28)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (446, 1, 30)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (447, 1, 49)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (448, 1, 29)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (449, 1, 50)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (450, 1, 26)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (451, 1, 39)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (452, 1, 34)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (453, 1, 40)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (454, 1, 32)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (455, 1, 35)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (456, 1, 36)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (457, 1, 31)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (458, 1, 37)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (459, 1, 38)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (460, 1, 41)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (461, 1, 4)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (462, 1, 94)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (463, 1, 95)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (464, 1, 96)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (465, 1, 97)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (466, 1, 98)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (467, 1, 99)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (468, 1, 100)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (469, 1, 101)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (470, 1, 102)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (471, 1, 103)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (472, 1, 104)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (473, 1, 105)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (474, 16, 1)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (475, 16, 7)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (476, 16, 2)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (477, 16, 23)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (478, 16, 24)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (479, 16, 15)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (480, 16, 14)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (481, 16, 19)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (482, 16, 20)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (483, 16, 16)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (484, 16, 13)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (485, 16, 11)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (486, 16, 112)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (487, 16, 113)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (488, 16, 9)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (489, 16, 6)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (490, 16, 93)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (491, 16, 10)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (492, 16, 8)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (493, 16, 106)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (494, 16, 107)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (495, 16, 108)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (496, 16, 109)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (497, 16, 110)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (498, 16, 111)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (701, 10, 1)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (702, 10, 7)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (703, 10, 2)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (704, 10, 23)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (705, 10, 24)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (706, 10, 15)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (707, 10, 14)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (708, 10, 18)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (709, 10, 19)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (710, 10, 20)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (711, 10, 13)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (712, 10, 17)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (713, 10, 11)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (714, 10, 112)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (715, 10, 113)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (716, 10, 9)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (717, 10, 6)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (718, 10, 93)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (719, 10, 10)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (720, 10, 8)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (721, 10, 106)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (722, 10, 107)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (723, 10, 108)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (724, 10, 109)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (725, 10, 110)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (726, 10, 111)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (727, 7, 1)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (728, 7, 7)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (729, 7, 2)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (730, 7, 23)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (731, 7, 24)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (732, 7, 15)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (733, 7, 14)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (734, 7, 18)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (735, 7, 19)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (736, 7, 20)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (737, 7, 16)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (738, 7, 13)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (739, 7, 17)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (740, 7, 11)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (741, 7, 112)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (742, 7, 113)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (743, 7, 124)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (744, 7, 9)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (745, 7, 6)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (746, 7, 91)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (747, 7, 92)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (748, 7, 93)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (749, 7, 5)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (750, 7, 54)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (751, 7, 55)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (752, 7, 56)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (753, 7, 51)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (754, 7, 52)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (755, 7, 53)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (756, 7, 10)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (757, 7, 8)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (758, 7, 106)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (759, 7, 107)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (760, 7, 108)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (761, 7, 109)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (762, 7, 110)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (763, 7, 111)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (780, 3, 124)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (781, 3, 9)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (782, 3, 6)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (783, 3, 91)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (784, 3, 92)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (668, 4, 1)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (669, 4, 7)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (670, 4, 2)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (671, 4, 23)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (672, 4, 24)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (673, 4, 15)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (674, 4, 14)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (675, 4, 21)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (676, 4, 19)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (677, 4, 20)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (577, 6, 1)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (578, 6, 7)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (579, 6, 2)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (580, 6, 23)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (581, 6, 24)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (582, 6, 15)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (583, 6, 14)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (584, 6, 19)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (585, 6, 20)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (586, 6, 16)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (587, 6, 13)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (588, 6, 11)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (589, 6, 112)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (590, 6, 113)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (591, 6, 114)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (592, 6, 115)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (593, 6, 116)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (594, 6, 117)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (595, 6, 118)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (596, 6, 119)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (597, 6, 121)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (598, 6, 120)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (599, 6, 122)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (600, 6, 123)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (601, 6, 124)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (602, 6, 9)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (603, 6, 6)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (604, 6, 91)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (605, 6, 92)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (606, 6, 93)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (607, 6, 5)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (608, 6, 54)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (609, 6, 55)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (610, 6, 56)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (611, 6, 51)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (612, 6, 52)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (613, 6, 53)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (614, 6, 10)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (615, 6, 8)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (616, 6, 106)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (617, 6, 107)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (618, 6, 108)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (619, 6, 109)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (620, 6, 110)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (621, 6, 111)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (622, 6, 3)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (623, 6, 29)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (624, 6, 50)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (625, 6, 26)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (626, 6, 39)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (627, 6, 34)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (628, 6, 40)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (678, 4, 16)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (679, 4, 13)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (680, 4, 22)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (681, 4, 11)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (682, 4, 112)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (683, 4, 113)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (684, 4, 114)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (685, 4, 124)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (686, 4, 9)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (687, 4, 6)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (688, 4, 91)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (689, 4, 92)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (690, 4, 93)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (691, 4, 5)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (692, 4, 54)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (693, 4, 10)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (694, 4, 8)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (695, 4, 106)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (696, 4, 107)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (697, 4, 108)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (698, 4, 109)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (699, 4, 110)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (700, 4, 111)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (785, 3, 93)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (786, 3, 5)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (787, 3, 54)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (788, 3, 10)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (789, 3, 8)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (790, 3, 106)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (791, 3, 107)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (792, 3, 108)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (793, 3, 109)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (794, 3, 110)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (795, 3, 111)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (796, 2, 1)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (797, 2, 7)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (798, 2, 2)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (799, 2, 23)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (800, 2, 24)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (801, 2, 15)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (802, 2, 14)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (803, 2, 12)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (804, 2, 21)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (805, 2, 18)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (806, 2, 19)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (807, 2, 20)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (808, 2, 16)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (809, 2, 13)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (810, 2, 17)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (811, 2, 25)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (812, 2, 22)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (813, 2, 11)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (814, 2, 112)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (815, 2, 113)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (816, 2, 114)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (817, 2, 115)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (818, 2, 116)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (819, 2, 117)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (820, 2, 118)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (821, 2, 119)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (822, 2, 121)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (823, 2, 120)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (824, 2, 122)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (825, 2, 123)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (826, 2, 124)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (827, 2, 9)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (828, 2, 6)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (829, 2, 91)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (830, 2, 92)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (831, 2, 93)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (832, 2, 5)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (833, 2, 54)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (834, 2, 55)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (835, 2, 56)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (836, 2, 51)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (837, 2, 52)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (838, 2, 53)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (839, 2, 10)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (840, 2, 8)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (841, 2, 106)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (842, 2, 107)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (843, 2, 108)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (844, 2, 109)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (845, 2, 110)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (846, 2, 111)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (847, 2, 3)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (848, 2, 42)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (849, 2, 27)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (850, 2, 43)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (851, 2, 44)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (852, 2, 45)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (853, 2, 46)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (854, 2, 47)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (855, 2, 48)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (856, 2, 29)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (857, 2, 50)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (858, 2, 26)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (859, 2, 39)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (860, 2, 34)
+GO
+INSERT [dbo].[RoleModules] ([RMID], [RoleID], [ModuleID]) VALUES (861, 2, 40)
+GO
+SET IDENTITY_INSERT [dbo].[RoleModules] OFF
+GO

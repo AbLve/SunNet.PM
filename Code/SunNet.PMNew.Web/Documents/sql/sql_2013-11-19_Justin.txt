@@ -1,0 +1,50 @@
+﻿IF OBJECT_ID('IsRemainHoursLessThanTen') IS NOT NULL
+DROP FUNCTION IsRemainHoursLessThanTen
+
+GO
+
+CREATE FUNCTION [dbo].[IsRemainHoursLessThanTen] 
+(
+	@TotalHours decimal,
+	@TimeSheetTime decimal
+)
+RETURNS bit
+AS
+BEGIN
+	DECLARE @result  bit;
+	DECLARE @remainHours decimal;
+	SET @remainHours=@TotalHours-@TimeSheetTime;
+	IF(@remainHours<10 AND @remainHours>0 OR (@remainHours=0 AND @TotalHours!=0))
+	BEGIN
+		SET	@result=1;
+	END
+	ELSE
+	BEGIN
+		SET	@result=0;
+	END
+	RETURN @result;
+END
+
+go
+
+IF OBJECT_ID('GetProjectsRemainHoursLessThanTenProjects') IS NOT NULL
+DROP PROC GetProjectsRemainHoursLessThanTenProjects
+
+GO
+
+CREATE PROCEDURE [dbo].[GetProjectsRemainHoursLessThanTenProjects]
+AS
+BEGIN
+SELECT T.projectid,T.Title as ProjectTitle,T.TotalHours-T.TimeSheetTime AS RemainHours
+FROM
+(
+	SELECT t.projectid,P.Title,sum(hours) AS TimeSheetTime,TotalHours
+	,dbo.IsRemainHoursLessThanTen(TotalHours,sum(hours)) AS IsLessThanTen   
+	FROM projects P inner join TimeSheets T on p.projectid=t.projectid 
+	WHERE P.MaintenancePlanOption='HAS' and hasSendRemainHourEmail=0
+	GROUP BY t.projectID,TotalHours,P.Title
+  ) T
+  WHERE IsLessThanTen=1
+END
+
+

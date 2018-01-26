@@ -1,0 +1,13 @@
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\bin\Debug\SunNet.PMNew.EmailSender.exe.config
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\bin\Debug\SunNet.PMNew.EmailSender.exe.manifest
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\bin\Debug\SunNet.PMNew.EmailSender.application
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\bin\Debug\SunNet.PMNew.EmailSender.exe
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\bin\Debug\SunNet.PMNew.EmailSender.pdb
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\bin\Debug\SunNet.PMNew.Framework.dll
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\bin\Debug\SunNet.PMNew.Framework.pdb
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\obj\Debug\SunNet.PMNew.EmailSender.csprojResolveAssemblyReference.cache
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\obj\Debug\SunNet.PMNew.EmailSender.exe.manifest
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\obj\Debug\SunNet.PMNew.EmailSender.application
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\obj\Debug\SunNet.PMNew.EmailSender.exe
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.EmailSender\obj\Debug\SunNet.PMNew.EmailSender.pdb

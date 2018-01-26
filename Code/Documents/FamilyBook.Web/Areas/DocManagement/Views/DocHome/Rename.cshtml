@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "Rename";
+    Layout = "~/Views/Shared/_PopLayout.cshtml";
+    ViewBag.Width = 432;
+}
+<script type="text/javascript">
+    var rename_tempname = "";
+    jQuery(function () {
+        rename_tempname = jQuery("#reName").val();
+    });
+    function rename_colsed() {
+        if (jQuery("#formrename").valid()) {
+            var text = jQuery("#reName").val().trim();
+            var projectId = jQuery(selectObj).attr("projectid");
+            jQuery.post("IsDuplicationReName", { id: '@ViewBag.ID', projectId: projectId, filename: text }, function (result) {
+                if (result.toLowerCase() == 'true') {
+                    jQuery.alert("danger-rename", "A folder with the name you specified already exists. Specify a different file name.");
+                    jQuery("#reName").focus();
+                    return;
+                } else if (rename_tempname == text) {
+                    jQuery.alert("danger-rename", "There is already a file with the same name in this location. <br/>Please enter a different name. ");
+                    jQuery("#reName").focus();
+                    return;
+                }
+                _callbackRename('@ViewBag.ID', text);
+            });
+            }
+        }
+        function txtname_onkeydown(event) {
+            if (event.keyCode == 13) {
+                rename_colsed();
+            }
+        }
+</script>
+<div class="mainowConbox" style="min-height: 125px;">
+    <div class="alert alert-danger alert-danger-rename fade hide">
+        <img src="/Images/icons/failed.png" />
+        <a class="close" data-dismiss="alert" href="###" aria-hidden="true">&times;</a>
+        Operation failed. 
+    </div>
+    <table width="98%" border="0" cellpadding="0" cellspacing="0" style="height: 71px; margin: 0px;">
+        <tr>
+            <td width="32%" align="right">New Name:<span class="noticeRed">*</span>&nbsp;
+            </td>
+            <td width="68%">
+                <form action="" id="formrename" style="font-size: 13px;">
+                    @Html.TextBox("reName", ViewData["FileName"], new { @class = "inputNormal", attrRequired = "The folder name", attrRegex = "The folder name", regex = "^[^\\\\\\/:*?\\\"<>|]+$", maxlength = 50, onkeydown = "txtname_onkeydown(event)" })
+                </form>
+            </td>
+        </tr>
+    </table>
+    <div class="buttonBox2">
+        <button class="saveBtn1 mainbutton" id="saveObject" onclick="return rename_colsed()">
+            Save</button>
+        <input name="button23" type="button" value="Cancel" class="cancelBtn1 mainbutton" data-dismiss="modal" aria-hidden="true" />
+    </div>
+</div>

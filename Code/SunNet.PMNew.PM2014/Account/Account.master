@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Normal.master" AutoEventWireup="true" CodeBehind="Account.master.cs" Inherits="SunNet.PMNew.PM2014.Account.Account" %>
+
+<%@ Register Src="../UserControls/Footer.ascx" TagName="Footer" TagPrefix="uc1" %>
+<%@ Register src="../UserControls/Account/LeftMenu.ascx" tagname="LeftMenu" tagprefix="uc2" %>
+<%@ Register src="../UserControls/Messager.ascx" tagname="Messager" tagprefix="uc3" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    
+    <script src="/Scripts/jquery.maskedinput-1.3.1.min.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+        <tr>
+            <td class="mainleftTd">
+                <uc2:LeftMenu ID="LeftMenu1" runat="server" />
+            </td>
+            <td class="mainrightTd">
+                <div class="mainrightBox"> <div class="limitwidth">
+                    <uc3:Messager ID="Messager1" runat="server" />
+                    <asp:ContentPlaceHolder ID="searchSection" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="dataSection" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="pagerSection" runat="server">
+                    </asp:ContentPlaceHolder></div>
+                </div>
+                <uc1:Footer ID="Footer1" runat="server" />
+            </td>
+        </tr>
+    </table>
+</asp:Content>

@@ -1,0 +1,1 @@
+﻿UPDATE tickets set  additionalstate=-1 where additionalstate=1 

@@ -1,0 +1,9 @@
+﻿Disallow:/Events/
+Disallow:/DocManagement/
+Disallow:/DynamicMessageCenter/
+Disallow:/Family/
+Disallow:/MyFriends/
+Disallow:/Notification/
+Disallow:/Photos/
+Disallow:/Users/
+Disallow:/Videos/

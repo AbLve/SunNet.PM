@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<emails>
+  <email>
+    <subject>{ProjectTitle} ticket is ready for review.</subject>
+    <content>
+      <![CDATA[
+                 Ticket {TicketID} is complete and ready for your review.<br/><br/>
+                 
+                 Ticket Title  : {TicketTitle}.<br/><br/>
+                 
+                 Ticket Description : {TicketDescription}.<br/><br/>
+                 
+                 {PMUserName}<br/></br>
+                 
+                 <a href="https://pm.sunnet.us" target="_blank"> PM System</a>, {Date}
+        ]]>
+    </content>
+  </email>
+</emails>

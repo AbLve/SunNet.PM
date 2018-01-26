@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "New Folder";
+    Layout = "~/Views/Shared/_PopLayout.cshtml";
+    ViewBag.Width = 432;
+    
+}
+
+<script type="text/javascript">
+    function newfolder_colsed() {
+        //var patten = new RegExp('^[^\\\\\\/:*?\\"<>|]+$');
+        if(jQuery("#formnewfolder").valid())
+        {
+            var text = jQuery("#newName").val().trim();
+            var projectId = jQuery(selectObj).attr("projectid");
+            jQuery.post("IsDuplicationName", { parentId: @ViewBag.ID,projectId:projectId, filename: text }, function (result) {
+                if(result.toLowerCase()=='true')
+                {
+                    jQuery.alert("warning","A folder with the name you specified already exists. Specify a different file name.");
+                    jQuery("#newName").focus();
+                    return;
+                }
+                _callbackNewFolder(@ViewBag.ID,text);
+                });
+                @*_callbackNewFolder(@ViewBag.ID,text);*@
+        }
+    }
+    function txtname_onkeydown(event)
+    {
+        if(event.keyCode==13)
+        {
+            newfolder_colsed();
+        }
+    }
+</script>
+<div class="mainowConbox" style="min-height: 125px;">
+    <div class="alert alert-danger alert-danger-newfolder fade hide">
+        <img src="/Images/icons/failed.png" />
+        <a class="close" data-dismiss="alert" href="###" aria-hidden="true">&times;</a>
+        Operation failed. 
+    </div>
+    <div style="height: 20px">&nbsp;</div>
+    <table width="99%" border="0" cellpadding="0" cellspacing="0" style="height: 71px; margin: 0px;">
+        <tr>
+            <td width="35%" align="right" valign="top">
+                <div style="margin-top: 3px;">New Folder Name:<span class="noticeRed">*</span>&nbsp;</div>
+            </td>
+            <td width="*" valign="top">
+                <form action="" id="formnewfolder">
+                    @Html.TextBox("newName", "", new { @class = "inputNormal", attrRequired = "The folder name", attrRegexCustom = "File name cannot contain this special character.", regex = "^[^\\\\\\/:*?\\\"<>|]+$", maxlength = 50, onkeydown = "txtname_onkeydown(event)" })
+                    <div class="noticeFaile1">
+                    </div>
+                </form>
+            </td>
+        </tr>
+    </table>
+    <div class="buttonBox2">
+        <button class="saveBtn1 mainbutton" id="saveObject" onclick="return newfolder_colsed()">
+            Save</button>
+        <input name="button23" type="button" value="Cancel" class="cancelBtn1 mainbutton" data-dismiss="modal" aria-hidden="true" />
+    </div>
+</div>

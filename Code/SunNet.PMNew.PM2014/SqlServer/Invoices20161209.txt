@@ -1,0 +1,7 @@
+﻿alter table Invoices add ETADate datetime
+alter table Invoices add Color varchar(50) 
+alter table Invoices add ColorFor varchar(100)
+alter table Invoices add CreatedOn datetime 
+alter table Invoices add CreatedBy int
+alter table Invoices add ModifiedOn datetime
+alter table Invoices add ModifiedBy int

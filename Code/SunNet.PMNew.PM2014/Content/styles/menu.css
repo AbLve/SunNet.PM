@@ -1,0 +1,746 @@
+/*top menu public */
+ul.topmenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.topmenu li {
+  width: 110px;
+  height: 75px;
+  border-radius: 8px;
+  text-align: center;
+  float: left;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding-top: 25px;
+  margin-right: 10px;
+  position: relative;
+}
+ul.topmenu li,
+ul.topmenu li a {
+  color: #ffffff;
+}
+ul.topmenu li.active {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+}
+ul.topmenu li a:hover {
+  text-decoration: none;
+}
+ul.topmenu li a.full {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+}
+ul.topmenu li .downarrow {
+  border-width: 11px;
+  display: none;
+}
+ul.topmenu li .downarrow,
+ul.topmenu li .downarrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+ul.topmenu li.active .downarrow {
+  bottom: -11px;
+  left: 50%;
+  margin-left: -11px;
+  border-bottom-width: 0;
+}
+ul.topmenu li.active .downarrow:after {
+  border-width: 10px;
+  bottom: 1px;
+  margin-left: -10px;
+  border-top-color: #ffffff;
+  border-bottom-width: 0;
+  content: " ";
+}
+ul.topmenu li img {
+  margin-bottom: 5px;
+}
+ul.topmenu li .image {
+  width: 28px;
+  height: 35px;
+  margin: 0 auto;
+}
+ul.topmenu li:hover {
+  filter: alpha(opacity=80);
+  -moz-opacity: 0.8;
+  -khtml-opacity: 0.8;
+  opacity: 0.8;
+}
+/*top menu public end */
+/*left menu public */
+ul.leftMenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul.leftMenu li a.full {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 2;
+}
+ul.leftMenu a {
+  text-decoration: none;
+  color: #000000;
+}
+ul.leftMenu li {
+  height: 20px;
+  padding: 12px 10px;
+  border-top: 1px solid #ddd;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+}
+ul.leftMenu li:hover {
+  background-color: #efefef;
+}
+ul.leftMenu li .icon {
+  display: inline-block;
+  width: 220px;
+  height: 21px;
+  background: url("") no-repeat left top;
+  padding-left: 25px;
+}
+ul.leftMenu li .rightarrow {
+  border-width: 11px;
+  display: none;
+}
+ul.leftMenu li .rightarrow,
+ul.leftMenu li .rightarrow:after {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+}
+ul.leftMenu li.active .rightarrow {
+  top: 50%;
+  right: -11px;
+  margin-top: -11px;
+  border-right-width: 0;
+}
+ul.leftMenu li.active .rightarrow:after {
+  border-width: 10px;
+  right: 1px;
+  bottom: -10px;
+  border-left-color: #ffffff;
+  border-right-width: 0;
+  content: " ";
+}
+ul.leftMenu li.active {
+  color: #073583;
+  border: 1px solid #073583;
+  font-weight: bold;
+  margin: -1px -1px 0px -1px;
+  height: 20px;
+}
+ul.leftMenu li.active:hover {
+  background-color: #ffffff;
+}
+/*left menu public end*/
+/* clients start*/
+ul.topmenu .clientdashboard {
+  background-color: #009c85;
+}
+ul.topmenu li.clientdashboard.active a {
+  color: #009c85;
+}
+ul.topmenu .clientdashboard .image {
+  background: url("/Images/icons/cdashboard_white.png") no-repeat center top;
+}
+ul.topmenu li.active.clientdashboard {
+  color: #009c85;
+  border-color: #009c85;
+}
+ul.topmenu li.active.clientdashboard .downarrow {
+  border-top-color: #009c85;
+}
+ul.topmenu li.active.clientdashboard .image {
+  background: url("/Images/icons/cdashboard_on.png") no-repeat center top;
+}
+ul.topmenu .client {
+  background-color: #54b1ff;
+}
+ul.topmenu li.client.active a {
+  color: #54b1ff;
+}
+ul.topmenu .client .image {
+  background: url("/Images/icons/clients_white.png") no-repeat center top;
+}
+ul.topmenu li.active.client {
+  color: #54b1ff;
+  border-color: #54b1ff;
+}
+ul.topmenu li.active.client .downarrow {
+  border-top-color: #54b1ff;
+}
+ul.topmenu li.active.client .image {
+  background: url("/Images/icons/clients_on.png") no-repeat center top;
+}
+ul.topmenu .clientticket {
+  background-color: #54b1ff;
+}
+ul.topmenu li.clientticket.active a {
+  color: #54b1ff;
+}
+ul.topmenu .clientticket .image {
+  background: url("/Images/icons/clientticket_white.png") no-repeat center top;
+}
+ul.topmenu li.active.clientticket {
+  color: #54b1ff;
+  border-color: #54b1ff;
+}
+ul.topmenu li.active.clientticket .downarrow {
+  border-top-color: #54b1ff;
+}
+ul.topmenu li.active.clientticket .image {
+  background: url("/Images/icons/clientticket_on.png") no-repeat center top;
+}
+/* client left menu */
+ul.leftMenu.client-left li.active {
+  border-color: #54b1ff;
+}
+ul.leftMenu.client-left li.active a {
+  color: #54b1ff;
+}
+ul.leftMenu.client-left li.active .rightarrow {
+  border-left-color: #4c9fe6;
+}
+/*client left menu*/
+ul.leftMenu li.dashboard .icon {
+  background-image: url("/Images/icons/dashboard_grey.png");
+}
+ul.leftMenu li.dashboard.active .icon {
+  background-image: url("/Images/icons/dashboard_on.png");
+}
+ul.leftMenu li.waitting .icon {
+  background-image: url("/Images/icons/waiting_grey.png");
+}
+ul.leftMenu li.waitting.active .icon {
+  background-image: url("/Images/icons/waiting_on.png");
+}
+ul.leftMenu li.ongoing .icon {
+  background-image: url("/Images/icons/ongoing_grey.png");
+}
+ul.leftMenu li.ongoing.active .icon {
+  background-image: url("/Images/icons/ongoing_on.png");
+}
+ul.leftMenu li.draft .icon {
+  background-image: url("/Images/icons/draft_grey.png");
+}
+ul.leftMenu li.draft.active .icon {
+  background-image: url("/Images/icons/draft_on.png");
+}
+ul.leftMenu li.completed .icon {
+  background-image: url("/Images/icons/completed_grey.png");
+}
+ul.leftMenu li.completed.active .icon {
+  background-image: url("/Images/icons/completed_on.png");
+}
+ul.leftMenu li.cancelled .icon {
+  background-image: url("/Images/icons/cancelled_grey.png");
+}
+ul.leftMenu li.cancelled.active .icon {
+  background-image: url("/Images/icons/cancelled_on.png");
+}
+ul.leftMenu li.reports .icon {
+  background-image: url("/Images/icons/reports_grey.png");
+}
+ul.leftMenu li.reports.active .icon {
+  background-image: url("/Images/icons/reports_on.png");
+}
+/* client end*/
+/* sunnet start */
+ul.topmenu .sunnet {
+  background-color: #008954;
+}
+ul.topmenu li.sunnet.active a {
+  color: #008954;
+}
+ul.topmenu .sunnet .image {
+  background: url("/Images/icons/tickets_white.png") no-repeat center top;
+}
+ul.topmenu li.active.sunnet {
+  color: #008954;
+  border-color: #008954;
+}
+ul.topmenu li.active.sunnet .downarrow {
+  border-top-color: #008954;
+}
+ul.topmenu li.active.sunnet .image {
+  background: url("/Images/icons/tickets_on.png") no-repeat center top;
+}
+/* sunnet left menu */
+ul.leftMenu.sunnet-left li.active {
+  border-color: #008954;
+}
+ul.leftMenu.sunnet-left li.active a {
+  color: #008954;
+}
+ul.leftMenu.sunnet-left li.active .rightarrow {
+  border-left-color: #007b4c;
+}
+/*Sunnet left menu*/
+ul.leftMenu li.sunnetdashboard .icon {
+  background-image: url("/Images/icons/dashboard_grey.png");
+}
+ul.leftMenu li.sunnetdashboard.active .icon {
+  background-image: url("/Images/icons/sunnet_dashboard_on.png");
+}
+ul.leftMenu li.mycategory .icon {
+  background-image: url("/Images/icons/mycategories_grey.png");
+}
+ul.leftMenu li.mycategory.active .icon {
+  background-image: url("/Images/icons/mycategories_on.png");
+}
+ul.leftMenu li.knowledge .icon {
+  background-image: url("/Images/icons/knowledgeshare_grey.png");
+}
+ul.leftMenu li.knowledge.active .icon {
+  background-image: url("/Images/icons/knowledgeshare_on.png");
+}
+ul.leftMenu li.myticket .icon {
+  background-image: url("/Images/icons/myticket_grey.png");
+}
+ul.leftMenu li.myticket.active .icon {
+  background-image: url("/Images/icons/myticket_on.png");
+}
+ul.leftMenu li.allticket .icon {
+  background-image: url("/Images/icons/allticket_grey.png");
+}
+ul.leftMenu li.allticket.active .icon {
+  background-image: url("/Images/icons/allticket_on.png");
+}
+ul.leftMenu li.schedule .icon {
+  background-image: url("/Images/icons/schedule_grey.png");
+}
+ul.leftMenu li.schedule.active .icon {
+  background-image: url("/Images/icons/schedule_on.png");
+}
+ul.leftMenu li.undercoordination .icon {
+  background-image: url("/Images/icons/undercoordination_grey.png");
+}
+ul.leftMenu li.undercoordination.active .icon {
+  background-image: url("/Images/icons/undercoordination_on.png");
+}
+ul.leftMenu li.underdevelop .icon {
+  background-image: url("/Images/icons/underdevelop_grey.png");
+}
+ul.leftMenu li.underdevelop.active .icon {
+  background-image: url("/Images/icons/underdevelop_on.png");
+}
+ul.leftMenu li.undertest .icon {
+  background-image: url("/Images/icons/undertest_grey.png");
+}
+ul.leftMenu li.undertest.active .icon {
+  background-image: url("/Images/icons/undertest_on.png");
+}
+/* ticket end */
+/* document start */
+ul.topmenu .document {
+  background-color: #6ca632;
+}
+ul.topmenu li.document.active a {
+  color: #6ca632;
+}
+ul.topmenu .document .image {
+  background: url("/Images/icons/documents_white.png") no-repeat center top;
+}
+ul.topmenu li.active.document {
+  color: #6ca632;
+  border-color: #6ca632;
+}
+ul.topmenu li.active.document .downarrow {
+  border-top-color: #6ca632;
+}
+ul.topmenu li.active.document .image {
+  background: url("/Images/icons/documents_on.png") no-repeat center top;
+}
+/* event start */
+ul.topmenu .event {
+  background-color: #f08e00;
+}
+ul.topmenu li.event.active a {
+  color: #f08e00;
+}
+ul.topmenu .event .image {
+  background: url("/Images/icons/events_white.png") no-repeat center top;
+}
+ul.topmenu li.active.event {
+  border-color: #f08e00;
+  color: #f08e00;
+}
+ul.topmenu li.active.event .downarrow {
+  border-top-color: #f08e00;
+}
+ul.topmenu li.active.event .image {
+  background: url("/Images/icons/events_on.png") no-repeat center top;
+}
+/* event left menu */
+ul.leftMenu.event-left li.active {
+  border-color: #f08e00;
+}
+ul.leftMenu.event-left li.active a {
+  color: #f08e00;
+}
+ul.leftMenu.event-left li.active .rightarrow {
+  border-left-color: #c07200;
+}
+ul.leftMenu li.calendar .icon {
+  background-image: url("/Images/icons/calendar_grey.png");
+}
+ul.leftMenu li.calendar.active .icon {
+  background-image: url("/Images/icons/calendar_on.png");
+}
+ul.leftMenu li.eventlist .icon {
+  background-image: url("/Images/icons/list_grey.png");
+}
+ul.leftMenu li.eventlist.active .icon {
+  background-image: url("/Images/icons/list_on.png");
+}
+/* forum start */
+ul.topmenu .forum {
+  background-color: #d64637;
+}
+ul.topmenu li.forum.active a {
+  color: #d64637;
+}
+ul.topmenu .forum .image {
+  background: url("/Images/icons/forums_white.png") no-repeat center top;
+}
+ul.topmenu li.active.forum {
+  border-color: #d64637;
+  color: #d64637;
+}
+ul.topmenu li.active.forum .downarrow {
+  border-top-color: #d64637;
+}
+ul.topmenu li.active.forum .image {
+  background: url("/Images/icons/forums_on.png") no-repeat center top;
+}
+ul.leftMenu.forum-left li.active {
+  border-color: #d64637;
+}
+ul.leftMenu.forum-left li.active a {
+  color: #d64637;
+}
+ul.leftMenu.forum-left li.active .rightarrow {
+  border-left-color: #d64637;
+}
+/* profile start */
+ul.topmenu .profile {
+  background-color: #3a7bb8;
+}
+ul.topmenu .profile .image {
+  background: url("/Images/icons/profile_white.png") no-repeat center top;
+}
+ul.topmenu li.active.profile {
+  border-color: #3a7bb8;
+  color: #3a7bb8;
+}
+ul.topmenu li.profile.active a {
+  color: #3a7bb8;
+}
+ul.topmenu li.active.profile .downarrow {
+  border-top-color: #3a7bb8;
+}
+ul.topmenu li.active.profile .image {
+  background: url("/Images/icons/profile_on.png") no-repeat center top;
+}
+/* profile left menu */
+ul.leftMenu.profile-left li.active {
+  border-color: #3a7bb8;
+}
+ul.leftMenu.profile-left li.active a {
+  color: #3a7bb8;
+}
+ul.leftMenu.profile-left li.active .rightarrow {
+  border-left-color: #295681;
+}
+ul.leftMenu li.myprofile .icon {
+  background-image: url("/Images/icons/myprofile_grey.png");
+}
+ul.leftMenu li.myprofile.active .icon {
+  background-image: url("/Images/icons/myprofile_on.png");
+}
+ul.leftMenu li.mycompany .icon {
+  background-image: url("/Images/icons/company_grey.png");
+}
+ul.leftMenu li.mycompany.active .icon {
+  background-image: url("/Images/icons/company_on.png");
+}
+ul.leftMenu li.changepwd .icon {
+  background-image: url("/Images/icons/password_grey.png");
+}
+ul.leftMenu li.changepwd.active .icon {
+  background-image: url("/Images/icons/password_on.png");
+}
+ul.leftMenu li.profileseal .icon {
+  background-image: url("/Images/icons/profileseal_grey.png");
+}
+ul.leftMenu li.profileseal.active .icon {
+  background-image: url("/Images/icons/profileseal_on.png");
+}
+/* profile end */
+/*Report start*/
+ul.topmenu .report {
+  background-color: #15bdb7;
+}
+ul.topmenu .report .image {
+  background: url("/Images/icons/reports_white.png") no-repeat center top;
+}
+ul.topmenu li.active.report {
+  border-color: #15bdb7;
+  color: #15bdb7;
+}
+ul.topmenu li.report.active a {
+  color: #15bdb7;
+}
+ul.topmenu li.active.report .downarrow {
+  border-top-color: #15bdb7;
+}
+ul.topmenu li.active.report .image {
+  background: url("/Images/icons/sunnetreports_on.png") no-repeat center top;
+}
+/*report left menu*/
+ul.leftMenu.report-left li.active {
+  border-color: #15bdb7;
+}
+ul.leftMenu.report-left li.active a {
+  color: #15bdb7;
+}
+ul.leftMenu.report-left li.active .rightarrow {
+  border-left-color: #15bdb7;
+}
+ul.leftMenu li.mytimesheetrpt .icon {
+  background-image: url("/Images/icons/mytimesheetreport_grey.png");
+}
+ul.leftMenu li.mytimesheetrpt.active .icon {
+  background-image: url("/Images/icons/mytimesheetreport_on.png");
+}
+ul.leftMenu li.timesheetreport .icon {
+  background-image: url("/Images/icons/timesheetreport_grey.png");
+}
+ul.leftMenu li.timesheetreport.active .icon {
+  background-image: url("/Images/icons/timesheetreport_on.png");
+}
+ul.leftMenu li.consuming .icon {
+  background-image: url("/Images/icons/consumingreport_grey.png");
+}
+ul.leftMenu li.consuming.active .icon {
+  background-image: url("/Images/icons/consumingreport_on.png");
+}
+ul.leftMenu li.ticketanalysisrpt .icon {
+  background-image: url("/Images/icons/ticketanalysis_grey.png");
+}
+ul.leftMenu li.ticketanalysisrpt.active .icon {
+  background-image: url("/Images/icons/ticketanalysis_on.png");
+}
+ul.leftMenu li.ticketratingrpt .icon {
+  background-image: url("/Images/icons/ticketrating_grey.png");
+}
+ul.leftMenu li.ticketratingrpt.active .icon {
+  background-image: url("/Images/icons/ticketrating_on.png");
+}
+ul.leftMenu li.comparisonrpt .icon {
+  background-image: url("/Images/icons/consumingcomparisonreport_grey.png");
+}
+ul.leftMenu li.comparisonrpt.active .icon {
+  background-image: url("/Images/icons/consumingcomparisonreport_on.png");
+}
+
+ul.leftMenu li.ticketsexport .icon {
+  background-image: url("/Images/icons/consumingcomparisonreport_grey.png");
+}
+ul.leftMenu li.ticketsexport.active .icon {
+  background-image: url("/Images/icons/consumingcomparisonreport_on.png");
+}
+/* report end*/
+/*OA start*/
+ul.topmenu .oa {
+  background-color: #5b429b;
+}
+ul.topmenu .oa .image {
+  background: url("/Images/icons/OA_white.png") no-repeat center top;
+}
+ul.topmenu li.active.oa {
+  border-color: #5b429b;
+  color: #5b429b;
+}
+ul.topmenu li.oa.active a {
+  color: #5b429b;
+}
+ul.topmenu li.active.oa .downarrow {
+  border-top-color: #5b429b;
+}
+ul.topmenu li.active.oa .image {
+  background: url("/Images/icons/OA_on.png") no-repeat center top;
+}
+/*left menu*/
+ul.leftMenu.oa-left li.active {
+  border-color: #5b429b;
+}
+ul.leftMenu.oa-left li.active a {
+  color: #5b429b;
+}
+ul.leftMenu.oa-left li.active .rightarrow {
+  border-left-color: #402e6d;
+}
+ul.leftMenu li.addtimesheet .icon {
+  background-image: url("/Images/icons/addtimesheet_grey.png");
+}
+ul.leftMenu li.addtimesheet.active .icon {
+  background-image: url("/Images/icons/addtimesheet_on.png");
+}
+ul.leftMenu li.timesheet .icon {
+  background-image: url("/Images/icons/mytimesheet_grey.png");
+}
+ul.leftMenu li.timesheet.active .icon {
+  background-image: url("/Images/icons/mytimesheet_on.png");
+}
+ul.leftMenu li.weekplan .icon {
+  background-image: url("/Images/icons/weekplan_grey.png");
+}
+ul.leftMenu li.weekplan.active .icon {
+  background-image: url("/Images/icons/weekplan_on.png");
+}
+ul.leftMenu li.sealrequest .icon {
+  background-image: url("/Images/icons/sealrequest_grey.png");
+}
+ul.leftMenu li.sealrequest.active .icon {
+  background-image: url("/Images/icons/sealrequest_on.png");
+}
+ul.leftMenu li.watingprocess .icon {
+  background-image: url("/Images/icons/watingprocess_grey.png");
+}
+ul.leftMenu li.watingprocess.active .icon {
+  background-image: url("/Images/icons/watingprocess_on.png");
+}
+ul.leftMenu li.oacalendar .icon {
+  background-image: url("/Images/icons/oacalendar_grey.png");
+}
+ul.leftMenu li.oacalendar.active .icon {
+  background-image: url("/Images/icons/oacalendar_on.png");
+}
+ul.leftMenu li.workrequest .icon {
+  background-image: url("/Images/icons/workrequest_grey.png");
+}
+ul.leftMenu li.workrequest.active .icon {
+  background-image: url("/Images/icons/workrequest_on.png");
+}
+/*OA end */
+/* Admin start*/
+ul.topmenu .admin {
+  background-color: #b82fba;
+}
+ul.topmenu .admin .image {
+  background: url("/Images/icons/admin_white.png") no-repeat center top;
+}
+ul.topmenu li.active.admin {
+  border-color: #b82fba;
+  color: #b82fba;
+}
+ul.topmenu li.admin.active a {
+  color: #b82fba;
+}
+ul.topmenu li.active.admin .downarrow {
+  border-top-color: #b82fba;
+}
+ul.topmenu li.active.admin .image {
+  background: url("/Images/icons/admin_on.png") no-repeat center top;
+}
+/* left menu */
+ul.leftMenu.admin-left li.active {
+  border-color: #b82fba;
+}
+ul.leftMenu.admin-left li.active a {
+  color: #b82fba;
+}
+ul.leftMenu.admin-left li.active .rightarrow {
+  border-left-color: #812182;
+}
+ul.leftMenu li.companies .icon {
+  background-image: url("/Images/icons/companiesmanger_grey.png");
+}
+ul.leftMenu li.companies.active .icon {
+  background-image: url("/Images/icons/companiesmanger_on.png");
+}
+ul.leftMenu li.module .icon {
+  background-image: url("/Images/icons/modulesmanager_grey.png");
+}
+ul.leftMenu li.module.active .icon {
+  background-image: url("/Images/icons/modulesmanager_on.png");
+}
+ul.leftMenu li.project .icon {
+  background-image: url("/Images/icons/projectsmanager_grey.png");
+}
+ul.leftMenu li.project.active .icon {
+  background-image: url("/Images/icons/projectsmanager_on.png");
+}
+ul.leftMenu li.role .icon {
+  background-image: url("/Images/icons/rolesmanager_grey.png");
+}
+ul.leftMenu li.role.active .icon {
+  background-image: url("/Images/icons/rolesmanager_on.png");
+}
+ul.leftMenu li.seal .icon {
+  background-image: url("/Images/icons/sealsmanager_grey.png");
+}
+ul.leftMenu li.seal.active .icon {
+  background-image: url("/Images/icons/sealsmanager_on.png");
+}
+ul.leftMenu li.user .icon {
+  background-image: url("/Images/icons/usersmanager_grey.png");
+}
+ul.leftMenu li.user.active .icon {
+  background-image: url("/Images/icons/usersmanager_on.png");
+}
+/* Admin end*/
+/* Invoice start */
+ul.topmenu .invoice {
+  background-color: #cc9900;
+}
+ul.topmenu .invoice .image {
+  background: url("/Images/icons/invoice_white.png") no-repeat center top;
+}
+ul.topmenu li.active.invoice {
+  border-color: #cc9900;
+  color: #cc9900;
+}
+ul.topmenu li.invoice.active a {
+  color: #cc9900;
+}
+ul.topmenu li.active.invoice .downarrow {
+  border-top-color: #cc9900;
+}
+ul.topmenu li.active.invoice .image {
+  background: url("/Images/icons/invoice_on.png") no-repeat center top;
+}
+/* left menu */
+ul.leftMenu.invoice-left li.active {
+  border-color: #cc9900;
+}
+ul.leftMenu.invoice-left li.active a {
+  color: #cc9900;
+}
+ul.leftMenu.invoice-left li.active .rightarrow {
+  border-left-color: #8f6b00;
+}
+/* Invoice end */

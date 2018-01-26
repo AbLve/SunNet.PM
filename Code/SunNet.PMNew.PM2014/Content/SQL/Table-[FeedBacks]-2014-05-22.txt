@@ -1,0 +1,2 @@
+﻿alter table [dbo].[FeedBacks]
+add [Order] int not null default 0

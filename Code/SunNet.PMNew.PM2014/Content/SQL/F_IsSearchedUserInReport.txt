@@ -1,0 +1,16 @@
+﻿CREATE FUNCTION [dbo].[F_IsSearchedUserInReport] 
+(
+	@ticketID int,
+	@searchUserID int
+)
+RETURNS int
+AS
+BEGIN
+	DECLARE @result int;
+	 SELECT @result= count(*)  from  TicketUsers TU 
+		 left join Users U on TU.UserID = U.UserID  
+		 and u.roleid in ( select RoleId from Roles where RoleName = 'DEV' or RoleName = 'QA' or RoleName = 'Leader')
+		 WHERE TICKETid = @ticketID and TU.userid=@searchUserID 
+	RETURN @result
+
+END

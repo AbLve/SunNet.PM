@@ -1,0 +1,3 @@
+﻿Dear {FristName},<br/>
+
+A meeting about [Title] held At [DataTime] .

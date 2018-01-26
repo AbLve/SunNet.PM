@@ -1,0 +1,8 @@
+﻿alter table projects
+add TotalHours float not null default 0
+
+alter table projects 
+add MaintenancePlanOption varchar(20) not null default 'NONE'
+
+alter table Projects
+add hasSendRemainHourEmail bit not null default(0)

@@ -1,0 +1,65 @@
+﻿@{
+    Layout = "~/Views/Shared/_PopLayout.cshtml";
+    ViewBag.Width = 432;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Upload</title>
+    <script src="~/Scripts/jquery-1.10.2.js"></script>
+    <script src="~/Scripts/jquery.form.js"></script>
+    <style type="text/css">
+    .mainowConbox {
+        margin-left: 15px;
+    }
+</style>
+</head>
+    <body>
+        <div class="alert alert-danger alert-danger-upload fade hide">
+    <img src="/Images/icons/failed.png" />
+    <a class="close" data-dismiss="alert" href="###" aria-hidden="true">&times;</a>
+    Operation failed. 
+</div>
+<div class="mainowConbox">
+        Filename:@ViewBag.filename<br />
+        FileCount:@ViewBag.filecount<br />
+        <div>
+            @using (Html.BeginForm("Upload", "Comment", FormMethod.Post, new { enctype = "multipart/form-data", id = "form1" }))
+            {
+                <input type="file" name="file" />
+                <input type="text" name="filename" />
+                <input type="submit" value="Submit" />
+                <input type="button" id="btnAjax" value="Ajax Submit" />
+                <input type="button" id="btnAjax2" value="XmlHttpRequest Submit" />
+            }
+        </div>
+     <div class="buttonBox2">
+        <input class="saveBtn1 mainbutton" type="button" onclick="$('#file_upload').uploadify('upload', '*');" value="Upload" />
+        <input name="button23" type="button" value="Cancel" class="cancelBtn1 mainbutton" data-dismiss="modal" aria-hidden="true" onclick="javascript: top._callbackUpload()" />
+    </div>
+</div>
+    </body>
+
+    <script type="text/javascript">
+        jQuery(function () {
+            jQuery("#btnAjax").click(function () {
+                @* jQuery.ajax({
+                url: "@Url.Action("Upload")",
+                type: "Post",
+                context: document.body,
+            }).success(function (response) {
+                console.log("success", response);
+            });*@
+                jQuery("#form1").ajaxSubmit();
+            });
+            jQuery("#btnAjax2").click(function () {
+                var xhr = new XMLHttpRequest();
+                xhr.open("@Url.Action("Upload")");
+            });
+        });
+    </script>
+    
+</html>

@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{13EE4593-0FB1-433F-AC02-F651B68229E4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SunNet.PMNew.App</RootNamespace>
+    <AssemblyName>SunNet.PMNew.App</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="StructureMap, Version=2.6.1.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Web\Lib\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BootStrap.cs" />
+    <Compile Include="CateGoryApplication.cs" />
+    <Compile Include="CompanyApplication.cs" />
+    <Compile Include="EventsApplication.cs" />
+    <Compile Include="FeedBackApplication.cs" />
+    <Compile Include="FileApplication.cs" />
+    <Compile Include="InvoicesApplication.cs" />
+    <Compile Include="KPICategoryApplications.cs" />
+    <Compile Include="LogApplication.cs" />
+    <Compile Include="ProjectApplication.cs" />
+    <Compile Include="ComplaintApplication.cs" />
+    <Compile Include="SchedulesApplication.cs" />
+    <Compile Include="SealsApplication.cs" />
+    <Compile Include="ShareApplication.cs" />
+    <Compile Include="TicketOrderApplication.cs" />
+    <Compile Include="TicketsApplication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TicketStatusManagerApplication.cs" />
+    <Compile Include="TimeSheetApplication.cs" />
+    <Compile Include="UserApplication.cs" />
+    <Compile Include="WeekPlanApplication.cs" />
+    <Compile Include="ProposalTrackerApplication.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Documents\FamilyBook.Common\FamilyBook.Common.csproj">
+      <Project>{D9D94031-AA12-4BFD-B62E-E59B1D4984C1}</Project>
+      <Name>FamilyBook.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Documents\SunNet.Framework\SF.Framework.csproj">
+      <Project>{7E282866-EF84-4CA9-86F4-3DB01AC8FBAA}</Project>
+      <Name>SF.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Core\SunNet.PMNew.Core.csproj">
+      <Project>{4E1E2933-E955-49FE-A367-51D6D2C43396}</Project>
+      <Name>SunNet.PMNew.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Entity\SunNet.PMNew.Entity.csproj">
+      <Project>{129ad4d5-62f8-424b-aee1-438744e1e065}</Project>
+      <Name>SunNet.PMNew.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Framework\SunNet.PMNew.Framework.csproj">
+      <Project>{3D3DAFD1-AFD8-48E5-8E11-BDF5C2A3FDC5}</Project>
+      <Name>SunNet.PMNew.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Impl\SunNet.PMNew.Impl.csproj">
+      <Project>{6edd8750-d5cd-4a8b-a0c4-3baf230131f6}</Project>
+      <Name>SunNet.PMNew.Impl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,2 @@
+﻿
+The Ticket [ID] has been cancelled by [Client]<br/>

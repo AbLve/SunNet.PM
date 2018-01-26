@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="About.master.cs" MasterPageFile="~/Normal.master" Inherits="SunNet.PMNew.PM2014.About.About" %>
+
+<%@ Register Src="../UserControls/Ticket/ClientLeftMenu.ascx" TagName="ClientLeftMenu" TagPrefix="uc1" %>
+<%@ Register Src="../UserControls/Footer.ascx" TagName="Footer" TagPrefix="uc2" %>
+<%@ Register Src="~/UserControls/Messager.ascx" TagName="Messager" TagPrefix="uc2" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+    <uc2:Messager ID="messager" runat="server" />
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+        <tr>
+            <td class="mainleftTd">
+                <uc1:ClientLeftMenu ID="ClientLeftMenu1" runat="server" Visible="false"/>
+            </td>
+            <td class="mainrightTd">
+                <div class="mainrightBox">
+                    <div class="loading"></div>
+                    <asp:ContentPlaceHolder ID="dataSection" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+                <uc2:Footer ID="Footer1" runat="server" />
+            </td>
+        </tr>
+    </table>
+
+</asp:Content>

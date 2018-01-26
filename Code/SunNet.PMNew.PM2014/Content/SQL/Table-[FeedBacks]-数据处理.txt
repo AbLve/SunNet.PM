@@ -1,0 +1,10 @@
+﻿
+select [TicketID] as TID,[FeedBackID] FID into #FeedBacks2
+ from [dbo].[FeedBacks]
+
+ update [FeedBacks] 
+ set [Order] = 
+ (select top 1 count(1)  from #FeedBacks2 fb2 where fb2.TID = [TicketID] and fb2.FID<=[FeedBackID] group by(fb2.TID)  ) 
+
+ drop table #FeedBacks2
+

@@ -1,0 +1,9 @@
+﻿
+
+Dear [ClientName],<br/>
+
+&nbsp;&nbsp;[applicant] has approved the following seal(s) or work order.<br/>
+
+[content]<br/> 
+
+Thank you.<br/>

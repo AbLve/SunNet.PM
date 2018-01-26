@@ -1,0 +1,53 @@
+﻿
+ALTER FUNCTION [dbo].[F_IsEventNeedAlert]
+(@fromday datetime ,@alertType int,@toDay datetime ) /*Today - Fromday= minute*/
+RETURNS bit 
+as 
+begin 
+DECLARE @needAlert int;
+IF @alertType=1
+BEGIN 
+	SET @needAlert=0;
+END
+ELSE IF @alertType=2
+BEGIN
+	SET @needAlert=DBO.[F_IsEventAlertCondition](dateadd(minute,5,@fromday),dateadd(minute,-5,@fromday));
+	
+END
+ELSE IF @alertType=3
+BEGIN 
+		SET @needAlert=DBO.[F_IsEventAlertCondition](dateadd(minute,15,@fromday),dateadd(minute,-15,@fromday));
+END
+ELSE IF @alertType=4
+BEGIN
+		SET @needAlert=DBO.[F_IsEventAlertCondition](dateadd(minute,30,@fromday),dateadd(minute,-30,@fromday));
+END 
+ELSE IF @alertType=5
+BEGIN 
+			SET @needAlert=DBO.[F_IsEventAlertCondition](dateadd(minute,60,@fromday),dateadd(minute,-60,@fromday));
+END
+ELSE IF @alertType=6
+BEGIN
+		SET @needAlert=DBO.[F_IsEventAlertCondition](dateadd(minute,2*60,@fromday),dateadd(minute,-2*60,@fromday));
+END
+ELSE IF @alertType=7
+BEGIN 
+			SET @needAlert=DBO.[F_IsEventAlertCondition](dateadd(DAY,1,@fromday),dateadd(DAY,-1,@fromday));
+END
+ELSE IF @alertType=8
+BEGIN
+	SET @needAlert=DBO.[F_IsEventAlertCondition](dateadd(DAY,2,@fromday),dateadd(DAY,-2,@fromday));
+END 
+ELSE IF @alertType=9
+BEGIN 
+	 IF( Convert(varchar(100),convert(datetime,@toDay),23) =Convert(varchar(100),GETDATE(),23))
+	 BEGIN
+	 RETURN 1
+	 END
+	 ELSE
+	 BEGIN
+		RETURN 0
+	 END;
+END
+RETURN  @needAlert;
+END

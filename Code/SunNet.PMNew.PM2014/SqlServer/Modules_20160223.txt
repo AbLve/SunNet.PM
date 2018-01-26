@@ -1,0 +1,40 @@
+GO 
+UPDATE  dbo.Modules
+SET     ModuleTitle = 'Proposal Tracker'
+WHERE   ModuleTitle = 'Work Request';
+
+UPDATE  dbo.Modules
+SET     ModuleTitle = 'New Proposal Tracker'
+WHERE   ModuleTitle = 'New Work Request';
+
+UPDATE  dbo.Modules
+SET     ModuleTitle = 'Edit Proposal Tracker'
+WHERE   ModuleTitle = 'Edit Work Request';
+
+
+
+UPDATE  dbo.Modules
+SET     ModulePath = '/OA/ProposalTracker/Index.aspx'
+WHERE   ModulePath = '/OA/WorkRequest/Index.aspx';
+
+UPDATE  dbo.Modules
+SET     ModulePath = '/OA/ProposalTracker/AddProposalTracker.aspx'
+WHERE   ModulePath = '/OA/WorkRequest/AddWorkRequest.aspx';
+
+UPDATE  dbo.Modules
+SET     ModulePath = '/OA/ProposalTracker/EditProposalTracker.aspx'
+WHERE   ModulePath = '/OA/WorkRequest/EditWorkRequest.aspx';
+
+
+
+
+
+
+
+
+
+
+
+
+
+

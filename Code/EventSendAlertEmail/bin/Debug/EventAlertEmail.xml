@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+{FromFirstName}
+{FromLastName}
+{ToFirstName}
+{ToLastName}
+{Date}
+{Link}
+{EventName}
+-->
+<emails>
+  <email>
+    <subject>{EventName} is coming up. </subject>
+    <content>
+      <![CDATA[
+            Dear {ToFirstName}, <br/><br/>
+                 Your event, {EventName}, is coming up {FromDay}, Please log into the <a href="{Link}" target="_blank">PM</a> for more details. <br/><br/>
+                 
+                 PM, {Date}
+        ]]>
+    </content>
+  </email>
+</emails>

@@ -1,0 +1,47 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Normal.master" AutoEventWireup="true" CodeBehind="Sunnet.master.cs" Inherits="SunNet.PMNew.PM2014.Ticket.Sunnet.Sunnet" %>
+
+<%@ Register Src="/UserControls/Sunnet/LeftMenu.ascx" TagName="LeftMenu" TagPrefix="uc1" %>
+<%@ Register TagPrefix="uc2" Src="/UserControls/Footer.ascx" TagName="Footer" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+        jQuery(function () {
+
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+    <div id="categorycontainer" style="display: none;">
+        <ul class="categoryBox">
+            <asp:Repeater ID="rptCategory" runat="server">
+                <ItemTemplate>
+                    <li><a href="###" action="addtocategory" category="<%#Eval("ID") %>">
+                        <%#Eval("Title") %></a></li>
+                </ItemTemplate>
+            </asp:Repeater>
+            <li><a href="/SunnetTicket/NewCateGory.aspx" data-target="#modalsmall" data-toggle="modal">New Category</a></li>
+        </ul>
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+        <tr>
+            <td class="mainleftTd">
+                <uc1:LeftMenu ID="LeftMenu1" runat="server" />
+            </td>
+            <td class="mainrightTd">
+                <div class="mainrightBox">
+                    <div class="limitwidth">
+                        <div class="loading"></div>
+                        <asp:ContentPlaceHolder ID="searchSection" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="dataSection" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="pagerSection" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <uc2:Footer ID="Footer1" runat="server" />
+            </td>
+        </tr>
+    </table>
+</asp:Content>

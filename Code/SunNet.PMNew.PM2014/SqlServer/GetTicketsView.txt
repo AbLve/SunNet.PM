@@ -1,0 +1,60 @@
+﻿/****** Object:  UserDefinedFunction [dbo].[GetTicketsView]    Script Date: 2015/3/27 15:24:49 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		Jack
+-- Create date: 2014-7-23
+-- Description:	Reset ticket properties by ticket users
+-- =============================================
+ALTER FUNCTION [dbo].[GetTicketsView]
+(	
+	-- Add the parameters for the function here
+	@UserId int
+)
+RETURNS TABLE 
+AS
+RETURN 
+(
+	-- Add the SELECT statement with parameter references here
+	SELECT DISTINCT * FROM(
+	SELECT T.[TicketID] ,T.[CompanyID] ,T.[ProjectID] ,T.[Title] ,T.[TicketCode] ,T.[TicketType] ,T.[Description]
+      ,T.[CreatedOn]
+      ,T.[CreatedBy]
+      ,T.[ModifiedOn]
+      ,T.[ModifiedBy]
+      ,T.[PublishDate]
+      ,T.[ClientPublished]
+      ,T.[StartDate]
+      ,T.[DeliveryDate]
+      ,T.[ContinueDate]
+      ,T.[URL]
+      ,T.[Priority]
+      --,T.[Status]
+      ,T.[ConvertDelete]
+      ,T.[IsInternal]
+      ,T.[CreateType]
+      ,T.[SourceTicketID]
+      ,T.[IsEstimates]
+      ,T.[InitialTime]
+      ,T.[FinalTime]
+      ,T.[EsUserID]
+      ,T.[Star]
+      ,T.[Source]
+      ,T.[AdditionalState]
+	  ,T.ConfirmEstmateUserId
+      ,[Status] = (CASE TU.[TicketStatus] 
+							  WHEN 0 THEN T.[Status] 
+							  WHEN NULL THEN T.[Status] 
+							  ELSE ISNULL(TU.[TicketStatus],T.[Status]) END)
+	  ,RealStatus = T.Status
+	  ,[ShowNotification] = ISNULL(TU.[ShowNotification],0)
+	  ,[WorkingOnStatus]  = ISNULL(TU.[Status],0)
+	  ,u.FirstName as CreatedByFirstName
+	  ,u.LastName as CreatedByLastName
+	  ,T.ResponsibleUser
+  FROM [dbo].[Tickets] T LEFT JOIN [dbo].[TicketUsers] TU ON T.[TicketID] = TU.[TicketID] AND TU.[UserID] = @UserId
+		LEFT JOIN Users u on u.UserID = t.CreatedBy
+    ) T
+)

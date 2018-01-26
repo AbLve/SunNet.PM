@@ -1,0 +1,78 @@
+.clear0
+{
+    clear: both;
+    height: 0px;
+}
+.clear5
+{
+    clear: both;
+    height: 5px;
+}
+.clear10
+{
+    clear: both;
+    height: 10px;
+}
+.btnBoxone
+{
+    padding: 15px;
+    text-align: center;
+}
+.btnBoxoneClient
+{
+    padding: 15px;
+    text-align: center;
+    height: 5px;
+}
+.btnBoxtwo
+{
+    padding: 15px 5px;
+}
+.btnBoxthree
+{
+    text-align: right;
+}
+a
+{
+    color: #083583;
+}
+a:hover
+{
+    color: #F60;
+}
+.logoBox
+{
+    padding: 10px 30px;
+}
+.logoBox img
+{
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+th
+{
+    text-align: left;
+}
+td>span
+{
+    color:#083583;
+    }
+.redstar
+{
+    color: #FF0000;
+    font-size: 12px;
+}
+.button_enabled
+{
+    background-image: none;
+    background-color: #DDD;
+    color: #083583;
+    border: 0px;  
+}
+.button_enabled:hover
+{
+    background-image: none;
+    background-color: #DDD;
+    color: #083583;
+    border: 0px;  
+}

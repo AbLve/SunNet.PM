@@ -1,0 +1,24 @@
+﻿GO
+
+/****** Object:  Table [dbo].[ShareType]    Script Date: 5/25 20:25:42 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ShareType](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](64) NOT NULL,
+	[CreatedBy] [int] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[Type] [int] NOT NULL,
+ CONSTRAINT [PK_ShareType] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+

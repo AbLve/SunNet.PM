@@ -1,0 +1,32 @@
+﻿
+-- =============================================
+-- Author:		Leason
+-- Create date: 2014-08-04
+-- Description:	Create table comment to save comment and reply .
+-- =============================================
+
+CREATE TABLE [dbo].[Comment](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Content] [nvarchar](1000) NOT NULL,
+	[ReplyID] [int] NOT NULL,
+	[Office] [nvarchar](50) NOT NULL,
+	[UserType] [nvarchar](50) NOT NULL,
+	[CreatedTime] [datetime] NOT NULL,
+	[UserID] [int] NULL,
+	[DocumentID] [int] NULL,
+ CONSTRAINT [PK__Comment__60FC61CA] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[Comment] ADD  CONSTRAINT [DF__Comment__ReplyID__61F08603]  DEFAULT ((0)) FOR [ReplyID]
+GO
+
+ALTER TABLE [dbo].[Comment] ADD  CONSTRAINT [DF__Comment__Created__62E4AA3C]  DEFAULT (getdate()) FOR [CreatedTime]
+GO
+
+

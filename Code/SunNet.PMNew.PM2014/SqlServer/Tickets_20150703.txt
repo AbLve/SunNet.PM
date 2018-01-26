@@ -1,0 +1,15 @@
+﻿alter table Tickets add ProprosalName varchar(100) 
+alter table Tickets add WorkPlanName varchar(100) 
+alter table Tickets add WorkScope varchar(100) 
+alter table Tickets add Invoice varchar(100) 
+
+go
+
+update Tickets set ProprosalName = '' , WorkPlanName='', WorkScope='',Invoice=''
+
+go
+
+alter table Tickets alter column ProprosalName varchar(100) not null
+alter table Tickets alter column WorkPlanName varchar(100)  not null
+alter table Tickets alter column WorkScope varchar(100)  not null
+alter table Tickets alter column Invoice varchar(100)  not null

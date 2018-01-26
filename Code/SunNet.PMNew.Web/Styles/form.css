@@ -1,0 +1,508 @@
+input, textarea, select {
+    font-family: Arial;
+    font-size: 11px;
+    color: #333;
+}
+
+.input200 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 200px;
+}
+
+.input186 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 186px;
+}
+
+.input193 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 193px;
+}
+
+.input220 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 220px;
+}
+
+.input213 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 213px;
+}
+
+.input223 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 223px;
+}
+
+.input180 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 180px;
+}
+
+.input595 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 570px;
+}
+
+.input350 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 350px;
+}
+
+.input450 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 450px;
+}
+
+.input570 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 570px;
+}
+
+.input98p {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 98%;
+}
+
+.select205 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 205px;
+}
+
+.select150 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 150px;
+}
+
+.select100 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 100px;
+}
+
+.select226 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 226px;
+}
+
+.select219 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 219px;
+}
+
+.select225 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 225px;
+}
+
+.select230 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 230px;
+}
+
+.input630 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 630px;
+}
+
+.select635 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 635px;
+}
+
+.input40 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    width: 40px;
+}
+
+.select150 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 150px;
+    margin-right: 10px;
+}
+
+/*Button*/
+.btnone {
+    background-image: url('/images/btn_bg1.gif');
+    border: 1px solid #9db0bc;
+    color: #083583;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 20px;
+    font-size: 12px;
+    width: 92px;
+}
+
+.btnoneClient {
+    background-image: url('/images/btn_bg1.gif');
+    border: 1px solid #9db0bc;
+    color: #083583;
+    margin-top: -10px;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 20px;
+    font-size: 12px;
+    height: 23px;
+    width: 92px;
+}
+
+.btntwo {
+    background-image: url(/images/btn_bg1.gif);
+    border: 1px solid #9db0bc;
+    color: #000;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 20px;
+    font-size: 12px;
+    height: 23px;
+}
+
+.btnthree {
+    background-image: url(/images/btn_bg3.gif);
+    border: 1px solid #83bbd9;
+    color: #00569b;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+    font-size: 11px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.btnthreeFile {
+    background-image: url(/images/btn_bg3.gif);
+    border: 1px solid #83bbd9;
+    color: #00569b;
+    font-weight: bold;
+    padding: 0 5px;
+    margin-right: 10px;
+    font-size: 11px;
+    height: 16px;
+    min-width: 85px;
+}
+
+    .btnthreeFile span {
+        width: 200%;
+        font-weight: normal;
+        font-size: 10px;
+        display: inline-block;
+        line-height: 16px;
+        overflow-y: hidden;
+        height: 16px;
+    }
+
+.btnfour {
+    background-image: url(/images/btn_bg4.gif);
+    border: 1px solid #d78f00;
+    color: #000;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-right: 10px;
+    font-size: 11px;
+    height: 18px;
+}
+
+.btnfive {
+    background-image: url(/images/btn_bg1.gif);
+    border: 1px solid #9db0bc;
+    color: #000;
+    font-weight: bold;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-right: 20px;
+    font-size: 11px;
+    height: 23px;
+}
+
+    .btnone:hover, .btntwo:hover, .btnthree:hover, .btnfive:hover {
+        background-image: url(/images/btn_over.gif);
+        border: 1px solid #d6ac00;
+        color: #a44500;
+    }
+
+.btnfour:hover {
+    color: #000;
+    background-image: url(/images/scdyearly_topbg.gif);
+    border: 1px solid #9db0bc;
+}
+
+.checkboxone {
+    margin-left: 20px;
+}
+
+.btnBoxone {
+    padding: 15px;
+    text-align: center;
+}
+
+/*New Css*/
+.select355 {
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    padding: 2px;
+    width: 355px;
+}
+
+.msg {
+    color: Red;
+    font: 12px;
+    font-weight: bold;
+}
+
+.redstar {
+    color: #FF0000;
+    font-size: 12px;
+}
+
+span.sealinfo {
+    color: #666;
+    margin-left: 15px;
+}
+/*Event Start*/
+.inputNormal {
+    border: 1px solid #ccc;
+    padding: 3px;
+    width: 200px;
+}
+
+.input-confirm {
+    color: #999999;
+}
+
+input, select, textarea {
+    font-family: 'Open Sans', sans-serif;
+    color: #666;
+    font-size: 13px;
+}
+
+input, button, select, textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+}
+
+button, input {
+    line-height: normal;
+}
+
+button, input, select, textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+
+.radiobutBox1 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+.selectNormal {
+    border: 1px solid #ccc;
+    padding: 3px;
+    width: 205px;
+}
+
+.selecteventl {
+    width: 100px;
+}
+
+.inpuDate {
+    width: 95px;
+    background-image: url(/Images/calendar_day.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+.inpuTime {
+    width: 90px;
+    margin-left: 4px;
+}
+
+.eventbtn3 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #666;
+    background-image: url(/images/but_bg2.png);
+    border: 1px solid #c2c2c2;
+    border-radius: 3px;
+    margin-right: 5px;
+    padding: 1px 10px;
+    cursor: pointer;
+}
+
+    .eventbtn3:hover {
+        color: #fff;
+        background-image: url(/images/homelog_btnbgover.png);
+        border: 1px solid #666;
+    }
+
+.owBtnbox1 {
+    padding: 10px 0px 0px 0px;
+    font-size: 13px;
+    bottom: 0px;
+    text-align: center;
+}
+
+    .owBtnbox1 a {
+        color: #04466a;
+    }
+
+        .owBtnbox1 a:hover {
+            color: #666;
+        }
+
+.eventiconBox {
+    position: absolute;
+    width: 250px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #fff;
+}
+
+ul.eventiconitem {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.eventiconitem li {
+        float: left;
+        width: 50px;
+        height: 55px;
+        margin: 5px;
+        border: 1px solid #ddd;
+    }
+
+        ul.eventiconitem li:hover {
+            background-color: #eee;
+        }
+
+        ul.eventiconitem li img {
+            margin-top: 10px;
+        }
+
+.owBtn1 {
+    font-size: 13px;
+    color: #fff;
+    border: 1px solid #5b7708;
+    background-image: url(/Images/homelog_btnbg.png);
+    padding: 3px 15px;
+    margin-right: 5px;
+    margin-left: 5px;
+    border-radius: 3px;
+}
+
+    .owBtn1:hover {
+        border: 1px solid #036bab;
+        background-image: url(/Images/homelog_btnbgover.png);
+    }
+    /* 2014.01.14 Dave */ .owBtn1[disabled] {
+        border: 1px solid #999;
+        background-color: #ccc;
+        background-image: none;
+    }
+
+.owTable1 td {
+    padding-bottom: 5px;
+}
+
+.mainowConbox {
+    margin: 15px 0px;
+    padding: 0px 5px 0 15px;
+    font-size: 13px;
+    height: auto;
+    min-height: 200px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: auto;
+}
+
+    .mainowConbox .content {
+        /*margin-left: -15px;         padding-left: 15px;         border-top: 1px solid #ccc;         border-bottom: 1px solid #ccc;         margin-top: 10px;         overflow-y: auto;         overflow-x: hidden;         width: 100%;         max-height: 365px;         min-height: 120px;*/
+        border-bottom: 1px solid #CCCCCC;
+        border-top: 1px solid #CCCCCC;
+        margin-top: 10px;
+        max-height: 365px;
+        min-height: 120px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 100%;
+    }
+
+    .mainowConbox td {
+        padding-right: 4px;
+    }
+
+.mainowBox a {
+    color: #04466a;
+}
+
+    .mainowBox a:hover {
+        color: #666;
+    }
+
+.owcancelBtn1 {
+    background-image: url("/Images/cacelbtn_bg.png");
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    color: #666666;
+    font-size: 13px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 3px 15px;
+}
+
+    .owcancelBtn1:hover {
+        background-image: url("/Images/cacelbtn_bgover.png");
+    }
+/*Event End*/

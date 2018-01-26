@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<emails>
+  <email>
+    <subject>Reminder: You have one or more pending tickets that have not been addressed.</subject>
+    <content>
+      <![CDATA[
+                 The following tickets have not been addressed in the past 3 days. Please log into the <a href="https://pm.sunnet.us" target="_blank">SunNet PM</a>(link to pm system) for more details. 
+                 <table style='border-spacing: 2px;'>
+                  <tr>
+                    <td>ProjectId</td>
+                    <td>ProjectName</td>
+                    <td>TicketId</td>
+                    <td>TicketTitle</td>
+                    <td>TicketModeifiedOn</td>
+                  </tr>
+                  {{ReminderData}}
+                 </table>
+                <a href="https://pm.sunnet.us" target="_blank"> PM System</a>, {{CurrentDateTime}}
+        ]]>
+    </content>
+  </email>
+</emails>

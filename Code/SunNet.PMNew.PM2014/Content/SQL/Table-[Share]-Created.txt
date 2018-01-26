@@ -1,0 +1,29 @@
+﻿GO
+
+/****** Object:  Table [dbo].[Share]    Script Date: 5/26 03:04:43 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Share](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Title] [nvarchar](512) NOT NULL,
+	[Note] [nvarchar](512) NULL,
+	[CreatedBy] [int] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[Type] [int] NOT NULL,
+	[IsDeleted] [bit] NOT NULL,
+	[TicketID] [int] NOT NULL,
+	[ModifiedOn] [datetime] NOT NULL,
+ CONSTRAINT [PK_Share] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[Share] ADD  CONSTRAINT [DF_Share_IsDeleted]  DEFAULT ((0)) FOR [IsDeleted]
+GO

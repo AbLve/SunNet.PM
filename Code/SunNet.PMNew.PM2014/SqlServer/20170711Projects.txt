@@ -1,0 +1,27 @@
+INSERT INTO dbo.Projects  (CompanyID ,ProjectCode,Title ,Description ,StartDate ,EndDate ,Status , CreatedBy , CreatedOn ,ModifiedBy ,ModifiedOn ,PMID , Priority ,Billable , TestLinkURL , TestUserName , TestPassword , FreeHour , BugNeedApproved ,RequestNeedApproved ,IsOverFreeTime , TotalHours ,MaintenancePlanOption , hasSendRemainHourEmail)
+VALUES  ( (SELECT ComID FROM dbo.Companys WHERE CompanyName='Sunnet')  , -- CompanyID - int
+          'PTO' , -- ProjectCode - varchar(64)
+          'PTO' , -- Title - varchar(128)
+          'pay to off' , -- Description - nvarchar(max)
+          GETDATE() , -- StartDate - datetime
+          '1753-01-01 00:00:00.000' , -- EndDate - datetime
+          1 , -- Status - int
+          (SELECT CreatedBy FROM dbo.Companys WHERE CompanyName='Sunnet') , -- CreatedBy - int
+          GETDATE() , -- CreatedOn - datetime
+          (SELECT CreatedBy FROM dbo.Companys WHERE CompanyName='Sunnet') , -- ModifiedBy - int
+          GETDATE() , -- ModifiedOn - datetime
+          (SELECT TOP 1 UserID FROM dbo.Users WHERE RoleID=2) , -- PMID - int
+          '3LOW' , -- Priority - varchar(128)
+          0 , -- Billable - bit
+          '' , -- TestLinkURL - varchar(250)
+          '' , -- TestUserName - varchar(50)
+          '' , -- TestPassword - varchar(50)
+          0 , -- FreeHour - int
+          0 , -- BugNeedApproved - bit
+          0 , -- RequestNeedApproved - bit
+          0 , -- IsOverFreeTime - bit
+          0.0 , -- TotalHours - float
+          'DONTNEEDAPPROVAL' , -- MaintenancePlanOption - varchar(20)
+          0  -- hasSendRemainHourEmail - bit
+        )
+GO

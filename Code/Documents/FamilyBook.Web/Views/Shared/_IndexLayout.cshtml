@@ -1,0 +1,541 @@
+﻿@{
+    string defaultEmail = ViewBag.txtEmail == null ? "" : ViewBag.txtEmail;
+    bool isLogin = false;
+    if (ViewBag.IsLogin != null)
+    {
+        isLogin = ViewBag.IsLogin;
+    }
+    bool isRemember = ViewBag.rdoRemember != null ? ViewBag.rdoRemember : false;
+
+    bool isNewYear = false;
+    if (DateTime.Now.Year == 2014)
+    {
+        isNewYear = true;
+    }
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - My Family Book</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    @Styles.Render("~/bundles/home/css")
+    <style type="text/css">
+        .mainowConbox {
+            min-height: 120px;
+            line-height: 22px;
+        }
+
+        .noticeFaile {
+            margin: auto 15px 10px -15px;
+        }
+
+        .mainowBoxtop {
+            height: 35px;
+        }
+    </style>
+    @if (isNewYear)
+    { 
+        <style type="text/css">
+            body {
+                background-image: url("../images/Image_backup/NewYear/home_bodybg.png");
+                background-position: center top;
+                background-repeat: repeat-x;
+                margin: 0;
+            }
+        </style> 
+    }
+    else
+    {
+        <style type="text/css">
+            body {
+                background-image: url("../images/home_bodybg.png");
+                background-position: center top;
+                background-repeat: repeat-x;
+                margin: 0;
+            }
+        </style>  
+    }
+    @RenderSection("Styles", false)
+    @Scripts.Render("~/bundles/home/js")
+    <script type="text/javascript" language="javascript">
+        jQuery.extend(jQuery.fn, {
+            serializeJson: function () {
+                var dataArrs = this.serializeArray();
+                var data = {};
+                for (var i = 0; i < dataArrs.length; i++) {
+                    data[dataArrs[i].name] = dataArrs[i].value;
+                }
+                return data;
+            }
+        });
+        $(function () {
+            jQuery("#signInModal").on("hidden.bs.modal", CloseModalCallback);
+            jQuery("#signUpModal").on("hidden.bs.modal", CloseModalCallback);
+            jQuery("#forgotPassModal").on("hidden.bs.modal", CloseModalCallback);
+
+            $("form").each(function (i, o) {
+                $(o).validate();
+            });
+
+            jQuery("#ckAcceptService").change(function () {
+                var msg = $("#acceptResultMsg");
+                var $elem = $(this);
+                if ($elem.prop("checked")) {
+                    $elem.val(true);
+                    msg.hide();
+                } else {
+                    $elem.val(false);
+                    msg.show();
+                }
+            });
+
+            jQuery("#ckIsRemember").change(function () {
+                var $elem = $(this);
+                if ($elem.prop("checked")) {
+                    $elem.val(true);
+                } else {
+                    $elem.val(false);
+                }
+            });
+        });
+
+        function CloseModalCallback(e) {
+            //Reset validate
+            $("form").each(function (i, o) {
+                var form = $(o);
+                if (!form.attr("noreset")) {
+                    form.validate().resetForm();
+                    if (form.length && form[0].length) {
+                        for (var i = 0; i < form[0].length; i++) {
+                            var $element = $(form[0][i]);
+                            if ($element.is("input:text,input:password")) {
+                                $element.removeClass('noticeinfo1');
+                                if ('@isRemember'.toLowerCase() != 'true') {
+                                    $element.val('');
+                                } else {
+                                    if ($element[0].name != 'txtEmail') {
+                                        $element.val('');
+                                    }
+                                }
+                            }
+                            if ($element.is("input:checked")) {
+                                $element.removeClass('noticeinfo1');
+                                if ('@isRemember'.toLowerCase() != 'true') {
+                                    $element.prop('checked', false);
+                                } else {
+                                    if ($element[0].name != 'rdoRemember') {
+                                        $element.prop('checked', false);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function OpenSignInModal() {
+            jQuery("#signInModal").modal("toggle");
+        }
+        function OpenSignUpModal() {
+            jQuery("#signUpModal").modal("toggle");
+        }
+        function OpenForgotPassModal() {
+            jQuery("#forgotPassModal").modal("toggle");
+        }
+
+        function CloseSignInModal() {
+            CloseModal("signInModal");
+        }
+        function CloseSignUpModal() {
+            CloseModal("signUpModal");
+        }
+        function CloseForgotPassModal() {
+            CloseModal("forgotPassModal");
+        }
+
+        function SignIn() {
+            if ($("#signInForm").valid()) {
+                $.post("/Home/LoginAccess", $("#signInForm").serializeJson(), function (data) {
+                    if (data) {
+                        $("#signInResultMsg").show().text(data);
+                        $("#txtPassWord").val('');
+                        SubmitResult("signInForm");
+                    } else {
+                        if ('@Request.QueryString["url"]' != '') {
+                            location = '@Request.QueryString["url"]';
+                        } else {
+                            location = "/";
+                        }
+                    }
+                });
+            }
+            return false;
+        }
+
+        function SignUp() {
+            var validResult = true;
+            if (!$("#signUpForm").valid()) {
+                validResult = false;
+            }
+            if (!$("#ckAcceptService").prop("checked")) {
+                validResult = false;
+                $("#acceptResultMsg").text("In order to use our services, you must agree to myFamilyBook's Terms of Service.").show();
+            }
+            if (validResult) {
+                $.post("/Home/SignAccess", $("#signUpForm").serializeJson(), function (data) {
+                    if (data) {
+                        $("#signUpResultMsg").show().text(data);
+                        SubmitResult("signUpForm");
+                    } else {
+                        if ('@Request.QueryString["url"]' != '') {
+                            location = '@Request.QueryString["url"]';
+                        } else {
+                            location = "/Plan/Plan";
+                        }
+                    }
+                });
+            }
+            return false;
+        }
+
+        function ForgotPass() {
+            if ($("#forgotForm").valid()) {
+                $("#btnForgotPass").prop("disabled", true);
+                $.post("/Home/ForgotFormAccess", $("#forgotForm").serializeJson(), function (data) {
+                    if (data) {
+                        $("#forgotResultMsg").show().text(data);
+                        SubmitResult("forgotForm", true);
+                    }
+                    $("#btnForgotPass").prop("disabled", false);
+                });
+            }
+            return false;
+        }
+
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+        function MM_showHideLayers() { //v6.0
+            var i, p, v, obj, args = MM_showHideLayers.arguments;
+            for (i = 0; i < (args.length - 2) ; i += 3) if ((obj = MM_findObj(args[i])) != null) {
+                v = args[i + 2];
+                if (obj.style) { obj = obj.style; v = (v == 'show') ? 'visible' : (v == 'hide') ? 'hidden' : v; }
+                obj.visibility = v;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="fixedContainer">
+        <div class="hometopBox">
+            <div class="hometop_left">
+                <a href="/Home/Index">
+                    <img src="/Images/homelogo.png" border="0" alt="My Family Book" /></a>
+            </div>
+            <div class="hometop_right">
+                @if (isNewYear)
+                {
+                    <img src="/Images/Image_backup/NewYear/home_free.png" alt="It's free." />
+                }
+                else
+                {
+                    <img src="/Images/home_free.png" alt="It's free." />
+                }
+                @if (isLogin)
+                { 
+                    <span class="headeruserhome"><a href="/" title="Click to user home.">&raquo; @ViewBag.UserName</a></span>
+                    <span class="headerlogoffhome"><a href="/Home/Logout">Log off</a></span>
+                }
+                else
+                {
+                    <a href="javascript:void(0);" onclick="OpenSignInModal();" style="margin-right: 25px;">Sign in</a> <span>Not a member yet?</span> <a href="javascript:void(0);" onclick="OpenSignUpModal();">
+                            Sign up</a>
+                }
+            </div>
+        </div>
+        <div class="homebannertop" @(isNewYear ? new MvcHtmlString("style='padding-top:40px;'") : null))>
+            <a href="/Home/Index">Home</a> |@* <a href="/Home/Advertisement">Advertisement</a>|*@ <a href="/Forums">Forums</a>
+            | <a href="/Home/AboutUs">About Us</a> | <a href="/Home/ContactUs">Contact Us</a>
+        </div>
+        @RenderBody()
+        @Html.Partial("~/Views/Shared/_FooterPartial.cshtml")
+    </div>
+    <div id="signInModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="mainowBox" style="width: 350px;">
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "signInForm" }))
+                {
+                    <div class="mainowBoxtop">
+                        <div class="mainowBoxtop_title">
+                            Sign in here!
+                        </div>
+                        <div class="mainowBoxtop_close">
+                            <div class="homeowBoxcloseBtn" onclick="CloseSignInModal();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="homeowBoxform">
+                        <div class="mainowConbox">
+                            <div class="noticeFaile">
+                                <img src="/Images/icons/Exclamationmark.png" alt="Warming" align="absmiddle" />
+                                Log in failed.
+                            </div>
+                            <table width="98%" border="0" cellpadding="0" cellspacing="0">
+                                <tr valign="top">
+                                    <td width="20%" align="right">Email:<span class="noticeinfo1">*</span>
+                                    </td>
+                                    <td width="80%">
+                                        @Html.TextBox("txtEmail", defaultEmail, new { @class = "inputNormal ipt", attrRequired = "The email", email = true, maxlength = 320, tabIndex = 1 })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;
+                                    </td>
+                                    <td width="80%">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td align="right">Password:<span class="noticeinfo1">*</span>
+                                    </td>
+                                    <td width="80%">
+                                        @Html.Password("txtPass", "", new { id = "txtPassWord", @class = "inputNormal ipt", attrRequired = "The password", maxlength = 16, tabIndex = 2 })
+                                        <label id="signInResultMsg" class="noticeinfo1" style="display: none;">
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" style="height: 15px;"></td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;
+                                    </td>
+                                    <td width="80%">
+                                        @*Html.CheckBox("rdoRemember", isRemember, new { tabIndex = 3 })*@
+                                        <input type="checkbox" name="rdoRemember" id="ckIsRemember" tabindex="3" value="@isRemember.ToString()" checked="@(isRemember ? true : false)" />&nbsp;
+                                        <label for="ckIsRemember">Remember me</label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;
+                                    </td>
+                                    <td width="80%">
+                                        <a href="javascript:void(0);" onclick="CloseSignInModal();OpenForgotPassModal();"
+                                            tabindex="5">&raquo; Forgot your password?</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="owBtnbox1">
+                                            <input type="submit" name="Submit" onclick="return SignIn();" value="Sign in" class="owBtn1"
+                                                tabindex="6" />
+                                            <input type="button" onclick="CloseSignInModal();" tabindex="7" class="owcancelBtn1" value="Cancel" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div id="signUpModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="mainowBox" style="width: 390px;">
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "signUpForm" }))
+                {
+                    <div class="mainowBoxtop">
+                        <div class="mainowBoxtop_title">
+                            Sign up here!
+                        </div>
+                        <div class="mainowBoxtop_close">
+                            <div class="homeowBoxcloseBtn" onclick="CloseSignUpModal();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="homeowBoxform">
+                        <div class="mainowConbox">
+                            <div class="noticeFaile">
+                                <img src="/Images/icons/Exclamationmark.png" alt="Warming" align="absmiddle" />
+                                Sign up failed.
+                            </div>
+                            <table width="98%" border="0" cellpadding="0" cellspacing="0">
+                                <tr valign="top">
+                                    <td width="35%" align="right">First Name:<span class="noticeinfo1">*</span>
+                                    </td>
+                                    <td width="65%">
+                                        @Html.TextBox("txtFName", "", new { @class = "inputNormal ipt", attrRequired = "The first name", maxlength = 50, tabIndex = 1 })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;
+                                    </td>
+                                    <td width="74%">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td align="right">Last Name:<span class="noticeinfo1">*</span>
+                                    </td>
+                                    <td width="74%">
+                                        @Html.TextBox("txtLName", "", new { @class = "inputNormal ipt", attrRequired = "The last name", maxlength = 50, tabIndex = 2 })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;
+                                    </td>
+                                    <td width="74%">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td align="right">Email:<span class="noticeinfo1">*</span>
+                                    </td>
+                                    <td width="74%">
+                                        @Html.TextBox("txtSignUpEmail", "", new { @class = "inputNormal ipt", attrRequired = "The email", email = "The email", attrRemote = "The email", remoteUrl = "/Home/ExistEmail", maxlength = 320, tabIndex = 3 })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;
+                                    </td>
+                                    <td width="74%">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td align="right">Password:<span class="noticeinfo1">*</span>
+                                    </td>
+                                    <td width="74%">
+                                        @Html.Password("txtSignUpPass", "", new { @class = "inputNormal ipt", attrRequired = "The password", minlength = 6, maxlength = 16, tabIndex = 4 })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;
+                                    </td>
+                                    <td width="74%">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td align="right">Confirm Password:<span class="noticeinfo1">*</span>
+                                    </td>
+                                    <td width="74%">
+                                        @Html.Password("txtConfirmSignUpPass", "", new { @class = "inputNormal ipt", attrRequired = "The confirm password", attrEqualTo = "Passwords", equalToID = "txtSignUpPass", maxlength = 16, tabIndex = 5 })
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;
+                                    </td>
+                                    <td width="74%">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td align="left" colspan="2">
+                                        @*Html.CheckBox("ckAccept", false, new { id = "ckAcceptService", style = "margin-left:25px;", tabIndex = 6 })*@
+                                        <input type="checkbox" name="ckAccept" id="ckAcceptService" style="margin-left: 25px;" tabindex="6" value="false" />
+                                        <label for="ckAcceptService">
+                                            I accept the</label>
+                                        <a href="/Home/TermsServices" target="_blank" tabindex="7">Service Terms</a>
+                                        <label for="ckAcceptService">
+                                            and the</label>
+                                        <a href="/Home/Privacy" target="_blank" tabindex="8">Privacy policy</a>
+                                        <label id="acceptResultMsg" class="noticeinfo1" style="display: none; margin-left: 40px;">
+                                        </label>
+                                        <label id="signUpResultMsg" class="noticeinfo1" style="display: none; margin-left: 40px;">
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="noticeinfo1" colspan="2">
+                                        <div class="owBtnbox1">
+                                            <input type="submit" name="Submit" onclick="return SignUp();" value="Sign up" class="owBtn1"
+                                                tabindex="9" />
+                                            <input type="button" onclick="CloseSignUpModal();" tabindex="10" class="owcancelBtn1" value="Cancel" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div id="forgotPassModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="mainowBox" style="width: 350px;">
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post, new { id = "forgotForm" }))
+                {
+                    <div class="mainowBoxtop">
+                        <div class="mainowBoxtop_title">
+                            Forgot Password?
+                        </div>
+                        <div class="mainowBoxtop_close">
+                            <div class="homeowBoxcloseBtn" onclick="CloseForgotPassModal();">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="homeowBoxform">
+                        <div class="mainowConbox">
+                            <div class="noticeFaile">
+                                <img src="/Images/icons/Exclamationmark.png" alt="Warming" align="absmiddle" />Request
+                                failed.
+                            </div>
+                            <table width="98%" border="0" cellpadding="0" cellspacing="0">
+                                <tr valign="top">
+                                    <td width="20%" align="right">Email:<span class="noticeinfo1">*</span>
+                                    </td>
+                                    <td width="80%">
+                                        @Html.TextBox("txtForgotEmail", "", new { @class = "inputNormal ipt", attrRequired = "The email", email = true, remoteUrl = "/Home/NotExistEmail", maxlength = 320, tabIndex = 1 })
+                                        <label id="forgotResultMsg" class="noticeinfo1" style="display: none; padding-right: 25px;">
+                                        </label>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;
+                                    </td>
+                                    <td width="80%">&nbsp;
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="right">&nbsp;
+                                    </td>
+                                    <td width="80%">
+                                        <a href="javascript:void(0);" onclick="CloseForgotPassModal();OpenSignInModal();"
+                                            tabindex="2">&raquo; Back to Sign in.</a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2">
+                                        <div class="owBtnbox1">
+                                            <input id="btnForgotPass" type="submit" name="Submit2" onclick="return ForgotPass();" value="Submit"
+                                                class="owBtn1" tabindex="3" />
+                                            <input type="button" onclick="CloseForgotPassModal();" tabindex="4" class="owcancelBtn1" value="Cancel" />
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    @RenderSection("Scripts", false)
+</body>
+</html>
+<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-46626023-1', 'myfamilybook.us');
+    ga('send', 'pageview');
+</script>

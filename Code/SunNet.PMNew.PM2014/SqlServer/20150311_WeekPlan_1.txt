@@ -1,0 +1,8 @@
+﻿alter table WeekPlan add [SundayTickets] varchar(1000) not null default ''
+alter table WeekPlan add [MondayTickets] varchar(1000) not null default ''
+alter table WeekPlan add [TuesdayTickets] varchar(1000) not null default ''
+alter table WeekPlan add [WednesdayTickets] varchar(1000) not null default ''
+alter table WeekPlan add [ThursdayTickets] varchar(1000) not null default ''
+alter table WeekPlan add [FridayTickets] varchar(1000) not null default ''
+alter table WeekPlan add [SaturdayTickets] varchar(1000) not null default ''
+

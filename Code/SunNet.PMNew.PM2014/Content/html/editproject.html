@@ -1,0 +1,423 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SunNet Solutions Project Management system</title>
+    <link href="../styles/public.css" rel="stylesheet" type="text/css" />
+    <link href="../styles/forms.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&subset=latin">
+</head>
+
+<body>
+    <div class="toploginInfo">Wecome David<span>|</span><a href="#">Logout</a></div>
+    <div class="topBox">
+        <div class="topBox_logo">
+            <img src="/images/sunnet_logo.png" /></div>
+        <div class="topBox_menu">
+            <ul class="topmenu">
+                <a href="#">
+                    <li class="ticketsOn">
+                        <div class="ticketToparrow">
+                            <img src="/images/ticket_toparrow.png" /></div>
+                        <img src="/images/icons/tickets_on.png"><br />
+                        Tickets</li>
+                </a>
+                <li class="forumsout">
+                    <img src="/images/icons/forums_white.png"><br />
+                    Reports</li>
+                <li class="forumsout">
+                    <img src="/images/icons/forums_white.png"><br />
+                    Clients</li>
+                <li class="forumsout">
+                    <img src="/images/icons/forums_white.png"><br />
+                    Work Requests </li>
+                <li class="forumsout">
+                    <img src="/images/icons/forums_white.png"><br />
+                    Forums</li>
+                <li class="forumsout">
+                    <img src="/images/icons/forums_white.png"><br />
+                    admin</li>
+                <li class="profileout">
+                    <img src="/images/icons/profile_white.png" /><br />
+                    Profile</li>
+            </ul>
+        </div>
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+        <tr>
+            <td class="mainleftTd">
+                <div class="leftmenuBox">
+                    <ul class="newticketBtn"><a href="#">
+                        <li>New Ticket</li>
+                    </a></ul>
+                    <ul class="leftMenu">
+                        <a href="#">
+                            <li>
+                                <img src="/images/icons/dashboard_grey.png" />
+
+                                Under Test Tickets </li>
+                        </a>
+                        <li>
+                            <img src="/images/icons/waiting_grey.png" />
+                            All Tickets   </li>
+                        <a href="#">
+                            <li class="leftmenuOn">
+                                <div class="leftArrow">
+                                    <img src="/images/leftarrow.png" /></div>
+                                <img src="/images/icons/ongoing_on.png" />Work Plan </li>
+                        </a>
+                        <li>
+                            <img src="/images/icons/draft_grey.png" />
+
+                            Timesheet
+                        </li>
+                        <li>
+                            <img src="/images/icons/completed_grey.png" />Schedules</li>
+                        <li>
+                            <img src="/images/icons/cancelled_grey.png" />Seal Requests </li>
+                    </ul>
+                </div>
+            </td>
+            <td class="mainrightTd">
+                <div class="mainrightBox">
+                    <div class="contentTitle titlsealrequest">Basic Information</div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Project Title:<span class="noticeRed">*</span></label>
+                        <div class="col-right-project righttext">
+                            <input type="text" name="textfield" class="inputproject">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Project Code:<span class="noticeRed">*</span></label>
+                        <div class="col-right-project righttext">
+                            <input type="text" name="textfield" class="inputproject">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Company:<span class="noticeRed">*</span></label>
+                        <div class="col-right-project righttext">
+                            <input type="text" name="textfield" class="inputproject">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Status:<span class="noticeRed">*</span></label>
+                        <div class="col-right-project righttext">
+                            <input type="text" name="textfield" class="inputproject">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Project Manager:<span class="noticeRed">*</span></label>
+                        <div class="col-right-project righttext">
+                            <input type="text" name="textfield" class="inputproject">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Priority:<span class="noticeRed">*</span></label>
+                        <div class="col-right-project righttext">
+                            <input type="text" name="textfield" class="inputproject">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Start Date:<span class="noticeRed">*</span></label>
+                        <div class="col-right-project righttext">
+                            <input type="text" name="textfield" class="inputprojectdate">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">End Date:<span class="noticeRed">*</span></label>
+                        <div class="col-right-project righttext">
+                            <input type="text" name="textfield2" class="inputprojectdate" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">
+                            Approved
+Options: <span class="noticeRed">*</span></label>
+                        <div class="col-right-project2 righttext">
+                            <span class="rightItem">
+                                <input type="checkbox" name="checkbox" value="checkbox" />Bug:requires client approval</span><span class="rightItem"><input type="checkbox" name="checkbox" value="checkbox" />Request:requires client approval</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Test URL: </label>
+                        <div class="col-right-project righttext">
+                            <input type="text" name="textfield" class="inputproject">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Test User Name: </label>
+                        <div class="col-right-project righttext">
+                            <input type="text" name="textfield" class="inputproject">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Test Password: </label>
+                        <div class="col-right-project righttext">
+                            <input type="text" name="textfield" class="inputproject">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Free Hours:<span class="noticeRed">*</span></label>
+                        <div class="col-right-project righttext">40, The project hasn't been over free hour </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Billable:</label>
+                        <div class="col-right-project righttext">
+                            <span class="rightItem">
+                                <input type="radio" name="radiobutton" value="radiobutton" />Yes</span><span class="rightItem">
+                                    <input type="radio" name="radiobutton" value="radiobutton" />No</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Description:</label>
+                        <div class="col-right-project2 righttext">
+                            <textarea name="textarea" rows="5" class="inputprojectds"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project lefttext">Maintenance Plan:<span class="noticeRed">*</span></label>
+                        <div class="col-right-project2 righttext">
+                            <input type="radio" name="radiobutton" value="radiobutton" />Has a maintenance plan
+        <br />
+                            <input type="radio" name="radiobutton" value="radiobutton" />
+                            Has a maintenance plan
+                            <div class="submaintenance">
+                                <input name="" type="radio" value="" />
+                                Needs a quote approval
+                                <br />
+                                <input name="" type="radio" value="" />
+                                Does not need a quote approval
+                                <br />
+                                <input name="" type="radio" value="" />
+                                Allow me to choose per submission
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttonBox2">
+                        <input name="Input22" type="button" class="saveBtn1 mainbutton" value="Save" />
+                        <input name="Input322" type="button" class="cancelBtn1 mainbutton" value="Clear" />
+                    </div>
+                    <div class="contentTitle titleeventlist">Sunnet Users</div>
+                    <div class="topbtnbox">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <ul class="listtopBtn">
+                                        <li>
+                                            <div class="listtopBtn_icon">
+                                                <img src="/images/icons/wassignuser.png" /></div>
+                                            <div class="listtopBtn_text">Assign User </div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td>
+                                <ul class="projectuser">
+                                    <li>
+                                        <ul>
+                                            <li class="usertype">DEV</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Lee</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Lee</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Lee</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="usertype">QA</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="usertype">Leader</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="usertype">QA</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <ul>
+                                            <li class="usertype">QA</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                            <li>
+                                                <input type="checkbox" name="checkbox2" value="checkbox" />Sam</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+
+                    <div class="contentTitle titleeventlist">Client Users</div>
+                    <div class="topbtnbox">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <ul class="listtopBtn">
+                                        <li>
+                                            <div class="listtopBtn_icon">
+                                                <img src="/images/icons/wassignuser.png" /></div>
+                                            <div class="listtopBtn_text">Assign User </div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table-advance">
+                        <thead>
+                            <tr>
+                                <th>First Name </th>
+                                <th>Last Name </th>
+                                <th class="aligncenter">Email </th>
+                                <th class="aligncenter">Phone </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td class="aligncenter">&nbsp;</td>
+                                <td class="aligncenter">&nbsp;</td>
+                            </tr>
+                            <tr class="whiterow">
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td class="aligncenter">&nbsp;</td>
+                                <td class="aligncenter">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="contentTitle titleeventlist">Files</div>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table-advance">
+                        <thead>
+                            <tr>
+                                <th>Title</th>
+                                <th>Link</th>
+                                <th class="aligncenter">Created On </th>
+                                <th class="aligncenter">Create By </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td class="aligncenter">&nbsp;</td>
+                                <td class="aligncenter">&nbsp;</td>
+                            </tr>
+                            <tr class="whiterow">
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td class="aligncenter">&nbsp;</td>
+                                <td class="aligncenter">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br />
+                    <div class="form-group">
+                        <label class="col-left-project2 lefttext">Title:</label>
+                        <div class="col-right-project2 righttext">
+                            <input type="text" name="textfield3" class="inputproject" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project2 lefttext">File:</label>
+                        <div class="col-right-project2 righttext">
+                            <input type="button" class="inlineBtn1" value="Choose Files">
+                            No file chosen
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-project2 lefttext"></label>
+                        <div class="col-right-project2 righttext">
+                            <input name="Input222" type="button" class="saveBtn1 mainbutton" value="Save" />
+                        </div>
+                    </div>
+                    <div class="contentTitle titleeventlist">
+                        Project Principal
+                    </div>
+                    <div class="topbtnbox">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>
+                                    <ul class="listtopBtn">
+                                        <li>
+                                            <div class="listtopBtn_icon">
+                                                <img src="/images/icons/waddprincipal.png" /></div>
+                                            <div class="listtopBtn_text">Add Project Principal </div>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table-advance">
+                        <thead>
+                            <tr>
+                                <th>Module/Function </th>
+                                <th>PM</th>
+                                <th>DEV</th>
+                                <th>Tester</th>
+                                <th class="aligncenter">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td class="aligncenter">&nbsp;</td>
+                            </tr>
+                            <tr class="whiterow">
+                                <td class="whiterow">&nbsp;</td>
+                                <td class="whiterow">&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td class="aligncenter">&nbsp;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="footerBox">
+                    <div class="footerBox_left"><a href="faq.html">FAQ</a> <span>|</span><a href="survey.html">Survey</a><span>|</span><a href="contact_us.html">Contact Us</a></div>
+                    <div class="footerBox_right">Copyright &copy; 2014 <a href="http://www.sunnet.us" target="_blank">SunNet Solutions</a>. </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

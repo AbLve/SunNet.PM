@@ -1,0 +1,4 @@
+﻿alter table [dbo].[TicketUsers]
+add ShowNotification bit not null default((0))
+alter table [dbo].[TicketUsers]
+add TicketStatus int not null default((0))

@@ -1,0 +1,416 @@
+﻿@using System.Web.UI.WebControls
+@model IEnumerable<FamilyBook.Entity.CommentEntity>
+
+@{
+    ViewBag.Title = "Comment";
+    Layout = "~/Views/Shared/_PopLayout.cshtml";
+    ViewBag.Width = 700;
+}
+<style>
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .main {
+        width: 640px;
+        min-height: 100px;
+        /*border-bottom: 1px solid #808080;*/
+        float: left;
+        margin-left: 16px;
+        padding: 0px 10px 10px 10px;
+    }
+    /*----------------------------------------------------*/
+    #addComment, #divContent {
+        width: 100%;
+        float: left;
+        /*margin-bottom: 20px;*/
+    }
+
+    #txtComment {
+        /*margin: 10px 0 5px 20px;*/
+        width: 99%;
+        max-width: 100%;
+        min-height: 60px;
+        max-height: 90px;
+        overflow: auto;
+        border: 1px solid silver;
+        margin-top: 5px;
+    }
+
+    .txtReply {
+        width: 250px;
+        height: 20px;
+        margin-left: 10px;
+        color: silver;
+    }
+
+    #btnComment {
+        /*
+        width: 53px;
+        height: 24px;
+        background-color: #808080;*/
+        margin-top: 5px;
+    }
+    /*-----------------------------------------------------*/
+    .commentItem, .commentReplyItem {
+        width: 100%;
+        height: auto;
+        min-height: 43px;
+        overflow: hidden;
+        margin-top: 5px;
+    }
+
+    .commentItem {
+        border: 1px solid #eee;
+        padding: 10px 0 10px 0px;
+    }
+
+    .comment_left {
+        float: left;
+        width: 55px;
+        min-height: 10px;
+        overflow: hidden;
+        clear: both;
+    }
+
+    .comment_right {
+        float: right;
+        width: 91%;
+        min-height: 10px;
+        overflow: hidden;
+    }
+
+    .reply_right {
+        float: right;
+        width: 89%;
+        min-height: 10px;
+        overflow: hidden;
+    }
+
+
+    .mainowConbox .content {
+        border-bottom: 1px solid #CCCCCC;
+        border-top: 0px solid #CCCCCC;
+        margin-top: 10px;
+        max-height: 365px;
+        min-height: 120px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 100%;
+        clear: both;
+    }
+
+    /*---------------------------------------------------------------------*/
+    .commentNameContent, .commentTimeNum, .commentReplyList, .commentWrite {
+        float: left;
+        width: 90%;
+        min-height: 10px;
+        overflow: hidden;
+        height: auto;
+        /*border: 1px solid #0000ff;*/
+    }
+
+    .commentTimeNum {
+        color: #808080;
+    }
+
+    .commentWrite {
+        padding-top: 3px;
+    }
+
+    .commentDelete, .replyDelete {
+        background-image: url('/document/Areas/Comment/Style/delete.png');
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
+        float: right;
+        display: none;
+        cursor: pointer;
+    }
+
+    .portrait {
+        border: 0;
+        vertical-align: middle;
+        height: 35px;
+        width: 35px;
+        margin-left: 10px;
+    }
+
+    .spanContent {
+        word-break: break-all;
+        font-size: larger;
+        margin-left: 20px;
+        display: block;
+    }
+
+
+    #btnInsertMessage {
+        font-size: 13px;
+        font-weight: bold;
+        color: #fff0f5;
+        padding: 1px 10px;
+        margin-right: 5px;
+        background-color: silver;
+    }
+
+    .spanBold {
+        font-weight: bold;
+    }
+    /*  颜色
+        ---------------------------------------------------*/
+    .silver {
+        background-color: #f5f5f5;
+    }
+
+    .white {
+        background-color: white;
+    }
+</style>
+@if (false)
+{
+    <script src="~/Areas/Comment/jQuery/jquery-1.10.2.min.js"></script>
+}
+
+<script type="text/javascript">
+    var documentID = '@(ViewBag.documentId)';
+    var virtualPath = "/document/Comment/Comment/";
+    var tempName = '@(ViewBag.userName)'; 
+    +(function () {
+
+        //动态绑定鼠标进入离开时的样式
+        $(".main").on("mouseenter", ".commentItem", function () {
+            $(this).css({ "background-color": "#f5f5f5" });
+            $(this).find("div.commentDelete").show();
+        });
+        $(".main").on("mouseleave", ".commentItem", function () {
+            $(this).css({ "background-color": "white" });
+            $(this).find("div.commentDelete").hide();
+        });
+        $(".main").on("mouseenter", ".commentReplyItem", function () {
+            $(this).addClass("white");
+            $(this).find("div.replyDelete").show();
+
+        });
+        $(".main").on("mouseleave", ".commentReplyItem", function () {
+            $(this).removeClass("white");
+            $(this).find("div.replyDelete").hide();
+        });
+
+        $(".main").on("mouseenter", ".txtReply", function () {
+            $(this).css("color","black");
+        });
+        $(".main").on("mouseout", ".txtReply", function () {
+            $(this).css("color", "silver");
+        });
+
+        //添加评论
+        $("#btnComment").click(function () {
+            var content = $.trim($("#txtComment").val());
+            if (content == '') {
+                alert("Can't be empty! ");
+            }else if (content.length>eval(1000)) {
+                alert("Length should not exceed 1000 characters. ");
+            }
+            else {
+                $.getJSON(virtualPath + "InsertComment", { documentID: documentID, replyID: 0, content: content }, function (jsonComment) {
+                    commentItem_RenderHtml(jsonComment.ID, jsonComment.Name, content.replace(/\n/gm,"<br/>"), jsonComment.CreatedTime, 0, jsonComment.Office);
+                    $("#txtComment").val("");
+                });
+            }
+        });
+        //添加回复
+        $(".main").on("keydown", ".txtReply", function (e) {
+            if (e.keyCode == 13) {
+                var reply = $.trim($(this).val());
+                if (reply == '') {
+                    alert("Can't be empty! ");
+                } else if (reply.length>eval(1000)) {
+                    alert("Length should not exceed 1000 characters. ");
+                } 
+                else {
+                    var $root = $(this).parent().prev();
+                    var replyID = $(this).attr("replyID");
+                    $.getJSON(virtualPath + "InsertComment", { documentID: documentID, replyID: replyID, "content": reply }, function (jsonReply) {
+                        commentReplyItem_RenderHtml($root, jsonReply.ID, jsonReply.Name, reply, jsonReply.CreatedTime, jsonReply.Office);
+                        //刷新回复数量
+                        refreshNum(replyID);
+                    });
+                    $(this).val("");
+                }
+            }
+        });
+
+        //采用全新的方法，一次性加载评论和回复，在前端进行解析绑定
+        $.getJSON(virtualPath + "GetList", { documentID: documentID }, function (commentData) {
+            $.each(commentData, function (key, val) {
+                commentItem_RenderHtml(val.ID, val.Name, val.Content.replace(/\n/gm, "<br/>"), ConvertJSONDateToJSDateObject(val.CreatedTime), 0, val.Office);
+                $.each(val.ReplyList, function (i, item) {
+                    var $root = $("#commentItem" + item.ReplyID);
+                    if ($root.length != 0) {
+                        commentReplyItem_RenderHtml($root.find("div.commentReplyList"), item.ID, item.Name, item.Content, ConvertJSONDateToJSDateObject(item.CreatedTime), item.Office);
+                    }
+                });
+                refreshNum(val.ID);
+            });
+        });
+
+        //文件长度超过17时，截取
+        if ($("#spanFileName").html().length > eval(17)) {
+            var tempF = $("#spanFileName").html().substr(0, 17) + "……";
+            $("#spanFileName").html(tempF);
+        }
+
+    })();
+
+    //刷新回复数量
+    function refreshNum(commentItemId) {
+        var num = $("#commentItem" + commentItemId).find("div.commentReplyItem").length;
+        $("#spanNum" + commentItemId).html(num);
+    }
+
+    //转化时间
+    function ConvertJSONDateToJSDateObject(jsondate) {
+        var date = new Date(parseInt(jsondate.replace("/Date(", "").replace(")/", ""), 10));
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDate();
+        var hh = date.getHours();
+        var mm = date.getMinutes();
+        var ss = date.getSeconds();
+        return month + "/" + day + "/" + +year + " " + hh + ":" + mm + ":" + ss;
+    }
+
+    //删除回复时，刷新数量
+    function subtractNum(spanId) {
+        var num = eval($("#spanNum" + spanId).html());
+        $("#spanNum" + spanId).html(num - 1);
+    }
+
+    //删除评论
+    function removeComment(id) {
+        jQuery.confirm("Are you sure you want to delete the comment? ",
+            {
+                yesText: "Delete",
+                noText: "Cancel",
+                yesCallback: function () {
+                    $.get(virtualPath + "DeleteComment", { ID: id }, function () {
+                        //淡入淡出效果
+                        $("#commentItem" + id).fadeOut("3000", function () {
+                            $("#commentItem" + id).remove();
+                        });
+                    });
+                },
+                noCallback: function () { }
+            });
+    }
+    //删除回复
+    function removeReply(id) {
+        jQuery.confirm("Are you sure you want to delete the reply? ",
+            {
+                yesText: "Delete",
+                noText: "Cancel",
+                yesCallback: function () {
+                    $.get(virtualPath + "DeleteComment", { ID: id }, function () {
+                        var parentid = $("#commentReplyItem" + id).parent().attr("parentid");
+                        //淡入淡出效果
+                        $("#commentReplyItem" + id).fadeOut("3000", function () {
+                            $("#commentReplyItem" + id).remove();
+                            //更新数量
+                            subtractNum(parentid);
+                        });
+                    });
+                },
+                noCallback: function () { }
+            });
+    }
+
+    //#region 根据不同的office，返回不同的头像
+    function getPicture(office) {
+        switch (office) {
+            case "US":
+                return "us.png";
+            case "CN":
+                return "cn.png";
+            case "CLIENT":
+                return "client.png";
+            default:
+                return "visitor.png";
+        }
+    }
+    //#endregion
+
+    //生成新评论Html
+    function commentItem_RenderHtml(id, name, content, time, num, office) {
+        var strHtml = '<div class="commentItem"  id="commentItem' + id + '">';
+        strHtml += '<div class="comment_left">';
+        strHtml += ' <img class="portrait" src="/Document/Areas/Comment/Style/' + getPicture(office) + '" />';
+        strHtml += ' </div>';
+        strHtml += '<div class="comment_right">';
+        strHtml += '<div class="commentNameContent">';
+        //姓名和内容
+        strHtml += ' <a href="#">' + name + ' (' + office + ')</a> <span class="spanContent">' + content + '</span></div>';
+        //删除评论
+        //若是本人评论，添加删除图标
+        if (tempName==name) {
+            strHtml += '<div class="commentDelete" onclick="removeComment(' + id + ')"></div> ';
+        }
+        //时间和数量
+        strHtml += '<div class="commentTimeNum"><span class="spanTime">' + time + '</span>&nbsp;&nbsp;Comment (<span class="spanNum" id="spanNum' + id + '">' + num + '</span>)</div> ';
+        //回复记录
+        strHtml += ' <div class="commentReplyList" parentid=' + id + '></div>';
+        //添加回复
+        strHtml += ' <div class="commentWrite" replyID=' + id + '>';
+        strHtml += ' <img class="portrait" src="/Document/Areas/Comment/Style/visitor.png" />';
+        strHtml += ' <input type="text" class="txtReply" replyID="' + id + '" placeholder="Write a comment...Enter to post" /></div>';
+        strHtml += '</div></div>';
+        //添加最前面
+        $("#divContent").prepend(strHtml);
+    }
+    //生成新回复Html
+    function commentReplyItem_RenderHtml($fatherRoot, id, name, content, time, office) {
+        var strHtml = '<div class="commentReplyItem" id="commentReplyItem' + id + '">';
+        strHtml += '<div class="comment_left">';
+        strHtml += ' <img class="portrait" src="/Document/Areas/Comment/Style/' + getPicture(office) + '" />';
+        strHtml += ' </div>';
+        strHtml += '<div class="reply_right">';
+        strHtml += '<div class="commentNameContent">';
+        strHtml += ' <a href="#">' + name + ' (' + office + ')</a> <span class="spanContent">' + content + '</span></div>';
+        if (tempName==name) {
+            strHtml += '<div class="replyDelete" onclick="removeReply(' + id + ')"></div> ';
+        }
+        strHtml += '<div class="commentTimeNum"><span class="spanTime">' + time + '</span></div> ';
+        strHtml += '</div></div>';
+        $fatherRoot.append(strHtml);
+    }
+
+</script>
+
+<div class="mainowConbox" style="min-height: 300px;border-top:0px solid silver !important;">
+    <div class="main">
+        <div style="margin: 5px 0px;">
+            <div style="float: left;"><span class="spanBold">File&nbsp;Name:&nbsp;</span><span id="spanFileName" style="color: blue; color: rgb(64,128,128)">@ViewBag.fileName</span></div>
+            <div style="float: right;"><span class="spanBold">Author:&nbsp</span><span>@ViewBag.author</span><span class="spanBold" style="padding-left: 50px;">Uploaded On:&nbsp;</span>@ViewBag.time</div>
+        </div>
+        <div id="addComment">
+            <textarea id="txtComment"></textarea>
+            <br />
+            <div style="clear: both; float: right;">
+                <span style="color:silver;margin-right: 20px;">Max 1000 </span>
+                <input type="button" id="btnComment" style="margin-right: 0px;" class="mainbutton saveBtn1" value="POST" />
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="main">
+            <div id="divContent">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

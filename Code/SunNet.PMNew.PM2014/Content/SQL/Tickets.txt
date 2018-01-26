@@ -1,0 +1,2 @@
+﻿alter table tickets 
+alter column [url] varchar(300) ;

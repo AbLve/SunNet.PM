@@ -1,0 +1,2612 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4541B531-EB41-46C6-AA3F-3101FC42C7FC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SunNet.PMNew.PM2014</RootNamespace>
+    <AssemblyName>SunNet.PMNew.PM2014</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXSSLibrary">
+      <HintPath>..\SunNet.PMNew.Framework\_Dlls\AntiXSS Library v4.2\NET40\AntiXSSLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNetPager, Version=7.2.0.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Framework\_Dlls\AspNetPager\tecpds\AspNetPager.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>Libs\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.6.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=1.2.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Framework\_Dlls\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap, Version=2.6.1.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Framework\_Dlls\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="Sunnet.Upload, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Framework\_Dlls\upload\Sunnet.Upload.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.WebPages, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="About\ContactUs.aspx" />
+    <Content Include="About\Faqs.aspx" />
+    <Content Include="About\Survey.aspx" />
+    <Content Include="Account\Account.master" />
+    <Content Include="Admin\Email.aspx" />
+    <Content Include="Admin\KPI\AddObjective.aspx" />
+    <Content Include="Admin\KPI\KPICategories.aspx" />
+    <Content Include="Admin\KPI\KPIObjectives.aspx" />
+    <Content Include="Admin\KPI\KPIPerformanceReport.aspx" />
+    <Content Include="Admin\KPI\AddCategory.aspx" />
+    <Content Include="Admin\KPI\EditKPIPerformanceReport.aspx" />
+    <Content Include="Admin\Modules\AddModule.aspx" />
+    <Content Include="Admin\Modules\EditModule.aspx" />
+    <Content Include="Admin\Modules\Modules.aspx" />
+    <Content Include="Admin\Projects\AddProject.aspx" />
+    <Content Include="Admin\admin.master" />
+    <Content Include="Admin\Projects\AddProjectFile.aspx" />
+    <Content Include="Admin\Projects\AddProjectPrincipal.aspx" />
+    <Content Include="Admin\Projects\EditProjectPrincipal.aspx" />
+    <Content Include="Admin\Roles\AddRole.aspx" />
+    <Content Include="Admin\Roles\EditRole.aspx" />
+    <Content Include="Admin\Roles\RolePages.aspx" />
+    <Content Include="Admin\Roles\Roles.aspx" />
+    <Content Include="Admin\Users\AssignProjectToUser.aspx" />
+    <Content Include="Admin\Users\ClientUserDetail.aspx" />
+    <Content Include="Admin\Users\SunnetUserDetail.aspx" />
+    <Content Include="Api\PMLogin.asmx" />
+    <None Include="Content\html\addschedule.html" />
+    <None Include="Content\html\addtimesheet.html" />
+    <None Include="Content\html\admin_week_plan_add.html" />
+    <None Include="Content\html\admin__consuming_comparison_report.html" />
+    <None Include="Content\html\admin__work_plan.html" />
+    <None Include="Content\html\anniu.html" />
+    <None Include="Content\html\button.html" />
+    <None Include="Content\html\contact.html" />
+    <None Include="Content\html\DEVreview.html" />
+    <None Include="Content\html\editproject.html" />
+    <None Include="Content\html\FAQ.html" />
+    <None Include="Content\html\mytimesheet.html" />
+    <None Include="Content\html\pmnewticket.html" />
+    <None Include="Content\html\pmreview.html" />
+    <None Include="Content\html\pmticketdetail.html" />
+    <None Include="Content\html\QAreview.html" />
+    <None Include="Content\html\survey.html" />
+    <None Include="Content\html\viewtimesheet.html" />
+    <None Include="Content\NewModules.txt" />
+    <None Include="Content\SQL\F_IsEventNeedAlert.txt" />
+    <None Include="Content\SQL\GetFeedbackIndexByTicket.txt" />
+    <None Include="Content\SQL\GetNeedAlertEvents.txt" />
+    <None Include="Content\SQL\GetUserNamesByTicket.txt" />
+    <None Include="Content\SQL\Table-[FeedBacks]-2014-05-22.txt" />
+    <None Include="Content\SQL\Table-[FeedBacks]-数据处理.txt" />
+    <None Include="Content\SQL\Table-[FeedBacks]-backup.txt" />
+    <None Include="Content\SQL\Table-[Files]-2014_5_26.txt" />
+    <None Include="Content\SQL\Table-[Files]-Backup.txt" />
+    <None Include="Content\SQL\Table-[ShareType]-Created.txt" />
+    <None Include="Content\SQL\Table-[Share]-Created.txt" />
+    <None Include="Content\SQL\Table-[Tickets]2014-05-23.txt" />
+    <None Include="Content\SQL\Table-[Tickets].txt" />
+    <None Include="Content\SQL\Table-[Tickets]2014-6-04.txt" />
+    <None Include="Content\SQL\Table-[TicketUsers]-2014_5_28.txt" />
+    <None Include="Content\SQL\Table-[TicketUsers]-backup.txt" />
+    <None Include="Content\SQL\F_IsSearchedUserInReport.txt" />
+    <None Include="Content\SQL\Tickets_GetListByCondition.txt" />
+    <None Include="Content\SQL\Tickets_GetListByCondition_count.txt" />
+    <None Include="Content\SQL\Tickets_GetListWithStatusWaitProcess.txt" />
+    <None Include="Content\SQL\WeekPlan_GetLists.txt" />
+    <None Include="Content\SQL\Tickets.txt" />
+    <None Include="Content\SQL\[CateGory]_DataInit_Knowledge.txt" />
+    <Content Include="Api\ReportAbuse.asmx" />
+    <Content Include="Content\SQL\Function_[GetTicketsView]_Created.txt" />
+    <Content Include="Content\SQL\Table-[TicketUsers]-2014_7_23.txt" />
+    <Content Include="Content\SQL\Tickets_GetListByCondition2014_7_23.txt" />
+    <Content Include="Content\SQL\Tickets_GetListByCondition_count_2014_7_29.txt" />
+    <Content Include="Content\styles\mobileApp.css" />
+    <Content Include="Content\styles\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\styles\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\styles\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\styles\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\styles\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\styles\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\styles\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\styles\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\styles\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\styles\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\styles\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\styles\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\styles\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\styles\smoothness\jquery-ui-1.8.23.custom.css" />
+    <Content Include="Content\styles\smoothness\jquery-ui-1.9.0.custom.css" />
+    <Content Include="Content\styles\smoothness\jquery-ui-1.9.0.custom.min.css" />
+    <Content Include="Content\styles\Ticket\additional-methods.js" />
+    <Content Include="Content\styles\Ticket\bootstrap.js" />
+    <Content Include="Content\styles\Ticket\global.js" />
+    <Content Include="Content\styles\Ticket\jquery.js" />
+    <Content Include="Content\styles\Ticket\jquery.sunnet.js" />
+    <Content Include="Content\styles\Ticket\jquery.validate.js" />
+    <Content Include="Content\styles\Ticket\knockout-3.1.0.debug.js" />
+    <Content Include="Content\styles\Ticket\uploader.js" />
+    <Content Include="Content\styles\Ticket\webuploader.js" />
+    <Content Include="Content\styles\tree\jquery.checkboxtree.css" />
+    <Content Include="Content\styles\tree\jquery.checkboxtree.min.css" />
+    <None Include="Content\Ticket -FeedbackProcess.png" />
+    <Content Include="Demo\ajaxSubmit-integration-demo.html" />
+    <Content Include="Demo\captcha\captcha.js" />
+    <Content Include="Demo\captcha\images\button.png" />
+    <Content Include="Demo\captcha\style.css" />
+    <Content Include="Demo\css\cmxform.css" />
+    <Content Include="Demo\css\cmxformTemplate.css" />
+    <Content Include="Demo\css\core.css" />
+    <Content Include="Demo\css\reset.css" />
+    <Content Include="Demo\css\screen.css" />
+    <Content Include="Demo\custom-messages-data-demo.html" />
+    <Content Include="Demo\custom-methods-demo.html" />
+    <Content Include="Demo\dynamic-totals.html" />
+    <Content Include="Demo\errorcontainer-demo.html" />
+    <Content Include="Demo\ExtendedDropDownList.aspx" />
+    <Content Include="Demo\file_input.html" />
+    <Content Include="Demo\images\bg.gif" />
+    <Content Include="Demo\images\checked.gif" />
+    <Content Include="Demo\images\cmxform-divider.gif" />
+    <Content Include="Demo\images\cmxform-fieldset.gif" />
+    <Content Include="Demo\images\loading.gif" />
+    <Content Include="Demo\images\unchecked.gif" />
+    <Content Include="Demo\index.html" />
+    <Content Include="Demo\jquerymobile.html" />
+    <Content Include="Demo\login\images\bg.gif" />
+    <Content Include="Demo\login\images\header1.jpg" />
+    <Content Include="Demo\login\images\page.gif" />
+    <Content Include="Demo\login\images\required_star.gif" />
+    <Content Include="Demo\login\index.html" />
+    <Content Include="Demo\login\screen.css" />
+    <Content Include="Demo\marketo\images\backRequiredGray.gif" />
+    <Content Include="Demo\marketo\images\back_green-fade.gif" />
+    <Content Include="Demo\marketo\images\back_nav_blue.gif" />
+    <Content Include="Demo\marketo\images\blank.gif" />
+    <Content Include="Demo\marketo\images\button-submit.gif" />
+    <Content Include="Demo\marketo\images\favicon.ico" />
+    <Content Include="Demo\marketo\images\help.png" />
+    <Content Include="Demo\marketo\images\left-nav-callout-long.png" />
+    <Content Include="Demo\marketo\images\login-sprite.gif" />
+    <Content Include="Demo\marketo\images\logo_marketo.gif" />
+    <Content Include="Demo\marketo\images\sf.png" />
+    <Content Include="Demo\marketo\images\step1-24.gif" />
+    <Content Include="Demo\marketo\images\step2-24.gif" />
+    <Content Include="Demo\marketo\images\step3-24.gif" />
+    <Content Include="Demo\marketo\images\tab-sprite.gif" />
+    <Content Include="Demo\marketo\images\tab_green.gif" />
+    <Content Include="Demo\marketo\images\time.png" />
+    <Content Include="Demo\marketo\images\toggle.gif" />
+    <Content Include="Demo\marketo\images\warning.gif" />
+    <Content Include="Demo\marketo\index.html" />
+    <Content Include="Demo\marketo\jquery.maskedinput.js" />
+    <Content Include="Demo\marketo\mktSignup.js" />
+    <Content Include="Demo\marketo\step2.htm" />
+    <Content Include="Demo\marketo\stylesheet.css" />
+    <Content Include="Demo\milk\bg.gif" />
+    <Content Include="Demo\milk\index.html" />
+    <Content Include="Demo\milk\left_white.png" />
+    <Content Include="Demo\milk\milk.css" />
+    <Content Include="Demo\milk\milk.png" />
+    <Content Include="Demo\milk\right_white.png" />
+    <Content Include="Demo\multipart\index.html" />
+    <Content Include="Demo\multipart\style.css" />
+    <Content Include="Demo\page_adaptation.html" />
+    <Content Include="Demo\page_ticket2.html" />
+    <Content Include="Demo\radio-checkbox-select-demo.html" />
+    <Content Include="Demo\site-demos.css" />
+    <Content Include="Demo\themerollered.html" />
+    <Content Include="Demo\tinymce\index.html" />
+    <Content Include="Demo\tinymce\themes\simple\editor_template.js" />
+    <Content Include="Demo\tinymce\themes\simple\img\icons.gif" />
+    <Content Include="Demo\tinymce\themes\simple\langs\en.js" />
+    <Content Include="Demo\tinymce\themes\simple\skins\default\ui.css" />
+    <Content Include="Demo\tinymce\tiny_mce.js" />
+    <Content Include="Demo\Validate.aspx" />
+    <Content Include="Demo\page_ticket.html" />
+    <Content Include="Demo\page_ticket3.html" />
+    <Content Include="Do\TimeSheetNotcie.asmx" />
+    <Content Include="Event\Html1.html" />
+    <Content Include="Images\a2_t.png" />
+    <Content Include="Images\a_t.png" />
+    <Content Include="Images\back.png" />
+    <Content Include="Images\chat_fj_icon.png" />
+    <Content Include="Images\chat_icon.png" />
+    <Content Include="Images\chat_push_icon.png" />
+    <Content Include="Images\delete.png" />
+    <Content Include="Images\doc-g.png" />
+    <Content Include="Images\doc-o.png" />
+    <Content Include="Images\eve-g.png" />
+    <Content Include="Images\eve-o.png" />
+    <Content Include="Images\event-app.png" />
+    <Content Include="Images\export-app.png" />
+    <Content Include="Images\for-g.png" />
+    <Content Include="Images\for-o.png" />
+    <Content Include="Images\icons\add-t.png" />
+    <Content Include="Images\b_a_l.png" />
+    <Content Include="Images\b_a_r.png" />
+    <Content Include="Images\clock.png" />
+    <Content Include="Images\DatePick\30.gif" />
+    <Content Include="Images\ex.gif" />
+    <Content Include="Images\icons\01.gif" />
+    <Content Include="Images\icons\02.gif" />
+    <Content Include="Images\icons\03.gif" />
+    <Content Include="Images\icons\18.gif" />
+    <Content Include="Images\icons\add.png" />
+    <Content Include="Images\icons\addtimesheet_grey.png" />
+    <Content Include="Images\icons\addtimesheet_on.png" />
+    <Content Include="Images\icons\admin_on.png" />
+    <Content Include="Images\icons\admin_white.png" />
+    <Content Include="Images\icons\allticket_grey.png" />
+    <Content Include="Images\icons\allticket_on.png" />
+    <Content Include="Images\icons\all_invoices.png" />
+    <Content Include="Images\icons\all_invoices_c.png" />
+    <Content Include="Images\icons\awaiting_payment.png" />
+    <Content Include="Images\icons\awaiting_payment_c.png" />
+    <Content Include="Images\icons\bids.png" />
+    <Content Include="Images\icons\btn-review.png" />
+    <Content Include="Images\icons\btn-view.png" />
+    <Content Include="Images\icons\cancel.png" />
+    <Content Include="Images\icons\cancel_new.png" />
+    <Content Include="Images\icons\category.png" />
+    <Content Include="Images\icons\cdashboard_on.png" />
+    <Content Include="Images\icons\cdashboard_white.png" />
+    <Content Include="Images\icons\clients_on.png" />
+    <Content Include="Images\icons\clients_white.png" />
+    <Content Include="Images\icons\comment.png" />
+    <Content Include="Images\icons\companiesmanger_grey.png" />
+    <Content Include="Images\icons\companiesmanger_on.png" />
+    <Content Include="Images\icons\complaint_grey.png" />
+    <Content Include="Images\icons\complaint_on.png" />
+    <Content Include="Images\icons\confirm_payment.png" />
+    <Content Include="Images\icons\confirm_payment_c.png" />
+    <Content Include="Images\icons\consumingcomparisonreport_grey.png" />
+    <Content Include="Images\icons\consumingcomparisonreport_on.png" />
+    <Content Include="Images\icons\consumingreport_grey.png" />
+    <Content Include="Images\icons\consumingreport_on.png" />
+    <Content Include="Images\icons\del.png" />
+    <Content Include="Images\icons\download.png" />
+    <Content Include="Images\icons\edit-color.png" />
+    <Content Include="Images\icons\email.png" />
+    <Content Include="Images\icons\emergency.png" />
+    <Content Include="Images\icons\export.png" />
+    <Content Include="Images\icons\file.png" />
+    <Content Include="Images\icons\google-sheets_grey.png" />
+    <Content Include="Images\icons\google-sheets_on.png" />
+    <Content Include="Images\icons\high.png" />
+    <Content Include="Images\icons\invoice_on.png" />
+    <Content Include="Images\icons\invoice_white.png" />
+    <Content Include="Images\icons\knowledgeshare_grey.png" />
+    <Content Include="Images\icons\knowledgeshare_on.png" />
+    <Content Include="Images\icons\low.png" />
+    <Content Include="Images\icons\medium.png" />
+    <Content Include="Images\icons\modulesmanager_grey.png" />
+    <Content Include="Images\icons\modulesmanager_on.png" />
+    <Content Include="Images\icons\mycategories_grey.png" />
+    <Content Include="Images\icons\mycategories_on.png" />
+    <Content Include="Images\icons\myticket_grey.png" />
+    <Content Include="Images\icons\myticket_on.png" />
+    <Content Include="Images\icons\mytimesheetreport_grey.png" />
+    <Content Include="Images\icons\mytimesheetreport_on.png" />
+    <Content Include="Images\icons\mytimesheet_grey.png" />
+    <Content Include="Images\icons\mytimesheet_on.png" />
+    <Content Include="Images\icons\newclientuser.png" />
+    <Content Include="Images\icons\newcompany.png" />
+    <Content Include="Images\icons\newitem.png" />
+    <Content Include="Images\icons\newproject.png" />
+    <Content Include="Images\icons\newseal.png" />
+    <Content Include="Images\icons\newsealrequest.png" />
+    <Content Include="Images\icons\newuser.png" />
+    <Content Include="Images\icons\oacalendar_grey.png" />
+    <Content Include="Images\icons\oacalendar_on.png" />
+    <Content Include="Images\icons\OA_on.png" />
+    <Content Include="Images\icons\OA_white.png" />
+    <Content Include="Images\icons\orange.png" />
+    <Content Include="Images\icons\passtime.png" />
+    <Content Include="Images\icons\pass_due.png" />
+    <Content Include="Images\icons\pass_due_c.png" />
+    <Content Include="Images\icons\pmreview.png" />
+    <Content Include="Images\icons\po_list.png" />
+    <Content Include="Images\icons\po_list_c.png" />
+    <Content Include="Images\icons\profileseal_grey.png" />
+    <Content Include="Images\icons\profileseal_on.png" />
+    <Content Include="Images\icons\projectsmanager_grey.png" />
+    <Content Include="Images\icons\projectsmanager_on.png" />
+    <Content Include="Images\icons\red.png" />
+    <Content Include="Images\icons\reports_white.png" />
+    <Content Include="Images\icons\requests_on.png" />
+    <Content Include="Images\icons\requests_white.png" />
+    <Content Include="Images\icons\review.png" />
+    <Content Include="Images\icons\rolesmanager_grey.png" />
+    <Content Include="Images\icons\rolesmanager_on.png" />
+    <Content Include="Images\icons\save.png" />
+    <Content Include="Images\icons\schedule_grey.png" />
+    <Content Include="Images\icons\schedule_on.png" />
+    <Content Include="Images\icons\sealrequest_grey.png" />
+    <Content Include="Images\icons\sealrequest_on.png" />
+    <Content Include="Images\icons\sealsmanager_grey.png" />
+    <Content Include="Images\icons\sealsmanager_on.png" />
+    <Content Include="Images\icons\seal_grey.png" />
+    <Content Include="Images\icons\seal_on.png" />
+    <Content Include="Images\icons\share.png" />
+    <Content Include="Images\icons\shareicon.png" />
+    <Content Include="Images\icons\stp.png" />
+    <Content Include="Images\icons\sunnetreports_on.png" />
+    <Content Include="Images\icons\sunnet_dashboard_on.png" />
+    <Content Include="Images\icons\Task_List.png" />
+    <Content Include="Images\icons\ticketanalysis_grey.png" />
+    <Content Include="Images\icons\ticketanalysis_on.png" />
+    <Content Include="Images\icons\ticketrating_grey.png" />
+    <Content Include="Images\icons\ticketrating_on.png" />
+    <Content Include="Images\icons\tickets_on.png" />
+    <Content Include="Images\icons\tickets_white.png" />
+    <Content Include="Images\icons\timesheetreport_grey.png" />
+    <Content Include="Images\icons\timesheetreport_on.png" />
+    <Content Include="Images\icons\timesheet_grey.png" />
+    <Content Include="Images\icons\timesheet_on.png" />
+    <Content Include="Images\icons\tocrm_grey.png" />
+    <Content Include="Images\icons\to_do.png" />
+    <Content Include="Images\icons\to_do_c.png" />
+    <Content Include="Images\icons\undercoordination_grey.png" />
+    <Content Include="Images\icons\undercoordination_on.png" />
+    <Content Include="Images\icons\underdevelop_grey.png" />
+    <Content Include="Images\icons\underdevelop_on.png" />
+    <Content Include="Images\icons\undertest_grey.png" />
+    <Content Include="Images\icons\undertest_on.png" />
+    <Content Include="Images\icons\userselected.png" />
+    <Content Include="Images\icons\usersmanager_grey.png" />
+    <Content Include="Images\icons\usersmanager_on.png" />
+    <Content Include="Images\icons\wadddocument.png" />
+    <Content Include="Images\icons\waddfile.png" />
+    <Content Include="Images\icons\waddnote.png" />
+    <Content Include="Images\icons\waddprincipal.png" />
+    <Content Include="Images\icons\waddrelatedticket.png" />
+    <Content Include="Images\icons\wassignuser.png" />
+    <Content Include="Images\icons\watingprocess_grey.png" />
+    <Content Include="Images\icons\watingprocess_on.png" />
+    <Content Include="Images\icons\wdelete.png" />
+    <Content Include="Images\icons\weekplan_grey.png" />
+    <Content Include="Images\icons\weekplan_on.png" />
+    <Content Include="Images\icons\wimportplan.png" />
+    <Content Include="Images\icons\wnewcategory.png" />
+    <Content Include="Images\icons\wnewmodule.png" />
+    <Content Include="Images\icons\wnewrole.png" />
+    <Content Include="Images\icons\wnewworkrequest.png" />
+    <Content Include="Images\icons\workplan_grey.png" />
+    <Content Include="Images\icons\workplan_on.png" />
+    <Content Include="Images\icons\workrequest_grey.png" />
+    <Content Include="Images\icons\workrequest_on.png" />
+    <Content Include="Images\icons\wplan.png" />
+    <Content Include="Images\icons\wsave.png" />
+    <Content Include="Images\icons\wsubmit.png" />
+    <Content Include="Images\icons\wtrash.png" />
+    <Content Include="Images\icons\wtrashempty.png" />
+    <Content Include="Images\icons\yellow.png" />
+    <Content Include="Images\laborDayLogo 3.jpg" />
+    <Content Include="Images\left_b_a.png" />
+    <Content Include="Images\left_b_m.png" />
+    <Content Include="Images\left_b_p.png" />
+    <Content Include="Images\left_b_w.png" />
+    <Content Include="Images\menu.png" />
+    <Content Include="Images\new-app.png" />
+    <Content Include="Images\oa-g.png" />
+    <Content Include="Images\oa-o.png" />
+    <Content Include="Images\pro-g.png" />
+    <Content Include="Images\pro-o.png" />
+    <Content Include="Images\rep-g.png" />
+    <Content Include="Images\rep-o.png" />
+    <Content Include="Images\search-app.png" />
+    <Content Include="Images\ticket-g.png" />
+    <Content Include="Images\ticket-o.png" />
+    <Content Include="Images\waddschedule.png" />
+    <Content Include="Images\wimport.png" />
+    <Content Include="Invoice\AllInvoices.aspx" />
+    <Content Include="Invoice\AwaingPayment.aspx" />
+    <Content Include="Invoice\ConfirmPayment.aspx" />
+    <Content Include="Invoice\Invoice.master" />
+    <Content Include="Invoice\PassDue.aspx" />
+    <Content Include="Invoice\POList.aspx" />
+    <Content Include="Invoice\Proposal\DetailInvoice.aspx" />
+    <Content Include="Invoice\TM\New.aspx" />
+    <Content Include="Invoice\TM\TSDetail.aspx" />
+    <Content Include="Invoice\ToDoList.aspx" />
+    <Content Include="MobileHtml\addTimesheet.html" />
+    <Content Include="MobileHtml\event.html" />
+    <Content Include="MobileHtml\eventList.html" />
+    <Content Include="MobileHtml\myTimesheet.html" />
+    <Content Include="MobileHtml\ticketDetail.html" />
+    <Content Include="MobileHtml\waitingForResponse.html" />
+    <Content Include="Mobile\SiteMobileMasterDemo.aspx" />
+    <Content Include="OA\Complaints\Complaints.aspx" />
+    <Content Include="OA\Calendar\Add.aspx" />
+    <Content Include="OA\Calendar\Edit.aspx" />
+    <Content Include="OA\Calendar\Index.aspx" />
+    <Content Include="OA\Complaints\ComplaintReview.aspx" />
+    <Content Include="OA\ProposalTracker\Comment.aspx" />
+    <Content Include="OA\Pto\Pto.aspx" />
+    <Content Include="OA\Pto\PtoUserTime.aspx" />
+    <Content Include="OA\Seals\AddSealFile.aspx" />
+    <Content Include="OA\Seals\AddSealNote.aspx" />
+    <Content Include="OA\Seals\AddSealRequest.aspx" />
+    <Content Include="OA\Seals\EditSealRequest.aspx" />
+    <Content Include="OA\Seals\SealRequests.aspx" />
+    <Content Include="OA\Seals\WaitingProcessSeal.aspx" />
+    <Content Include="OA\SSO\ToCRM.aspx" />
+    <Content Include="OA\Timesheet\MoveTimeSheet.aspx" />
+    <Content Include="OA\WeekPlan\WeekPlanEdit.aspx" />
+    <Content Include="OA\ProposalTracker\AddDocument.aspx" />
+    <Content Include="OA\ProposalTracker\AddNote.aspx" />
+    <Content Include="OA\ProposalTracker\AddRelatedticket.aspx" />
+    <Content Include="OA\ProposalTracker\AddProposalTracker.aspx" />
+    <Content Include="OA\ProposalTracker\EditProposalTracker.aspx" />
+    <Content Include="OA\ProposalTracker\Index.aspx" />
+    <Content Include="PopEmpty.aspx" />
+    <Content Include="Report\Analysis.aspx" />
+    <Content Include="Report\Comparison.aspx" />
+    <Content Include="Report\Consuming.aspx" />
+    <Content Include="Report\TicketsExport.aspx" />
+    <Content Include="Report\MyTimesheet.aspx" />
+    <Content Include="Report\ProjectUserTimeSheet.aspx" />
+    <Content Include="Report\Ratings.aspx" />
+    <Content Include="Report\TicketTimesheet.aspx" />
+    <Content Include="Report\Timesheet.aspx" />
+    <Content Include="Report\SubAnalysis.aspx" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="Scripts\Calendar\close.gif" />
+    <Content Include="Scripts\Calendar\close2.gif" />
+    <Content Include="Scripts\Calendar\drop1.gif" />
+    <Content Include="Scripts\Calendar\drop2.gif" />
+    <Content Include="Scripts\Calendar\left1.gif" />
+    <Content Include="Scripts\Calendar\left2.gif" />
+    <Content Include="Scripts\Calendar\right1.gif" />
+    <Content Include="Scripts\Calendar\right2.gif" />
+    <Content Include="Scripts\jquery-1.8.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.9.0.custom.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\jquery.extend.js" />
+    <Content Include="Scripts\knockout-3.1.0.debug.js" />
+    <Content Include="Scripts\knockout-3.1.0.js" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\layer-v3.1.0\layer\layer.js" />
+    <Content Include="Scripts\layer-v3.1.0\layer\mobile\layer.js" />
+    <Content Include="Scripts\layer-v3.1.0\layer\mobile\need\layer.css" />
+    <Content Include="Scripts\layer-v3.1.0\layer\theme\default\icon-ext.png" />
+    <Content Include="Scripts\layer-v3.1.0\layer\theme\default\icon.png" />
+    <Content Include="Scripts\layer-v3.1.0\layer\theme\default\layer.css" />
+    <Content Include="Scripts\layer-v3.1.0\layer\theme\default\loading-0.gif" />
+    <Content Include="Scripts\layer-v3.1.0\layer\theme\default\loading-1.gif" />
+    <Content Include="Scripts\layer-v3.1.0\layer\theme\default\loading-2.gif" />
+    <Content Include="Scripts\layer-v3.1.0\test.html" />
+    <Content Include="Scripts\layer-v3.1.0\更新日志.txt" />
+    <Content Include="Scripts\mediaPlayer\flowplayer-3.2.6.min.js" />
+    <Content Include="Scripts\mediaPlayer\flowplayer-3.2.7.swf" />
+    <Content Include="Scripts\mediaPlayer\flowplayer.controls-3.2.5.swf" />
+    <Content Include="Scripts\mediaPlayer\jquerymedia.js" />
+    <Content Include="Scripts\mediaPlayer\jwplayer.js" />
+    <Content Include="Scripts\mediaPlayer\pl.swf" />
+    <Content Include="Scripts\mediaPlayer\preview.jpg" />
+    <Content Include="Scripts\mediaPlayer\swfobject.js" />
+    <Content Include="Scripts\popcalendar.js" />
+    <Content Include="Scripts\Tree\jquery.checkboxtree.js" />
+    <Content Include="Scripts\Tree\jquery.checkboxtree.min.js" />
+    <Content Include="Scripts\Validate\additional-methods.js" />
+    <Content Include="Scripts\Validate\additional-methods.min.js" />
+    <Content Include="Scripts\Validate\jquery.validate.js" />
+    <Content Include="Scripts\Validate\jquery.validate.min.js" />
+    <Content Include="Scripts\webuploader\uploader.js" />
+    <Content Include="Scripts\webuploader\Uploader.swf" />
+    <Content Include="Scripts\webuploader\webuploader.css" />
+    <Content Include="Scripts\webuploader\webuploader.js" />
+    <Content Include="Scripts\webuploader\webuploader.min.js" />
+    <Content Include="Scripts\webuploader\webuploader.min.js.map">
+      <DependentUpon>webuploader.js</DependentUpon>
+    </Content>
+    <Content Include="SqlServer\20180105_Users.txt" />
+    <Content Include="SqlServer\20150120_Events_1.txt" />
+    <Content Include="SqlServer\20160728_GetTicketsView.txt" />
+    <Content Include="SqlServer\20171108_Modules.txt" />
+    <Content Include="SqlServer\20160728_Tickets.txt" />
+    <Content Include="SqlServer\20170707Modules.txt" />
+    <Content Include="SqlServer\20170711Projects.txt" />
+    <Content Include="SqlServer\20170712WorkTime.txt" />
+    <Content Include="SqlServer\20170824Project.txt" />
+    <Content Include="SqlServer\20170829Webconfig.txt" />
+    <Content Include="SqlServer\20170905GetNeedAlertEvents.txt" />
+    <Content Include="SqlServer\20170925webconfig.txt" />
+    <Content Include="SqlServer\20171016_HideUsers.txt" />
+    <Content Include="SqlServer\CheckTimesheet_20150303.txt" />
+    <Content Include="SqlServer\Complaints_20150819.txt" />
+    <Content Include="SqlServer\Events_20150511.txt" />
+    <Content Include="SqlServer\GetTicketsView.txt" />
+    <Content Include="SqlServer\GetTicketsView_20150703.txt" />
+    <Content Include="SqlServer\Invoices_20171129.txt" />
+    <Content Include="SqlServer\Invoices_20171123.txt" />
+    <Content Include="SqlServer\Modules_20160223.txt" />
+    <Content Include="SqlServer\Modules_20160225.txt" />
+    <Content Include="SqlServer\ProjectPayment_20160520.txt" />
+    <Content Include="SqlServer\ProjectPayment_20160525.txt" />
+    <Content Include="SqlServer\ProposalTracker20161124.txt" />
+    <Content Include="SqlServer\ProposalTrackerNote_20160223.txt" />
+    <Content Include="SqlServer\ProposalTrackerRelation_20160223.txt" />
+    <Content Include="SqlServer\ProposalTracker_20160223.txt" />
+    <Content Include="SqlServer\ProposalTracker_20160525.txt" />
+    <Content Include="SqlServer\Invoices20161209.txt" />
+    <Content Include="SqlServer\Tickets20170523.txt" />
+    <Content Include="SqlServer\Tickets_20150311.txt" />
+    <Content Include="SqlServer\20150311_WeekPlan_1.txt" />
+    <Content Include="SqlServer\Tickets_20150703.txt" />
+    <Content Include="SqlServer\TimeSheets_20150511.txt" />
+    <Content Include="SqlServer\WorkflowHistory_20160111.txt" />
+    <Content Include="SqlServer\Workflow_20150819.txt" />
+    <Content Include="SqlServer\WorkRequestNote_20160223.txt" />
+    <Content Include="SqlServer\WorkRequestRelation_20160223.txt" />
+    <Content Include="SqlServer\WorkRequest_20160223.txt" />
+    <Content Include="SqlServer\Modules_20160229.txt" />
+    <Content Include="SqlServer\PaymentComment_20160729.txt" />
+    <Content Include="SqlServer\Inovice_20160901.txt" />
+    <Content Include="SqlServer\TSInvoiceRelation_20160901.txt" />
+    <Content Include="SunnetTicket\Approve.aspx" />
+    <Content Include="SunnetTicket\ClientProject.aspx" />
+    <Content Include="SunnetTicket\Deny.aspx" />
+    <Content Include="SunnetTicket\HideUser.aspx" />
+    <Content Include="SunnetTicket\InternalDashboard.aspx" />
+    <Content Include="SunnetTicket\InternalProject.aspx" />
+    <Content Include="SunnetTicket\Knowledge\Edit.aspx" />
+    <Content Include="SunnetTicket\Knowledge\Index.aspx" />
+    <Content Include="SunnetTicket\Knowledge\New.aspx" />
+    <Content Include="SunnetTicket\Knowledge\View.aspx" />
+    <Content Include="SunnetTicket\MyCategory.aspx" />
+    <Content Include="SunnetTicket\MyTicket.aspx" />
+    <Content Include="SunnetTicket\NewCategory.aspx" />
+    <Content Include="SunnetTicket\Ongoing.aspx" />
+    <Content Include="SunnetTicket\SalerReview.aspx" />
+    <Content Include="SunnetTicket\TicketQueue.aspx" />
+    <Content Include="SunnetTicket\TicketSelect.aspx" />
+    <Content Include="SunnetTicket\WaitingResponse.aspx" />
+    <Content Include="Template\Event\PTOBalance .txt" />
+    <Content Include="Template\Event\CreateEvent.txt" />
+    <Content Include="Template\Event\DeletedEvent.txt" />
+    <Content Include="Template\Event\EventUpdateTime.txt" />
+    <Content Include="Template\Event\RemoveUser.txt" />
+    <Content Include="Template\SendEmailForReadyforReview.xml" />
+    <Content Include="Template\SendEmailInternalCancel.xml" />
+    <Content Include="Template\SendEmailToResponsible.xml" />
+    <Content Include="Template\SendEmailToAssignUser.xml" />
+    <Content Include="Template\SendEmailToPayment.txt" />
+    <Content Include="Template\SendEmailForReadyforReview.txt" />
+    <Content Include="Template\SendEmailToPmForFeedBack.xml" />
+    <Content Include="Template\SendEmailToTeemByClientCancleTicket.txt" />
+    <Content Include="Template\SendEmailToWorkFlowRespUser.txt" />
+    <Content Include="Template\SendEmailToWorkFlowUser.txt" />
+    <Content Include="Template\SendEmailWaitConfirm.txt" />
+    <Content Include="Template\TimehseetNoticeToHR.txt" />
+    <Content Include="Template\SendEmailFromUserList.txt" />
+    <Content Include="Template\SendEmailToFeedbackReplied.txt" />
+    <Content Include="Test Ticket Style\images\a2_t.png" />
+    <Content Include="Test Ticket Style\images\additional-methods.js" />
+    <Content Include="Test Ticket Style\images\a_t.png" />
+    <Content Include="Test Ticket Style\images\bootstrap.js" />
+    <Content Include="Test Ticket Style\images\chat_fj_icon.png" />
+    <Content Include="Test Ticket Style\images\chat_icon.png" />
+    <Content Include="Test Ticket Style\images\chat_push_icon.png" />
+    <Content Include="Test Ticket Style\images\failed.png" />
+    <Content Include="Test Ticket Style\images\file.png" />
+    <Content Include="Test Ticket Style\images\global.js" />
+    <Content Include="Test Ticket Style\images\jquery.js" />
+    <Content Include="Test Ticket Style\images\jquery.sunnet.js" />
+    <Content Include="Test Ticket Style\images\jquery.validate.js" />
+    <Content Include="Test Ticket Style\images\knockout-3.1.0.debug.js" />
+    <Content Include="Test Ticket Style\images\success.png" />
+    <Content Include="Test Ticket Style\images\sunnet_logo.png" />
+    <Content Include="Test Ticket Style\images\uploader.js" />
+    <Content Include="Test Ticket Style\images\webuploader.js" />
+    <Content Include="Test Ticket Style\pm.html" />
+    <Content Include="test.aspx" />
+    <Content Include="SunnetTicket\Detail.aspx" />
+    <Content Include="SunnetTicket\DevReview.aspx" />
+    <Content Include="SunnetTicket\Index.aspx" />
+    <Content Include="SunnetTicket\PMReview.aspx" />
+    <Content Include="SunnetTicket\QAReview.aspx" />
+    <Content Include="OA\Timesheet\Date.aspx" />
+    <Content Include="OA\Timesheet\Index.aspx" />
+    <Content Include="Ticket\ConfirmEstimates.aspx" />
+    <Content Include="Ticket\MyTicket.aspx" />
+    <Content Include="UserControls\Invoice\InvoiceLeft.ascx" />
+    <Content Include="UserControls\OA\LeftMenu.ascx" />
+    <Content Include="UserControls\OA\YearsUserCon.ascx" />
+    <Content Include="UserControls\Report\ReportLeft.ascx" />
+    <Content Include="UserControls\Sunnet\ChangeHistory.ascx" />
+    <Content Include="UserControls\Sunnet\RatingsView.ascx" />
+    <Content Include="OA\WeekPlan\Index.aspx" />
+    <Content Include="About\About.Master" />
+    <None Include="Content\Documents.docx" />
+    <None Include="Content\styles\bootstrap-rtl.css" />
+    <None Include="Content\styles\bootstrap-rtl.min.css" />
+    <Content Include="Account\ChangePassword.aspx" />
+    <Content Include="Account\Company.aspx" />
+    <Content Include="Account\Profile.aspx" />
+    <Content Include="Admin\Companies.aspx" />
+    <Content Include="Admin\CompanyDetail.aspx" />
+    <Content Include="Admin\Projects\EditProject.aspx" />
+    <Content Include="Admin\Users\NewClientUser.aspx" />
+    <Content Include="Admin\NewCompany.aspx" />
+    <Content Include="Admin\NewSeal.aspx" />
+    <Content Include="Admin\Users\NewSunneter.aspx" />
+    <Content Include="Admin\Projects\Projects.aspx" />
+    <Content Include="Admin\SealDetail.aspx" />
+    <Content Include="Admin\Seals.aspx" />
+    <Content Include="Admin\Users\Users.aspx" />
+    <Content Include="Api\ProjectApi.asmx" />
+    <None Include="Content\html\clientdashboard.html" />
+    <None Include="Content\html\adjustpriority.html" />
+    <None Include="Content\html\createevent.html" />
+    <None Include="Content\html\error.html" />
+    <Content Include="App_Themes\Default\Default.skin" />
+    <None Include="Content\html\newticket.html" />
+    <None Include="Content\html\ticketslist.html" />
+    <None Include="Content\html\changepassword.html" />
+    <None Include="Content\html\documents.html" />
+    <None Include="Content\html\events_calendar.html" />
+    <None Include="Content\html\events_list.html" />
+    <None Include="Content\html\mycompany.html" />
+    <None Include="Content\html\myprofile.html" />
+    <None Include="Content\html\openwindow.html" />
+    <None Include="Content\html\ticketdetail.html" />
+    <None Include="Content\styles\bootstrap-theme.css" />
+    <None Include="Content\styles\bootstrap-theme.min.css" />
+    <None Include="Content\styles\bootstrap.css" />
+    <None Include="Content\styles\bootstrap.min.css" />
+    <None Include="Content\html\viewevent.html" />
+    <None Include="Content\html\vieweventlist.html" />
+    <Content Include="Content\styles\bootstrap_1.css" />
+    <Content Include="Content\styles\fonts.css" />
+    <Content Include="Content\styles\forms.css" />
+    <Content Include="Content\styles\menu.css">
+      <DependentUpon>menu.less</DependentUpon>
+    </Content>
+    <Content Include="Content\styles\menu.min.css">
+      <DependentUpon>menu.less</DependentUpon>
+    </Content>
+    <Content Include="Content\styles\public.css" />
+    <Content Include="Default.aspx" />
+    <Content Include="Error\error.html" />
+    <Content Include="Error\404.html" />
+    <Content Include="Event\Add.aspx" />
+    <Content Include="Event\DayEvent.aspx" />
+    <Content Include="Event\Edit.aspx" />
+    <Content Include="Event\Index.aspx" />
+    <Content Include="Event\List.aspx" />
+    <Content Include="Event\View.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="Forum\Index.aspx" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\but_bg2.png" />
+    <Content Include="Images\error_right.png" />
+    <Content Include="Images\homelog_btnbg.png" />
+    <Content Include="Images\homelog_btnbgover.png" />
+    <Content Include="Images\icons\calendar_grey.png" />
+    <Content Include="Images\icons\calendar_on.png" />
+    <Content Include="Images\icons\close.png" />
+    <Content Include="Images\icons\company_grey.png" />
+    <Content Include="Images\icons\company_on.png" />
+    <Content Include="Images\eventicons\event_icon_1.png" />
+    <Content Include="Images\eventicons\event_icon_10.png" />
+    <Content Include="Images\eventicons\event_icon_10s.png" />
+    <Content Include="Images\eventicons\event_icon_11.png" />
+    <Content Include="Images\eventicons\event_icon_11s.png" />
+    <Content Include="Images\eventicons\event_icon_12.png" />
+    <Content Include="Images\eventicons\event_icon_12s.png" />
+    <Content Include="Images\eventicons\event_icon_1s.png" />
+    <Content Include="Images\eventicons\event_icon_2.png" />
+    <Content Include="Images\eventicons\event_icon_2s.png" />
+    <Content Include="Images\eventicons\event_icon_3.png" />
+    <Content Include="Images\eventicons\event_icon_3s.png" />
+    <Content Include="Images\eventicons\event_icon_4.png" />
+    <Content Include="Images\eventicons\event_icon_4s.png" />
+    <Content Include="Images\eventicons\event_icon_5.png" />
+    <Content Include="Images\eventicons\event_icon_5s.png" />
+    <Content Include="Images\eventicons\event_icon_6.png" />
+    <Content Include="Images\eventicons\event_icon_6s.png" />
+    <Content Include="Images\eventicons\event_icon_7.png" />
+    <Content Include="Images\eventicons\event_icon_7s.png" />
+    <Content Include="Images\eventicons\event_icon_8.png" />
+    <Content Include="Images\eventicons\event_icon_8s.png" />
+    <Content Include="Images\eventicons\event_icon_9.png" />
+    <Content Include="Images\eventicons\event_icon_9s.png" />
+    <Content Include="Images\event_arrow.png" />
+    <Content Include="Images\fdarrow1.png" />
+    <Content Include="Images\fdarrow2.png" />
+    <Content Include="Images\icons\add1.png" />
+    <Content Include="Images\icons\adjust_priority.png" />
+    <Content Include="Images\icons\approve.png" />
+    <Content Include="Images\icons\cancelled_grey.png" />
+    <Content Include="Images\icons\cancelled_on.png" />
+    <Content Include="Images\icons\completed_grey.png" />
+    <Content Include="Images\icons\completed_on.png" />
+    <Content Include="Images\icons\dashboard_grey.png" />
+    <Content Include="Images\icons\dashboard_on.png" />
+    <Content Include="Images\icons\delete.png" />
+    <Content Include="Images\icons\deletelogo.gif" />
+    <Content Include="Images\icons\deny.png" />
+    <Content Include="Images\icons\document.png" />
+    <Content Include="Images\icons\documents_on.png" />
+    <Content Include="Images\icons\documents_white.png" />
+    <Content Include="Images\icons\draft_grey.png" />
+    <Content Include="Images\icons\draft_on.png" />
+    <Content Include="Images\icons\edit.png" />
+    <Content Include="Images\icons\emergency_notice.png" />
+    <Content Include="Images\icons\ex.gif" />
+    <Content Include="Images\icons\excel.png" />
+    <Content Include="Images\icons\folder.png" />
+    <Content Include="Images\icons\folder_add.png" />
+    <Content Include="Images\icons\folder_reduce.png" />
+    <Content Include="Images\icons\grey_star.png" />
+    <Content Include="Images\icons\hottopic.png" />
+    <Content Include="Images\icons\info.png" />
+    <Content Include="Images\icons\events_on.png" />
+    <Content Include="Images\icons\events_white.png" />
+    <Content Include="Images\icons\expansion.png" />
+    <Content Include="Images\icons\failed.png" />
+    <Content Include="Images\icons\forums_on.png" />
+    <Content Include="Images\icons\forums_white.png" />
+    <Content Include="Images\icons\inputdate.png" />
+    <Content Include="Images\icons\latesttopic.png" />
+    <Content Include="Images\icons\list_grey.png" />
+    <Content Include="Images\icons\list_on.png" />
+    <Content Include="Images\icons\message.png" />
+    <Content Include="Images\icons\ongoing_grey.png" />
+    <Content Include="Images\icons\ongoing_on.png" />
+    <Content Include="Images\icons\orange_star.png" />
+    <Content Include="Images\icons\orderarrow_up.png" />
+    <Content Include="Images\icons\orderarro_down.png" />
+    <Content Include="Images\icons\packup.png" />
+    <Content Include="Images\icons\pd_cancelled.png" />
+    <Content Include="Images\icons\pd_completed.png" />
+    <Content Include="Images\icons\pd_draft.png" />
+    <Content Include="Images\icons\pd_issue.png" />
+    <Content Include="Images\icons\pd_ongoing.png" />
+    <Content Include="Images\icons\pd_reports.png" />
+    <Content Include="Images\icons\pd_response.png" />
+    <Content Include="Images\icons\profile_on.png" />
+    <Content Include="Images\icons\profile_white.png" />
+    <Content Include="Images\icons\reddot.png" />
+    <Content Include="Images\icons\reply.png" />
+    <Content Include="Images\icons\reports_grey.png" />
+    <Content Include="Images\icons\reports_on.png" />
+    <Content Include="Images\icons\search.png" />
+    <Content Include="Images\icons\star_grey.png" />
+    <Content Include="Images\icons\star_orange.png" />
+    <Content Include="Images\icons\success.png" />
+    <Content Include="Images\icons\clientticket_on.png" />
+    <Content Include="Images\icons\clientticket_white.png" />
+    <Content Include="Images\icons\view.png" />
+    <Content Include="Images\icons\waiting_grey.png" />
+    <Content Include="Images\icons\waiting_on.png" />
+    <Content Include="Images\icons\wevents.png" />
+    <Content Include="Images\ico_delete.gif" />
+    <Content Include="Images\leftarrow.png" />
+    <Content Include="Images\icons\myprofile_grey.png" />
+    <Content Include="Images\icons\myprofile_on.png" />
+    <Content Include="Images\icons\password_grey.png" />
+    <Content Include="Images\icons\password_on.png" />
+    <Content Include="Images\loading.gif" />
+    <Content Include="Images\login_logo.png" />
+    <Content Include="Images\login_picture.png" />
+    <Content Include="Images\logomain.jpg" />
+    <Content Include="Images\monthleft.png" />
+    <Content Include="Images\monthleft2.png" />
+    <Content Include="Images\monthright.png" />
+    <Content Include="Images\monthright2.png" />
+    <Content Include="Images\Process_green.png" />
+    <Content Include="Images\Process_grey.png" />
+    <Content Include="Images\Process_red.png" />
+    <Content Include="Images\signbox_bg.png" />
+    <Content Include="Images\sunnet_logo.png" />
+    <Content Include="Images\ticket_toparrow.png" />
+    <Content Include="Images\topicleft.png" />
+    <Content Include="Images\treemenu_bgover.png" />
+    <Content Include="Libs\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="Libs\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="Libs\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="Libs\Microsoft.Practices.ObjectBuilder2.dll" />
+    <Content Include="Libs\Microsoft.Practices.Unity.dll" />
+    <Content Include="Libs\NPOI.dll" />
+    <Content Include="Libs\nunit.framework.dll" />
+    <Content Include="Libs\StructureMap.dll" />
+    <Content Include="Libs\Yahoo.Yui.Compressor\EcmaScript.NET.dll" />
+    <Content Include="Libs\Yahoo.Yui.Compressor\Iesi.Collections.dll" />
+    <Content Include="Libs\Yahoo.Yui.Compressor\NAnt.Core.dll" />
+    <Content Include="Libs\Yahoo.Yui.Compressor\New BSD License.txt" />
+    <Content Include="Libs\Yahoo.Yui.Compressor\Yahoo.Yui.Compressor.Build.MsBuild.dll" />
+    <Content Include="Libs\Yahoo.Yui.Compressor\Yahoo.Yui.Compressor.Build.Nant.dll" />
+    <Content Include="Libs\Yahoo.Yui.Compressor\Yahoo.Yui.Compressor.dll" />
+    <Content Include="Login.aspx" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Do\DoDeleteUserFromProject.ashx" />
+    <Content Include="Do\DoGetProjectClientUsers.ashx" />
+    <Content Include="Do\DoCancelTicketHandler.ashx" />
+    <Content Include="Do\SendEmailClientCancelTicketHandler.ashx" />
+    <Content Include="Do\DoGetWorkflowNextPeople.ashx" />
+    <Content Include="Do\DoGetddlProposal.ashx" />
+    <Content Include="Mobile\SiteMobile.Master" />
+    <None Include="packages.config" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Normal.master" />
+    <Content Include="Pop.master" />
+    <None Include="Content\styles\bootstrap-theme.css.map" />
+    <None Include="Content\styles\bootstrap.css.map" />
+    <Content Include="Images\icons\Thumbs.db" />
+    <Content Include="Do\DoFeedBacks.ashx" />
+    <Content Include="publicpage\Menu.aspx" />
+    <Content Include="Scripts\bootstrap.min.js.map">
+      <DependentUpon>bootstrap.js</DependentUpon>
+    </Content>
+    <Content Include="Do\DoDownloadFileHandler.ashx" />
+    <Content Include="Do\DoRemoveFileHandler.ashx" />
+    <Content Include="Do\DoGetCalendarList.ashx" />
+    <Content Include="Do\DoGetEventList.ashx" />
+    <Content Include="Do\DoRemoveDraftTicketHandler.ashx" />
+    <Content Include="Do\DoDeleteEvent.ashx" />
+    <Content Include="Content\styles\menu.less" />
+    <Content Include="Event\Event.master" />
+    <Content Include="Do\DoSetClientTicketStart.ashx" />
+    <Content Include="Do\DownloadSealFile.ashx" />
+    <Content Include="Do\deleteSealFile.ashx" />
+    <Content Include="Do\DoAssentUserToProject.ashx" />
+    <Content Include="Demo\captcha\fonts\Anorexia.ttf" />
+    <Content Include="Demo\captcha\images\.htaccess" />
+    <Content Include="Demo\captcha\images\image.php" />
+    <Content Include="Demo\captcha\image_req.php" />
+    <Content Include="Demo\captcha\index.php" />
+    <Content Include="Demo\captcha\newsession.php" />
+    <Content Include="Demo\captcha\process.php" />
+    <Content Include="Demo\captcha\rand.php" />
+    <Content Include="Do\DoAssignProjectsToUser.ashx" />
+    <Content Include="Report\Report.Master" />
+    <Content Include="OA\OA.master" />
+    <Content Include="Do\DoGetProjectUsers.ashx" />
+    <Content Include="Do\DoDownWrokRequestFile.ashx" />
+    <Content Include="Do\DoDeleteWorkRequestDocuments.ashx" />
+    <Content Include="OA\Calendar\DoAddSchedule.ashx" />
+    <Content Include="NoLeftmenu.master" />
+    <Content Include="Do\DoAddRelationWorkRequest.ashx" />
+    <Content Include="Do\DoDeleteRelationWorkRequest.ashx" />
+    <Content Include="Do\iCalFeed.ashx" />
+    <Content Include="Do\Event\GetUsersByProjectId.ashx" />
+    <Content Include="Do\DoDeleteRelationDocument.ashx" />
+    <Content Include="PopSite.Master" />
+    <None Include="Properties\PublishProfiles\211.pubxml" />
+    <None Include="Properties\PublishProfiles\88.pubxml" />
+    <None Include="Properties\PublishProfiles\Irving.pubxml" />
+    <None Include="Properties\PublishProfiles\Hunk.pubxml" />
+    <None Include="Properties\PublishProfiles\Jack_Web_Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\Leason.pubxml" />
+    <None Include="Properties\PublishProfiles\Local.pubxml" />
+    <None Include="Properties\PublishProfiles\Sam.pubxml" />
+    <None Include="Scripts\jquery-1.11.0.intellisense.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\global.js" />
+    <Content Include="Scripts\jquery-1.11.0.js" />
+    <Content Include="Scripts\jquery-1.11.0.min.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="Scripts\jquery.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.3.1.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.3.1.min.js" />
+    <Content Include="Scripts\jquery.sunnet.js" />
+    <Content Include="Scripts\My97DatePicker\calendar.js" />
+    <Content Include="Scripts\My97DatePicker\lang\en.js" />
+    <Content Include="Scripts\layer-v3.1.0\文档\jquery下载.url" />
+    <Content Include="Scripts\layer-v3.1.0\文档\layer官网.url" />
+    <Content Include="Scripts\layer-v3.1.0\文档\layer文档.url" />
+    <Content Include="Scripts\layer-v3.1.0\文档\Layui社区.url" />
+    <Content Include="Scripts\layer-v3.1.0\获得layim.url" />
+    <None Include="Scripts\My97DatePicker\lang\zh-cn.js" />
+    <None Include="Scripts\My97DatePicker\lang\zh-tw.js" />
+    <Content Include="Scripts\My97DatePicker\skin\datePicker.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\default\datepicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\default\img.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\twoer\datepicker-dev.css" />
+    <Content Include="Scripts\My97DatePicker\skin\twoer\datepicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\twoer\img.gif" />
+    <Content Include="Scripts\My97DatePicker\skin\twoer\img.png" />
+    <Content Include="Scripts\My97DatePicker\skin\WdatePicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\bg.jpg" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\datepicker.css" />
+    <Content Include="Scripts\My97DatePicker\skin\whyGreen\img.gif" />
+    <Content Include="Scripts\My97DatePicker\PM_WdatePicke.js" />
+    <Content Include="Scripts\My97DatePicker\WdatePicker.js" />
+    <Content Include="Scripts\Validate\formValidatorRegex.js" />
+    <Content Include="Scripts\Validate\regex.js" />
+    <Content Include="Scripts\Validate\Validator.js" />
+    <None Include="Service References\OperateDocManagements\OperateDocManagement.disco" />
+    <None Include="Service References\OperateDocManagements\configuration91.svcinfo" />
+    <None Include="Service References\OperateDocManagements\configuration.svcinfo" />
+    <None Include="Service References\OperateDocManagements\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Template\MeetingCancel.txt" />
+    <Content Include="Template\MeetingInvitations.txt" />
+    <Content Include="Template\NewDailyReportTemplate.html" />
+    <Content Include="Template\NoSubmitTimeSheet.htm" />
+    <Content Include="Template\SendEmailForRemainHours.txt" />
+    <Content Include="Template\SendEmailSealDenied.txt" />
+    <Content Include="Template\SendEmailToApproved.txt" />
+    <Content Include="Template\SendEmailToClientForFeedBack.txt" />
+    <Content Include="Template\SendEmailToClientForVerify.txt" />
+    <Content Include="Template\SendEmailToClientRegisterEmail.txt" />
+    <Content Include="Template\SendEmailToSealed.txt" />
+    <Content Include="Template\SendEmailToUserEsTime.txt" />
+    <Content Include="Template\SendEmailToUserForFindPassword.txt" />
+    <Content Include="Template\SendEmailWithNotBug.txt" />
+    <Content Include="Template\SendEmailWithSpecStatus.txt" />
+    <Content Include="Template\SendEmailWithStatusChanged.txt" />
+    <Content Include="Template\SendEmailwithStatusNotApproved.txt" />
+    <Content Include="Template\SendPMTicketAdd.txt" />
+    <Content Include="Template\SurveyEmail.txt" />
+    <Content Include="Template\WeekPlanNotice.txt" />
+    <Content Include="Ticket\AdjustPriority.aspx" />
+    <Content Include="Ticket\Approve.aspx" />
+    <Content Include="Ticket\Cancelled.aspx" />
+    <Content Include="Ticket\Completed.aspx" />
+    <Content Include="Dashboard.aspx" />
+    <Content Include="Ticket\Deny.aspx" />
+    <Content Include="Ticket\Detail.aspx" />
+    <Content Include="Ticket\Draft.aspx" />
+    <Content Include="Ticket\New.aspx" />
+    <Content Include="Ticket\Ongoing.aspx" />
+    <Content Include="Ticket\Report.aspx" />
+    <Content Include="SunnetTicket\Dashboard.aspx" />
+    <Content Include="SunnetTicket\New.aspx" />
+    <Content Include="Ticket\Waiting.aspx" />
+    <Content Include="UserControls\Account\LeftMenu.ascx" />
+    <Content Include="UserControls\Admin\adminLeft.ascx" />
+    <Content Include="UserControls\Admin\ClientMaintenancePlan.ascx" />
+    <Content Include="UserControls\ClientMenu.ascx" />
+    <Content Include="UserControls\Event\LeftMenu.ascx" />
+    <Content Include="UserControls\Footer.ascx" />
+    <Content Include="UserControls\Messager.ascx" />
+    <Content Include="UserControls\SunnetMenu.ascx" />
+    <Content Include="UserControls\Sunnet\UsersView.ascx" />
+    <Content Include="UserControls\Ticket\FeedbackDashBoardList.ascx" />
+    <Content Include="UserControls\Ticket\FileUploader.ascx" />
+    <Content Include="UserControls\Ticket\ClientLeftMenu.ascx" />
+    <Content Include="UserControls\Ticket\FeedbackList.ascx" />
+    <Content Include="UserControls\Ticket\Progress.ascx" />
+    <Content Include="UserControls\Sunnet\LeftMenu.ascx" />
+    <Content Include="UserControls\Ticket\TicketBasicInfoView.ascx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About\About.Master.cs">
+      <DependentUpon>About.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About\About.Master.designer.cs">
+      <DependentUpon>About.Master</DependentUpon>
+    </Compile>
+    <Compile Include="About\ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About\ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About\Faqs.aspx.cs">
+      <DependentUpon>Faqs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About\Faqs.aspx.designer.cs">
+      <DependentUpon>Faqs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="About\Survey.aspx.cs">
+      <DependentUpon>Survey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About\Survey.aspx.designer.cs">
+      <DependentUpon>Survey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Account.master.cs">
+      <DependentUpon>Account.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Account.master.designer.cs">
+      <DependentUpon>Account.master</DependentUpon>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Company.aspx.cs">
+      <DependentUpon>Company.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Company.aspx.designer.cs">
+      <DependentUpon>Company.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Email.aspx.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Email.aspx.designer.cs">
+      <DependentUpon>Email.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KPI\AddObjective.aspx.cs">
+      <DependentUpon>AddObjective.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\KPI\AddObjective.aspx.designer.cs">
+      <DependentUpon>AddObjective.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KPI\KPICategories.aspx.cs">
+      <DependentUpon>KPICategories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\KPI\KPICategories.aspx.designer.cs">
+      <DependentUpon>KPICategories.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KPI\KPIObjectives.aspx.cs">
+      <DependentUpon>KPIObjectives.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\KPI\KPIObjectives.aspx.designer.cs">
+      <DependentUpon>KPIObjectives.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KPI\KPIPerformanceReport.aspx.cs">
+      <DependentUpon>KPIPerformanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\KPI\KPIPerformanceReport.aspx.designer.cs">
+      <DependentUpon>KPIPerformanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KPI\AddCategory.aspx.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\KPI\AddCategory.aspx.designer.cs">
+      <DependentUpon>AddCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\KPI\EditKPIPerformanceReport.aspx.cs">
+      <DependentUpon>EditKPIPerformanceReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\KPI\EditKPIPerformanceReport.aspx.designer.cs">
+      <DependentUpon>EditKPIPerformanceReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Modules\AddModule.aspx.cs">
+      <DependentUpon>AddModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Modules\AddModule.aspx.designer.cs">
+      <DependentUpon>AddModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Modules\EditModule.aspx.cs">
+      <DependentUpon>EditModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Modules\EditModule.aspx.designer.cs">
+      <DependentUpon>EditModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Modules\Modules.aspx.cs">
+      <DependentUpon>Modules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Modules\Modules.aspx.designer.cs">
+      <DependentUpon>Modules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Projects\AddProject.aspx.cs">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Projects\AddProject.aspx.designer.cs">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\admin.master.cs">
+      <DependentUpon>admin.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\admin.master.designer.cs">
+      <DependentUpon>admin.master</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Projects\AddProjectFile.aspx.cs">
+      <DependentUpon>AddProjectFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Projects\AddProjectFile.aspx.designer.cs">
+      <DependentUpon>AddProjectFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Projects\AddProjectPrincipal.aspx.cs">
+      <DependentUpon>AddProjectPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Projects\AddProjectPrincipal.aspx.designer.cs">
+      <DependentUpon>AddProjectPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Projects\EditProjectPrincipal.aspx.cs">
+      <DependentUpon>EditProjectPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Projects\EditProjectPrincipal.aspx.designer.cs">
+      <DependentUpon>EditProjectPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Roles\AddRole.aspx.cs">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Roles\AddRole.aspx.designer.cs">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Roles\EditRole.aspx.cs">
+      <DependentUpon>EditRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Roles\EditRole.aspx.designer.cs">
+      <DependentUpon>EditRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Roles\RolePages.aspx.cs">
+      <DependentUpon>RolePages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Roles\RolePages.aspx.designer.cs">
+      <DependentUpon>RolePages.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Roles\Roles.aspx.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Roles\Roles.aspx.designer.cs">
+      <DependentUpon>Roles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users\AssignProjectToUser.aspx.cs">
+      <DependentUpon>AssignProjectToUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users\AssignProjectToUser.aspx.designer.cs">
+      <DependentUpon>AssignProjectToUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users\ClientUserDetail.aspx.cs">
+      <DependentUpon>ClientUserDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users\ClientUserDetail.aspx.designer.cs">
+      <DependentUpon>ClientUserDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Companies.aspx.cs">
+      <DependentUpon>Companies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Companies.aspx.designer.cs">
+      <DependentUpon>Companies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CompanyDetail.aspx.cs">
+      <DependentUpon>CompanyDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\CompanyDetail.aspx.designer.cs">
+      <DependentUpon>CompanyDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Projects\EditProject.aspx.cs">
+      <DependentUpon>EditProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Projects\EditProject.aspx.designer.cs">
+      <DependentUpon>EditProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users\NewClientUser.aspx.cs">
+      <DependentUpon>NewClientUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users\NewClientUser.aspx.designer.cs">
+      <DependentUpon>NewClientUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewCompany.aspx.cs">
+      <DependentUpon>NewCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewCompany.aspx.designer.cs">
+      <DependentUpon>NewCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\NewSeal.aspx.cs">
+      <DependentUpon>NewSeal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\NewSeal.aspx.designer.cs">
+      <DependentUpon>NewSeal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users\NewSunneter.aspx.cs">
+      <DependentUpon>NewSunneter.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users\NewSunneter.aspx.designer.cs">
+      <DependentUpon>NewSunneter.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Projects\Projects.aspx.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Projects\Projects.aspx.designer.cs">
+      <DependentUpon>Projects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\SealDetail.aspx.cs">
+      <DependentUpon>SealDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\SealDetail.aspx.designer.cs">
+      <DependentUpon>SealDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Seals.aspx.cs">
+      <DependentUpon>Seals.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Seals.aspx.designer.cs">
+      <DependentUpon>Seals.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users\SunnetUserDetail.aspx.cs">
+      <DependentUpon>SunnetUserDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users\SunnetUserDetail.aspx.designer.cs">
+      <DependentUpon>SunnetUserDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Users\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Api\PMLogin.asmx.cs">
+      <DependentUpon>PMLogin.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Api\ProjectApi.asmx.cs">
+      <DependentUpon>ProjectApi.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Api\ReportAbuse.asmx.cs">
+      <DependentUpon>ReportAbuse.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Codes\BaseAscx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Codes\BasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Codes\EmailExecuter.cs" />
+    <Compile Include="Codes\ExcelReport.cs" />
+    <Compile Include="Codes\FeedBackMessageHandler.cs" />
+    <Compile Include="Codes\FileHelper.cs" />
+    <Compile Include="Codes\GlobalPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Codes\ResponseMessage.cs" />
+    <Compile Include="Codes\RoleEnumComparer.cs" />
+    <Compile Include="Codes\SelectedModule.cs" />
+    <Compile Include="Codes\TicketPageHelper.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\ExtendedDropDownList.aspx.cs">
+      <DependentUpon>ExtendedDropDownList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demo\ExtendedDropDownList.aspx.designer.cs">
+      <DependentUpon>ExtendedDropDownList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Demo\Validate.aspx.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Demo\Validate.aspx.designer.cs">
+      <DependentUpon>Validate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoAddRelationWorkRequest.ashx.cs">
+      <DependentUpon>DoAddRelationWorkRequest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoAssignProjectsToUser.ashx.cs">
+      <DependentUpon>DoAssignProjectsToUser.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\deleteSealFile.ashx.cs">
+      <DependentUpon>deleteSealFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoAssentUserToProject.ashx.cs">
+      <DependentUpon>DoAssentUserToProject.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoBase.cs" />
+    <Compile Include="Do\DoCancelTicketHandler.ashx.cs">
+      <DependentUpon>DoCancelTicketHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoDeleteEvent.ashx.cs">
+      <DependentUpon>DoDeleteEvent.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoDeleteRelationDocument.ashx.cs">
+      <DependentUpon>DoDeleteRelationDocument.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoDeleteRelationWorkRequest.ashx.cs">
+      <DependentUpon>DoDeleteRelationWorkRequest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoDeleteUserFromProject.ashx.cs">
+      <DependentUpon>DoDeleteUserFromProject.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoFeedBacks.ashx.cs">
+      <DependentUpon>DoFeedBacks.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoDeleteWorkRequestDocuments.ashx.cs">
+      <DependentUpon>DoDeleteWorkRequestDocuments.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoDownloadFileHandler.ashx.cs">
+      <DependentUpon>DoDownloadFileHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoDownWrokRequestFile.ashx.cs">
+      <DependentUpon>DoDownWrokRequestFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoGetCalendarList.ashx.cs">
+      <DependentUpon>DoGetCalendarList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoGetddlProposal.ashx.cs">
+      <DependentUpon>DoGetddlProposal.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoGetEventList.ashx.cs">
+      <DependentUpon>DoGetEventList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoGetProjectClientUsers.ashx.cs">
+      <DependentUpon>DoGetProjectClientUsers.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoGetProjectUsers.ashx.cs">
+      <DependentUpon>DoGetProjectUsers.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoGetWorkflowNextPeople.ashx.cs">
+      <DependentUpon>DoGetWorkflowNextPeople.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoRemoveDraftTicketHandler.ashx.cs">
+      <DependentUpon>DoRemoveDraftTicketHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoRemoveFileHandler.ashx.cs">
+      <DependentUpon>DoRemoveFileHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoSetClientTicketStart.ashx.cs">
+      <DependentUpon>DoSetClientTicketStart.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DownloadSealFile.ashx.cs">
+      <DependentUpon>DownloadSealFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\Event\GetUsersByProjectId.ashx.cs">
+      <DependentUpon>GetUsersByProjectId.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\iCalFeed.ashx.cs">
+      <DependentUpon>iCalFeed.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\SendEmailClientCancelTicketHandler.ashx.cs">
+      <DependentUpon>SendEmailClientCancelTicketHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\TimeSheetNotcie.asmx.cs">
+      <DependentUpon>TimeSheetNotcie.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Event\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\DayEvent.aspx.cs">
+      <DependentUpon>DayEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\DayEvent.aspx.designer.cs">
+      <DependentUpon>DayEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Event.master.cs">
+      <DependentUpon>Event.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Event.master.designer.cs">
+      <DependentUpon>Event.master</DependentUpon>
+    </Compile>
+    <Compile Include="Event\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\List.aspx.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\List.aspx.designer.cs">
+      <DependentUpon>List.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Event\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Event\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Forum\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Forum\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\AllInvoices.aspx.cs">
+      <DependentUpon>AllInvoices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice\AllInvoices.aspx.designer.cs">
+      <DependentUpon>AllInvoices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\AwaingPayment.aspx.cs">
+      <DependentUpon>AwaingPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice\AwaingPayment.aspx.designer.cs">
+      <DependentUpon>AwaingPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\ConfirmPayment.aspx.cs">
+      <DependentUpon>ConfirmPayment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice\ConfirmPayment.aspx.designer.cs">
+      <DependentUpon>ConfirmPayment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\Invoice.master.cs">
+      <DependentUpon>Invoice.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice\Invoice.master.designer.cs">
+      <DependentUpon>Invoice.master</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\PassDue.aspx.cs">
+      <DependentUpon>PassDue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice\PassDue.aspx.designer.cs">
+      <DependentUpon>PassDue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\POList.aspx.cs">
+      <DependentUpon>POList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice\POList.aspx.designer.cs">
+      <DependentUpon>POList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\Proposal\DetailInvoice.aspx.cs">
+      <DependentUpon>DetailInvoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice\Proposal\DetailInvoice.aspx.designer.cs">
+      <DependentUpon>DetailInvoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\TM\New.aspx.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice\TM\New.aspx.designer.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\TM\TSDetail.aspx.cs">
+      <DependentUpon>TSDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice\TM\TSDetail.aspx.designer.cs">
+      <DependentUpon>TSDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice\ToDoList.aspx.cs">
+      <DependentUpon>ToDoList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Invoice\ToDoList.aspx.designer.cs">
+      <DependentUpon>ToDoList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile\SiteMobile.Master.cs">
+      <DependentUpon>SiteMobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile\SiteMobile.Master.designer.cs">
+      <DependentUpon>SiteMobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Mobile\SiteMobileMasterDemo.aspx.cs">
+      <DependentUpon>SiteMobileMasterDemo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mobile\SiteMobileMasterDemo.aspx.designer.cs">
+      <DependentUpon>SiteMobileMasterDemo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Complaints\Complaints.aspx.cs">
+      <DependentUpon>Complaints.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Complaints\Complaints.aspx.designer.cs">
+      <DependentUpon>Complaints.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NoLeftmenu.master.cs">
+      <DependentUpon>NoLeftmenu.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NoLeftmenu.master.designer.cs">
+      <DependentUpon>NoLeftmenu.master</DependentUpon>
+    </Compile>
+    <Compile Include="Normal.master.cs">
+      <DependentUpon>Normal.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Normal.master.designer.cs">
+      <DependentUpon>Normal.master</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Calendar\Add.aspx.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Calendar\Add.aspx.designer.cs">
+      <DependentUpon>Add.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Calendar\DoAddSchedule.ashx.cs">
+      <DependentUpon>DoAddSchedule.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Calendar\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Calendar\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Calendar\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Calendar\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Complaints\ComplaintReview.aspx.cs">
+      <DependentUpon>ComplaintReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Complaints\ComplaintReview.aspx.designer.cs">
+      <DependentUpon>ComplaintReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\OA.master.cs">
+      <DependentUpon>OA.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\OA.master.designer.cs">
+      <DependentUpon>OA.master</DependentUpon>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\Comment.aspx.cs">
+      <DependentUpon>Comment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\Comment.aspx.designer.cs">
+      <DependentUpon>Comment.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Pto\Pto.aspx.cs">
+      <DependentUpon>Pto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Pto\Pto.aspx.designer.cs">
+      <DependentUpon>Pto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Pto\PtoUserTime.aspx.cs">
+      <DependentUpon>PtoUserTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Pto\PtoUserTime.aspx.designer.cs">
+      <DependentUpon>PtoUserTime.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Seals\AddSealFile.aspx.cs">
+      <DependentUpon>AddSealFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Seals\AddSealFile.aspx.designer.cs">
+      <DependentUpon>AddSealFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Seals\AddSealNote.aspx.cs">
+      <DependentUpon>AddSealNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Seals\AddSealNote.aspx.designer.cs">
+      <DependentUpon>AddSealNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Seals\AddSealRequest.aspx.cs">
+      <DependentUpon>AddSealRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Seals\AddSealRequest.aspx.designer.cs">
+      <DependentUpon>AddSealRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Seals\EditSealRequest.aspx.cs">
+      <DependentUpon>EditSealRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Seals\EditSealRequest.aspx.designer.cs">
+      <DependentUpon>EditSealRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Seals\SealRequests.aspx.cs">
+      <DependentUpon>SealRequests.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Seals\SealRequests.aspx.designer.cs">
+      <DependentUpon>SealRequests.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Seals\WaitingProcessSeal.aspx.cs">
+      <DependentUpon>WaitingProcessSeal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Seals\WaitingProcessSeal.aspx.designer.cs">
+      <DependentUpon>WaitingProcessSeal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\SSO\ToCRM.aspx.cs">
+      <DependentUpon>ToCRM.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\SSO\ToCRM.aspx.designer.cs">
+      <DependentUpon>ToCRM.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Timesheet\MoveTimeSheet.aspx.cs">
+      <DependentUpon>MoveTimeSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Timesheet\MoveTimeSheet.aspx.designer.cs">
+      <DependentUpon>MoveTimeSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\WeekPlan\WeekPlanEdit.aspx.cs">
+      <DependentUpon>WeekPlanEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\WeekPlan\WeekPlanEdit.aspx.designer.cs">
+      <DependentUpon>WeekPlanEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\AddDocument.aspx.cs">
+      <DependentUpon>AddDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\AddDocument.aspx.designer.cs">
+      <DependentUpon>AddDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\AddNote.aspx.cs">
+      <DependentUpon>AddNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\AddNote.aspx.designer.cs">
+      <DependentUpon>AddNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\AddRelatedticket.aspx.cs">
+      <DependentUpon>AddRelatedticket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\AddRelatedticket.aspx.designer.cs">
+      <DependentUpon>AddRelatedticket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\AddProposalTracker.aspx.cs">
+      <DependentUpon>AddProposalTracker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\AddProposalTracker.aspx.designer.cs">
+      <DependentUpon>AddProposalTracker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\EditProposalTracker.aspx.cs">
+      <DependentUpon>EditProposalTracker.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\EditProposalTracker.aspx.designer.cs">
+      <DependentUpon>EditProposalTracker.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\ProposalTracker\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pop.master.cs">
+      <DependentUpon>Pop.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pop.master.designer.cs">
+      <DependentUpon>Pop.master</DependentUpon>
+    </Compile>
+    <Compile Include="PopEmpty.aspx.cs">
+      <DependentUpon>PopEmpty.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PopEmpty.aspx.designer.cs">
+      <DependentUpon>PopEmpty.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PopSite.Master.cs">
+      <DependentUpon>PopSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PopSite.Master.designer.cs">
+      <DependentUpon>PopSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="publicpage\Menu.aspx.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="publicpage\Menu.aspx.designer.cs">
+      <DependentUpon>Menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Analysis.aspx.cs">
+      <DependentUpon>Analysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Analysis.aspx.designer.cs">
+      <DependentUpon>Analysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Comparison.aspx.cs">
+      <DependentUpon>Comparison.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Comparison.aspx.designer.cs">
+      <DependentUpon>Comparison.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Consuming.aspx.cs">
+      <DependentUpon>Consuming.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Consuming.aspx.designer.cs">
+      <DependentUpon>Consuming.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\TicketsExport.aspx.cs">
+      <DependentUpon>TicketsExport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\TicketsExport.aspx.designer.cs">
+      <DependentUpon>TicketsExport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\MyTimesheet.aspx.cs">
+      <DependentUpon>MyTimesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\MyTimesheet.aspx.designer.cs">
+      <DependentUpon>MyTimesheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\ProjectUserTimeSheet.aspx.cs">
+      <DependentUpon>ProjectUserTimeSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\ProjectUserTimeSheet.aspx.designer.cs">
+      <DependentUpon>ProjectUserTimeSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Ratings.aspx.cs">
+      <DependentUpon>Ratings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Ratings.aspx.designer.cs">
+      <DependentUpon>Ratings.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Report.Master.cs">
+      <DependentUpon>Report.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Report.Master.designer.cs">
+      <DependentUpon>Report.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Report\TicketTimesheet.aspx.cs">
+      <DependentUpon>TicketTimesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\TicketTimesheet.aspx.designer.cs">
+      <DependentUpon>TicketTimesheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Timesheet.aspx.cs">
+      <DependentUpon>Timesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\Timesheet.aspx.designer.cs">
+      <DependentUpon>Timesheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Report\SubAnalysis.aspx.cs">
+      <DependentUpon>SubAnalysis.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Report\SubAnalysis.aspx.designer.cs">
+      <DependentUpon>SubAnalysis.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OperateDocManagements\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Category.ashx.cs">
+      <DependentUpon>Category.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\CheckTimesheet.ashx.cs">
+      <DependentUpon>CheckTimesheet.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\CookieResume.ashx.cs">
+      <DependentUpon>CookieResume.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Email.ashx.cs">
+      <DependentUpon>Email.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\File.ashx.cs">
+      <DependentUpon>File.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\GetCookieData.ashx.cs">
+      <DependentUpon>GetCookieData.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Invoice.ashx.cs">
+      <DependentUpon>Invoice.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Project.ashx.cs">
+      <DependentUpon>Project.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Share.ashx.cs">
+      <DependentUpon>Share.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Ticket.ashx.cs">
+      <DependentUpon>Ticket.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\TicketUser.ashx.cs">
+      <DependentUpon>TicketUser.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\Timesheet.ashx.cs">
+      <DependentUpon>Timesheet.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\User.ashx.cs">
+      <DependentUpon>User.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\Approve.aspx.cs">
+      <DependentUpon>Approve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\Approve.aspx.designer.cs">
+      <DependentUpon>Approve.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\ClientProject.aspx.cs">
+      <DependentUpon>ClientProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\ClientProject.aspx.designer.cs">
+      <DependentUpon>ClientProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\Deny.aspx.cs">
+      <DependentUpon>Deny.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\Deny.aspx.designer.cs">
+      <DependentUpon>Deny.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\HideUser.aspx.cs">
+      <DependentUpon>HideUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\HideUser.aspx.designer.cs">
+      <DependentUpon>HideUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\InternalDashboard.aspx.cs">
+      <DependentUpon>InternalDashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\InternalDashboard.aspx.designer.cs">
+      <DependentUpon>InternalDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\InternalProject.aspx.cs">
+      <DependentUpon>InternalProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\InternalProject.aspx.designer.cs">
+      <DependentUpon>InternalProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\Knowledge\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\Knowledge\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\Knowledge\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\Knowledge\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\Knowledge\New.aspx.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\Knowledge\New.aspx.designer.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\Knowledge\View.aspx.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\Knowledge\View.aspx.designer.cs">
+      <DependentUpon>View.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\MyCategory.aspx.cs">
+      <DependentUpon>MyCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\MyCategory.aspx.designer.cs">
+      <DependentUpon>MyCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\MyTicket.aspx.cs">
+      <DependentUpon>MyTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\MyTicket.aspx.designer.cs">
+      <DependentUpon>MyTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\NewCategory.aspx.cs">
+      <DependentUpon>NewCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\NewCategory.aspx.designer.cs">
+      <DependentUpon>NewCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\Ongoing.aspx.cs">
+      <DependentUpon>Ongoing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\Ongoing.aspx.designer.cs">
+      <DependentUpon>Ongoing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\SalerReview.aspx.cs">
+      <DependentUpon>SalerReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\SalerReview.aspx.designer.cs">
+      <DependentUpon>SalerReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\Ticket.master.cs">
+      <DependentUpon>Ticket.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\Ticket.master.designer.cs">
+      <DependentUpon>Ticket.master</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\TicketQueue.aspx.cs">
+      <DependentUpon>TicketQueue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\TicketQueue.aspx.designer.cs">
+      <DependentUpon>TicketQueue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\TicketSelect.aspx.cs">
+      <DependentUpon>TicketSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\TicketSelect.aspx.designer.cs">
+      <DependentUpon>TicketSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\WaitingResponse.aspx.cs">
+      <DependentUpon>WaitingResponse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\WaitingResponse.aspx.designer.cs">
+      <DependentUpon>WaitingResponse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\AdjustPriority.aspx.cs">
+      <DependentUpon>AdjustPriority.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\AdjustPriority.aspx.designer.cs">
+      <DependentUpon>AdjustPriority.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\Approve.aspx.cs">
+      <DependentUpon>Approve.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\Approve.aspx.designer.cs">
+      <DependentUpon>Approve.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\Cancelled.aspx.cs">
+      <DependentUpon>Cancelled.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\Cancelled.aspx.designer.cs">
+      <DependentUpon>Cancelled.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\Completed.aspx.cs">
+      <DependentUpon>Completed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\Completed.aspx.designer.cs">
+      <DependentUpon>Completed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\ConfirmEstimates.aspx.cs">
+      <DependentUpon>ConfirmEstimates.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\ConfirmEstimates.aspx.designer.cs">
+      <DependentUpon>ConfirmEstimates.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\Deny.aspx.cs">
+      <DependentUpon>Deny.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\Deny.aspx.designer.cs">
+      <DependentUpon>Deny.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\Draft.aspx.cs">
+      <DependentUpon>Draft.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\Draft.aspx.designer.cs">
+      <DependentUpon>Draft.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\MyTicket.aspx.cs">
+      <DependentUpon>MyTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\MyTicket.aspx.designer.cs">
+      <DependentUpon>MyTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\New.aspx.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\New.aspx.designer.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\Client.master.cs">
+      <DependentUpon>Client.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\Client.master.designer.cs">
+      <DependentUpon>Client.master</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\Ongoing.aspx.cs">
+      <DependentUpon>Ongoing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\Ongoing.aspx.designer.cs">
+      <DependentUpon>Ongoing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\Detail.aspx.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\Detail.aspx.designer.cs">
+      <DependentUpon>Detail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\DevReview.aspx.cs">
+      <DependentUpon>DevReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\DevReview.aspx.designer.cs">
+      <DependentUpon>DevReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\New.aspx.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\New.aspx.designer.cs">
+      <DependentUpon>New.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\PMReview.aspx.cs">
+      <DependentUpon>PMReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\PMReview.aspx.designer.cs">
+      <DependentUpon>PMReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\QAReview.aspx.cs">
+      <DependentUpon>QAReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\QAReview.aspx.designer.cs">
+      <DependentUpon>QAReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SunnetTicket\Sunnet.master.cs">
+      <DependentUpon>Sunnet.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SunnetTicket\Sunnet.master.designer.cs">
+      <DependentUpon>Sunnet.master</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\Ticket.master.cs">
+      <DependentUpon>Ticket.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\Ticket.master.designer.cs">
+      <DependentUpon>Ticket.master</DependentUpon>
+    </Compile>
+    <Compile Include="Ticket\Waiting.aspx.cs">
+      <DependentUpon>Waiting.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticket\Waiting.aspx.designer.cs">
+      <DependentUpon>Waiting.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Timesheet\Date.aspx.cs">
+      <DependentUpon>Date.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Timesheet\Date.aspx.designer.cs">
+      <DependentUpon>Date.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\Timesheet\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\Timesheet\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Account\LeftMenu.ascx.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Account\LeftMenu.ascx.designer.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Admin\adminLeft.ascx.cs">
+      <DependentUpon>adminLeft.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Admin\adminLeft.ascx.designer.cs">
+      <DependentUpon>adminLeft.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Admin\ClientMaintenancePlan.ascx.cs">
+      <DependentUpon>ClientMaintenancePlan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Admin\ClientMaintenancePlan.ascx.designer.cs">
+      <DependentUpon>ClientMaintenancePlan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ClientMenu.ascx.cs">
+      <DependentUpon>ClientMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ClientMenu.ascx.designer.cs">
+      <DependentUpon>ClientMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Event\LeftMenu.ascx.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Event\LeftMenu.ascx.designer.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ExtendedDropdownList.cs" />
+    <Compile Include="UserControls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Invoice\InvoiceLeft.ascx.cs">
+      <DependentUpon>InvoiceLeft.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Invoice\InvoiceLeft.ascx.designer.cs">
+      <DependentUpon>InvoiceLeft.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Messager.ascx.cs">
+      <DependentUpon>Messager.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Messager.ascx.designer.cs">
+      <DependentUpon>Messager.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OA\LeftMenu.ascx.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\OA\LeftMenu.ascx.designer.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OA\YearsUserCon.ascx.cs">
+      <DependentUpon>YearsUserCon.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\OA\YearsUserCon.ascx.designer.cs">
+      <DependentUpon>YearsUserCon.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Report\ReportLeft.ascx.cs">
+      <DependentUpon>ReportLeft.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Report\ReportLeft.ascx.designer.cs">
+      <DependentUpon>ReportLeft.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\SunnetMenu.ascx.cs">
+      <DependentUpon>SunnetMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\SunnetMenu.ascx.designer.cs">
+      <DependentUpon>SunnetMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Sunnet\UsersView.ascx.cs">
+      <DependentUpon>UsersView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Sunnet\UsersView.ascx.designer.cs">
+      <DependentUpon>UsersView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ticket\FeedbackDashBoardList.ascx.cs">
+      <DependentUpon>FeedbackDashBoardList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ticket\FeedbackDashBoardList.ascx.designer.cs">
+      <DependentUpon>FeedbackDashBoardList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ticket\FileUploader.ascx.cs">
+      <DependentUpon>FileUploader.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ticket\FileUploader.ascx.designer.cs">
+      <DependentUpon>FileUploader.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ticket\ClientLeftMenu.ascx.cs">
+      <DependentUpon>ClientLeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ticket\ClientLeftMenu.ascx.designer.cs">
+      <DependentUpon>ClientLeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ticket\FeedbackList.ascx.cs">
+      <DependentUpon>FeedbackList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ticket\FeedbackList.ascx.designer.cs">
+      <DependentUpon>FeedbackList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ticket\Progress.ascx.cs">
+      <DependentUpon>Progress.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ticket\Progress.ascx.designer.cs">
+      <DependentUpon>Progress.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Sunnet\ChangeHistory.ascx.cs">
+      <DependentUpon>ChangeHistory.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Sunnet\ChangeHistory.ascx.designer.cs">
+      <DependentUpon>ChangeHistory.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Sunnet\RatingsView.ascx.cs">
+      <DependentUpon>RatingsView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Sunnet\RatingsView.ascx.designer.cs">
+      <DependentUpon>RatingsView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Sunnet\LeftMenu.ascx.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Sunnet\LeftMenu.ascx.designer.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Ticket\TicketBasicInfoView.ascx.cs">
+      <DependentUpon>TicketBasicInfoView.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Ticket\TicketBasicInfoView.ascx.designer.cs">
+      <DependentUpon>TicketBasicInfoView.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="OA\WeekPlan\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OA\WeekPlan\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Site.Master" />
+    <None Include="Scripts\jquery-1.11.0.min.map" />
+    <Content Include="Ticket\Client.master" />
+    <None Include="Service References\OperateDocManagements\OperateDocManagement.wsdl" />
+    <Content Include="Service\Ticket.ashx" />
+    <Content Include="Template\AllTemplate.xlsx" />
+    <Content Include="Template\AllTemplate_Project.xlsx" />
+    <Content Include="Template\MyTimesheetTemplate.xlsx" />
+    <Content Include="SunnetTicket\Sunnet.master" />
+    <Content Include="Service\Timesheet.ashx" />
+    <Content Include="Service\Category.ashx" />
+    <Content Include="Template\ComparisonTemplate.xlsx" />
+    <Content Include="Service\FileUploader.ashx" />
+    <Content Include="Template\Analysis.xlsx" />
+    <Content Include="Template\Rating.xlsx" />
+    <Content Include="Service\Share.ashx" />
+    <Content Include="Service\TicketUser.ashx" />
+    <Content Include="Service\File.ashx" />
+    <Content Include="Service\Email.ashx" />
+    <Content Include="Service\CheckTimesheet.ashx" />
+    <Content Include="SunnetTicket\Ticket.master" />
+    <Content Include="Ticket\Ticket.master" />
+    <Content Include="Service\Invoice.ashx" />
+    <Content Include="Service\CookieResume.ashx" />
+    <Content Include="Service\GetCookieData.ashx" />
+    <Content Include="Service\User.ashx" />
+    <Content Include="Service\Project.ashx" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Start\" />
+    <Folder Include="Upload\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\OperateDocManagements\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SunNet.PMNew.App\SunNet.PMNew.App.csproj">
+      <Project>{13ee4593-0fb1-433f-ac02-f651b68229e4}</Project>
+      <Name>SunNet.PMNew.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Core\SunNet.PMNew.Core.csproj">
+      <Project>{4e1e2933-e955-49fe-a367-51d6d2c43396}</Project>
+      <Name>SunNet.PMNew.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Entity\SunNet.PMNew.Entity.csproj">
+      <Project>{129ad4d5-62f8-424b-aee1-438744e1e065}</Project>
+      <Name>SunNet.PMNew.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Framework\SunNet.PMNew.Framework.csproj">
+      <Project>{3d3dafd1-afd8-48e5-8e11-bdf5c2a3fdc5}</Project>
+      <Name>SunNet.PMNew.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Impl\SunNet.PMNew.Impl.csproj">
+      <Project>{6edd8750-d5cd-4a8b-a0c4-3baf230131f6}</Project>
+      <Name>SunNet.PMNew.Impl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4150</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:27273/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

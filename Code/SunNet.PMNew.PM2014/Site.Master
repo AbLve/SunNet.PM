@@ -1,0 +1,273 @@
+﻿    <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="SunNet.PMNew.PM2014.Site" %>
+
+<%@ Import Namespace="SunNet.PMNew.PM2014.Codes" %>
+<%@ Import Namespace="SunNet.PMNew.Framework.Utils" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <% =IEEmulator%>
+    <title>SunNet Solutions</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <%--<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans&subset=latin"/>--%>
+    <%--<link href="/Content/styles/bootstrap.css" rel="stylesheet" />--%>
+    <link href="/Content/styles/bootstrap_1.css" rel="stylesheet" />
+    <link href="/Content/styles/public.css" rel="stylesheet" />
+    <link href="/Content/styles/forms.css" rel="stylesheet" />
+    <% 
+        if (Request.Url.ToString().ToLower().IndexOf("rolepages.aspx") >= 0)
+        {
+    %>
+            <script src="/Scripts/jquery-1.8.1.min.js"></script>
+    <%}
+        else
+        {
+    %>
+            <script src="/Scripts/jquery.js"></script>
+    <% 
+        }
+    %>
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="/Scripts/global.js"></script>
+    <script src="/Scripts/jquery.sunnet.js"></script>
+    <script src="/Scripts/Validate/jquery.validate.js"></script>
+    <script src="/Scripts/Validate/additional-methods.js"></script>
+    <script src="/Scripts/knockout-3.1.0.debug.js"></script>
+    <script src="/Scripts/layer-v3.1.0/layer/layer.js"></script>
+    <link href="/Scripts/layer-v3.1.0/layer/theme/default/layer.css" rel="stylesheet" />
+    <script type="text/javascript">
+        var isPostBack = '<%=Page.IsPostBack%>';
+        var minusSeconds = 0;
+        var computeTimer=0;
+        var loginTimer=0;
+        var layerIndex = 0;
+        var layerIndexList = [];
+
+        var defaultMessageProvider = {
+            required: function (result, element) {
+                var $label = $(element).siblings("label:not(.error):first");
+                if (!$label.length) {
+                    $label = $(element).parent().prev("label:first");
+                }
+                return $label.text().replace(/:/g, "").replace(/\*/g, "") + " is required.";
+            }
+        }
+
+        function getCookie(objName) {//get value cookie    
+            var arrStr = document.cookie.split("; ");
+            for (var i = 0; i < arrStr.length; i++) {
+                //get signal cookies   
+                var temp = arrStr[i].split("=");
+                if (temp[0] == objName) {
+                    if (temp.length > 1) {
+                        return unescape(temp[1]);
+                    } else {
+                        return "";
+                    }
+                };
+            }
+            return "";
+        }
+
+        function formatTime(seconds) {
+            return [
+                parseInt(seconds / 60 % 60),
+                parseInt(seconds % 60)
+            ]
+                .join(":")
+                .replace(/\b(\d)\b/g, "0$1");
+        }
+
+        function chklogin() {
+
+            if (layerIndexList.length > 0) {
+                for (var j = 0; j < layerIndexList.length; j++) {
+                    layer.close(layerIndexList[j]);
+                }
+
+                layerIndexList = [];
+            };
+
+            clearInterval(computeTimer);
+
+            var logout = '../logout.aspx', autoClose = false;
+            layerIndex = layer.open({
+                type: 1,
+                area: ['350px', '150px'],
+                shade: 0,
+                moveType: 1,
+                btnAlign: 'c',
+                content:
+                    '<div style="padding-left:8px;margin-top: 22px;font-size:11pt;color:blue;">Your login is about to expire and continue to work？</div>',
+                closeBtn: 0,
+                success: function (a, b) {
+                    layerIndexList.push(b);
+                    var i = 300;
+                    var fn = function() {
+                        layer.title(formatTime(i) + ' After minutes.', b);
+                        if (i <= 0) {
+                            clearInterval(loginTimer);
+                            autoClose = true;
+                            layer.close(b);
+                        }
+
+                        i--;
+
+                        //其它页面有没有刷新过期时间
+                        $.ajax({
+                            type: "post",
+                            url: "/Service/GetCookieData.ashx",
+                            dataType: "json",
+                            crossDomain: true,
+                            beforeSend: function(xhr) {
+                                xhr.withCredentials = true;
+                            },
+                            async: true,
+                            success: function(data2) {
+                                var difTime2 = parseInt(data2.IntervaSeconds) / 60;
+                                difTime2 = difTime2 - minusSeconds; //测试
+
+                                if (difTime2 <= 1) { //其它程序设置已过期，则退出
+                                    clearInterval(loginTimer);
+                                    layer.close(b);
+                                    location.href = logout;
+                                }
+
+                                if (difTime2 > 5) { //其它程序刷新（延长）过期，则关闭窗口
+                                    clearInterval(loginTimer);
+                                    layer.close(b);
+                                    cookieComputer();
+                                }
+                            }
+                        });
+                    };
+                    loginTimer = setInterval(fn, 1000);
+                },
+                btn: ['Continue', 'Log Out'],
+                yes: function(i, l) {
+                    $.post(
+                        "/Service/CookieResume.ashx",
+                        {},
+                        function(response) {
+                            layer.close(i);
+                            clearInterval(loginTimer);
+                            cookieComputer();
+                        },
+                        "json"
+                    );
+                },
+                btn2: function(index, layero) {
+                    location.href = logout;
+                },
+                end: function() {
+                    if (autoClose) {
+                        //其它页面有没有刷新过期时间
+                        $.ajax({
+                            type: "post",
+                            url: "/Service/GetCookieData.ashx",
+                            dataType: "json",
+                            crossDomain: true,
+                            beforeSend: function(xhr) {
+                                xhr.withCredentials = true;
+                            },
+                            async: false,
+                            success: function(data3) {
+                                var difTime3 = parseInt(data3.IntervaSeconds) / 60;
+                                difTime3 = difTime3 - minusSeconds;
+                                if (difTime3 < 5) { //过期时间没被其它操作刷新，则退出
+                                    location.href = logout;
+                                } else {
+                                    cookieComputer();
+                                };
+                            }
+                        });
+
+                    }
+
+                    for (var i = 0; i < layerIndexList.length; i++) {
+                        if (layerIndexList[i] == layerIndex) {
+                            layerIndexList.splice(i, 1);
+                            break;
+                        }
+                    }
+
+                    if (layerIndexList.length > 0) {
+                        for (var k = 0; k < layerIndexList.length; k++) {
+                            layer.close(layerIndexList[k]);
+                        }
+                    }
+                    //layer.closeAll();
+                }
+            });
+        }
+
+        function cookieComputer() {
+            if (computeTimer > 0) {
+                for (var t = 1; t <= computeTimer; t++) {
+                    clearInterval(t);
+                }
+            }
+
+            var cookieData;
+            computeTimer = setInterval(function () {
+                $.ajax({
+                    type: "post",
+                    url: "/Service/GetCookieData.ashx",
+                    dataType: "json",
+                    crossDomain: true,
+                    beforeSend: function (xhr) {
+                        xhr.withCredentials = true;
+                    },
+                    async: false,
+                    success: function (data) {
+                        cookieData = data;
+                    }
+                });
+                var cookieVal = cookieData.UserId;
+                if (cookieVal == null || cookieVal == "") {
+                    clearInterval(computeTimer);
+                    return;
+                }
+                var userType = cookieData.UserType;
+                if (userType === "CLIENT") {
+                    //console.dir(cookieData); 
+                    var difTime = parseInt(cookieData.IntervaSeconds) / 60;
+                    difTime = difTime - minusSeconds;
+                    //console.log("current:"+difTime);
+                    if (difTime <= 5) {
+                        clearInterval(computeTimer);
+                        chklogin();
+                    }
+                } else {
+                    clearInterval(computeTimer);
+                }
+            }, 5000);
+        }
+
+        function getPath() {
+           return  window.document.location.pathname;
+        }
+
+        $(function () {
+            $.validator.setDefaults({
+                focusCleanup: true,
+                ignore: ".novalidate"
+            });
+            var absolutePath = getPath();
+            if (absolutePath.indexOf("Login.aspx") < 0) {
+                cookieComputer();
+            }
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ContentPlaceHolder ID="body" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+
+</html>

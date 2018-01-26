@@ -1,0 +1,5 @@
+﻿Dear {FirstName},<br/><br/>
+
+Your week plan haven't submitted.<br/>
+You'd better submit it as soon as possible.
+

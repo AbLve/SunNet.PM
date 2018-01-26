@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<emails>
+  <email>
+    <subject>Milestone Awaiting for Sending Invoice</subject>
+    <content>
+      <![CDATA[
+                 The following milestone has been approved by client, please send invoice to client.<br/><br/>
+                 
+                 Project Title  : {ProjectTitle},<br/><br/>
+                 Proposal Title : {ProposalTitle},<br/><br/>
+                 Milestone      : {Milestone}.<br/><br/>
+                 
+                <a href="https://pm.sunnet.us" target="_blank"> PM System</a>, {Date}
+        ]]>
+    </content>
+  </email>
+</emails>

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<emails>
+  <email>
+    <subject>Ticket #{TicketID} {TicketTitle} has been assigned to you.</subject>
+    <content>
+      <![CDATA[
+                 [{TicketTitle}] (Ticket {TicketID}) from [{Project}] has been assigned to you by {CreateName}.<br/><br/>
+                 
+                 For more information, Please<a href="https://pm.sunnet.us" target="_blank"> log in</a>.
+        ]]>
+    </content>
+  </email>
+</emails>

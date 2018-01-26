@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4E1E2933-E955-49FE-A367-51D6D2C43396}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SunNet.PMNew.Core</RootNamespace>
+    <AssemblyName>SunNet.PMNew.Core</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="StructureMap, Version=2.6.1.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Framework\_Dlls\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CompanyModule\Adapters\UserCompaniesAdapter.cs" />
+    <Compile Include="CompanyModule\Interfaces\ICompanyUser.cs" />
+    <Compile Include="CompanyModule\Validators\UpdateCompanyValidator.cs" />
+    <Compile Include="ComplaintModel\Interfaces\IComplaintHistoryRepository.cs" />
+    <Compile Include="EventsModule\EventsManager.cs" />
+    <Compile Include="EventsModule\Interfaces\IEventCommentsRepository.cs" />
+    <Compile Include="EventsModule\Interfaces\IEventRepository.cs" />
+    <Compile Include="FileModule\FilesManager.cs" />
+    <Compile Include="FileModule\Interfaces\DirectoryObjectRepository.cs" />
+    <Compile Include="FileModule\Interfaces\DirectoryRepository.cs" />
+    <Compile Include="FileModule\Interfaces\IFilesRepository.cs" />
+    <Compile Include="FileModule\Validators\DirectoryObjectValidator.cs" />
+    <Compile Include="FileModule\Validators\DirectoryValidator.cs" />
+    <Compile Include="FileModule\Validators\FilesValidator.cs" />
+    <Compile Include="InvoiceModule\Interface\IinvoiceRepository.cs" />
+    <Compile Include="InvoiceModule\Interface\ITSInvoiceRelationRpository.cs" />
+    <Compile Include="InvoiceModule\InvoiceManager.cs" />
+    <Compile Include="InvoiceModule\TSInvoiceRelationManager.cs" />
+    <Compile Include="KPIModule\Interface\IKPICategoryRepository.cs" />
+    <Compile Include="KPIModule\KPIManager.cs" />
+    <Compile Include="KPIModule\Validators\AddCategoryValidator.cs" />
+    <Compile Include="KPIModule\Validators\UpdateCategoryValidator.cs" />
+    <Compile Include="Log\Interfaces\ILogRepository.cs" />
+    <Compile Include="Log\LogManager.cs" />
+    <Compile Include="Log\Validators\AddLogValidator.cs" />
+    <Compile Include="ProjectModule\Interfaces\IProjectPrincipalRepository.cs" />
+    <Compile Include="ProjectModule\ProjectCompare.cs" />
+    <Compile Include="ProjectModule\Validators\AddProjectUserValidator.cs" />
+    <Compile Include="ProjectModule\Interfaces\ISearchUsers.cs" />
+    <Compile Include="ProjectModule\ProjectManager.cs" />
+    <Compile Include="ProjectModule\Validators\UpdateProjectValidator.cs" />
+    <Compile Include="ProjectModule\Validators\AddProjectValidator.cs" />
+    <Compile Include="ProjectModule\Interfaces\IProjectsRepository.cs" />
+    <Compile Include="ProjectModule\Interfaces\IProjectUsersRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="CompanyModule\CompanyManager.cs" />
+    <Compile Include="CompanyModule\Interfaces\ICompanyRepository.cs" />
+    <Compile Include="CompanyModule\Notifications\CompanyPostedNotification.cs" />
+    <Compile Include="CompanyModule\Validators\PostCompanyValidator.cs" />
+    <Compile Include="ComplaintModel\Interfaces\IComplaintRepository.cs" />
+    <Compile Include="ComplaintModel\Interfaces\ISystemRepository.cs" />
+    <Compile Include="ComplaintModel\ComplaintManager.cs" />
+    <Compile Include="SchedulesModule\Interfaces\ISchedulesRepository.cs" />
+    <Compile Include="SchedulesModule\SchedulesManager.cs" />
+    <Compile Include="SealModel\Interfaces\ISealFileRepository.cs" />
+    <Compile Include="SealModel\Interfaces\ISealNotesRepository.cs" />
+    <Compile Include="SealModel\Interfaces\ISealRequestsRepository.cs" />
+    <Compile Include="SealModel\Interfaces\ISealsRepository.cs" />
+    <Compile Include="SealModel\Interfaces\ISealUnionRequestsRepository.cs" />
+    <Compile Include="SealModel\Interfaces\IWorkflowHistoryRepository.cs" />
+    <Compile Include="SealModel\SealsManager.cs" />
+    <Compile Include="ShareModule\Interfaces\IShareRepository.cs" />
+    <Compile Include="ShareModule\ShareManager.cs" />
+    <Compile Include="ShareModule\Validators\ShareTypeValidator.cs" />
+    <Compile Include="ShareModule\Validators\ShareValidator.cs" />
+    <Compile Include="TicketModule\EmailManager.cs" />
+    <Compile Include="TicketModule\FeedBacksManager.cs" />
+    <Compile Include="TicketModule\Interfaces\ICateGoryTicketRepository.cs" />
+    <Compile Include="TicketModule\Interfaces\IFeedBackMessagesRepository.cs" />
+    <Compile Include="TicketModule\Interfaces\IGetTicketUser.cs" />
+    <Compile Include="TicketModule\Interfaces\ITaskRespository.cs" />
+    <Compile Include="TicketModule\Interfaces\ITicketEsDetailRespository.cs" />
+    <Compile Include="TicketModule\Interfaces\ITicketsRelationRespository.cs" />
+    <Compile Include="TicketModule\Interfaces\ITicketsUserRepository.cs" />
+    <Compile Include="TicketModule\Interfaces\ITicketsOrderRespository.cs" />
+    <Compile Include="TicketModule\Interfaces\IWeekPlanRepository.cs" />
+    <Compile Include="TicketModule\Validators\AddFeedBacksValidator.cs" />
+    <Compile Include="TicketModule\Validators\AddRelationTicketsValidator.cs" />
+    <Compile Include="TicketModule\Validators\AddTaskValidator.cs" />
+    <Compile Include="TicketModule\Validators\AddTicketEsValidator.cs" />
+    <Compile Include="TicketModule\Validators\AddTicketUserValidator.cs" />
+    <Compile Include="TicketModule\Validators\EditFeedBacksValidator.cs" />
+    <Compile Include="TicketModule\Validators\TicketsSearchConditionValidator.cs" />
+    <Compile Include="TicketModule\TicketsOrderManager.cs" />
+    <Compile Include="TicketModule\WeekPlanManager.cs" />
+    <Compile Include="TimeSheetModule\Interfaces\ITimeSheetRepository.cs" />
+    <Compile Include="TimeSheetModule\TimeSheetManager.cs" />
+    <Compile Include="TimeSheetModule\Validators\AddTimeSheetValidator.cs" />
+    <Compile Include="UserModule\Adapters\CompanyUserAdapter.cs" />
+    <Compile Include="UserModule\Adapters\SearchUsersAdapter.cs" />
+    <Compile Include="UserModule\Adapters\TicketUsersAdapter.cs" />
+    <Compile Include="UserModule\Interfaces\IHideUserRepository.cs" />
+    <Compile Include="UserModule\Interfaces\ISearchCompany.cs" />
+    <Compile Include="UserModule\Notifications\UserInsertedNotification.cs" />
+    <Compile Include="UserModule\Validators\AddHideUserValidator.cs" />
+    <Compile Include="UserModule\Validators\RemoveRoleModulesValidator.cs" />
+    <Compile Include="TicketModule\CateGoryManager.cs" />
+    <Compile Include="TicketModule\Interfaces\ICateGoryRepository.cs" />
+    <Compile Include="TicketModule\Interfaces\IFeedBacksRepository.cs" />
+    <Compile Include="TicketModule\Interfaces\ITicketsHistoryRepository.cs" />
+    <Compile Include="TicketModule\Interfaces\ITicketsRepository.cs" />
+    <Compile Include="TicketModule\TicketsManager.cs" />
+    <Compile Include="TicketModule\Validators\AddCateGoryValidator.cs" />
+    <Compile Include="TicketModule\Validators\AddTicketsValidator.cs" />
+    <Compile Include="TicketModule\Validators\UpdateCateGoryValidator.cs" />
+    <Compile Include="TicketModule\Validators\UpdateTicketValidator.cs" />
+    <Compile Include="UserModule\Validators\AddRoleModulesValidator.cs" />
+    <Compile Include="UserModule\Validators\UpdateHideUserValidator.cs" />
+    <Compile Include="UserModule\Validators\UpdateUserValidator.cs" />
+    <Compile Include="UserModule\Validators\AddRoleValidator.cs" />
+    <Compile Include="UserModule\Validators\AddUserValidator.cs" />
+    <Compile Include="UserModule\Validators\UpdateRoleValidator.cs" />
+    <Compile Include="UserModule\Validators\AddModuleValidator.cs" />
+    <Compile Include="UserModule\Interfaces\IModulesRepository.cs" />
+    <Compile Include="UserModule\Interfaces\IRoleModulesRepository.cs" />
+    <Compile Include="UserModule\Interfaces\IRolesRepository.cs" />
+    <Compile Include="UserModule\Interfaces\IUsersRepository.cs" />
+    <Compile Include="UserModule\UserManager.cs" />
+    <Compile Include="UserModule\Validators\UpdateModuleValidator.cs" />
+    <Compile Include="ProposalTrackerModule\Interfaces\IProposalTrackerNoteRepository.cs" />
+    <Compile Include="ProposalTrackerModule\Interfaces\IProposalTrackerRelationRepository.cs" />
+    <Compile Include="ProposalTrackerModule\Interfaces\IProposalTrackerRepository.cs" />
+    <Compile Include="ProposalTrackerModule\Validators\AddProposalTrackerValidator.cs" />
+    <Compile Include="ProposalTrackerModule\ProposalTrackerManager.cs" />
+    <Compile Include="ProposalTrackerModule\ProposalTrackerNoteManager.cs" />
+    <Compile Include="ProposalTrackerModule\ProposalTrackerRelationManager.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SunNet.PMNew.Entity\SunNet.PMNew.Entity.csproj">
+      <Project>{129AD4D5-62F8-424B-AEE1-438744E1E065}</Project>
+      <Name>SunNet.PMNew.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Framework\SunNet.PMNew.Framework.csproj">
+      <Project>{3D3DAFD1-AFD8-48E5-8E11-BDF5C2A3FDC5}</Project>
+      <Name>SunNet.PMNew.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="EventsModule\Enums\" />
+    <Folder Include="FileModule\Adapters\" />
+    <Folder Include="InvoiceModule\Enums\" />
+    <Folder Include="Log\Enums\" />
+    <Folder Include="ProjectModule\Adapters\" />
+    <Folder Include="ProjectModule\Enums\" />
+    <Folder Include="TicketModule\Adapters\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

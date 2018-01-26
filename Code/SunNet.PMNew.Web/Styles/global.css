@@ -1,0 +1,1313 @@
+body {
+    margin: 0;
+    background-image: url(/images/mainbg.jpg);
+    background-position: top;
+    background-repeat: repeat-x;
+    background-color: #bad8f0;
+}
+
+div, td, th, span {
+    font-family: Arial;
+    font-size: 11px;
+    color: #333;
+}
+
+img {
+    border: none;
+}
+
+/*Top*/
+.mainTop {
+    height: 39px;
+    min-width: 1100px;
+}
+
+.mainTop_left {
+    width: 395px;
+    float: left;
+}
+
+.mainTop_right {
+    color: #bbb;
+    width: auto;
+    float: right;
+    padding: 15px 5px 0px 0px;
+    text-align: right;
+}
+
+    .mainTop_right a {
+        color: #000;
+        margin: 0px 15px 0px 15px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+.mainTop_rightUser {
+    color: #a48c2b;
+    padding-right: 20px;
+}
+
+.topTitle {
+    min-width: 1100px;
+    height: 30px;
+}
+
+.topTitle_left {
+    float: left;
+    width: 195px; /*background-image: url(/images/leftmenu_topbg.jpg);*/
+    background-position: right;
+    background-repeat: no-repeat;
+    padding-top: 8px;
+    height: 22px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #083583;
+    position: relative;
+}
+
+.topTitle_right {
+    padding: 2px 0px 0px 10px;
+    float: left;
+    height: 22px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #083583;
+}
+
+
+/*Top Menu*/
+.topMenu {
+    height: 30px;
+    padding: 0px 20px 0px 130px; /*min-width: 950px;*/
+    margin-bottom: 5px;
+}
+
+.topMenu_left {
+    float: left;
+    width: auto;
+}
+
+.topMenu_right {
+    float: right;
+    width: auto;
+    color: #083583;
+    padding-top: 8px;
+    font-weight: bold;
+    height: 25px;
+    cursor: pointer;
+}
+
+.topMenu_left ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .topMenu_left ul a {
+        color: #083583;
+        text-decoration: none;
+    }
+
+    .topMenu_left ul li:hover {
+        background-image: url(/images/menucurrent_bg.jpg);
+    }
+
+    .topMenu_left ul li {
+        float: left;
+        font-size: 12px;
+        color: #083583;
+        padding: 8px 18px 0px 18px;
+        height: 22px;
+        font-weight: bold;
+    }
+
+        .topMenu_left ul li.currenttop {
+            float: left;
+            font-size: 12px;
+            color: #083583;
+            padding: 8px 18px 0px 18px;
+            height: 22px;
+            font-weight: bold;
+            background-image: url(/images/menucurrent_bg.jpg);
+        }
+
+        .topMenu_left ul li.sepline {
+            float: left;
+            width: 2px;
+            padding: 0px;
+        }
+
+/*Main Content*/
+.mainBox {
+    min-width: 1100px;
+}
+
+.mainBox_left {
+    width: 195px;
+    border-bottom: 1px solid #81bae8;
+    border-right: 1px solid #81bae8; /*background-color: #E0ECF8;*/
+    vertical-align: top;
+    overflow: hidden;
+}
+
+.mainBox_right {
+    padding: 6px 6px 0px 6px;
+    vertical-align: top;
+    min-width: 1000px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.mainrightBox {
+    border: 1px solid #81bae8;
+    background-color: #fff;
+    overflow: auto;
+    padding: 20px; /*min-width: 950px;*/
+    min-height: 500px;
+}
+
+.mainrightBoxtwo {
+    border: 1px solid #81bae8;
+    background-color: #fff;
+    overflow: auto; /*min-width: 950px;*/
+}
+
+.mainactionBox {
+    border-top: 1px solid #81bae8;
+    border-left: 1px solid #81bae8;
+    border-right: 1px solid #81bae8;
+    background-image: url(/images/action_bg.jpg);
+    padding: 5px; /*min-width: 950px;*/
+    color: #083583;
+    overflow: auto;
+}
+
+    .mainactionBox span {
+        font-size: 12px;
+        margin-right: 20px;
+        font-weight: bold;
+        padding: 5px;
+    }
+
+        .mainactionBox span:hover {
+            background-image: url(/images/cld_bg.gif);
+        }
+
+        .mainactionBox span a {
+            color: #083583;
+            text-decoration: none;
+        }
+
+            .mainactionBox span a:hover {
+                color: #000;
+            }
+
+.mainrightBoxfour {
+    border-left: 1px solid #81bae8;
+    border-right: 1px solid #81bae8;
+    border-bottom: 1px solid #81bae8;
+    background-color: #eff5fb;
+    overflow: auto;
+}
+
+    .mainrightBoxfour th {
+        text-align: left;
+    }
+
+        .mainrightBoxfour th a, .mainrightBoxfour td a {
+            color: #083583;
+            text-decoration: none;
+        }
+
+.mainmenuBox {
+    border-top: 1px solid #81bae8;
+    border-bottom: 1px solid #81bae8;
+    background-image: url(/images/action_bg.jpg);
+    padding: 5px 5px 0px 10px;
+    color: #083583;
+    font-size: 12px;
+    font-weight: bold;
+    height: 24px;
+}
+
+
+/*Calendar*/
+.mainactionBox span.cld {
+    background-image: url(/images/cld_bg.gif);
+}
+
+.mainactionBox_left {
+    float: left;
+    width: 800px;
+}
+
+.mainactionBox_right {
+    float: right;
+    width: 20px;
+}
+
+.mainrightBoxthree {
+    border: 1px solid #81bae8;
+    background-color: #fff;
+    overflow: auto;
+    padding: 5px; /*min-width: 950px;*/
+}
+
+.calendarTable {
+    border-top: 1px solid #aac6e8;
+    border-left: 1px solid #aac6e8;
+}
+
+    .calendarTable td, .calendarTable th {
+        border-bottom: 1px solid #aac6e8;
+        border-right: 1px solid #aac6e8;
+        padding: 5px;
+    }
+
+.calendartop {
+    background-color: #edf6ff;
+    border-top: 1px solid #aac6e8;
+    border-left: 1px solid #aac6e8;
+    border-right: 1px solid #aac6e8;
+}
+
+    .calendartop td, .calendartop th {
+        padding: 5px;
+        text-align: center;
+    }
+
+.calendarweek td {
+    background-color: #cfdeef;
+    color: #000;
+    font-weight: bold;
+    text-align: center;
+}
+
+.dateDisable {
+    background-color: #f5f5f5;
+    color: #ccc;
+    height: 60px;
+    min-width: 135px;
+    vertical-align: top;
+}
+
+.dateNormal {
+    height: 60px;
+    min-width: 135px;
+    vertical-align: top;
+}
+
+.dateWeekend {
+    height: 60px;
+    min-width: 135px;
+    vertical-align: top;
+    color: #ccc;
+}
+
+.dateToday {
+    height: 60px;
+    min-width: 135px;
+    vertical-align: top;
+    background-color: #fff4ca;
+}
+
+ul.onscdTicket {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.onscdTicket li {
+        color: #1952b3;
+    }
+
+        ul.onscdTicket li a {
+            color: #1952b3;
+            text-decoration: none;
+        }
+
+            ul.onscdTicket li a:hover {
+                color: #f60;
+                text-decoration: underline;
+            }
+
+.scdyearlyBox td, .scdyearlyBox th {
+    padding: 3px;
+    background-color: #d9e9f9;
+    border-bottom: 1px solid #fff;
+    border-right: 1px solid #fff;
+    width: 25%;
+}
+
+.sdcyearlyTop {
+    padding: 4px;
+    font-weight: bold;
+    background-image: url(/images/scdyearly_topbg.gif);
+    border-top: 1px solid #bad8f0;
+    border-left: 1px solid #bad8f0;
+    border-right: 1px solid #bad8f0;
+    color: #000;
+}
+
+.sdcyearlymain {
+    border: 1px solid #bad8f0;
+    text-align: center;
+    font-size: 30px;
+    color: #083583;
+    padding-top: 30px;
+    height: 60px;
+    background-color: #fff;
+}
+
+    .sdcyearlymain a {
+        color: #083583;
+        text-decoration: none;
+    }
+
+        .sdcyearlymain a:hover {
+            color: #f60;
+            text-decoration: underline;
+        }
+
+
+
+/*List Relation*/
+.onlistBox {
+    height: 20px;
+    margin-bottom: 5px;
+}
+
+.onlistText {
+    margin-right: 20px;
+}
+
+.onlistBox strong {
+    color: #bd3a00;
+}
+
+.listone {
+    border: 1px solid #81bae8;
+    margin-bottom: 15px;
+}
+
+    .listone td {
+        border-right: 1px solid #ddd;
+    }
+
+.listtwo {
+    border-bottom: 1px solid #cae3ff;
+}
+
+    .listtwo td {
+        border-right: 1px solid #ddd;
+    }
+
+        .listtwo td a {
+            color: #000;
+        }
+
+            .listtwo td a:hover {
+                color: #f00;
+            }
+
+.listone td strong {
+    color: #bd3a00;
+    margin-left: 15px;
+}
+
+.listthree td, .listthree th {
+    border-right: 1px solid #c5d7e6;
+    border-bottom: 1px solid #c5d7e6;
+}
+
+.listtopTitle {
+    padding-top: 2px;
+    height: 24px;
+    background-image: url(/images/listtop_bg.jpg);
+    border-bottom: 1px solid #81bae8;
+    border-right: none;
+    border-left: 0;
+}
+
+    .listtopTitle a {
+        color: #000;
+        text-decoration: none;
+    }
+
+.listtopTitle_left {
+    padding-left: 10px;
+    width: 400px;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.listtopTitle_leftdate {
+    padding-left: 10px;
+    width: auto;
+    min-width: 280px;
+    float: left;
+    font-size: 12px;
+    font-weight: bold;
+    color: #f60;
+}
+
+.listtopTitle_right {
+    float: right;
+    width: 100px;
+    padding-right: 20px;
+    font-size: 10px;
+    text-align: right;
+}
+
+.listsubTitle th, .listsubTitle td {
+    background-color: #EAEAEA;
+    padding: 3px 6px 3px 8px;
+    color: #083583;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+
+.listrownblank {
+    border-bottom: 1px solid #e0ecf9;
+}
+
+.listrowone td, .listrowone th {
+    padding: 3px 6px 3px 8px;
+    background-color: #e0ecf9;
+    color: #083583;
+}
+
+.listrowtwo td, .listrowtwo th {
+    padding: 3px 6px 3px 8px;
+    background-color: #fff;
+    color: #083583;
+}
+
+.listrowHightLight td, .listrowHightLight th {
+    padding: 3px 6px 3px 8px;
+    background-color: #FFF68F;
+    color: #083583;
+}
+
+.listrowthree td, .listrowthree th {
+    padding: 3px 6px 3px 8px;
+    background-color: #81bae8;
+    color: #000;
+}
+
+.listrowthreclick td, .listrowthreclick th {
+    padding: 3px 6px 3px 8px;
+    background-color: #81bae8;
+    color: #000;
+}
+
+.listrowfour td, .listrowfour th {
+    padding: 4px 6px 4px 8px;
+    background-color: #fea;
+    font-weight: bold;
+}
+
+.listrowfive td, .listrowfive th {
+    padding: 4px 6px 4px 15px;
+    background-color: #eee;
+}
+
+.listrowsix td, .listrowsix th {
+    padding: 4px 6px 4px 15px;
+    background-color: #fff;
+}
+
+.subList td {
+    color: #083583;
+    border: 0px;
+}
+
+
+/*Left Menu*/
+*html ul.leftmenu div {
+    margin-left: -10px;
+    margin-top: 7px;
+    margin-bottom: -5px; /*For ie6*/
+}
+
+    *html ul.leftmenu div div.leftSub {
+        padding-left: 25px;
+        margin-top: 0px;
+        font-weight: normal;
+        margin-bottom: 0px; /*For ie6*/
+    }
+
+        *html ul.leftmenu div div.leftSub a.thiscate {
+            color: #ff6600;
+            font-weight: bold; /*For ie6*/
+        }
+
+* + html ul.leftmenu div {
+    margin-left: -10px;
+    margin-top: 7px;
+    margin-bottom: -5px; /*For ie7*/
+}
+
+    * + html ul.leftmenu div div.leftSub {
+        padding-left: 25px;
+        margin-top: 0px;
+        font-weight: normal;
+        margin-bottom: 0px; /*For ie7*/
+    }
+
+        * + html ul.leftmenu div div.leftSub a.thiscate {
+            color: #ff6600;
+            font-weight: bold; /*For ie7*/
+        }
+
+ul.leftmenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 195px;
+}
+
+    ul.leftmenu li {
+        padding: 5px 0px 5px 15px;
+        color: #fff;
+        background-image: url(/images/leftmenu_bg.jpg);
+        background-position: top;
+        background-repeat: no-repeat;
+        font-weight: bold;
+    }
+
+        ul.leftmenu li.currentleft {
+            padding: 5px 0px 5px 15px;
+            color: #000;
+            background-image: url(/images/leftmenuthis_bg.jpg);
+            background-position: top;
+            background-repeat: no-repeat;
+            font-weight: bold;
+        }
+
+            ul.leftmenu li.currentleft a {
+                color: #000;
+            }
+
+        ul.leftmenu li.sub {
+            padding: 5px 0px 5px 15px;
+            color: #fff;
+            background-image: url(/images/leftmenuarw_bg.jpg);
+            font-weight: bold;
+            width: 180px;
+            cursor: pointer;
+        }
+
+            ul.leftmenu li a, ul.leftmenu li.sub a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+.leftSub {
+    padding: 3px 5px 3px 20px;
+    line-height: 16px;
+}
+
+    .leftSub:hover {
+        background-color: #fff;
+    }
+
+    .leftSub a {
+        color: #333;
+        text-decoration: none;
+    }
+
+        .leftSub a.thiscate {
+            color: #f60;
+            font-weight: bold;
+        }
+/*Page Function*/
+.pageBox {
+    background-image: url(/images/page_Bg.gif);
+    height: 27px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-bottom: 1px solid #84b9eb;
+    border-left: 1px solid #84b9eb;
+    border-right: 1px solid #84b9eb;
+}
+
+.pageBox_left {
+    float: left;
+    width: 200px;
+    padding-top: 5px;
+}
+
+    .pageBox_left span {
+        margin-right: 20px;
+    }
+
+.pageBox_right {
+    float: right;
+    width: 200px;
+    text-align: right;
+    padding-top: 5px;
+}
+
+    .pageBox_right img {
+        margin-right: 5px;
+        vertical-align: middle;
+    }
+
+/*Search Parts*/
+.searchBox {
+    margin: 10px 0px 10px 10px;
+    color: #000;
+    font-weight: bold;
+}
+
+    .searchBox td {
+        padding: 3px;
+    }
+/*Foot*/
+.footer {
+    clear: both;
+    padding: 5px 0px 0px 210px;
+    font-size: 10px;
+    color: #083583;
+}
+/*Timesheet*/
+.timesheetBox {
+    border: 1px solid #81bae8;
+    margin: 10px 0px;
+}
+
+.timesheetAction {
+    border-bottom: 1px solid #c5d7e6;
+}
+
+.blacktext {
+    color: #000;
+    font-weight: bold;
+}
+
+.tmcalendartop {
+    border-left: 1px solid #c5d7e6;
+    border-right: 1px solid #c5d7e6;
+    border-top: 1px solid #c5d7e6;
+    margin-top: 10px;
+}
+
+.tmcalendartoptwo {
+    border: 1px solid #c5d7e6;
+    margin-top: 10px;
+}
+
+    .tmcalendartoptwo td, .tmcalendartoptwo th {
+        font-size: 14px;
+        background-color: #e0ecf9;
+        font-weight: bold;
+        padding: 3px;
+    }
+
+.tmcalendartop td, .tmcalendartop th {
+    font-size: 14px;
+    background-color: #e0ecf9;
+    font-weight: bold;
+    padding: 3px;
+}
+
+.tmcalendarBox {
+    border-right: 1px solid #c5d7e6;
+    border-top: 1px solid #c5d7e6;
+    margin-bottom: 10px;
+}
+
+    .tmcalendarBox td, .tmcalendarBox th {
+        border-left: 1px solid #c5d7e6;
+        border-bottom: 1px solid #c5d7e6;
+        padding: 3px;
+    }
+
+        .tmcalendarBox td a, .tmcalendarBox th a {
+            color: #333;
+            text-decoration: none;
+        }
+
+            .tmcalendarBox td a:hover, .tmcalendarBox th a:hover {
+                color: #000;
+                text-decoration: underline;
+            }
+
+        .tmcalendarBox td.tmtoday, .tmcalendarBox td.tmtoday a {
+            background-color: #F8DDC2;
+        }
+
+        .tmcalendarBox td.tmweek, .tmcalendarBox td.tmweek a {
+            color: #999;
+        }
+
+.tmbtnBox {
+    width: 180px;
+    margin: 0 auto;
+    border-top: 1px solid #c5d7e6;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+/*10-16-2012*/
+.categoryList {
+    position: absolute;
+    background-color: #e1eefe;
+    border: 1px solid #82bae9;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 120px;
+    display: none;
+    z-index: 999;
+}
+
+ul.category {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.category li {
+        padding: 4px 20px;
+        word-wrap: break-word;
+        word-break: normal;
+    }
+
+        ul.category li:hover {
+            background-color: #80bef1;
+        }
+
+        ul.category li a {
+            color: #000;
+            text-decoration: none;
+        }
+
+.categoryListtwo {
+    position: absolute;
+    background-color: #e1eefe;
+    border: 1px solid #82bae9;
+    margin-top: -3px;
+    margin-left: 5px;
+    width: 120px;
+    visibility: hidden;
+}
+
+ul.categorytwo {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.categorytwo li {
+        padding: 4px 20px;
+        word-wrap: break-word;
+        word-break: normal;
+    }
+
+        ul.categorytwo li:hover {
+            background-color: #80bef1;
+        }
+
+        ul.categorytwo li a {
+            color: #000;
+            text-decoration: none;
+        }
+/*2012-11-07new category*/
+ul.category li a.newcate {
+    color: #F60;
+    text-decoration: none;
+}
+
+a.newcate {
+    color: #F60;
+    text-decoration: none;
+}
+/*Schedule Style*/
+ul.yearlyview {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.yearlyview li {
+        float: left;
+        width: 24.7%;
+        margin: 1px;
+    }
+
+.monthlyviewBox {
+    border-left: 1px solid #aac6e8;
+    margin: 0 auto;
+    min-width: 1023px;
+}
+
+ul.monthlyview {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.monthlyview li {
+        border-bottom: 1px solid #aac6e8;
+        border-right: 1px solid #aac6e8;
+        float: left;
+        width: 14.17%;
+        height: 105px;
+        overflow: hidden;
+    }
+
+ul.monthlyviewweek {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.monthlyviewweek li {
+        border-bottom: 1px solid #aac6e8;
+        border-right: 1px solid #aac6e8;
+        border-top: 1px solid #aac6e8;
+        float: left;
+        width: 14.17%;
+        height: 20px;
+        background-color: #cfdeef;
+        font-family: Arial;
+        font-size: 11px;
+        color: #000;
+        font-weight: bold;
+        padding-top: 5px;
+        text-align: center;
+    }
+
+ul.monthlyview li ul li {
+    border: 0;
+    padding: 0;
+    width: 100%;
+    height: 15px;
+    margin-left: 5px;
+}
+/*jack document center*/
+.strong {
+    font-weight: bold;
+    color: #50AFF9;
+}
+
+.hide {
+    display: none;
+}
+
+.description {
+    position: relative;
+}
+
+    .description div {
+        width: 500px;
+        height: auto;
+        position: absolute;
+        z-index: 999;
+        display: none;
+        background-color: #e0ecf9;
+        border: solid 1px #083583;
+        padding: 3px;
+    }
+
+    .description:hover span {
+        /* display: none;*/ /*visibility:hidden;*/
+    }
+
+    .description:hover .remove {
+        display: none; /*visibility:hidden;*/
+    }
+
+    .description:hover div {
+        display: block;
+    }
+
+/*dashboard start*/
+.dashboardBox {
+    padding: 60px 0 60px 125px;
+    overflow: auto;
+}
+
+ul.dashboardItem {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+    ul.dashboardItem li {
+        float: left;
+        width: 180px;
+        height: 120px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 12px;
+        font-weight: bold;
+        line-height: 20px;
+        margin-bottom: 40px;
+    }
+
+        ul.dashboardItem li img {
+            border: none;
+        }
+
+        ul.dashboardItem li:hover {
+            cursor: pointer;
+            margin-top: 1px;
+            height: 119px;
+        }
+
+    ul.dashboardItem a li {
+        color: #000;
+        text-decoration: none;
+    }
+
+        ul.dashboardItem a li span {
+            color: #900;
+        }
+
+        ul.dashboardItem a li:hover {
+            color: #0066CC;
+        }
+
+.dashboardIcon {
+    width: 85px;
+    height: 85px;
+    margin: 0 auto;
+    margin-bottom: -10px;
+}
+
+.reddot {
+    position: absolute;
+    background-image: url(/images/reddot.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    margin-left: 55px;
+    margin-top: -5px;
+}
+/*dashboard end*/
+/*1/24/2014*/
+.pdashboardMain {
+    margin: 10px 0px;
+}
+
+td.pdashboardBox {
+    border-radius: 5px 5px 0px 0px;
+    border: 1px solid #81b9e8;
+    background-color: #eff5fb;
+    min-height: 200px;
+    vertical-align: top;
+}
+
+.pdashboardIconbox {
+    padding-top: 8px;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.pdashboardTitle {
+    background-color: #dbebfb;
+    border-bottom: 1px solid #81b9e8;
+    padding: 8px;
+    color: #083583;
+    font-weight: bold;
+    border-radius: 5px 5px 0px 0px;
+}
+
+    .pdashboardTitle a {
+        color: #083583;
+        text-decoration: none;
+    }
+
+        .pdashboardTitle a:hover {
+            color: #666;
+        }
+
+ul.pdashboardItem {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+    ul.pdashboardItem li {
+        float: left;
+        width: 33%;
+        height: 90px;
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        line-height: 20px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
+        ul.pdashboardItem li img {
+            border: none;
+        }
+
+        ul.pdashboardItem li:hover {
+            cursor: pointer;
+        }
+
+    ul.pdashboardItem a li {
+        color: #000;
+        text-decoration: none;
+    }
+
+        ul.pdashboardItem a li:hover {
+            color: #0066CC;
+        }
+
+.pdashboardIcon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto;
+    margin-bottom: -20px;
+}
+
+.pdreddot {
+    position: absolute;
+    background-image: url(../images/reddot.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 40px;
+    height: 20px;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    margin-left: 35px;
+    margin-top: -5px;
+}
+
+.listtwo td a {
+    color: #083583;
+    text-decoration: none;
+}
+
+.pdlistTop {
+    padding: 10px 0px 3px 5px;
+    font-weight: bold;
+    border-bottom: 1px solid #81b9e8;
+}
+
+.activeBtnbox1 {
+    padding: 5px;
+    height: 20px;
+}
+
+.activeBtn1 {
+    width: 80px;
+    background-image: url(../images/active_bg1.png);
+    text-align: center;
+    color: #666;
+    margin-right: 2px;
+    font-weight: bold;
+    border: 1px solid #cececf;
+    display: inline-table;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    float: left;
+}
+
+.activeBtn2 {
+    width: 80px;
+    background-image: url(../images/active_bg2.png);
+    text-align: center;
+    color: #fff;
+    margin-right: 2px;
+    font-weight: bold;
+    border: 1px solid #498dbf;
+    display: inline-table;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    float: left;
+}
+
+    .activeBtn1:hover, .activeBtn2:hover {
+        background-image: url(../images/active_bg3.png);
+        color: #083583;
+        border: 1px solid #77a0ab;
+    }
+
+.createeventBtn {
+    padding: 0px 5px;
+    float: right;
+    background-image: url(../images/active_bg3.png);
+    text-align: center;
+    color: #083583;
+    border: 1px solid #77a0ab;
+    display: inline-table;
+    font-weight: bold;
+}
+
+    .createeventBtn:hover {
+        background-image: url(../images/active_bg1.png);
+    }
+
+.pdlistTop a {
+    color: #333;
+    text-decoration: none;
+}
+
+    .pdlistTop a:hover {
+        color: #083583;
+    }
+
+.pdlist {
+    margin-top: 0px;
+}
+
+.pdcalendar {
+    padding: 10px 0px 5px 3px;
+}
+
+/*Dashboard Calendar Start*/
+.pdmonthlyviewBox {
+    border-left: 1px solid #aac6e8;
+    margin: 0 auto;
+}
+
+ul.pdmonthlyviewweek {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.pdmonthlyviewweek li {
+        border-bottom: 1px solid #aac6e8;
+        border-right: 1px solid #aac6e8;
+        border-top: 1px solid #aac6e8;
+        float: left;
+        width: 14%;
+        height: 20px;
+        background-color: #cfdeef;
+        font-family: Arial;
+        font-size: 11px;
+        color: #000;
+        font-weight: bold;
+        padding-top: 5px;
+        text-align: center;
+    }
+
+ul.pdmonthlyview li ul li {
+    border: 0;
+    padding: 0;
+    width: 100%;
+    height: 15px;
+    margin-left: 5px;
+}
+
+ul.pdmonthlyview {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.pdmonthlyview li {
+        border-bottom: 1px solid #aac6e8;
+        border-right: 1px solid #aac6e8;
+        float: left;
+        width: 14%;
+        height: 70px;
+        overflow: hidden;
+    }
+
+.pddateDisable {
+    background-color: #f5f5f5;
+    color: #ccc;
+    height: 60px;
+    vertical-align: top;
+}
+
+.pddateNormal {
+    height: 60px;
+    vertical-align: top;
+}
+
+.dateWeekend {
+    height: 60px;
+    vertical-align: top;
+    color: #ccc;
+}
+
+.pddateToday {
+    height: 60px;
+    vertical-align: top;
+    background-color: #fff4ca;
+}
+
+.dateforclick {
+    cursor: pointer;
+    float: left;
+    width: 128px;
+}
+
+.dateToday div {
+    font-size: 13px;
+    font-family: 'Open Sans',sans-serif;
+    color: #04466A;
+}
+
+ul.onscdTicket li a {
+    color: #055787;
+}
+
+ul.onscdTicket li {
+    color: #1952B3;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+ul.monthlyview, ul.monthlyviewwweek, ul.onscdTicket {
+    list-style: none outside none;
+}
+
+.pddateforclick {
+    cursor: pointer;
+    float: left;
+    width: 52px;
+}
+
+.calendartop1 {
+    background-color: #EEEEEE;
+    border: 1px solid #DDDDDD;
+    font-size: 18px;
+    margin-top: 15px;
+    padding: 5px;
+}
+
+.calendartop {
+    font-size: 18px;
+    margin-bottom: 8px;
+    padding: 5px 0;
+    text-align: center;
+}
+
+.calendartopArrow {
+    border: 1px solid #EDF6FF;
+    border-radius: 3px;
+    cursor: pointer;
+    padding: 0 5px 2px;
+}
+
+    .calendartopArrow:hover {
+        background-image: url("/images/but_bg2.png");
+        border: 1px solid #C2C2C2;
+    }
+
+    .calendartopArrow img {
+        vertical-align: middle;
+    }
+/*Dashboard Calendar End*/
+.btnRefreshHidden {
+    visibility: hidden;
+}

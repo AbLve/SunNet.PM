@@ -1,0 +1,180 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>SunNet Project Management Application</title>
+<link href="/styles/global.css" rel="stylesheet" type="text/css">
+<link href="/styles/public.css" rel="stylesheet" type="text/css" />
+<link href="/styles/form.css" rel="stylesheet" type="text/css" />
+<script type="text/JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_showHideLayers() { //v6.0
+  var i,p,v,obj,args=MM_showHideLayers.arguments;
+  for (i=0; i<(args.length-2); i+=3) if ((obj=MM_findObj(args[i]))!=null) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
+}
+//-->
+</script>
+</head>
+
+<body><div class="mainTop"><div class="mainTop_left"><img src="/images/logomain.jpg"></div><div class="mainTop_right"><span class="mainTop_rightUser">User: <strong>Suki</strong></span><a href="#">FAQ</a>|<a href="#">Survey</a>|<a href="#">Logout</a></div>
+</div>
+<div class="topMenu"><div class="topMenu_left">
+<ul><li class="sepline"><img src="/images/topsep.jpg"></li>
+<li class="currenttop"><a href="ticketlist.html">Tickets</a></li>
+<li class="sepline"><img src="/images/topsep.jpg"></li>
+<li><a href="#">Documents</a></li>
+<li class="sepline"><img src="/images/topsep.jpg"></li>
+<li><a href="reports.html">Reports</a></li>
+<li class="sepline"><img src="/images/topsep.jpg"></li>
+<li><a href="projects.html">Projects</a></li>
+<li class="sepline"><img src="/images/topsep.jpg"></li>
+<li><a href="companyinfo.html">My Company</a></li>
+<li class="sepline"><img src="/images/topsep.jpg"></li></ul></div><div class="topMenu_right" onmouseover="MM_showHideLayers('globalcate','','show')" onmouseout="MM_showHideLayers('globalcate','','hide')"><img src="/icons/04.gif" align="absmiddle">My Categories
+  <div class="categoryList" id="globalcate" onmouseover="MM_showHideLayers('globalcate','','show')" onmouseout="MM_showHideLayers('globalcate','','hide')"><ul class="category"><li><a href="mycategories.html">09-27-2012</a></li>
+  <li><a href="#">09-27-2012</a></li><li><a href="#">09-27-2012</a></li><li><a href="#">09-27-2012</a></li><li><a href="#" onclick="MM_openBrWindow('div_newcategory.html','','width=455,height=170')">New Category</a></li></ul></div></div>
+</div><div class="topTitle"><div class="topTitle_left">Tickets</div>
+<div class="topTitle_right">Tickets</div>
+</div><table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td class="mainBox_left">
+<ul class="leftmenu">
+<li><a href="dashboard.html">Dashboard</a></li>
+<li><a href="schedule.html">Schedules</a></li>
+<li  class="currentleft">Tickets</li><div class="leftSub">Developing (9)<br>
+Testing (1)<br>
+Coordination (14)</div>
+<li class="sub"><a href="mycategories.html">My Categories</a></li>
+<li class="sub"><a href="mytimesheet.html">Timesheet</a></li>
+</ul>	
+	</td>
+    <td class="mainBox_right"><table width="97%" border="0" align="center" cellpadding="0" cellspacing="0" class="searchBox">
+  <tr>
+    <td width="59">Keyword</td>
+    <td width="260"><input name="textfield" type="text" class="input200" value="please input keyword"></td>
+    <td width="100">Status</td>
+    <td width="260"><select name="select3" class="select205">
+    </select></td>
+    <td width="60">Type</td>
+    <td><select name="select6" class="select205">
+    </select></td>
+  </tr>
+  <tr>
+    <td>Project</td>
+    <td><select name="select" class="select205">
+    </select>    </td>
+    <td>Assigned User</td>
+    <td><select name="select4" class="select205">
+    </select></td>
+    <td>Company </td>
+    <td><select name="select7" class="select205">
+    </select></td>
+  </tr>
+  <tr>
+    <td>Client</td>
+    <td><select name="select2" class="select205">
+    </select></td>
+    <td>Client Priority </td>
+    <td><select name="select5" class="select205">
+    </select></td>
+    <td colspan="2"><input name="checkbox" type="checkbox" value="checkbox" checked="checked"> 
+      Priority View &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="/images/search_btn.jpg" align="absmiddle"></td>
+    </tr>
+</table>
+<div class="mainactionBox"><span><a href="#" onclick="MM_openBrWindow('addticket.html','','width=855,height=700')"><img src="/icons/09.gif" border="0" align="absmiddle">New</a></span>  <span><a href="#" onclick="MM_openBrWindow('addmulti-ticket.html','','scrollbars=yes,width=875,height=700')"><img src="/icons/07.gif" border="0" align="absmiddle"> Bulk Add</a></span><span> <a href="tickedetail.html" target="_blank"><img src="/icons/05.gif" title="Edit" border="0" align="absmiddle"> Edit</a></span></div>
+    <div class="mainrightBoxtwo">
+      <table width="100%" border="0" cellpadding="0" cellspacing="0" class="listtwo">
+        <tr class="listsubTitle">
+          <th width="10">&nbsp;</th>
+          <th width="30">&nbsp;</th>
+          <th width="90">Ticket Code</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Due Date</th>
+          <th>Action</th>
+          <th>Related Tickets </th>
+        </tr>
+        <tr class="listrowthree">
+          <td><img src="/icons/13.gif"></td>
+          <td><img src="/icons/06.gif"  title="On Schedule"></td>
+          <td>B815</td>
+          <td>Reports &gt; Monitoring/Uonitor</td>
+          <td>Reports &gt; Monitoring/UonitorReports &gt; Monitoring/Uonitor</td>
+          <td>Ready for Testing </td>
+          <td>09/25/2012</td>
+          <td><img src="/icons/05.gif" title="Edit"> <img src="/icons/12.gif"  title="Add Ticket to Category" onmouseover="MM_showHideLayers('globallistcate','','show')" onmouseout="MM_showHideLayers('globallistcate','','hide')"><div class="categoryListtwo" id="globallistcate" onmouseover="MM_showHideLayers('globallistcate','','show')" onmouseout="MM_showHideLayers('globallistcate','','hide')">
+            <ul class="categorytwo"><li><a href="mycategories.html">09-27-2012</a></li>
+  <li><a href="#">09-27-2012</a></li><li><a href="#">09-27-2012</a></li><li><a href="#">09-27-2012</a></li><li><a href="#" onclick="MM_openBrWindow('div_newcategory.html','','width=455,height=170')">New Category</a></li></ul></div></td>
+          <td><a href="tickedetail.html">R822</a>, <a href="tickedetail.html">R678</a>,<a href="tickedetail.html">R980</a>,<a href="tickedetail.html">R980</a> </td>
+        </tr>
+        <tr>
+          <td colspan="9" class="listrownblank"><table width="100%" border="0" cellpadding="0" cellspacing="0" class="subList">
+              <tr class="listrowfour">
+                <td width="100%">Tasks</td>
+              </tr>
+              <tr class="listrowsix">
+                <td>Reports &gt; Monitoring/UonitorReports &gt; Monitoring/Uonitor </td>
+              </tr>
+              <tr class="listrowfive">
+                <td>Reports &gt; Monitoring/UonitorReports &gt; Monitoring/Uonitor</td>
+              </tr>
+              <tr class="listrowsix">
+                <td>Reports &gt; Monitoring/UonitorReports &gt; Monitoring/Uonitor</td>
+              </tr>
+          </table></td>
+        </tr>
+        <tr class="listrowtwo">
+          <td>&nbsp;</td>
+          <td><img src="/icons/06.gif"  title="On Schedule"></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+        <tr class="listrowone">
+          <td><img src="/icons/04.gif"></td>
+          <td><img src="/icons/14.gif"  title="Not a Bug"></td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      
+      </div><div class="pageBox">
+  <div class="pageBox_left"><span>Records: 7</span> <span>Page: 1 of 8 </span></div>
+  <div class="pageBox_right"><img src="/icons/firstb.gif"> <img src="/icons/prevb.gif"> <img src="/icons/nextb.gif"> <img src="/icons/lastb.gif">
+    <select name="select8" class="input40">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+    </div>
+</div></td>
+  </tr>
+</table>
+<div class="footer">Version 2012  Copyright &copy; SunNet Solutions 2009.</div>
+</body>
+</html>

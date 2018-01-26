@@ -1,0 +1,19 @@
+UPDATE  dbo.Modules
+SET     ModuleTitle = 'Proposal Tracker Documents'
+WHERE   ModuleTitle = 'Work Request Documents';
+
+UPDATE  dbo.Modules
+SET     ModuleTitle = 'Proposal Tracker Notes'
+WHERE   ModuleTitle = 'Work Request Notes';
+
+UPDATE  dbo.Modules
+SET     ModulePath = '/OA/ProposalTracker/AddRelatedticket.aspx'
+WHERE   ModulePath = '/OA/WorkRequest/AddRelatedticket.aspx';
+
+UPDATE  dbo.Modules
+SET     ModulePath = '/OA/ProposalTracker/AddDocument.aspx'
+WHERE   ModulePath = '/OA/WorkRequest/AddDocument.aspx';
+
+UPDATE  dbo.Modules
+SET     ModulePath = '/OA/ProposalTracker/AddNote.aspx'
+WHERE   ModulePath = '/OA/WorkRequest/AddNote.aspx';

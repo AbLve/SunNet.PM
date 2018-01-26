@@ -1,0 +1,2574 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8EBCE4C9-50BE-48E2-9F1D-C50A5DCCC0A8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SunNet.PMNew.Web</RootNamespace>
+    <AssemblyName>SunNet.PMNew.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AntiXSSLibrary, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Framework\_Dlls\AntiXSS Library v4.2\NET35\AntiXSSLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNetPager, Version=7.2.0.0, Culture=neutral, PublicKeyToken=fb0a0fe055d40fd4, processorArchitecture=MSIL" />
+    <Reference Include="HtmlSanitizationLibrary, Version=4.2.0.0, Culture=neutral, PublicKeyToken=d127efab8a9c114f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Framework\_Dlls\AntiXSS Library v4.2\SANITIZER\HtmlSanitizationLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Documents and Settings\leel.SHDEV.000\桌面\SunNet.PMNew\SunNet.PMNew.Web\Bin\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.Office.Interop.Word, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Word.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\SunNet.PMNew\SunNet.PMNew\SunNet.PMNew.Web\Bin\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\SunNet.PMNew\SunNet.PMNew\SunNet.PMNew.Web\Bin\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\SunNet.PMNew\SunNet.PMNew\SunNet.PMNew.Web\Bin\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>F:\SunNet.PMNew\SunNet.PMNew\SunNet.PMNew.Web\Bin\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Framework\_Dlls\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=1.2.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL" />
+    <Reference Include="StructureMap, Version=2.6.1.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Documents and Settings\leel.SHDEV.000\桌面\SunNet.PMNew\SunNet.PMNew.Web\Bin\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Yahoo.Yui.Compressor, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Api\ProjectApi.asmx" />
+    <Content Include="Documents\sql\SPForumsGetByCategory.txt" />
+    <Content Include="Documents\sql\sql_2014-03-28_Buring.txt" />
+    <Content Include="Documents\sql\sql_2014-2-14_Justin%281%29.txt" />
+    <Content Include="Documents\sql\sql_2014-2-14_Justin%282%29.txt" />
+    <Content Include="Documents\sql\sql_2014-2-14_Lynn.txt" />
+    <Content Include="Documents\sql\sql_2014-3-13_Justin.txt" />
+    <Content Include="Documents\sql\sql_2014-3-28_Buring.txt" />
+    <Content Include="Documents\sql\Tickets_GetListByCondition.txt" />
+    <Content Include="Documents\sql\Tickets_GetListWithStatusWaitProcess.txt" />
+    <Content Include="Images\add1.png" />
+    <Content Include="Images\arrowl1.png" />
+    <Content Include="Images\arrowl2.png" />
+    <Content Include="Images\arrowr1.png" />
+    <Content Include="Images\arrowr2.png" />
+    <Content Include="Images\arrowy_cleft.png" />
+    <Content Include="Images\arrowy_cright.png" />
+    <Content Include="Images\arrow_cleft.png" />
+    <Content Include="Images\arrow_cright.png" />
+    <Content Include="Images\cacelbtn_bg.png" />
+    <Content Include="Images\cacelbtn_bgover.png" />
+    <Content Include="Images\clock.png" />
+    <Content Include="Images\closef.png" />
+    <Content Include="Images\closef_hover.png" />
+    <Content Include="Images\fdarrow1.png" />
+    <Content Include="Images\fdarrow2.png" />
+    <Content Include="Images\folderleft.png" />
+    <Content Include="Images\homelog_btnbgover.png" />
+    <Content Include="Images\hottopic.png" />
+    <Content Include="Images\latesttopic.png" />
+    <Content Include="Images\login_logo.png" />
+    <Content Include="Images\login_picture.png" />
+    <Content Include="Images\reply.png" />
+    <Content Include="Images\signbox_bg.png" />
+    <Content Include="Images\topicleft.png" />
+    <Content Include="Lib\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="Scripts\Dialog\imgAndCss\btnbg_on.jpg" />
+    <Content Include="Scripts\Dialog\imgAndCss\btnbg_over.jpg" />
+    <Content Include="Scripts\Dialog\imgAndCss\confirmation.png" />
+    <Content Include="Scripts\Dialog\imgAndCss\error.png" />
+    <Content Include="Scripts\Dialog\imgAndCss\information.png" />
+    <Content Include="Scripts\Dialog\imgAndCss\panel_title.png" />
+    <Content Include="Scripts\Dialog\imgAndCss\panel_tools.gif" />
+    <Content Include="Scripts\Dialog\imgAndCss\preloader.gif" />
+    <Content Include="Scripts\Dialog\imgAndCss\question.png" />
+    <Content Include="Scripts\Dialog\imgAndCss\warning.png" />
+    <Content Include="Scripts\Dialog\imgAndCss\zebra_dialog.css" />
+    <Content Include="Scripts\Dialog\jquery.form.js" />
+    <Content Include="Scripts\Dialog\zebra_dialog.js" />
+    <Content Include="Scripts\Dialog\zebra_dialog.src.js" />
+    <Content Include="Scripts\v3.bootstrap\css\bootstrap.css" />
+    <Content Include="Scripts\v3.bootstrap\css\bootstrap.mi2n.css" />
+    <Content Include="Scripts\v3.bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\v3.bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\v3.bootstrap\js\bootstrap.min.notinuser.js" />
+    <Content Include="Do\DoDeleteEvent.ashx" />
+    <Content Include="Service References\OperateDocManagements\OperateDocManagement.disco" />
+    <Content Include="Service References\OperateDocManagements\configuration91.svcinfo" />
+    <Content Include="Service References\OperateDocManagements\configuration.svcinfo" />
+    <Content Include="Service References\OperateDocManagements\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Sunnet\Events\DayEvents.aspx" />
+    <Content Include="Sunnet\Projects\AddPrincipal.aspx" />
+    <Content Include="Template\WeekPlanNotice.txt" />
+    <Content Include="UserControls\AddTicket.ascx" />
+    <Content Include="Default.aspx" />
+    <Content Include="Documents\PM UML.jpg" />
+    <Content Include="icons\01.gif" />
+    <Content Include="icons\02.gif" />
+    <Content Include="icons\03.gif" />
+    <Content Include="icons\04.gif" />
+    <Content Include="icons\05.gif" />
+    <Content Include="icons\06.gif" />
+    <Content Include="icons\07.gif" />
+    <Content Include="icons\08.gif" />
+    <Content Include="icons\09.gif" />
+    <Content Include="icons\10.gif" />
+    <Content Include="icons\11.gif" />
+    <Content Include="icons\12.gif" />
+    <Content Include="icons\13.gif" />
+    <Content Include="icons\14.gif" />
+    <Content Include="icons\15.gif" />
+    <Content Include="icons\16.gif" />
+    <Content Include="icons\17.gif" />
+    <Content Include="icons\18.gif" />
+    <Content Include="icons\19.gif" />
+    <Content Include="icons\20.gif" />
+    <Content Include="icons\21.gif" />
+    <Content Include="icons\22.gif" />
+    <Content Include="icons\23.gif" />
+    <Content Include="icons\24.gif" />
+    <Content Include="icons\25.gif" />
+    <Content Include="icons\26.gif" />
+    <Content Include="icons\27.gif" />
+    <Content Include="icons\28.gif" />
+    <Content Include="icons\29.gif" />
+    <Content Include="icons\30.gif" />
+    <Content Include="icons\client_user.gif" />
+    <Content Include="icons\firstb.gif" />
+    <Content Include="icons\firstx.gif" />
+    <Content Include="icons\lastb.gif" />
+    <Content Include="icons\lastx.gif" />
+    <Content Include="icons\nextb.gif" />
+    <Content Include="icons\nextx.gif" />
+    <Content Include="icons\prevb.gif" />
+    <Content Include="icons\prevx.gif" />
+    <Content Include="Images\action_bg.jpg" />
+    <Content Include="Images\blank.png" />
+    <Content Include="Images\btn_bg1.gif" />
+    <Content Include="Images\btn_bg3.gif" />
+    <Content Include="Images\btn_bg4.gif" />
+    <Content Include="Images\downArrow.gif" />
+    <Content Include="Images\green_arrow.gif" />
+    <Content Include="Images\grey_arrow.gif" />
+    <Content Include="Images\leftmenuarw_bg.jpg" />
+    <Content Include="Images\leftmenuthis_bg.jpg" />
+    <Content Include="Images\leftmenu_bg.jpg" />
+    <Content Include="Images\leftmenu_topbg.jpg" />
+    <Content Include="Images\link_bg1.gif" />
+    <Content Include="Images\listsub_bg.jpg" />
+    <Content Include="Images\listtop_bg.jpg" />
+    <Content Include="Images\logomain.jpg" />
+    <Content Include="Images\mainbg.jpg" />
+    <Content Include="Images\menucurrent_bg.jpg" />
+    <Content Include="Images\minus.png" />
+    <Content Include="Images\owmenu_bg.gif" />
+    <Content Include="Images\owmenu_sep.gif" />
+    <Content Include="Images\owsc_bg.gif" />
+    <Content Include="Images\owtop_bg1.gif" />
+    <Content Include="Images\owtop_bg2.gif" />
+    <Content Include="Images\page_Bg.gif" />
+    <Content Include="Images\picsample.jpg" />
+    <Content Include="Images\plus.png" />
+    <Content Include="Images\rightArrow.gif" />
+    <Content Include="Images\search_btn.jpg" />
+    <Content Include="Images\topsep.jpg" />
+    <Content Include="Login.aspx" />
+    <Content Include="Scripts\Calendar\close.gif" />
+    <Content Include="Scripts\Calendar\close2.gif" />
+    <Content Include="Scripts\Calendar\drop1.gif" />
+    <Content Include="Scripts\Calendar\drop2.gif" />
+    <Content Include="Scripts\Calendar\left1.gif" />
+    <Content Include="Scripts\Calendar\left2.gif" />
+    <Content Include="Scripts\Calendar\right1.gif" />
+    <Content Include="Scripts\Calendar\right2.gif" />
+    <Content Include="Scripts\jquery-1.8.0-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.8.0.js" />
+    <Content Include="Scripts\jquery-1.8.0.min.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
+    <Content Include="Scripts\MessageBox.js" />
+    <Content Include="Scripts\MessageBox\buttom_sure.gif" />
+    <Content Include="Scripts\MessageBox\button_cancel.gif" />
+    <Content Include="Scripts\MessageBox\button_Continue.gif" />
+    <Content Include="Scripts\MessageBox\button_no.gif" />
+    <Content Include="Scripts\MessageBox\button_yes.gif" />
+    <Content Include="Scripts\MessageBox\left_t_bg2.gif" />
+    <Content Include="Scripts\MessageBox\warning_2.gif" />
+    <Content Include="Scripts\MessageBox\warning_3.gif" />
+    <Content Include="Scripts\MessageBox\warning_bottom_bg.gif" />
+    <Content Include="Scripts\popcalendar.js" />
+    <Content Include="Scripts\Validate\regex.js" />
+    <Content Include="Scripts\Tree\jquery.checkboxtree.js" />
+    <Content Include="Scripts\Tree\jquery.checkboxtree.min.js" />
+    <Content Include="Scripts\Upload\images\attach.png" />
+    <Content Include="Scripts\Upload\images\botton_046.gif" />
+    <Content Include="Scripts\Upload\images\cancel.png" />
+    <Content Include="Scripts\Upload\images\error.png" />
+    <Content Include="Scripts\Upload\images\error_fuck.png" />
+    <Content Include="Scripts\Upload\jquery.uploadify.v2.1.0.min.js" />
+    <Content Include="Scripts\Upload\swfobject.js" />
+    <Content Include="Scripts\Upload\uploadify.css" />
+    <Content Include="Styles\cupertino\images\ui-bg_diagonals-thick_90_eeeeee_40x40.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_flat_15_cd0a0a_40x100.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_glass_100_e4f1fb_1x400.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_glass_50_3baae3_1x400.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_glass_80_d7ebf9_1x400.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_highlight-hard_100_f2f5f7_1x100.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_highlight-hard_70_000000_1x100.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_highlight-soft_100_deedf7_1x100.png" />
+    <Content Include="Styles\cupertino\images\ui-bg_highlight-soft_25_ffef8f_1x100.png" />
+    <Content Include="Styles\cupertino\images\ui-icons_2694e8_256x240.png" />
+    <Content Include="Styles\cupertino\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\cupertino\images\ui-icons_3d80b3_256x240.png" />
+    <Content Include="Styles\cupertino\images\ui-icons_72a7cf_256x240.png" />
+    <Content Include="Styles\cupertino\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Styles\cupertino\jquery-ui-1.8.23.custom.css" />
+    <Content Include="Styles\form.css" />
+    <Content Include="Styles\global.css" />
+    <Content Include="Styles\openwindow.css" />
+    <Content Include="Styles\smoothness\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Styles\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Styles\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="Styles\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Styles\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="Styles\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="Styles\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Styles\smoothness\jquery-ui-1.8.23.custom.css" />
+    <Content Include="Styles\tree\jquery.checkboxtree.css" />
+    <Content Include="Styles\tree\jquery.checkboxtree.min.css" />
+    <Content Include="TicketList.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\PMLogin.asmx.cs">
+      <DependentUpon>PMLogin.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Api\ProjectApi.asmx.cs">
+      <DependentUpon>ProjectApi.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Codes\EmailExecuter.cs" />
+    <Compile Include="Codes\FeedBackMessageHandler.cs" />
+    <Compile Include="Codes\GlobalPageBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Codes\ResponseMessage.cs" />
+    <Compile Include="Codes\RoleEnumComparer.cs" />
+    <Compile Include="Codes\ScheduledTasks.cs" />
+    <Compile Include="Codes\Schedule\BaseSchedule.cs" />
+    <Compile Include="Do\DoDeleteOwnFeedBack.ashx.cs">
+      <DependentUpon>DoDeleteOwnFeedBack.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\DoAddSeal.ashx.cs">
+      <DependentUpon>DoAddSeal.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Profile\DoAddFile.ashx.cs">
+      <DependentUpon>DoAddFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoAssignProjectsToUser.ashx.cs">
+      <DependentUpon>DoAssignProjectsToUser.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\CateGory.ashx.cs">
+      <DependentUpon>CateGory.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\deleteSealFile.ashx.cs">
+      <DependentUpon>deleteSealFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\Directory.ashx.cs">
+      <DependentUpon>Directory.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoBase.cs" />
+    <Compile Include="Do\DoDeleteEvent.ashx.cs">
+      <DependentUpon>DoDeleteEvent.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoDownloadFileHandler.ashx.cs">
+      <DependentUpon>DoDownloadFileHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoGetCalendarList.ashx.cs">
+      <DependentUpon>DoGetCalendarList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoGetListEsStringHandler.ashx.cs">
+      <DependentUpon>DoGetListEsStringHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoGetTotalCountUnderSpecificStatus.ashx.cs">
+      <DependentUpon>DoGetTotalCountUnderSpecificStatus.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoInternalCancel.ashx.cs">
+      <DependentUpon>DoInternalCancel.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoRemoveFileHandler.ashx.cs">
+      <DependentUpon>DoRemoveFileHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoUpdateTaskStatusHandler.ashx.cs">
+      <DependentUpon>DoUpdateTaskStatusHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DownloadSealFile.ashx.cs">
+      <DependentUpon>DownloadSealFile.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoGetEventList.ashx.cs">
+      <DependentUpon>DoGetEventList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\Js.ashx.cs">
+      <DependentUpon>Js.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\TicketStar.ashx.cs">
+      <DependentUpon>TicketStar.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\TicketTasks.ashx.cs">
+      <DependentUpon>TicketTasks.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\TimeSheet.ashx.cs">
+      <DependentUpon>TimeSheet.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Codes\ExcelReport.cs" />
+    <Compile Include="Codes\Schedule\DayEntity.cs" />
+    <Compile Include="Codes\Schedule\MonthEntity.cs" />
+    <Compile Include="Codes\Schedule\YearEntity.cs" />
+    <Compile Include="Do\DoAddFeedBackHandler.ashx.cs">
+      <DependentUpon>DoAddFeedBackHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoAddRelationTickets.ashx.cs">
+      <DependentUpon>DoAddRelationTickets.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoAddTaskHandler.ashx.cs">
+      <DependentUpon>DoAddTaskHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoAddTicketHandler.ashx.cs">
+      <DependentUpon>DoAddTicketHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoAssignUserHandler.ashx.cs">
+      <DependentUpon>DoAssignUserHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoConverReasonHandler.ashx.cs">
+      <DependentUpon>DoConverReasonHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoEditTicketHandler.ashx.cs">
+      <DependentUpon>DoEditTicketHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoGetTaskList.ashx.cs">
+      <DependentUpon>DoGetTaskList.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoRemoveDraftTicketHandler.ashx.cs">
+      <DependentUpon>DoRemoveDraftTicketHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoRemoveRelationTicketsHandler.ashx.cs">
+      <DependentUpon>DoRemoveRelationTicketsHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoTicketEsTimeUpdateHandler.ashx.cs">
+      <DependentUpon>DoTicketEsTimeUpdateHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoUpdateDate.ashx.cs">
+      <DependentUpon>DoUpdateDate.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoUpdateEnStatus.ashx.cs">
+      <DependentUpon>DoUpdateEnStatus.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoUpdateTicketStatus.ashx.cs">
+      <DependentUpon>DoUpdateTicketStatus.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\TimeSheetNotcie.asmx.cs">
+      <DependentUpon>TimeSheetNotcie.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Do\DoAddRelationWorkRequest.ashx.cs">
+      <DependentUpon>DoAddRelationWorkRequest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoDeleteRelationWorkRequest.ashx.cs">
+      <DependentUpon>DoDeleteRelationWorkRequest.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Do\DoDeleteWorkRequestDocuments.ashx.cs">
+      <DependentUpon>DoDeleteWorkRequestDocuments.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPassword.aspx.designer.cs">
+      <DependentUpon>ForgotPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPassword.aspx.designer.cs">
+      <DependentUpon>ResetPassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\OperateDocManagements\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\AssignProjectToUser.aspx.cs">
+      <DependentUpon>AssignProjectToUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\AssignProjectToUser.aspx.designer.cs">
+      <DependentUpon>AssignProjectToUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\SealEdit.aspx.cs">
+      <DependentUpon>SealEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\SealEdit.aspx.designer.cs">
+      <DependentUpon>SealEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\SealsList.aspx.cs">
+      <DependentUpon>SealsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\SealsList.aspx.designer.cs">
+      <DependentUpon>SealsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddChange.aspx.cs">
+      <DependentUpon>AddChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddChange.aspx.designer.cs">
+      <DependentUpon>AddChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Events\AddEvent.aspx.cs">
+      <DependentUpon>AddEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Events\AddEvent.aspx.designer.cs">
+      <DependentUpon>AddEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddIssue.aspx.cs">
+      <DependentUpon>AddIssue.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddIssue.aspx.designer.cs">
+      <DependentUpon>AddIssue.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddRequest.aspx.cs">
+      <DependentUpon>AddRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddRequest.aspx.designer.cs">
+      <DependentUpon>AddRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddRisk.aspx.cs">
+      <DependentUpon>AddRisk.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddRisk.aspx.designer.cs">
+      <DependentUpon>AddRisk.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddTicketList.aspx.cs">
+      <DependentUpon>AddTicketList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddTicketList.aspx.designer.cs">
+      <DependentUpon>AddTicketList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\AddClient.aspx.cs">
+      <DependentUpon>AddClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\AddClient.aspx.designer.cs">
+      <DependentUpon>AddClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\MyAccount.aspx.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\MyAccount.aspx.designer.cs">
+      <DependentUpon>MyAccount.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddFeedBacks.aspx.cs">
+      <DependentUpon>AddFeedBacks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddFeedBacks.aspx.designer.cs">
+      <DependentUpon>AddFeedBacks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddRelation.aspx.cs">
+      <DependentUpon>AddRelation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddRelation.aspx.designer.cs">
+      <DependentUpon>AddRelation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ContactUs.aspx.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ContactUs.aspx.designer.cs">
+      <DependentUpon>ContactUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\Dashboard.aspx.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\Dashboard.aspx.designer.cs">
+      <DependentUpon>Dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\DenyTicket.aspx.cs">
+      <DependentUpon>DenyTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\DenyTicket.aspx.designer.cs">
+      <DependentUpon>DenyTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Events\DayEvents.aspx.cs">
+      <DependentUpon>DayEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Events\DayEvents.aspx.designer.cs">
+      <DependentUpon>DayEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Events\EditEvent.aspx.cs">
+      <DependentUpon>EditEvent.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Events\EditEvent.aspx.designer.cs">
+      <DependentUpon>EditEvent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\EditPriority.aspx.cs">
+      <DependentUpon>EditPriority.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\EditPriority.aspx.designer.cs">
+      <DependentUpon>EditPriority.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Events\EventsCalendar.aspx.cs">
+      <DependentUpon>EventsCalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Events\EventsCalendar.aspx.designer.cs">
+      <DependentUpon>EventsCalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Events\EventsList.aspx.cs">
+      <DependentUpon>EventsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Events\EventsList.aspx.designer.cs">
+      <DependentUpon>EventsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\Faqs.aspx.cs">
+      <DependentUpon>Faqs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\Faqs.aspx.designer.cs">
+      <DependentUpon>Faqs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ListTicketCancel.aspx.cs">
+      <DependentUpon>ListTicketCancel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ListTicketCancel.aspx.designer.cs">
+      <DependentUpon>ListTicketCancel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ListTicketCompleted.aspx.cs">
+      <DependentUpon>ListTicketCompleted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ListTicketCompleted.aspx.designer.cs">
+      <DependentUpon>ListTicketCompleted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ListTicketDrafted.aspx.cs">
+      <DependentUpon>ListTicketDrafted.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ListTicketDrafted.aspx.designer.cs">
+      <DependentUpon>ListTicketDrafted.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ListTicketwaitProcessing.aspx.cs">
+      <DependentUpon>ListTicketwaitProcessing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ListTicketwaitProcessing.aspx.designer.cs">
+      <DependentUpon>ListTicketwaitProcessing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddBug.aspx.cs">
+      <DependentUpon>AddBug.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddBug.aspx.designer.cs">
+      <DependentUpon>AddBug.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\SystemEnhancement.aspx.cs">
+      <DependentUpon>SystemEnhancement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\SystemEnhancement.aspx.designer.cs">
+      <DependentUpon>SystemEnhancement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Documents\CompanyFiles.aspx.cs">
+      <DependentUpon>CompanyFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Documents\CompanyFiles.aspx.designer.cs">
+      <DependentUpon>CompanyFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Documents\EditObject.aspx.cs">
+      <DependentUpon>EditObject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Documents\EditObject.aspx.designer.cs">
+      <DependentUpon>EditObject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Documents\MoveObjects.aspx.cs">
+      <DependentUpon>MoveObjects.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Documents\MoveObjects.aspx.designer.cs">
+      <DependentUpon>MoveObjects.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Documents\NewDirectory.aspx.cs">
+      <DependentUpon>NewDirectory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Documents\NewDirectory.aspx.designer.cs">
+      <DependentUpon>NewDirectory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Documents\ProjectFiles.aspx.cs">
+      <DependentUpon>ProjectFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Documents\ProjectFiles.aspx.designer.cs">
+      <DependentUpon>ProjectFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Documents\SunnetFiles.aspx.cs">
+      <DependentUpon>SunnetFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Documents\SunnetFiles.aspx.designer.cs">
+      <DependentUpon>SunnetFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Documents\SunnetFilesListView.aspx.cs">
+      <DependentUpon>SunnetFilesListView.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Documents\SunnetFilesListView.aspx.designer.cs">
+      <DependentUpon>SunnetFilesListView.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Documents\WorkRequestFiles.aspx.cs">
+      <DependentUpon>WorkRequestFiles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Documents\WorkRequestFiles.aspx.designer.cs">
+      <DependentUpon>WorkRequestFiles.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\popWindow.Master.cs">
+      <DependentUpon>popWindow.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\popWindow.Master.designer.cs">
+      <DependentUpon>popWindow.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Profile\AddFile.aspx.cs">
+      <DependentUpon>AddFile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Profile\AddFile.aspx.designer.cs">
+      <DependentUpon>AddFile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Profile\AddNote.aspx.cs">
+      <DependentUpon>AddNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Profile\AddNote.aspx.designer.cs">
+      <DependentUpon>AddNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Profile\DoAddNote.ashx.cs">
+      <DependentUpon>DoAddNote.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Profile\DoSealRequestEdit.ashx.cs">
+      <DependentUpon>DoSealRequestEdit.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Profile\MyCompany.aspx.cs">
+      <DependentUpon>MyCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Profile\MyCompany.aspx.designer.cs">
+      <DependentUpon>MyCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\Survey.aspx.cs">
+      <DependentUpon>Survey.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\Survey.aspx.designer.cs">
+      <DependentUpon>Survey.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\SurveySuccess.aspx.cs">
+      <DependentUpon>SurveySuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\SurveySuccess.aspx.designer.cs">
+      <DependentUpon>SurveySuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\TicketsDetail.aspx.cs">
+      <DependentUpon>TicketsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\TicketsDetail.aspx.designer.cs">
+      <DependentUpon>TicketsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ViewRelatedTicket.aspx.cs">
+      <DependentUpon>ViewRelatedTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ViewRelatedTicket.aspx.designer.cs">
+      <DependentUpon>ViewRelatedTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\WaitingProcess.aspx.cs">
+      <DependentUpon>WaitingProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\WaitingProcess.aspx.designer.cs">
+      <DependentUpon>WaitingProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Companys\EditCompany.aspx.cs">
+      <DependentUpon>EditCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Companys\EditCompany.aspx.designer.cs">
+      <DependentUpon>EditCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Profile\SealRequestsEdit.aspx.cs">
+      <DependentUpon>SealRequestsEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Profile\SealRequestsEdit.aspx.designer.cs">
+      <DependentUpon>SealRequestsEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Profile\SealRequestsList.aspx.cs">
+      <DependentUpon>SealRequestsList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Profile\SealRequestsList.aspx.designer.cs">
+      <DependentUpon>SealRequestsList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Profile\WaitingProcess.aspx.cs">
+      <DependentUpon>WaitingProcess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Profile\WaitingProcess.aspx.designer.cs">
+      <DependentUpon>WaitingProcess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Projects\AddPrincipal.aspx.cs">
+      <DependentUpon>AddPrincipal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Projects\AddPrincipal.aspx.designer.cs">
+      <DependentUpon>AddPrincipal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Projects\AssignClientUsers.aspx.cs">
+      <DependentUpon>AssignClientUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Projects\AssignClientUsers.aspx.designer.cs">
+      <DependentUpon>AssignClientUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Projects\DoDeletePrincipal.ashx.cs">
+      <DependentUpon>DoDeletePrincipal.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Projects\DoAddPrincipal.ashx.cs">
+      <DependentUpon>DoAddPrincipal.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Projects\ViewProject.aspx.cs">
+      <DependentUpon>ViewProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Projects\ViewProject.aspx.designer.cs">
+      <DependentUpon>ViewProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Reports\MyTimesheetReport.aspx.cs">
+      <DependentUpon>MyTimesheetReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Reports\MyTimesheetReport.aspx.designer.cs">
+      <DependentUpon>MyTimesheetReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\TestEmail.aspx.cs">
+      <DependentUpon>TestEmail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\TestEmail.aspx.designer.cs">
+      <DependentUpon>TestEmail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AddFeedBacks.aspx.cs">
+      <DependentUpon>AddFeedBacks.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AddFeedBacks.aspx.designer.cs">
+      <DependentUpon>AddFeedBacks.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AddRelation.aspx.cs">
+      <DependentUpon>AddRelation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AddRelation.aspx.designer.cs">
+      <DependentUpon>AddRelation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AddSchedules.aspx.cs">
+      <DependentUpon>AddSchedules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AddSchedules.aspx.designer.cs">
+      <DependentUpon>AddSchedules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AddTask.aspx.cs">
+      <DependentUpon>AddTask.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AddTask.aspx.designer.cs">
+      <DependentUpon>AddTask.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AssignUsers.aspx.cs">
+      <DependentUpon>AssignUsers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AssignUsers.aspx.designer.cs">
+      <DependentUpon>AssignUsers.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AssignUserTs.aspx.cs">
+      <DependentUpon>AssignUserTs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AssignUserTs.aspx.designer.cs">
+      <DependentUpon>AssignUserTs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\ChooseCateGory.aspx.cs">
+      <DependentUpon>ChooseCateGory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\ChooseCateGory.aspx.designer.cs">
+      <DependentUpon>ChooseCateGory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\ConvertReason.aspx.cs">
+      <DependentUpon>ConvertReason.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\ConvertReason.aspx.designer.cs">
+      <DependentUpon>ConvertReason.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\DoAddSchedule.ashx.cs">
+      <DependentUpon>DoAddSchedule.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\EditSchedules.aspx.cs">
+      <DependentUpon>EditSchedules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\EditSchedules.aspx.designer.cs">
+      <DependentUpon>EditSchedules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\iCalendar.aspx.cs">
+      <DependentUpon>iCalendar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\iCalendar.aspx.designer.cs">
+      <DependentUpon>iCalendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\ListMyTicket.aspx.cs">
+      <DependentUpon>ListMyTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\ListMyTicket.aspx.designer.cs">
+      <DependentUpon>ListMyTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\MyCategory.aspx.cs">
+      <DependentUpon>MyCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\MyCategory.aspx.designer.cs">
+      <DependentUpon>MyCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\NewCateGory.aspx.cs">
+      <DependentUpon>NewCateGory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\NewCateGory.aspx.designer.cs">
+      <DependentUpon>NewCateGory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Reports\ProjectUserTimeSheet.aspx.cs">
+      <DependentUpon>ProjectUserTimeSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Reports\ProjectUserTimeSheet.aspx.designer.cs">
+      <DependentUpon>ProjectUserTimeSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\NewSchedules.aspx.cs">
+      <DependentUpon>NewSchedules.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\NewSchedules.aspx.designer.cs">
+      <DependentUpon>NewSchedules.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\StatusChange.aspx.cs">
+      <DependentUpon>StatusChange.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\StatusChange.aspx.designer.cs">
+      <DependentUpon>StatusChange.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\TicketDetail.aspx.cs">
+      <DependentUpon>TicketDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\TicketDetail.aspx.designer.cs">
+      <DependentUpon>TicketDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\TicketEsDetail.aspx.cs">
+      <DependentUpon>TicketEsDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\TicketEsDetail.aspx.designer.cs">
+      <DependentUpon>TicketEsDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\TicketTsTime.aspx.cs">
+      <DependentUpon>TicketTsTime.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\TicketTsTime.aspx.designer.cs">
+      <DependentUpon>TicketTsTime.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\UpdateDate.aspx.cs">
+      <DependentUpon>UpdateDate.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\UpdateDate.aspx.designer.cs">
+      <DependentUpon>UpdateDate.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\ViewRelatedTicket.aspx.cs">
+      <DependentUpon>ViewRelatedTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\ViewRelatedTicket.aspx.designer.cs">
+      <DependentUpon>ViewRelatedTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\WeekPlanEdit.aspx.cs">
+      <DependentUpon>WeekPlanEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\WeekPlanEdit.aspx.designer.cs">
+      <DependentUpon>WeekPlanEdit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\WeekPlanList.aspx.cs">
+      <DependentUpon>WeekPlanList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\WeekPlanList.aspx.designer.cs">
+      <DependentUpon>WeekPlanList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\AddDocument.aspx.cs">
+      <DependentUpon>AddDocument.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\AddDocument.aspx.designer.cs">
+      <DependentUpon>AddDocument.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\AddNote.aspx.cs">
+      <DependentUpon>AddNote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\AddNote.aspx.designer.cs">
+      <DependentUpon>AddNote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\AddRelation.aspx.cs">
+      <DependentUpon>AddRelation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\AddRelation.aspx.designer.cs">
+      <DependentUpon>AddRelation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\AddWorkRequest.aspx.cs">
+      <DependentUpon>AddWorkRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\AddWorkRequest.aspx.designer.cs">
+      <DependentUpon>AddWorkRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\Download.aspx.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\Download.aspx.designer.cs">
+      <DependentUpon>Download.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\EditWorkRequest.aspx.cs">
+      <DependentUpon>EditWorkRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\EditWorkRequest.aspx.designer.cs">
+      <DependentUpon>EditWorkRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\WorkRequest.aspx.cs">
+      <DependentUpon>WorkRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\WorkRequest\WorkRequest.aspx.designer.cs">
+      <DependentUpon>WorkRequest.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="testJson.aspx.cs">
+      <DependentUpon>testJson.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testJson.aspx.designer.cs">
+      <DependentUpon>testJson.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TestUI.aspx.cs">
+      <DependentUpon>TestUI.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TestUI.aspx.designer.cs">
+      <DependentUpon>TestUI.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddFeedBack.ascx.cs">
+      <DependentUpon>AddFeedBack.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddFeedBack.ascx.designer.cs">
+      <DependentUpon>AddFeedBack.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddRelationTickets.ascx.cs">
+      <DependentUpon>AddRelationTickets.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddRelationTickets.ascx.designer.cs">
+      <DependentUpon>AddRelationTickets.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddTicket.ascx.cs">
+      <DependentUpon>AddTicket.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddTicket.ascx.designer.cs">
+      <DependentUpon>AddTicket.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Codes\BaseAscx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Codes\BaseWebsitePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scripts\Upload\RemoteHandlers\Upload.ashx.cs">
+      <DependentUpon>Upload.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\AddModule.aspx.cs">
+      <DependentUpon>AddModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\AddModule.aspx.designer.cs">
+      <DependentUpon>AddModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\AddRole.aspx.cs">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\AddRole.aspx.designer.cs">
+      <DependentUpon>AddRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\AddUser.aspx.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\AddUser.aspx.designer.cs">
+      <DependentUpon>AddUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\EditModule.aspx.cs">
+      <DependentUpon>EditModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\EditModule.aspx.designer.cs">
+      <DependentUpon>EditModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\EditRole.aspx.cs">
+      <DependentUpon>EditRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\EditRole.aspx.designer.cs">
+      <DependentUpon>EditRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\EditUser.aspx.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\EditUser.aspx.designer.cs">
+      <DependentUpon>EditUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\ListModule.aspx.cs">
+      <DependentUpon>ListModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\ListModule.aspx.designer.cs">
+      <DependentUpon>ListModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\ListRole.aspx.cs">
+      <DependentUpon>ListRole.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\ListRole.aspx.designer.cs">
+      <DependentUpon>ListRole.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\ListUser.aspx.cs">
+      <DependentUpon>ListUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\ListUser.aspx.designer.cs">
+      <DependentUpon>ListUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Admin\RoleModulePage.aspx.cs">
+      <DependentUpon>RoleModulePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Admin\RoleModulePage.aspx.designer.cs">
+      <DependentUpon>RoleModulePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddTicket.aspx.cs">
+      <DependentUpon>AddTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\AddTicket.aspx.designer.cs">
+      <DependentUpon>AddTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\EditTicket.aspx.cs">
+      <DependentUpon>EditTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\EditTicket.aspx.designer.cs">
+      <DependentUpon>EditTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\FileList.aspx.cs">
+      <DependentUpon>FileList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\FileList.aspx.designer.cs">
+      <DependentUpon>FileList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ListTicket.aspx.cs">
+      <DependentUpon>ListTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\ListTicket.aspx.designer.cs">
+      <DependentUpon>ListTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Clients\TicketReport.aspx.cs">
+      <DependentUpon>TicketReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Clients\TicketReport.aspx.designer.cs">
+      <DependentUpon>TicketReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Companys\AddCompany.aspx.cs">
+      <DependentUpon>AddCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Companys\AddCompany.aspx.designer.cs">
+      <DependentUpon>AddCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Companys\ListCompany.aspx.cs">
+      <DependentUpon>ListCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Companys\ListCompany.aspx.designer.cs">
+      <DependentUpon>ListCompany.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Documents\FilesList.aspx.cs">
+      <DependentUpon>FilesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Documents\FilesList.aspx.designer.cs">
+      <DependentUpon>FilesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\InputPop.Master.cs">
+      <DependentUpon>InputPop.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\InputPop.Master.designer.cs">
+      <DependentUpon>InputPop.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Profile\ChangePassword.aspx.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Profile\ChangePassword.aspx.designer.cs">
+      <DependentUpon>ChangePassword.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Profile\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Profile\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Projects\AddProject.aspx.cs">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Projects\AddProject.aspx.designer.cs">
+      <DependentUpon>AddProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Projects\Companies.aspx.cs">
+      <DependentUpon>Companies.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Projects\Companies.aspx.designer.cs">
+      <DependentUpon>Companies.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Projects\EditProject.aspx.cs">
+      <DependentUpon>EditProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Projects\EditProject.aspx.designer.cs">
+      <DependentUpon>EditProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Projects\ListProject.aspx.cs">
+      <DependentUpon>ListProject.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Projects\ListProject.aspx.designer.cs">
+      <DependentUpon>ListProject.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Reports\Consuming.aspx.cs">
+      <DependentUpon>Consuming.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Reports\Consuming.aspx.designer.cs">
+      <DependentUpon>Consuming.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Reports\TimeSheet.aspx.cs">
+      <DependentUpon>TimeSheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Reports\TimeSheet.aspx.designer.cs">
+      <DependentUpon>TimeSheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AddTicket.aspx.cs">
+      <DependentUpon>AddTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AddTicket.aspx.designer.cs">
+      <DependentUpon>AddTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AddTimesheet.aspx.cs">
+      <DependentUpon>AddTimesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\AddTimesheet.aspx.designer.cs">
+      <DependentUpon>AddTimesheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\ListTicket.aspx.cs">
+      <DependentUpon>ListTicket.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\ListTicket.aspx.designer.cs">
+      <DependentUpon>ListTicket.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\ListTimesheet.aspx.cs">
+      <DependentUpon>ListTimesheet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\ListTimesheet.aspx.designer.cs">
+      <DependentUpon>ListTimesheet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\SchedulesList.aspx.cs">
+      <DependentUpon>SchedulesList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\SchedulesList.aspx.designer.cs">
+      <DependentUpon>SchedulesList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\SchedulesMonthly.aspx.cs">
+      <DependentUpon>SchedulesMonthly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\SchedulesMonthly.aspx.designer.cs">
+      <DependentUpon>SchedulesMonthly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\SchedulesYearly.aspx.cs">
+      <DependentUpon>SchedulesYearly.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sunnet\Tickets\SchedulesYearly.aspx.designer.cs">
+      <DependentUpon>SchedulesYearly.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TicketList.aspx.cs">
+      <DependentUpon>TicketList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TicketList.aspx.designer.cs">
+      <DependentUpon>TicketList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddWorkRequest.ascx.cs">
+      <DependentUpon>AddWorkRequest.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddWorkRequest.ascx.designer.cs">
+      <DependentUpon>AddWorkRequest.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AddWorkRequestRelation.ascx.cs">
+      <DependentUpon>AddWorkRequestRelation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AddWorkRequestRelation.ascx.designer.cs">
+      <DependentUpon>AddWorkRequestRelation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\AssignProjectToUser.ascx.cs">
+      <DependentUpon>AssignProjectToUser.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\AssignProjectToUser.ascx.designer.cs">
+      <DependentUpon>AssignProjectToUser.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ChangePassword.ascx.cs">
+      <DependentUpon>ChangePassword.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ChangePassword.ascx.designer.cs">
+      <DependentUpon>ChangePassword.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ChangeStatus.ascx.cs">
+      <DependentUpon>ChangeStatus.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ChangeStatus.ascx.designer.cs">
+      <DependentUpon>ChangeStatus.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ClientMaintenancePlan.ascx.cs">
+      <DependentUpon>ClientMaintenancePlan.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ClientMaintenancePlan.ascx.designer.cs">
+      <DependentUpon>ClientMaintenancePlan.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ClientTicketBaseInfo.ascx.cs">
+      <DependentUpon>ClientTicketBaseInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\ClientTicketBaseInfo.ascx.designer.cs">
+      <DependentUpon>ClientTicketBaseInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CompanyEdit.ascx.cs">
+      <DependentUpon>CompanyEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\CompanyEdit.ascx.designer.cs">
+      <DependentUpon>CompanyEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FeedBacksList.ascx.cs">
+      <DependentUpon>FeedBacksList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\FeedBacksList.ascx.designer.cs">
+      <DependentUpon>FeedBacksList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\HistoryList.ascx.cs">
+      <DependentUpon>HistoryList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\HistoryList.ascx.designer.cs">
+      <DependentUpon>HistoryList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LeftMenu.ascx.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\LeftMenu.ascx.designer.cs">
+      <DependentUpon>LeftMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OpenICalendar.ascx.cs">
+      <DependentUpon>OpenICalendar.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\OpenICalendar.ascx.designer.cs">
+      <DependentUpon>OpenICalendar.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Profile.ascx.cs">
+      <DependentUpon>Profile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\Profile.ascx.designer.cs">
+      <DependentUpon>Profile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RelationTicketsList.ascx.cs">
+      <DependentUpon>RelationTicketsList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\RelationTicketsList.ascx.designer.cs">
+      <DependentUpon>RelationTicketsList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TaskList.ascx.cs">
+      <DependentUpon>TaskList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TaskList.ascx.designer.cs">
+      <DependentUpon>TaskList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TicketBaseInfo.ascx.cs">
+      <DependentUpon>TicketBaseInfo.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TicketBaseInfo.ascx.designer.cs">
+      <DependentUpon>TicketBaseInfo.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TicketUsers.ascx.cs">
+      <DependentUpon>TicketUsers.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TicketUsers.ascx.designer.cs">
+      <DependentUpon>TicketUsers.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\TopMenu.ascx.cs">
+      <DependentUpon>TopMenu.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\TopMenu.ascx.designer.cs">
+      <DependentUpon>TopMenu.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UploadFile.ascx.cs">
+      <DependentUpon>UploadFile.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UploadFile.ascx.designer.cs">
+      <DependentUpon>UploadFile.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UserEdit.ascx.cs">
+      <DependentUpon>UserEdit.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\UserEdit.ascx.designer.cs">
+      <DependentUpon>UserEdit.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkFlow.ascx.cs">
+      <DependentUpon>WorkFlow.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkFlow.ascx.designer.cs">
+      <DependentUpon>WorkFlow.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkRequestDocuments.ascx.cs">
+      <DependentUpon>WorkRequestDocuments.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkRequestDocuments.ascx.designer.cs">
+      <DependentUpon>WorkRequestDocuments.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkRequestNotes.ascx.cs">
+      <DependentUpon>WorkRequestNotes.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkRequestNotes.ascx.designer.cs">
+      <DependentUpon>WorkRequestNotes.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\WorkRequestRelatedTicketsList.ascx.cs">
+      <DependentUpon>WorkRequestRelatedTicketsList.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UserControls\WorkRequestRelatedTicketsList.ascx.designer.cs">
+      <DependentUpon>WorkRequestRelatedTicketsList.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Api\PMLogin.asmx" />
+    <Content Include="Config\js.txt" />
+    <Content Include="404.html" />
+    <Content Include="Documents\sql\sql_2013-07-18_Jack.txt" />
+    <Content Include="Documents\sql\sql_2013-11-06_Justin.txt" />
+    <Content Include="Documents\sql\sql_2013-11-15_Justin.txt" />
+    <Content Include="Documents\sql\sql_2013-11-18_Justin.txt" />
+    <Content Include="Documents\sql\sql_2013-11-19_Justin.txt" />
+    <Content Include="Do\CateGory.ashx" />
+    <Content Include="Do\TicketTasks.ashx" />
+    <Content Include="Do\TimeSheet.ashx" />
+    <None Include="Documents\FUA.rar" />
+    <None Include="Documents\Pm_2012_09_13.dm1" />
+    <None Include="Documents\PM_UML.uml" />
+    <None Include="Documents\PM_权限.docx" />
+    <None Include="Documents\PM代码内权限控制.xlsx" />
+    <None Include="Documents\PM状态.docx" />
+    <None Include="Documents\sql\sql_procs_CateGory.sql" />
+    <None Include="Documents\sql\sql_procs_CateGoryTicket.sql" />
+    <None Include="Documents\sql\sql_procs_Companys.sql" />
+    <None Include="Documents\sql\sql_procs_FeedBacks.sql" />
+    <None Include="Documents\sql\sql_procs_Files.sql" />
+    <None Include="Documents\sql\sql_procs_Modules.sql" />
+    <None Include="Documents\sql\sql_procs_Pages.sql" />
+    <None Include="Documents\sql\sql_procs_Projects.sql" />
+    <None Include="Documents\sql\sql_procs_ProjectUsers.sql" />
+    <None Include="Documents\sql\sql_procs_RoleModules.sql" />
+    <None Include="Documents\sql\sql_procs_RolePages.sql" />
+    <None Include="Documents\sql\sql_procs_Roles.sql" />
+    <None Include="Documents\sql\sql_procs_Tasks.sql" />
+    <None Include="Documents\sql\sql_procs_TicketHistorys.sql" />
+    <None Include="Documents\sql\sql_procs_Tickets.sql" />
+    <None Include="Documents\sql\sql_procs_TicketsOrder.sql" />
+    <None Include="Documents\sql\sql_procs_TicketUsers.sql" />
+    <None Include="Documents\sql\sql_procs_TimeSheets.sql" />
+    <None Include="Documents\sql\sql_procs_Users.sql" />
+    <Content Include="Do\TimeSheetNotcie.asmx" />
+    <Content Include="error.html" />
+    <Content Include="ForgotPassword.aspx" />
+    <Content Include="icons\deny.gif" />
+    <Content Include="icons\download.png" />
+    <Content Include="icons\grey_star.png" />
+    <Content Include="icons\icn-help.png" />
+    <Content Include="icons\ico_priority.gif" />
+    <Content Include="icons\needreply.gif" />
+    <Content Include="icons\new_schedule.png" />
+    <Content Include="icons\note.gif" />
+    <Content Include="icons\orange_star.png" />
+    <Content Include="icons\star12.png" />
+    <Content Include="icons\star15.png" />
+    <Content Include="icons\star16.png" />
+    <Content Include="icons\stars.png" />
+    <Content Include="icons\ticket_status.gif" />
+    <Content Include="Images\active_bg1.png" />
+    <Content Include="Images\active_bg2.png" />
+    <Content Include="Images\active_bg3.png" />
+    <Content Include="Images\addtopic.png" />
+    <Content Include="Images\but_bg2.png" />
+    <Content Include="Images\calendar_day.png" />
+    <Content Include="Images\cancelled_ticket.png" />
+    <Content Include="Images\checked-100.png" />
+    <Content Include="Images\checked.jpg" />
+    <Content Include="Images\close.png" />
+    <Content Include="Images\close_hover.png" />
+    <Content Include="Images\completed_ticket.png" />
+    <Content Include="Images\dashboard_bg.png" />
+    <Content Include="Images\draft_ticket.png" />
+    <Content Include="Images\event.png" />
+    <Content Include="Images\EventIcon\event_icon_1.png" />
+    <Content Include="Images\EventIcon\event_icon_10.png" />
+    <Content Include="Images\EventIcon\event_icon_10s.png" />
+    <Content Include="Images\EventIcon\event_icon_11.png" />
+    <Content Include="Images\EventIcon\event_icon_11s.png" />
+    <Content Include="Images\EventIcon\event_icon_12.png" />
+    <Content Include="Images\EventIcon\event_icon_12s.png" />
+    <Content Include="Images\EventIcon\event_icon_1s.png" />
+    <Content Include="Images\EventIcon\event_icon_2.png" />
+    <Content Include="Images\EventIcon\event_icon_2s.png" />
+    <Content Include="Images\EventIcon\event_icon_3.png" />
+    <Content Include="Images\EventIcon\event_icon_3s.png" />
+    <Content Include="Images\EventIcon\event_icon_4.png" />
+    <Content Include="Images\EventIcon\event_icon_4s.png" />
+    <Content Include="Images\EventIcon\event_icon_5.png" />
+    <Content Include="Images\EventIcon\event_icon_5s.png" />
+    <Content Include="Images\EventIcon\event_icon_6.png" />
+    <Content Include="Images\EventIcon\event_icon_6s.png" />
+    <Content Include="Images\EventIcon\event_icon_7.png" />
+    <Content Include="Images\EventIcon\event_icon_7s.png" />
+    <Content Include="Images\EventIcon\event_icon_8.png" />
+    <Content Include="Images\EventIcon\event_icon_8s.png" />
+    <Content Include="Images\EventIcon\event_icon_9.png" />
+    <Content Include="Images\EventIcon\event_icon_9s.png" />
+    <Content Include="Images\ex.gif" />
+    <Content Include="Images\filetype-256\ac3.png" />
+    <Content Include="Images\filetype-256\ai.png" />
+    <Content Include="Images\filetype-256\aiff.png" />
+    <Content Include="Images\filetype-256\ani.png" />
+    <Content Include="Images\filetype-256\asf.png" />
+    <Content Include="Images\filetype-256\au.png" />
+    <Content Include="Images\filetype-256\avi.png" />
+    <Content Include="Images\filetype-256\bat.png" />
+    <Content Include="Images\filetype-256\bin-64.png" />
+    <Content Include="Images\filetype-256\bin.png" />
+    <Content Include="Images\filetype-256\bmp.png" />
+    <Content Include="Images\filetype-256\bup.png" />
+    <Content Include="Images\filetype-256\cab.png" />
+    <Content Include="Images\filetype-256\cal.png" />
+    <Content Include="Images\filetype-256\cat.png" />
+    <Content Include="Images\filetype-256\cur.png" />
+    <Content Include="Images\filetype-256\dat.png" />
+    <Content Include="Images\filetype-256\dcr.png" />
+    <Content Include="Images\filetype-256\der.png" />
+    <Content Include="Images\filetype-256\dic.png" />
+    <Content Include="Images\filetype-256\directory.png" />
+    <Content Include="Images\filetype-256\dll.png" />
+    <Content Include="Images\filetype-256\doc.png" />
+    <Content Include="Images\filetype-256\docx.png" />
+    <Content Include="Images\filetype-256\dvd.png" />
+    <Content Include="Images\filetype-256\dwg.png" />
+    <Content Include="Images\filetype-256\dwt.png" />
+    <Content Include="Images\filetype-256\empty.png" />
+    <Content Include="Images\filetype-256\fon.png" />
+    <Content Include="Images\filetype-256\gif.png" />
+    <Content Include="Images\filetype-256\hlp.png" />
+    <Content Include="Images\filetype-256\hst.png" />
+    <Content Include="Images\filetype-256\html.png" />
+    <Content Include="Images\filetype-256\ico.png" />
+    <Content Include="Images\filetype-256\ifo.png" />
+    <Content Include="Images\filetype-256\inf.png" />
+    <Content Include="Images\filetype-256\ini.png" />
+    <Content Include="Images\filetype-256\java.png" />
+    <Content Include="Images\filetype-256\jif.png" />
+    <Content Include="Images\filetype-256\jpg.png" />
+    <Content Include="Images\filetype-256\log.png" />
+    <Content Include="Images\filetype-256\m4a.png" />
+    <Content Include="Images\filetype-256\mmf.png" />
+    <Content Include="Images\filetype-256\mmm.png" />
+    <Content Include="Images\filetype-256\mov.png" />
+    <Content Include="Images\filetype-256\mp2.png" />
+    <Content Include="Images\filetype-256\mp2v.png" />
+    <Content Include="Images\filetype-256\mp3.png" />
+    <Content Include="Images\filetype-256\mp4.png" />
+    <Content Include="Images\filetype-256\mpeg.png" />
+    <Content Include="Images\filetype-256\msp.png" />
+    <Content Include="Images\filetype-256\pdf.png" />
+    <Content Include="Images\filetype-256\png.png" />
+    <Content Include="Images\filetype-256\ppt.png" />
+    <Content Include="Images\filetype-256\pptx.png" />
+    <Content Include="Images\filetype-256\psd.png" />
+    <Content Include="Images\filetype-256\ra.png" />
+    <Content Include="Images\filetype-256\rar.png" />
+    <Content Include="Images\filetype-256\reg.png" />
+    <Content Include="Images\filetype-256\rtf.png" />
+    <Content Include="Images\filetype-256\theme.png" />
+    <Content Include="Images\filetype-256\ticket.png" />
+    <Content Include="Images\filetype-256\tiff.png" />
+    <Content Include="Images\filetype-256\tlb.png" />
+    <Content Include="Images\filetype-256\ttf.png" />
+    <Content Include="Images\filetype-256\txt.png" />
+    <Content Include="Images\filetype-256\vob.png" />
+    <Content Include="Images\filetype-256\wav.png" />
+    <Content Include="Images\filetype-256\wma.png" />
+    <Content Include="Images\filetype-256\wmv.png" />
+    <Content Include="Images\filetype-256\wpl.png" />
+    <Content Include="Images\filetype-256\wri.png" />
+    <Content Include="Images\filetype-256\xls.png" />
+    <Content Include="Images\filetype-256\xlsx.png" />
+    <Content Include="Images\filetype-256\xml.png" />
+    <Content Include="Images\filetype-256\xsl.png" />
+    <Content Include="Images\filetype-256\zip.png" />
+    <Content Include="Images\filetype.png" />
+    <Content Include="Images\filetype\ac3.png" />
+    <Content Include="Images\filetype\ai.png" />
+    <Content Include="Images\filetype\aiff.png" />
+    <Content Include="Images\filetype\ani.png" />
+    <Content Include="Images\filetype\asf.png" />
+    <Content Include="Images\filetype\au.png" />
+    <Content Include="Images\filetype\avi.png" />
+    <Content Include="Images\filetype\bat.png" />
+    <Content Include="Images\filetype\bin.png" />
+    <Content Include="Images\filetype\bmp.png" />
+    <Content Include="Images\filetype\bup.png" />
+    <Content Include="Images\filetype\cab.png" />
+    <Content Include="Images\filetype\cal.png" />
+    <Content Include="Images\filetype\cat.png" />
+    <Content Include="Images\filetype\cur.png" />
+    <Content Include="Images\filetype\dat.png" />
+    <Content Include="Images\filetype\dcr.png" />
+    <Content Include="Images\filetype\der.png" />
+    <Content Include="Images\filetype\dic.png" />
+    <Content Include="Images\filetype\directory.png" />
+    <Content Include="Images\filetype\dll.png" />
+    <Content Include="Images\filetype\doc.png" />
+    <Content Include="Images\filetype\docx.png" />
+    <Content Include="Images\filetype\dvd.png" />
+    <Content Include="Images\filetype\dwg.png" />
+    <Content Include="Images\filetype\dwt.png" />
+    <Content Include="Images\filetype\empty.png" />
+    <Content Include="Images\filetype\fon.png" />
+    <Content Include="Images\filetype\gif.png" />
+    <Content Include="Images\filetype\hlp.png" />
+    <Content Include="Images\filetype\hst.png" />
+    <Content Include="Images\filetype\html.png" />
+    <Content Include="Images\filetype\ico.png" />
+    <Content Include="Images\filetype\ifo.png" />
+    <Content Include="Images\filetype\inf.png" />
+    <Content Include="Images\filetype\ini.png" />
+    <Content Include="Images\filetype\java.png" />
+    <Content Include="Images\filetype\jif.png" />
+    <Content Include="Images\filetype\jpg.png" />
+    <Content Include="Images\filetype\log.png" />
+    <Content Include="Images\filetype\m4a.png" />
+    <Content Include="Images\filetype\mmf.png" />
+    <Content Include="Images\filetype\mmm.png" />
+    <Content Include="Images\filetype\mov.png" />
+    <Content Include="Images\filetype\mp2.png" />
+    <Content Include="Images\filetype\mp2v.png" />
+    <Content Include="Images\filetype\mp3.png" />
+    <Content Include="Images\filetype\mp4.png" />
+    <Content Include="Images\filetype\mpeg.png" />
+    <Content Include="Images\filetype\msp.png" />
+    <Content Include="Images\filetype\pdf.png" />
+    <Content Include="Images\filetype\png.png" />
+    <Content Include="Images\filetype\ppt.png" />
+    <Content Include="Images\filetype\pptx.png" />
+    <Content Include="Images\filetype\psd.png" />
+    <Content Include="Images\filetype\ra.png" />
+    <Content Include="Images\filetype\rar.png" />
+    <Content Include="Images\filetype\reg.png" />
+    <Content Include="Images\filetype\rtf.png" />
+    <Content Include="Images\filetype\theme.png" />
+    <Content Include="Images\filetype\ticket.png" />
+    <Content Include="Images\filetype\tiff.png" />
+    <Content Include="Images\filetype\tlb.png" />
+    <Content Include="Images\filetype\ttf.png" />
+    <Content Include="Images\filetype\txt.png" />
+    <Content Include="Images\filetype\vob.png" />
+    <Content Include="Images\filetype\wav.png" />
+    <Content Include="Images\filetype\wma.png" />
+    <Content Include="Images\filetype\wmv.png" />
+    <Content Include="Images\filetype\wpl.png" />
+    <Content Include="Images\filetype\wri.png" />
+    <Content Include="Images\filetype\xls.png" />
+    <Content Include="Images\filetype\xlsx.png" />
+    <Content Include="Images\filetype\xml.png" />
+    <Content Include="Images\filetype\xsl.png" />
+    <Content Include="Images\filetype\zip.png" />
+    <Content Include="Images\folder_add.png" />
+    <Content Include="Images\forgot_password_bg.jpg" />
+    <Content Include="Images\fwbox_bg.png" />
+    <Content Include="Images\homelog_btnbg.png" />
+    <Content Include="Images\ico_delete.gif" />
+    <Content Include="Images\ico_password.jpg" />
+    <Content Include="Images\ico_registration.gif" />
+    <Content Include="Images\ico_username.jpg" />
+    <Content Include="Images\leftArrow.gif" />
+    <Content Include="Images\listicon.png" />
+    <Content Include="Images\loading100.gif" />
+    <Content Include="Images\login_arrow.gif" />
+    <Content Include="Images\login_bg.jpg" />
+    <Content Include="Images\login_btnbg.jpg" />
+    <Content Include="Images\login_btnbg1.jpg" />
+    <Content Include="Images\login_btnbgover.jpg" />
+    <Content Include="Images\login_logo.jpg" />
+    <Content Include="Images\login_sepline.png" />
+    <Content Include="Images\login_topright.jpg" />
+    <Content Include="Images\pd_bug.png" />
+    <Content Include="Images\pd_cancelled.png" />
+    <Content Include="Images\pd_change.png" />
+    <Content Include="Images\pd_completed.png" />
+    <Content Include="Images\pd_draft.png" />
+    <Content Include="Images\pd_issue.png" />
+    <Content Include="Images\pd_ongoing.png" />
+    <Content Include="Images\pd_reports.png" />
+    <Content Include="Images\pd_request.png" />
+    <Content Include="Images\pd_response.png" />
+    <Content Include="Images\pd_risk.png" />
+    <Content Include="Images\pm_enhancement.png" />
+    <Content Include="Images\reddot.png" />
+    <Content Include="Images\report.png" />
+    <Content Include="Do\DoAddTicketHandler.ashx" />
+    <Content Include="Do\DoAddFeedBackHandler.ashx" />
+    <Content Include="Do\DoAddRelationTickets.ashx" />
+    <Content Include="Do\DoRemoveRelationTicketsHandler.ashx" />
+    <Content Include="Do\DoUpdateTicketStatus.ashx" />
+    <Content Include="Do\DoRemoveDraftTicketHandler.ashx" />
+    <Content Include="Do\DoEditTicketHandler.ashx" />
+    <Content Include="Do\DoUpdateEnStatus.ashx" />
+    <Content Include="Do\DoUpdateDate.ashx" />
+    <Content Include="Do\DoAssignUserHandler.ashx" />
+    <Content Include="Do\DoTicketEsTimeUpdateHandler.ashx" />
+    <Content Include="Do\DoConverReasonHandler.ashx" />
+    <Content Include="Do\DoAddTaskHandler.ashx" />
+    <Content Include="Do\DoGetTaskList.ashx" />
+    <Content Include="Do\DoUpdateTaskStatusHandler.ashx" />
+    <Content Include="Do\DoGetTotalCountUnderSpecificStatus.ashx" />
+    <Content Include="Do\DoDownloadFileHandler.ashx" />
+    <Content Include="Do\Js.ashx" />
+    <Content Include="Do\DoRemoveFileHandler.ashx" />
+    <Content Include="Do\Directory.ashx" />
+    <Content Include="Do\DoGetListEsStringHandler.ashx" />
+    <Content Include="Do\TicketStar.ashx" />
+    <Content Include="Do\DoInternalCancel.ashx" />
+    <Content Include="Do\DownloadSealFile.ashx" />
+    <Content Include="Do\deleteSealFile.ashx" />
+    <Content Include="Do\DoAddRelationWorkRequest.ashx" />
+    <Content Include="Do\DoDeleteRelationWorkRequest.ashx" />
+    <Content Include="Do\DoDeleteWorkRequestDocuments.ashx" />
+    <Content Include="Do\DoAssignProjectsToUser.ashx" />
+    <Content Include="Do\DoGetCalendarList.ashx" />
+    <Content Include="Do\DoGetEventList.ashx" />
+    <Content Include="Sunnet\Profile\DoAddFile.ashx" />
+    <Content Include="Do\DoDeleteOwnFeedBack.ashx" />
+    <None Include="icons\Thumbs.db" />
+    <None Include="Images\filetype-256\Thumbs.db" />
+    <None Include="Images\filetype\Thumbs.db" />
+    <None Include="Scripts\Upload\uploadify.php" />
+    <Content Include="Scripts\v3.bootstrap\config.json" />
+    <Content Include="Scripts\v3.bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\v3.bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\v3.bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Service References\OperateDocManagements\OperateDocManagement.wsdl" />
+    <None Include="Styles\datagrid\default\images\Thumbs.db" />
+    <None Include="Styles\datagrid\gray\images\Thumbs.db" />
+    <Content Include="Sunnet\popWindow.Master" />
+    <Content Include="Sunnet\Profile\DoAddNote.ashx" />
+    <Content Include="Sunnet\Profile\DoSealRequestEdit.ashx" />
+    <Content Include="Sunnet\Admin\DoAddSeal.ashx" />
+    <Content Include="Sunnet\Projects\DoAddPrincipal.ashx" />
+    <Content Include="Sunnet\Projects\DoDeletePrincipal.ashx" />
+    <Content Include="Sunnet\Tickets\DoAddSchedule.ashx" />
+    <None Include="Template\AllTemplate.xlsx" />
+    <None Include="Template\AllTemplate_Project.xlsx" />
+    <None Include="Template\MyTimesheetTemplate.xlsx" />
+    <Content Include="icons\35.gif" />
+    <Content Include="icons\36.gif" />
+    <Content Include="icons\37.gif" />
+    <Content Include="icons\38.gif" />
+    <Content Include="icons\reply.gif" />
+    <Content Include="Images\asc.gif" />
+    <Content Include="Images\desc.gif" />
+    <Content Include="Images\loading16.gif" />
+    <Content Include="Images\loading16_blue.gif" />
+    <Content Include="Images\loginbg.jpg" />
+    <Content Include="Images\loginbox_bg.jpg" />
+    <Content Include="Images\loginbtn_bg.gif" />
+    <Content Include="Images\nologo.jpg" />
+    <Content Include="Images\save.gif" />
+    <Content Include="icons\saveBtn1.gif" />
+    <Content Include="icons\saveBtn2.gif" />
+    <Content Include="icons\saveBtn3.gif" />
+    <Content Include="icons\saveBtn4.gif" />
+    <Content Include="Images\save_item.gif" />
+    <Content Include="Images\send_success.jpg" />
+    <Content Include="Images\showmenu_1.gif" />
+    <Content Include="Images\showmenu_2.gif" />
+    <Content Include="Images\showmenu_3.gif" />
+    <Content Include="Images\showmenu_4.gif" />
+    <Content Include="Images\submit_bug.png" />
+    <Content Include="Images\submit_button.jpg" />
+    <Content Include="Images\submit_request.png" />
+    <Content Include="Images\tickettopbtn_bg.gif" />
+    <Content Include="Images\tickettopbtn_bgover.gif" />
+    <Content Include="Images\ticket_report.png" />
+    <Content Include="Images\unchecked.jpg" />
+    <Content Include="Images\upload.png" />
+    <Content Include="Images\view_progress.png" />
+    <Content Include="Images\waiting_client.png" />
+    <Content Include="Images\weekplan_topbg.gif" />
+    <Content Include="Images\weekplan_wbg.gif" />
+    <Content Include="Lib\NPOI.dll" />
+    <Content Include="Lib\Yahoo.Yui.Compressor\EcmaScript.NET.dll" />
+    <Content Include="Lib\Yahoo.Yui.Compressor\Iesi.Collections.dll" />
+    <Content Include="Lib\Yahoo.Yui.Compressor\NAnt.Core.dll" />
+    <Content Include="Lib\Yahoo.Yui.Compressor\New BSD License.txt" />
+    <Content Include="Lib\Yahoo.Yui.Compressor\Yahoo.Yui.Compressor.Build.MsBuild.dll" />
+    <Content Include="Lib\Yahoo.Yui.Compressor\Yahoo.Yui.Compressor.Build.Nant.dll" />
+    <Content Include="Lib\Yahoo.Yui.Compressor\Yahoo.Yui.Compressor.dll" />
+    <Content Include="Logout.aspx" />
+    <Content Include="Register.aspx" />
+    <Content Include="ResetPassword.aspx" />
+    <Content Include="Scripts\addtocategory.js" />
+    <Content Include="Scripts\Common.js" />
+    <Content Include="Scripts\jquery-1.8.1.min.js" />
+    <Content Include="Scripts\jquery-ui-1.9.0.custom.min.js" />
+    <Content Include="Scripts\jquery.datagrid.js" />
+    <Content Include="Scripts\jquery.easyui.min.js" />
+    <Content Include="Scripts\jquery.edatagrid.js" />
+    <Content Include="Scripts\jquery.maskedinput-1.3.min.js" />
+    <Content Include="Scripts\jsgantt.js" />
+    <Content Include="Scripts\ShowMsgCommon.js" />
+    <Content Include="Scripts\Upload\css\blank.gif" />
+    <Content Include="Scripts\Upload\css\iepngfix.htc" />
+    <Content Include="Scripts\Upload\images\selectfiles.png" />
+    <Content Include="Scripts\Upload\jquery-1.3.2.min.js" />
+    <Content Include="Scripts\Upload\jquery.uploadify.min.js" />
+    <Content Include="Scripts\Upload\RemoteHandlers\Upload.ashx" />
+    <Content Include="NoAccess.html" />
+    <Content Include="icons\32.gif" />
+    <Content Include="icons\33.gif" />
+    <Content Include="icons\34.gif" />
+    <Content Include="Images\btn_over.gif" />
+    <Content Include="Images\cld_bg.gif" />
+    <Content Include="Images\FirstD.gif" />
+    <Content Include="Images\FirstN.gif" />
+    <Content Include="Images\LastD.gif" />
+    <Content Include="Images\LastN.gif" />
+    <Content Include="Images\logosample.gif" />
+    <Content Include="Images\go.gif" />
+    <Content Include="Images\NextD.gif" />
+    <Content Include="Images\NextN.gif" />
+    <Content Include="Images\PrevD.gif" />
+    <Content Include="Images\PrevN.gif" />
+    <Content Include="Images\scdyearly_topbg.gif" />
+    <Content Include="Lib\AspNetPager.dll" />
+    <Content Include="Lib\Microsoft.Practices.EnterpriseLibrary.Common.dll" />
+    <Content Include="Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll" />
+    <Content Include="Lib\Microsoft.Practices.ObjectBuilder2.dll" />
+    <Content Include="Lib\Microsoft.Practices.Unity.dll" />
+    <Content Include="Lib\nunit.framework.dll" />
+    <Content Include="Lib\StructureMap.dll" />
+    <Content Include="Scripts\Upload\uploadify.swf" />
+    <Content Include="Scripts\Validate\formValidatorRegex.js" />
+    <Content Include="Scripts\windialog\lhgcore.js" />
+    <Content Include="Scripts\windialog\lhgdialog.html" />
+    <Content Include="Scripts\windialog\lhgdialog.js" />
+    <Content Include="Scripts\windialog\skins\confirm\d_bg.gif" />
+    <Content Include="Scripts\windialog\skins\confirm\d_x.gif" />
+    <Content Include="Scripts\windialog\skins\confirm\lhgdialog.css" />
+    <Content Include="Scripts\windialog\skins\confirm\lhg_dlg_ie6.js" />
+    <Content Include="Scripts\windialog\skins\confirm\wait.gif" />
+    <Content Include="Scripts\windialog\skins\default\d_bg.gif" />
+    <Content Include="Scripts\windialog\skins\default\d_x.gif" />
+    <Content Include="Scripts\windialog\skins\default\lhgdialog.css" />
+    <Content Include="Scripts\windialog\skins\default\lhg_dlg_ie6.js" />
+    <Content Include="Scripts\windialog\skins\default\wait.gif" />
+    <Content Include="Scripts\windialog\skins\extjs\d_bg.gif" />
+    <Content Include="Scripts\windialog\skins\extjs\d_x.gif" />
+    <Content Include="Scripts\windialog\skins\extjs\lhgdialog.css" />
+    <Content Include="Scripts\windialog\skins\extjs\lhg_dlg_ie6.js" />
+    <Content Include="Scripts\windialog\skins\extjs\wait.gif" />
+    <Content Include="Scripts\windialog\skins\silvergray\d_bg.gif" />
+    <Content Include="Scripts\windialog\skins\silvergray\d_x.gif" />
+    <Content Include="Scripts\windialog\skins\silvergray\lhgdialog.css" />
+    <Content Include="Scripts\windialog\skins\silvergray\lhg_dlg_ie6.js" />
+    <Content Include="Scripts\windialog\skins\silvergray\wait.gif" />
+    <Content Include="Scripts\windialog\skins\skyblue\d_bg.gif" />
+    <Content Include="Scripts\windialog\skins\skyblue\d_x.gif" />
+    <Content Include="Scripts\windialog\skins\skyblue\lhgdialog.css" />
+    <Content Include="Scripts\windialog\skins\skyblue\lhg_dlg_ie6.js" />
+    <Content Include="Scripts\windialog\skins\skyblue\wait.gif" />
+    <Content Include="Scripts\windialog\skins\tskyblue\h_bg.png" />
+    <Content Include="Scripts\windialog\skins\tskyblue\h_x.png" />
+    <Content Include="Scripts\windialog\skins\tskyblue\lhgdialog.css" />
+    <Content Include="Scripts\windialog\skins\tskyblue\lhg_dlg_ie6.js" />
+    <Content Include="Scripts\windialog\skins\tskyblue\wait.gif" />
+    <Content Include="Styles\datagrid\default\accordion.css" />
+    <Content Include="Styles\datagrid\default\calendar.css" />
+    <Content Include="Styles\datagrid\default\combo.css" />
+    <Content Include="Styles\datagrid\default\combobox.css" />
+    <Content Include="Styles\datagrid\default\datagrid.css" />
+    <Content Include="Styles\datagrid\default\datebox.css" />
+    <Content Include="Styles\datagrid\default\dialog.css" />
+    <Content Include="Styles\datagrid\default\easyui.css" />
+    <Content Include="Styles\datagrid\default\images\accordion_collapse.png" />
+    <Content Include="Styles\datagrid\default\images\accordion_expand.png" />
+    <Content Include="Styles\datagrid\default\images\blank.gif" />
+    <Content Include="Styles\datagrid\default\images\button_a_bg.gif" />
+    <Content Include="Styles\datagrid\default\images\button_plain_hover.png" />
+    <Content Include="Styles\datagrid\default\images\button_span_bg.gif" />
+    <Content Include="Styles\datagrid\default\images\calendar_nextmonth.gif" />
+    <Content Include="Styles\datagrid\default\images\calendar_nextyear.gif" />
+    <Content Include="Styles\datagrid\default\images\calendar_prevmonth.gif" />
+    <Content Include="Styles\datagrid\default\images\calendar_prevyear.gif" />
+    <Content Include="Styles\datagrid\default\images\combo_arrow.gif" />
+    <Content Include="Styles\datagrid\default\images\datagrid_header_bg.gif" />
+    <Content Include="Styles\datagrid\default\images\datagrid_row_collapse.gif" />
+    <Content Include="Styles\datagrid\default\images\datagrid_row_expand.gif" />
+    <Content Include="Styles\datagrid\default\images\datagrid_sort_asc.gif" />
+    <Content Include="Styles\datagrid\default\images\datagrid_sort_desc.gif" />
+    <Content Include="Styles\datagrid\default\images\datagrid_title_bg.png" />
+    <Content Include="Styles\datagrid\default\images\datebox_arrow.png" />
+    <Content Include="Styles\datagrid\default\images\layout_arrows.png" />
+    <Content Include="Styles\datagrid\default\images\menu.gif" />
+    <Content Include="Styles\datagrid\default\images\menu_downarrow.png" />
+    <Content Include="Styles\datagrid\default\images\menu_rightarrow.png" />
+    <Content Include="Styles\datagrid\default\images\menu_sep.png" />
+    <Content Include="Styles\datagrid\default\images\menu_split_downarrow.png" />
+    <Content Include="Styles\datagrid\default\images\messager_error.gif" />
+    <Content Include="Styles\datagrid\default\images\messager_info.gif" />
+    <Content Include="Styles\datagrid\default\images\messager_question.gif" />
+    <Content Include="Styles\datagrid\default\images\messager_warning.gif" />
+    <Content Include="Styles\datagrid\default\images\pagination_first.gif" />
+    <Content Include="Styles\datagrid\default\images\pagination_last.gif" />
+    <Content Include="Styles\datagrid\default\images\pagination_load.png" />
+    <Content Include="Styles\datagrid\default\images\pagination_loading.gif" />
+    <Content Include="Styles\datagrid\default\images\pagination_next.gif" />
+    <Content Include="Styles\datagrid\default\images\pagination_prev.gif" />
+    <Content Include="Styles\datagrid\default\images\panel_loading.gif" />
+    <Content Include="Styles\datagrid\default\images\panel_title.png" />
+    <Content Include="Styles\datagrid\default\images\panel_tools.gif" />
+    <Content Include="Styles\datagrid\default\images\searchbox_button.png" />
+    <Content Include="Styles\datagrid\default\images\slider_handle.png" />
+    <Content Include="Styles\datagrid\default\images\spinner_arrow_down.gif" />
+    <Content Include="Styles\datagrid\default\images\spinner_arrow_up.gif" />
+    <Content Include="Styles\datagrid\default\images\tabs_active.png" />
+    <Content Include="Styles\datagrid\default\images\tabs_close.gif" />
+    <Content Include="Styles\datagrid\default\images\tabs_enabled.png" />
+    <Content Include="Styles\datagrid\default\images\tabs_leftarrow.png" />
+    <Content Include="Styles\datagrid\default\images\tabs_rightarrow.png" />
+    <Content Include="Styles\datagrid\default\images\tree_arrows.gif" />
+    <Content Include="Styles\datagrid\default\images\tree_checkbox_0.gif" />
+    <Content Include="Styles\datagrid\default\images\tree_checkbox_1.gif" />
+    <Content Include="Styles\datagrid\default\images\tree_checkbox_2.gif" />
+    <Content Include="Styles\datagrid\default\images\tree_dnd_no.png" />
+    <Content Include="Styles\datagrid\default\images\tree_dnd_yes.png" />
+    <Content Include="Styles\datagrid\default\images\tree_elbow.png" />
+    <Content Include="Styles\datagrid\default\images\tree_file.gif" />
+    <Content Include="Styles\datagrid\default\images\tree_folder.gif" />
+    <Content Include="Styles\datagrid\default\images\tree_folder_open.gif" />
+    <Content Include="Styles\datagrid\default\images\tree_loading.gif" />
+    <Content Include="Styles\datagrid\default\images\validatebox_pointer.gif" />
+    <Content Include="Styles\datagrid\default\images\validatebox_warning.png" />
+    <Content Include="Styles\datagrid\default\layout.css" />
+    <Content Include="Styles\datagrid\default\linkbutton.css" />
+    <Content Include="Styles\datagrid\default\menu.css" />
+    <Content Include="Styles\datagrid\default\menubutton.css" />
+    <Content Include="Styles\datagrid\default\messager.css" />
+    <Content Include="Styles\datagrid\default\pagination.css" />
+    <Content Include="Styles\datagrid\default\panel.css" />
+    <Content Include="Styles\datagrid\default\progressbar.css" />
+    <Content Include="Styles\datagrid\default\propertygrid.css" />
+    <Content Include="Styles\datagrid\default\searchbox.css" />
+    <Content Include="Styles\datagrid\default\slider.css" />
+    <Content Include="Styles\datagrid\default\spinner.css" />
+    <Content Include="Styles\datagrid\default\splitbutton.css" />
+    <Content Include="Styles\datagrid\default\tabs.css" />
+    <Content Include="Styles\datagrid\default\tree.css" />
+    <Content Include="Styles\datagrid\default\validatebox.css" />
+    <Content Include="Styles\datagrid\default\window.css" />
+    <Content Include="Styles\datagrid\gray\accordion.css" />
+    <Content Include="Styles\datagrid\gray\calendar.css" />
+    <Content Include="Styles\datagrid\gray\combo.css" />
+    <Content Include="Styles\datagrid\gray\combobox.css" />
+    <Content Include="Styles\datagrid\gray\datagrid.css" />
+    <Content Include="Styles\datagrid\gray\datebox.css" />
+    <Content Include="Styles\datagrid\gray\dialog.css" />
+    <Content Include="Styles\datagrid\gray\easyui.css" />
+    <Content Include="Styles\datagrid\gray\images\accordion_collapse.png" />
+    <Content Include="Styles\datagrid\gray\images\accordion_expand.png" />
+    <Content Include="Styles\datagrid\gray\images\blank.gif" />
+    <Content Include="Styles\datagrid\gray\images\button_a_bg.gif" />
+    <Content Include="Styles\datagrid\gray\images\button_plain_hover.png" />
+    <Content Include="Styles\datagrid\gray\images\button_span_bg.gif" />
+    <Content Include="Styles\datagrid\gray\images\calendar_nextmonth.gif" />
+    <Content Include="Styles\datagrid\gray\images\calendar_nextyear.gif" />
+    <Content Include="Styles\datagrid\gray\images\calendar_prevmonth.gif" />
+    <Content Include="Styles\datagrid\gray\images\calendar_prevyear.gif" />
+    <Content Include="Styles\datagrid\gray\images\combo_arrow.gif" />
+    <Content Include="Styles\datagrid\gray\images\datagrid_header_bg.gif" />
+    <Content Include="Styles\datagrid\gray\images\datagrid_row_collapse.gif" />
+    <Content Include="Styles\datagrid\gray\images\datagrid_row_expand.gif" />
+    <Content Include="Styles\datagrid\gray\images\datagrid_sort_asc.gif" />
+    <Content Include="Styles\datagrid\gray\images\datagrid_sort_desc.gif" />
+    <Content Include="Styles\datagrid\gray\images\datagrid_title_bg.gif" />
+    <Content Include="Styles\datagrid\gray\images\datebox_arrow.png" />
+    <Content Include="Styles\datagrid\gray\images\layout_arrows.png" />
+    <Content Include="Styles\datagrid\gray\images\menu.gif" />
+    <Content Include="Styles\datagrid\gray\images\menu_downarrow.png" />
+    <Content Include="Styles\datagrid\gray\images\menu_rightarrow.png" />
+    <Content Include="Styles\datagrid\gray\images\menu_sep.png" />
+    <Content Include="Styles\datagrid\gray\images\menu_split_downarrow.png" />
+    <Content Include="Styles\datagrid\gray\images\messager_error.gif" />
+    <Content Include="Styles\datagrid\gray\images\messager_info.gif" />
+    <Content Include="Styles\datagrid\gray\images\messager_question.gif" />
+    <Content Include="Styles\datagrid\gray\images\messager_warning.gif" />
+    <Content Include="Styles\datagrid\gray\images\pagination_first.gif" />
+    <Content Include="Styles\datagrid\gray\images\pagination_last.gif" />
+    <Content Include="Styles\datagrid\gray\images\pagination_load.png" />
+    <Content Include="Styles\datagrid\gray\images\pagination_loading.gif" />
+    <Content Include="Styles\datagrid\gray\images\pagination_next.gif" />
+    <Content Include="Styles\datagrid\gray\images\pagination_prev.gif" />
+    <Content Include="Styles\datagrid\gray\images\panel_loading.gif" />
+    <Content Include="Styles\datagrid\gray\images\panel_title.gif" />
+    <Content Include="Styles\datagrid\gray\images\panel_tools.gif" />
+    <Content Include="Styles\datagrid\gray\images\searchbox_button.png" />
+    <Content Include="Styles\datagrid\gray\images\slider_handle.png" />
+    <Content Include="Styles\datagrid\gray\images\spinner_arrow_down.gif" />
+    <Content Include="Styles\datagrid\gray\images\spinner_arrow_up.gif" />
+    <Content Include="Styles\datagrid\gray\images\tabs_close.gif" />
+    <Content Include="Styles\datagrid\gray\images\tabs_enabled.gif" />
+    <Content Include="Styles\datagrid\gray\images\tabs_leftarrow.png" />
+    <Content Include="Styles\datagrid\gray\images\tabs_rightarrow.png" />
+    <Content Include="Styles\datagrid\gray\images\tree_arrows.gif" />
+    <Content Include="Styles\datagrid\gray\images\tree_checkbox_0.gif" />
+    <Content Include="Styles\datagrid\gray\images\tree_checkbox_1.gif" />
+    <Content Include="Styles\datagrid\gray\images\tree_checkbox_2.gif" />
+    <Content Include="Styles\datagrid\gray\images\tree_dnd_no.png" />
+    <Content Include="Styles\datagrid\gray\images\tree_dnd_yes.png" />
+    <Content Include="Styles\datagrid\gray\images\tree_elbow.png" />
+    <Content Include="Styles\datagrid\gray\images\tree_file.gif" />
+    <Content Include="Styles\datagrid\gray\images\tree_folder.gif" />
+    <Content Include="Styles\datagrid\gray\images\tree_folder_open.gif" />
+    <Content Include="Styles\datagrid\gray\images\tree_loading.gif" />
+    <Content Include="Styles\datagrid\gray\images\validatebox_pointer.gif" />
+    <Content Include="Styles\datagrid\gray\images\validatebox_warning.png" />
+    <Content Include="Styles\datagrid\gray\layout.css" />
+    <Content Include="Styles\datagrid\gray\linkbutton.css" />
+    <Content Include="Styles\datagrid\gray\menu.css" />
+    <Content Include="Styles\datagrid\gray\menubutton.css" />
+    <Content Include="Styles\datagrid\gray\messager.css" />
+    <Content Include="Styles\datagrid\gray\pagination.css" />
+    <Content Include="Styles\datagrid\gray\panel.css" />
+    <Content Include="Styles\datagrid\gray\progressbar.css" />
+    <Content Include="Styles\datagrid\gray\propertygrid.css" />
+    <Content Include="Styles\datagrid\gray\searchbox.css" />
+    <Content Include="Styles\datagrid\gray\slider.css" />
+    <Content Include="Styles\datagrid\gray\spinner.css" />
+    <Content Include="Styles\datagrid\gray\splitbutton.css" />
+    <Content Include="Styles\datagrid\gray\tabs.css" />
+    <Content Include="Styles\datagrid\gray\tree.css" />
+    <Content Include="Styles\datagrid\gray\validatebox.css" />
+    <Content Include="Styles\datagrid\gray\window.css" />
+    <Content Include="Styles\datagrid\icon.css" />
+    <Content Include="Styles\datagrid\icons\back.png" />
+    <Content Include="Styles\datagrid\icons\blank.gif" />
+    <Content Include="Styles\datagrid\icons\cancel.png" />
+    <Content Include="Styles\datagrid\icons\cut.png" />
+    <Content Include="Styles\datagrid\icons\edit_add.png" />
+    <Content Include="Styles\datagrid\icons\edit_remove.png" />
+    <Content Include="Styles\datagrid\icons\filesave.png" />
+    <Content Include="Styles\datagrid\icons\help.png" />
+    <Content Include="Styles\datagrid\icons\mini_add.png" />
+    <Content Include="Styles\datagrid\icons\mini_edit.png" />
+    <Content Include="Styles\datagrid\icons\mini_refresh.png" />
+    <Content Include="Styles\datagrid\icons\no.png" />
+    <Content Include="Styles\datagrid\icons\ok.png" />
+    <Content Include="Styles\datagrid\icons\pencil.png" />
+    <Content Include="Styles\datagrid\icons\print.png" />
+    <Content Include="Styles\datagrid\icons\redo.png" />
+    <Content Include="Styles\datagrid\icons\reload.png" />
+    <Content Include="Styles\datagrid\icons\search.png" />
+    <Content Include="Styles\datagrid\icons\sum.png" />
+    <Content Include="Styles\datagrid\icons\tip.png" />
+    <Content Include="Styles\datagrid\icons\undo.png" />
+    <Content Include="Styles\datagrid\metro\accordion.css" />
+    <Content Include="Styles\datagrid\metro\calendar.css" />
+    <Content Include="Styles\datagrid\metro\combo.css" />
+    <Content Include="Styles\datagrid\metro\combobox.css" />
+    <Content Include="Styles\datagrid\metro\datagrid.css" />
+    <Content Include="Styles\datagrid\metro\datebox.css" />
+    <Content Include="Styles\datagrid\metro\dialog.css" />
+    <Content Include="Styles\datagrid\metro\easyui.css" />
+    <Content Include="Styles\datagrid\metro\images\accordion_collapse.png" />
+    <Content Include="Styles\datagrid\metro\images\accordion_expand.png" />
+    <Content Include="Styles\datagrid\metro\images\blank.gif" />
+    <Content Include="Styles\datagrid\metro\images\calendar_nextmonth.gif" />
+    <Content Include="Styles\datagrid\metro\images\calendar_nextyear.gif" />
+    <Content Include="Styles\datagrid\metro\images\calendar_prevmonth.gif" />
+    <Content Include="Styles\datagrid\metro\images\calendar_prevyear.gif" />
+    <Content Include="Styles\datagrid\metro\images\combo_arrow.gif" />
+    <Content Include="Styles\datagrid\metro\images\datagrid_row_collapse.gif" />
+    <Content Include="Styles\datagrid\metro\images\datagrid_row_expand.gif" />
+    <Content Include="Styles\datagrid\metro\images\datagrid_sort_asc.gif" />
+    <Content Include="Styles\datagrid\metro\images\datagrid_sort_desc.gif" />
+    <Content Include="Styles\datagrid\metro\images\datebox_arrow.png" />
+    <Content Include="Styles\datagrid\metro\images\layout_arrows.png" />
+    <Content Include="Styles\datagrid\metro\images\menu_downarrow.png" />
+    <Content Include="Styles\datagrid\metro\images\menu_rightarrow.png" />
+    <Content Include="Styles\datagrid\metro\images\menu_sep.png" />
+    <Content Include="Styles\datagrid\metro\images\menu_split_downarrow.png" />
+    <Content Include="Styles\datagrid\metro\images\messager_error.gif" />
+    <Content Include="Styles\datagrid\metro\images\messager_info.gif" />
+    <Content Include="Styles\datagrid\metro\images\messager_question.gif" />
+    <Content Include="Styles\datagrid\metro\images\messager_warning.gif" />
+    <Content Include="Styles\datagrid\metro\images\pagination_first.gif" />
+    <Content Include="Styles\datagrid\metro\images\pagination_last.gif" />
+    <Content Include="Styles\datagrid\metro\images\pagination_load.png" />
+    <Content Include="Styles\datagrid\metro\images\pagination_loading.gif" />
+    <Content Include="Styles\datagrid\metro\images\pagination_next.gif" />
+    <Content Include="Styles\datagrid\metro\images\pagination_prev.gif" />
+    <Content Include="Styles\datagrid\metro\images\panel_loading.gif" />
+    <Content Include="Styles\datagrid\metro\images\panel_tools.gif" />
+    <Content Include="Styles\datagrid\metro\images\searchbox_button.png" />
+    <Content Include="Styles\datagrid\metro\images\slider_handle.png" />
+    <Content Include="Styles\datagrid\metro\images\tabs_close.gif" />
+    <Content Include="Styles\datagrid\metro\images\tabs_leftarrow.png" />
+    <Content Include="Styles\datagrid\metro\images\tabs_rightarrow.png" />
+    <Content Include="Styles\datagrid\metro\images\tree_arrows.gif" />
+    <Content Include="Styles\datagrid\metro\images\tree_checkbox_0.gif" />
+    <Content Include="Styles\datagrid\metro\images\tree_checkbox_1.gif" />
+    <Content Include="Styles\datagrid\metro\images\tree_checkbox_2.gif" />
+    <Content Include="Styles\datagrid\metro\images\tree_dnd_no.png" />
+    <Content Include="Styles\datagrid\metro\images\tree_dnd_yes.png" />
+    <Content Include="Styles\datagrid\metro\images\tree_elbow.png" />
+    <Content Include="Styles\datagrid\metro\images\tree_file.gif" />
+    <Content Include="Styles\datagrid\metro\images\tree_folder.gif" />
+    <Content Include="Styles\datagrid\metro\images\tree_folder_open.gif" />
+    <Content Include="Styles\datagrid\metro\images\tree_loading.gif" />
+    <Content Include="Styles\datagrid\metro\images\validatebox_warning.png" />
+    <Content Include="Styles\datagrid\metro\layout.css" />
+    <Content Include="Styles\datagrid\metro\linkbutton.css" />
+    <Content Include="Styles\datagrid\metro\menu.css" />
+    <Content Include="Styles\datagrid\metro\menubutton.css" />
+    <Content Include="Styles\datagrid\metro\messager.css" />
+    <Content Include="Styles\datagrid\metro\pagination.css" />
+    <Content Include="Styles\datagrid\metro\panel.css" />
+    <Content Include="Styles\datagrid\metro\progressbar.css" />
+    <Content Include="Styles\datagrid\metro\propertygrid.css" />
+    <Content Include="Styles\datagrid\metro\searchbox.css" />
+    <Content Include="Styles\datagrid\metro\slider.css" />
+    <Content Include="Styles\datagrid\metro\splitbutton.css" />
+    <Content Include="Styles\datagrid\metro\tabs.css" />
+    <Content Include="Styles\datagrid\metro\tree.css" />
+    <Content Include="Styles\datagrid\metro\validatebox.css" />
+    <Content Include="Styles\datagrid\metro\window.css" />
+    <Content Include="Styles\forgotpassword.css" />
+    <Content Include="Styles\InputPop.Master.css" />
+    <Content Include="Styles\jsgantt.css" />
+    <Content Include="Styles\login.css" />
+    <Content Include="Styles\main.master.css" />
+    <Content Include="Styles\public.css" />
+    <Content Include="Styles\smoothness\jquery-ui-1.9.0.custom.css" />
+    <Content Include="Styles\smoothness\jquery-ui-1.9.0.custom.min.css" />
+    <Content Include="Sunnet\Admin\AssignProjectToUser.aspx" />
+    <Content Include="Sunnet\Admin\SealEdit.aspx" />
+    <Content Include="Sunnet\Admin\SealsList.aspx" />
+    <Content Include="Sunnet\Clients\AddChange.aspx" />
+    <Content Include="Sunnet\Events\AddEvent.aspx" />
+    <Content Include="Sunnet\Clients\AddIssue.aspx" />
+    <Content Include="Sunnet\Clients\AddRequest.aspx" />
+    <Content Include="Sunnet\Clients\AddRisk.aspx" />
+    <Content Include="Sunnet\Clients\AddTicketList.aspx" />
+    <Content Include="Sunnet\Admin\AddClient.aspx" />
+    <Content Include="Sunnet\Admin\AddModule.aspx" />
+    <Content Include="Sunnet\Admin\AddRole.aspx" />
+    <Content Include="Sunnet\Admin\AddUser.aspx" />
+    <Content Include="Sunnet\Admin\EditModule.aspx" />
+    <Content Include="Sunnet\Admin\EditRole.aspx" />
+    <Content Include="Sunnet\Admin\EditUser.aspx" />
+    <Content Include="Sunnet\Admin\ListModule.aspx" />
+    <Content Include="Sunnet\Admin\ListRole.aspx" />
+    <Content Include="Sunnet\Admin\ListUser.aspx" />
+    <Content Include="Sunnet\Admin\MyAccount.aspx" />
+    <Content Include="Sunnet\Admin\RoleModulePage.aspx" />
+    <Content Include="Sunnet\Clients\AddFeedBacks.aspx" />
+    <Content Include="Sunnet\Clients\AddRelation.aspx" />
+    <Content Include="Sunnet\Clients\AddTicket.aspx" />
+    <Content Include="Sunnet\Clients\ContactUs.aspx" />
+    <Content Include="Sunnet\Clients\Dashboard.aspx" />
+    <Content Include="Sunnet\Clients\DenyTicket.aspx" />
+    <Content Include="Sunnet\Events\EditEvent.aspx" />
+    <Content Include="Sunnet\Clients\EditPriority.aspx" />
+    <Content Include="Sunnet\Clients\EditTicket.aspx" />
+    <Content Include="Sunnet\Events\EventsCalendar.aspx" />
+    <Content Include="Sunnet\Events\EventsList.aspx" />
+    <Content Include="Sunnet\Clients\Faqs.aspx" />
+    <Content Include="Sunnet\Clients\FileList.aspx" />
+    <Content Include="Sunnet\Clients\ListTicket.aspx" />
+    <Content Include="Sunnet\Clients\ListTicketCancel.aspx" />
+    <Content Include="Sunnet\Clients\ListTicketCompleted.aspx" />
+    <Content Include="Sunnet\Clients\ListTicketDrafted.aspx" />
+    <Content Include="Sunnet\Clients\ListTicketwaitProcessing.aspx" />
+    <Content Include="Sunnet\Clients\AddBug.aspx" />
+    <Content Include="Sunnet\Clients\SystemEnhancement.aspx" />
+    <Content Include="Sunnet\Documents\CompanyFiles.aspx" />
+    <Content Include="Sunnet\Documents\EditObject.aspx" />
+    <Content Include="Sunnet\Documents\MoveObjects.aspx" />
+    <Content Include="Sunnet\Documents\NewDirectory.aspx" />
+    <Content Include="Sunnet\Documents\ProjectFiles.aspx" />
+    <Content Include="Sunnet\Documents\SunnetFiles.aspx" />
+    <Content Include="Sunnet\Documents\SunnetFilesListView.aspx" />
+    <Content Include="Sunnet\Documents\WorkRequestFiles.aspx" />
+    <Content Include="Sunnet\Profile\AddFile.aspx" />
+    <Content Include="Sunnet\Profile\AddNote.aspx" />
+    <Content Include="Sunnet\Profile\MyCompany.aspx" />
+    <Content Include="Sunnet\Clients\Survey.aspx" />
+    <Content Include="Sunnet\Clients\SurveySuccess.aspx" />
+    <Content Include="Sunnet\Clients\TicketReport.aspx" />
+    <Content Include="Sunnet\Clients\TicketsDetail.aspx" />
+    <Content Include="Sunnet\Clients\ViewRelatedTicket.aspx" />
+    <Content Include="Sunnet\Clients\WaitingProcess.aspx" />
+    <Content Include="Sunnet\Companys\AddCompany.aspx" />
+    <Content Include="Sunnet\Companys\EditCompany.aspx" />
+    <Content Include="Sunnet\Companys\ListCompany.aspx" />
+    <Content Include="Sunnet\Documents\FilesList.aspx" />
+    <Content Include="Sunnet\Main.Master" />
+    <Content Include="Sunnet\InputPop.Master" />
+    <Content Include="Documents\ValidateNote.txt" />
+    <Content Include="Global.asax" />
+    <Content Include="icons\31.gif" />
+    <Content Include="icons\arron_down.gif" />
+    <Content Include="icons\arron_up.gif" />
+    <Content Include="icons\ico_next.gif" />
+    <Content Include="icons\ico_prev.gif" />
+    <Content Include="icons\ico_refresh.gif" />
+    <Content Include="Scripts\Validate\Validator.js" />
+    <Content Include="Sunnet\Default.aspx" />
+    <Content Include="Sunnet\Profile\ChangePassword.aspx" />
+    <Content Include="Sunnet\Profile\Profile.aspx" />
+    <Content Include="Sunnet\Profile\SealRequestsEdit.aspx" />
+    <Content Include="Sunnet\Profile\SealRequestsList.aspx" />
+    <Content Include="Sunnet\Profile\WaitingProcess.aspx" />
+    <Content Include="Sunnet\Projects\AddProject.aspx" />
+    <Content Include="Sunnet\Projects\AssignClientUsers.aspx" />
+    <Content Include="Sunnet\Projects\Companies.aspx" />
+    <Content Include="Sunnet\Projects\EditProject.aspx" />
+    <Content Include="Sunnet\Projects\ListProject.aspx" />
+    <Content Include="Sunnet\Projects\ViewProject.aspx" />
+    <Content Include="Sunnet\Reports\Consuming.aspx" />
+    <Content Include="Sunnet\Reports\MyTimesheetReport.aspx" />
+    <Content Include="Sunnet\Reports\TimeSheet.aspx" />
+    <Content Include="Sunnet\TestEmail.aspx" />
+    <Content Include="Sunnet\Tickets\AddFeedBacks.aspx" />
+    <Content Include="Sunnet\Tickets\AddRelation.aspx" />
+    <Content Include="Sunnet\Tickets\AddSchedules.aspx" />
+    <Content Include="Sunnet\Tickets\AddTask.aspx" />
+    <Content Include="Sunnet\Tickets\AddTicket.aspx" />
+    <Content Include="Sunnet\Tickets\AddTimesheet.aspx" />
+    <Content Include="Sunnet\Tickets\AssignUsers.aspx" />
+    <Content Include="Sunnet\Tickets\AssignUserTs.aspx" />
+    <Content Include="Sunnet\Tickets\ChooseCateGory.aspx" />
+    <Content Include="Sunnet\Tickets\ConvertReason.aspx" />
+    <Content Include="Sunnet\Tickets\dashboard.aspx" />
+    <Content Include="Sunnet\Tickets\EditSchedules.aspx" />
+    <Content Include="Sunnet\Tickets\iCalendar.aspx" />
+    <Content Include="Sunnet\Tickets\ListMyTicket.aspx" />
+    <Content Include="Sunnet\Tickets\ListTicket.aspx" />
+    <Content Include="Sunnet\Tickets\ListTimesheet.aspx" />
+    <Content Include="Sunnet\Tickets\MyCategory.aspx" />
+    <Content Include="Sunnet\Tickets\NewCateGory.aspx" />
+    <Content Include="Sunnet\Reports\ProjectUserTimeSheet.aspx" />
+    <Content Include="Sunnet\Tickets\NewSchedules.aspx" />
+    <Content Include="Sunnet\Tickets\SchedulesList.aspx" />
+    <Content Include="Sunnet\Tickets\SchedulesMonthly.aspx" />
+    <Content Include="Sunnet\Tickets\SchedulesYearly.aspx" />
+    <Content Include="Sunnet\Tickets\StatusChange.aspx" />
+    <Content Include="Sunnet\Tickets\TicketDetail.aspx" />
+    <Content Include="Sunnet\Tickets\TicketEsDetail.aspx" />
+    <Content Include="Sunnet\Tickets\TicketTsTime.aspx" />
+    <Content Include="Sunnet\Tickets\UpdateDate.aspx" />
+    <Content Include="Sunnet\Tickets\ViewRelatedTicket.aspx" />
+    <Content Include="Sunnet\Tickets\WeekPlanEdit.aspx" />
+    <Content Include="Sunnet\Tickets\WeekPlanList.aspx" />
+    <Content Include="Sunnet\WorkRequest\AddDocument.aspx" />
+    <Content Include="Sunnet\WorkRequest\AddNote.aspx" />
+    <Content Include="Sunnet\WorkRequest\AddRelation.aspx" />
+    <Content Include="Sunnet\WorkRequest\AddWorkRequest.aspx" />
+    <Content Include="Sunnet\WorkRequest\Download.aspx" />
+    <Content Include="Sunnet\WorkRequest\EditWorkRequest.aspx" />
+    <Content Include="Sunnet\WorkRequest\WorkRequest.aspx" />
+    <Content Include="Template\MeetingCancel.txt" />
+    <Content Include="Template\MeetingInvitations.txt" />
+    <Content Include="Template\NewDailyReportTemplate.html" />
+    <Content Include="Template\NoSubmitTimeSheet.htm" />
+    <Content Include="Template\SendEmailForRemainHours.txt" />
+    <Content Include="Template\SendEmailSealDenied.txt" />
+    <Content Include="Template\SendEmailToClientRegisterEmail.txt" />
+    <Content Include="Template\SendEmailToAssignUser.txt" />
+    <Content Include="Template\SendEmailToClientForFeedBack.txt" />
+    <Content Include="Template\SendEmailToClientForVerify.txt" />
+    <Content Include="Template\SendEmailToPmForFeedBack.txt" />
+    <Content Include="Template\SendEmailToApproved.txt" />
+    <Content Include="Template\SendEmailToSealed.txt" />
+    <Content Include="Template\SendEmailToUserEsTime.txt" />
+    <Content Include="Template\SendEmailToUserForFindPassword.txt" />
+    <Content Include="Template\SendEmailWithSpecStatus.txt" />
+    <Content Include="Template\SendEmailWithStatusChanged.txt" />
+    <Content Include="Template\SendEmailWithNotBug.txt" />
+    <Content Include="Template\SendEmailwithStatusNotApproved.txt" />
+    <Content Include="Template\SendPMTicketAdd.txt" />
+    <Content Include="Template\SurveyEmail.txt" />
+    <Content Include="testJson.aspx" />
+    <Content Include="TestUI.aspx" />
+    <Content Include="UserControls\AddFeedBack.ascx" />
+    <Content Include="UserControls\AddRelationTickets.ascx" />
+    <Content Include="UserControls\AddWorkRequest.ascx" />
+    <Content Include="UserControls\AddWorkRequestRelation.ascx" />
+    <Content Include="UserControls\AssignProjectToUser.ascx" />
+    <Content Include="UserControls\ChangePassword.ascx" />
+    <Content Include="UserControls\ChangeStatus.ascx" />
+    <Content Include="UserControls\ClientMaintenancePlan.ascx" />
+    <Content Include="UserControls\ClientTicketBaseInfo.ascx" />
+    <Content Include="UserControls\CompanyEdit.ascx" />
+    <Content Include="UserControls\FeedBacksList.ascx" />
+    <Content Include="UserControls\HistoryList.ascx" />
+    <Content Include="UserControls\LeftMenu.ascx" />
+    <Content Include="UserControls\OpenICalendar.ascx" />
+    <Content Include="UserControls\Profile.ascx" />
+    <Content Include="UserControls\RelationTicketsList.ascx" />
+    <Content Include="UserControls\TaskList.ascx" />
+    <Content Include="UserControls\TicketBaseInfo.ascx" />
+    <Content Include="UserControls\TicketUsers.ascx" />
+    <Content Include="UserControls\TopMenu.ascx" />
+    <Content Include="UserControls\UploadFile.ascx" />
+    <Content Include="UserControls\UserEdit.ascx" />
+    <Content Include="UserControls\WorkFlow.ascx" />
+    <Content Include="UserControls\WorkRequestDocuments.ascx" />
+    <Content Include="UserControls\WorkRequestNotes.ascx" />
+    <Content Include="UserControls\WorkRequestRelatedTicketsList.ascx" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SunNet.PMNew.App\SunNet.PMNew.App.csproj">
+      <Project>{13EE4593-0FB1-433F-AC02-F651B68229E4}</Project>
+      <Name>SunNet.PMNew.App</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Entity\SunNet.PMNew.Entity.csproj">
+      <Project>{129AD4D5-62F8-424B-AEE1-438744E1E065}</Project>
+      <Name>SunNet.PMNew.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Framework\SunNet.PMNew.Framework.csproj">
+      <Project>{3D3DAFD1-AFD8-48E5-8E11-BDF5C2A3FDC5}</Project>
+      <Name>SunNet.PMNew.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Impl\SunNet.PMNew.Impl.csproj">
+      <Project>{6EDD8750-D5CD-4A8B-A0C4-3BAF230131F6}</Project>
+      <Name>SunNet.PMNew.Impl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="App_Themes\" />
+    <Folder Include="Codes\TimeSheetNotice\" />
+    <Folder Include="content\" />
+    <Folder Include="Documents\DeploymentDocs\" />
+    <Folder Include="Properties\PublishProfiles\" />
+    <Folder Include="update\" />
+    <Folder Include="Upload\Company\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\OperateDocManagements\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>6248</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

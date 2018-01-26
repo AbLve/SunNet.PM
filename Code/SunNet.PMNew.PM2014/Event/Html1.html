@@ -1,0 +1,414 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="/Content/styles/bootstrap_1.css" rel="stylesheet" />
+    <link href="/Content/styles/public.css" rel="stylesheet" />
+    <link href="/Content/styles/forms.css" rel="stylesheet" />
+    <script src="/Scripts/jquery-1.8.1.min.js"></script>
+    <script src="/Scripts/jquery.sunnet.js"></script>
+
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="/Scripts/global.js"></script>
+    <script src="/Scripts/jquery.sunnet.js"></script>
+    <script src="/Scripts/Validate/jquery.validate.js"></script>
+    <script src="/Scripts/Validate/additional-methods.js"></script>
+    <script src="/Scripts/knockout-3.1.0.debug.js"></script>
+
+</head>
+<body>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <!-- evetns -->
+            <td width="49%" class="cdmainBox">
+
+                <div class="cdtopbtnbox">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="138">
+                                <ul class="listtopBtn">
+                                    <li>
+                                        <div class="listtopBtn_icon">
+                                            <img src="/images/icons/wevents.png" />
+                                        </div>
+                                        <div class="listtopBtn_text" href="Add.aspx" data-target="#modalsmall" data-toggle="modal" id="dvCreateEvent">Create Event </div>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td width="*">
+                                <table border="0" align="center" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <td style="width: 40px;">
+                                            <a href="javascript:void(0);">
+                                                <img src="/images/monthleft2.png" onclick="backClick(1)" title="Previous Year" /></a></td>
+                                        <td style="width: 40px;">
+                                            <a href="javascript:void(0);">
+                                                <img src="/images/monthleft.png" onclick="backClick(0)" title="Previous Month" />
+                                            </a></td>
+                                        <td width="110" align="center" id="spnMonth">
+                                            <script type="text/javascript">document.write(getdate());
+                                                function getdate() {
+                                                    var d = new Date();
+                                                    var vYear = d.getFullYear();
+                                                    var vMon = d.getMonth() + 1;
+                                                    var vDay = d.getDate();
+                                                    var s = vYear + " " + vMon + " " + vDay
+                                                    return s;
+                                                }</script>
+                                        </td>
+                                        <td style="width: 28px;"></td>
+                                        <td style="width: 40px;">
+                                            <a href="javascript:void(0);">
+                                                <img src="/images/monthright.png" onclick="forwardClick(0);" title="Next Month">
+                                            </a></td>
+                                        <td style="width: 40px;">
+                                            <a href="javascript:void(0);">
+                                                <img src="/images/monthright2.png" onclick="forwardClick(1)" title="Next Year">
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="200" align="right"><span class="topbtn cdtopBtn cdtopBtn-active" onclick="showEventCalendar()" id="spanCalendar">Calendar</span>
+                                <span class="topbtn cdtopBtn" onclick="showEventList()" id="spanList">Today</span></td>
+                        </tr>
+                    </table>
+                </div>
+                <!--edit Calendar-->
+
+
+
+                <!--*******************************************************-->
+                <!--*******************************************************-->
+
+                <table width="100%" cellspacing="0" cellpadding="0" border="0" class="monthlyviewBox">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <!--                               <ul class="monthlyviewweek" data-bind="foreach: lists">
+                                    <li data-bind="text: name"></li>                                                
+                                </ul>
+
+
+                            <ul data-bind="template: { name: 'dayTemplate1', foreach: dayarr }" class="monthlyviewweek"></ul>
+
+                                <script type="text/html" id="dayTemplate1">
+                                    <li data-bind="text: values"></li>
+                                    <!--<li data-bind="text: days"></li>
+                                </script>
+
+                                <script type="text/html" id="dayTemplate2">
+                                    <li data-bind="text: types"></li>
+                                    <!--<li data-bind="text: days"></li>
+                                </script>-->
+
+                                <script type="text/javascript">
+                                    // function dayarray(){
+                                    //     dayarr = [
+                                    //{ days: "days1", type: "1", values: "1", types: "test1" },
+                                    //{ days: "days2", type: "1", values: "2", types: "test2" },
+                                    //{ days: "days3", type: "1", values: "3", types: "test3" },
+                                    //{ days: "days4", type: "1", values: "4", types: "test4" },
+                                    //{ days: "days5", type: "1", values: "5", types: "test5" },
+                                    //{ days: "days6", type: "1", values: "6", types: "test6" },
+                                    //{ days: "days7", type: "1", values: "7", types: "test7" },
+
+                                    // { days: "days1", type: "1", values: "1", types: "test1" },
+                                    // { days: "days2", type: "1", values: "2", types: "test2" },
+                                    // { days: "days3", type: "1", values: "3", types: "test3" },
+                                    // { days: "days4", type: "1", values: "4", types: "test4" },
+                                    // { days: "days5", type: "1", values: "5", types: "test5" },
+                                    // { days: "days6", type: "1", values: "6", types: "test6" },
+                                    // { days: "days7", type: "1", values: "7", types: "test7" },
+
+                                    // { days: "days1", type: "1", values: "1", types: "test1" },
+                                    // { days: "days2", type: "1", values: "2", types: "test2" },
+                                    // { days: "days3", type: "1", values: "3", types: "test3" },
+                                    // { days: "days4", type: "1", values: "4", types: "test4" },
+                                    // { days: "days5", type: "1", values: "5", types: "test5" },
+                                    // { days: "days6", type: "1", values: "6", types: "test6" },
+                                    // { days: "days7", type: "1", values: "7", types: "test7" },
+
+                                    // { days: "days1", type: "1", values: "1", types: "test1" },
+                                    // { days: "days2", type: "1", values: "2", types: "test2" },
+                                    // { days: "days3", type: "1", values: "3", types: "test3" },
+                                    // { days: "days4", type: "1", values: "4", types: "test4" },
+                                    // { days: "days5", type: "1", values: "5", types: "test5" },
+                                    // { days: "days6", type: "1", values: "6", types: "test6" },
+                                    // { days: "days7", type: "1", values: "7", types: "test7" },
+
+                                    // { days: "days1", type: "1", values: "1", types: "test1" },
+                                    // { days: "days2", type: "1", values: "2", types: "test2" },
+                                    // { days: "days3", type: "1", values: "3", types: "test3" },
+                                    // { days: "days4", type: "1", values: "4", types: "test4" },
+                                    // { days: "days5", type: "1", values: "5", types: "test5" },
+                                    // { days: "days6", type: "1", values: "6", types: "test6" },
+                                    // { days: "days7", type: "1", values: "7", types: "test7" }
+
+                                    // ],
+                                    //     lists = [{name:"Sun"},{name:"Mon"},{name: "Tues"},{name: "Wed"},{name: "Thurs"},{name: "Fri"},{name: "Sat"}]
+                                    // };
+
+                                    // ko.applyBindings(new dayarray());
+                                </script>
+                                <!--<ul data-bind="foreach: months">
+    <li>
+        The current item is: <b data-bind="text: $data"></b>
+    </li>
+</ul>-->
+                                <script type="text/javascript">
+                                    //var viewModels = {
+                                    //    months: ['Jan', 'Feb', 'Mar', 'etc']
+                                    //};
+
+                                    //// Activates knockout.js
+                                    //ko.applyBindings(viewModels);
+                                </script>
+
+                                <!--                                <div data-bind="foreach: dayArray">
+                                    <span data-bind="text: firstName"></span>
+                                    <span data-bind="text: lastName"></span>
+                                </div>-->
+
+                                <ul class="monthlyviewweek">
+                                    <li>Sun</li>
+                                    <li>Mon</li>
+                                    <li>Tues</li>
+                                    <li>Wed</li>
+                                    <li>Thurs</li>
+                                    <li>Fri</li>
+                                    <li>Sat</li>
+                                </ul>
+                                    <script type="text/html" id="day_template_Items">
+                                        <!-- ko if: $index() < 3 -->
+                                        <li data-bind="attr: { 'id': $root.createEventId(item) }">
+                                            <img data-bind="attr: { src: Icon }" style='width: 15px; height: 15px; vertical-align: text-bottom;' />
+                                            <a data-bind="attr: { href: $root.getEventUrl(item) }, text: Title" data-target='#modalsmall' data-toggle='modal'></a></li>
+                                        <!-- /ko -->
+                                        <!-- ko if: $index() == 3 -->
+                                        <li><a style="cursor: pointer; color: #15c" data-toggle="modal" data-target="#modalsmall" data-bind="attr: { href: $root.getUrl(d) }">More</a></li>
+                                        <!-- /ko -->
+                                    </script>
+                                    <script type="text/html" id="day_template_0">
+                                        <li class="dateDisable" data-bind="text: Day">
+                                            <ul class="onscdTicket" data-bind='template: { name: "day_template_Items", foreach: list, as: "item" }'>
+                                                <li>More</li>
+                                            </ul>
+                                        </li>
+                                    </script>
+                                    <script type="text/html" id="day_template_1">
+                                        <li>
+                                            <div class='dateforclick' data-toggle="modal" data-target="#modalsmall" data-bind="attr: { href: $root.getUrl(d) }, text: Day"></div>
+                                            <ul class="onscdTicket" data-bind='template: { name: "day_template_Items", foreach: list, as: "item" }'>
+                                            </ul>
+                                        </li>
+                                    </script>
+                                    <script type="text/html" id="day_template_2">
+                                        <li>
+                                            <div class='dateforclick' data-toggle="modal" data-target="#modalsmall" data-bind="attr: { href: $root.getUrl(d) }, text: Day"></div>
+                                            <!-- ko if:$root.isOwner -->
+                                            <img src="/images/icons/add1.png" data-bind="attr: { href: $root.getCreateUrl(d) } " style="cursor: pointer" align="right" title='Create Event' data-toggle="modal" data-target="#modalsmall">
+                                            <!-- /ko -->
+                                            <ul class="onscdTicket" data-bind='template: { name: "day_template_Items", foreach: list, as: "item" }'>
+                                            </ul>
+                                            <div data-bind="attr: { href: $root.getCreateUrl(d) }, style: { paddingTop: $root.getTop(d), 'width': '150px', 'height': $root.getheight(d) }" data-target="#modalsmall" data-toggle="modal"></div>
+                                        </li>
+                                    </script>
+                                    <script type="text/html" id="day_template_3">
+                                        <li class="dateToday"><a name='today'></a>
+                                            <div class='dateforclick' data-toggle="modal" data-target="#modalsmall" data-bind="attr: { href: $root.getUrl(d) }, text: Day"></div>
+                                            <!-- ko if:$root.isOwner -->
+                                            <img src="/images/icons/add1.png" data-bind="attr: { href: $root.getCreateUrl(d) } " style="cursor: pointer" align="right" title='Create Event' data-toggle="modal" data-target="#modalsmall">
+                                            <!-- /ko -->
+                                            <ul class="onscdTicket" data-bind='template: { name: "day_template_Items", foreach: list, as: "item" }'>
+                                            </ul>
+                                            <div data-bind="attr: { href: $root.getCreateUrl(d) }, style: { paddingTop: $root.getTop(d), 'width': '150px', 'height': $root.getheight(d) }" data-target="#modalsmall" data-toggle="modal"></div>
+                                        </li>
+                                    </script>
+                                    <script type="text/html" id="day_template_4">
+                                        <li class="dateDisable">
+                                            <div class='dateforclick' data-toggle="modal" data-target="#modalsmall" data-bind="attr: { href: $root.getUrl(d) }, text: Day"></div>
+                                            <!-- ko if:$root.isOwner -->
+                                            <img src="/images/icons/add1.png" data-bind="attr: { href: $root.getCreateUrl(d) } " style="cursor: pointer" align="right" title='Create Event' data-toggle="modal" data-target="#modalsmall">
+                                            <!-- /ko -->
+                                            <ul class="onscdTicket" data-bind='template: { name: "day_template_Items", foreach: list, as: "item" }'>
+                                            </ul>
+                                            <div data-bind="attr: { href: $root.getCreateUrl(d) }, style: { paddingTop: $root.getTop(d), 'width': '150px', 'height': $root.getheight(d) }" data-target="#modalsmall" data-toggle="modal"></div>
+                                        </li>
+                                    </script>
+
+
+                                <ul class="monthlyview" data-bind='template: { name: dayTemplate, foreach: days, as: "d" }'>
+                                </ul>
+
+
+
+                                <script type="text/javascript">
+
+                                    var projectID = 3;
+                                    var userId = 18;
+                                    var ClientID = "";
+                                    var IsPageLoad = true;
+
+                                    InitEvents({ 'projectID': projectID, 'userId': userId });
+                                    function InitEvents(para, oldId, r) {
+                                        if (!para["userId"]) {
+                                            para['userId'] = userId;
+                                        }
+                                        //if (!doubleClick) return;
+                                        $.getJSON("/Do/DoGetCalendarList.ashx?" + Math.random(), para, function (result) {
+                                            if (IsPageLoad) {
+                                                viewModel = {
+                                                    getUrl: function (day) {
+                                                        return "DayEvent.aspx?date=" + day.StrDate + "&ProjectID="
+                                                            + projectID
+                                                            + "&userId=" + userId
+                                                            + "&allUser=" + ClientID
+                                                            + "&r=" + Math.random();
+                                                    },
+                                                    getCreateUrl: function (day) {
+                                                        return "Add.aspx?Date=" + day.StrDate + "&pid=" + projectID + "&r=" + Math.random();
+                                                    },
+
+                                                    days: ko.observableArray(result.list),
+
+                                                    dayTemplate: function (day) {
+                                                        switch (day.Type) {
+                                                            case 0:
+                                                                return "day_template_0";
+                                                            case 1:
+                                                                return "day_template_1";
+                                                            case 2:
+                                                                return "day_template_2";
+                                                            case 3:
+                                                                return "day_template_3";
+                                                            case 4:
+                                                                return "day_template_4";
+                                                        }
+                                                    },
+
+                                                    createEventId: function (item) {
+                                                        return "liCalendarEvent" + item.ID;
+                                                    },
+
+                                                    getEventUrl: function (item) {
+                                                        if (item.IsEdit) {
+                                                            return "Edit.aspx?ID=" + item.ID + "&r=" + Math.random();
+                                                        }
+                                                        else {
+                                                            return "View.aspx?ID=" + item.ID + "&r=" + Math.random();
+                                                        }
+                                                    },
+
+                                                    getTop: function (day) {
+                                                        return (day.list.length * 20 + 20) + "px";
+                                                    },
+
+                                                    getheight: function (day) {
+                                                        return (105 - day.list.length * 20 - 20) + "px";
+                                                    },
+
+                                                    ShowMore: function (index) {
+                                                        return index() >= 3;
+                                                    },
+
+                                                    NoShowMore: function (index) {
+                                                        return index() < 3;
+                                                    },
+
+                                                    isOwner: ko.observable(result.isOwner)
+                                                };
+
+                                                ko.applyBindings(viewModel);
+                                                IsPageLoad = false;
+                                            }
+                                            else {
+                                                viewModel.days(result.list);
+                                                viewModel.isOwner(result.isOwner);
+                                            }
+
+                                            var d = result.list;
+                                            calendarDate = d[8].StrDate;
+                                            jQuery("#spnMonth").html(d[8].Month.replace("_", " "));
+                                            calendarMonth = d[8].Month;
+
+                                            if (result.isOwner == false) {
+                                                $('.mainactionBox_left span a').css('visibility', 'hidden');
+                                            }
+                                            else {
+                                                $('.mainactionBox_left').css('visibility', 'visible');
+                                            }
+
+                                            if (r) {
+                                                if (r == 2) //today
+                                                    location.href = "#today";
+                                            }
+
+                                            //$('#<%=ddlYears.ClientID%>').val(d[5].StrDate.substring(6));
+                                            //if ($("#<%=ddlYears.ClientID%>").get(0).selectedIndex < 0) {
+                                            //    $("#<%=ddlYears.ClientID%>").append("<option value='" + d[5].StrDate.substring(6) + "'>" + d[5].StrDate.substring(6) + "</option>");
+                                            //    $('#<%=ddlYears.ClientID%>').val(d[5].StrDate.substring(6));
+                                            //}
+                                            //$('#<%=ddlMonths.ClientID%>').val(parseInt(d[5].StrDate.substring(0, 2)));
+                                        });
+                                    }
+
+                                    function backClick(y) {
+                                        InitEvents(
+                                            { "d": calendarDate, "t": 2, "y": y, "dashboard": 1 },
+                                            calendarMonth);
+                                    }
+
+                                    function forwardClick(y) {
+                                        InitEvents(
+                                            { "d": calendarDate, "t": 1, "y": y, "dashboard": 1 },
+                                            calendarMonth);
+                                    }
+                                    //ko.applyBindings(GetCalendarList({ 'projectID': 3, 'userId': 18 }));
+                                </script>
+
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </td>
+        </tr>
+        <tr>
+            <td height="20" colspan="3"></td>
+        </tr>
+    </table>
+
+</body>
+</html>
+<!--// 0:灰色；1：不可添加；2：可添加；3：当天; 4:灰色可添加-->
+<!--{
+"list":[
+{"list":[],"Day":29,"Date":"2014-06-29T00:00:00","StrDate":"06/29/2014","Month":"六月_2014","Type":0,"MoreEvent":false},{"list":[],"Day":30,"Date":"2014-06-30T00:00:00","StrDate":"06/30/2014","Month":"六月_2014","Type":0,"MoreEvent":false},{"list":[],"Day":1,"Date":"2014-07-01T00:00:00","StrDate":"07/01/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+{"list":[{"ID":433,"Title":"(All day) sdf","Name":"sdf","Icon":"/Images/EventIcons/event_icon_8s.png","date":"七月 2, 2014","CreatedAt":18,"Invited":false,"InviteStatus":0,"FullName":"","IsEdit":false}],"Day":2,"Date":"2014-07-02T00:00:00","StrDate":"07/02/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+{"list":[],"Day":3,"Date":"2014-07-03T00:00:00","StrDate":"07/03/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+{"list":[],"Day":4,"Date":"2014-07-04T00:00:00","StrDate":"07/04/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+{"list":[],"Day":5,"Date":"2014-07-05T00:00:00","StrDate":"07/05/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+{"list":[],"Day":6,"Date":"2014-07-06T00:00:00","StrDate":"07/06/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+{"list":[],"Day":7,"Date":"2014-07-07T00:00:00","StrDate":"07/07/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+{"list":[],"Day":8,"Date":"2014-07-08T00:00:00","StrDate":"07/08/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+{"list":[],"Day":9,"Date":"2014-07-09T00:00:00","StrDate":"07/09/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+{"list":[],"Day":10,"Date":"2014-07-10T00:00:00","StrDate":"07/10/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":11,"Date":"2014-07-11T00:00:00","StrDate":"07/11/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":12,"Date":"2014-07-12T00:00:00","StrDate":"07/12/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":13,"Date":"2014-07-13T00:00:00","StrDate":"07/13/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":14,"Date":"2014-07-14T00:00:00","StrDate":"07/14/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":15,"Date":"2014-07-15T00:00:00","StrDate":"07/15/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":16,"Date":"2014-07-16T00:00:00","StrDate":"07/16/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":17,"Date":"2014-07-17T00:00:00","StrDate":"07/17/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":18,"Date":"2014-07-18T00:00:00","StrDate":"07/18/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":19,"Date":"2014-07-19T00:00:00","StrDate":"07/19/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":20,"Date":"2014-07-20T00:00:00","StrDate":"07/20/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":21,"Date":"2014-07-21T00:00:00","StrDate":"07/21/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":22,"Date":"2014-07-22T00:00:00","StrDate":"07/22/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":23,"Date":"2014-07-23T00:00:00","StrDate":"07/23/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":24,"Date":"2014-07-24T00:00:00","StrDate":"07/24/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":25,"Date":"2014-07-25T00:00:00","StrDate":"07/25/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":26,"Date":"2014-07-26T00:00:00","StrDate":"07/26/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":27,"Date":"2014-07-27T00:00:00","StrDate":"07/27/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":28,"Date":"2014-07-28T00:00:00","StrDate":"07/28/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":29,"Date":"2014-07-29T00:00:00","StrDate":"07/29/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":30,"Date":"2014-07-30T00:00:00","StrDate":"07/30/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":31,"Date":"2014-07-31T00:00:00","StrDate":"07/31/2014","Month":"七月_2014","Type":3,"MoreEvent":false},{"list":[],"Day":1,"Date":"2014-08-01T00:00:00","StrDate":"08/01/2014","Month":"八月_2014","Type":4,"MoreEvent":false},
+{"list":[],"Day":2,"Date":"2014-08-02T00:00:00","StrDate":"08/02/2014","Month":"八月_2014","Type":4,"MoreEvent":false}],
+"isOw-->
+
+
+<!--{
+"list":[
+    {"list":[],"Day":29,"Date":"2014-06-29T00:00:00","StrDate":"06/29/2014","Month":"六月_2014","Type":0,"MoreEvent":false},
+    {"list":[],"Day":30,"Date":"2014-06-30T00:00:00","StrDate":"06/30/2014","Month":"六月_2014","Type":0,"MoreEvent":false},
+    {"list":[],"Day":1,"Date":"2014-07-01T00:00:00","StrDate":"07/01/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+    {"list":[{"ID":433,"Title":"(All day) sdf","Name":"sdf","Icon":"/Images/EventIcons/event_icon_8s.png","date":"七月 2,2014","CreatedAt":18,"Invited":false,"InviteStatus":0,"FullName":"","IsEdit":false}],"Day":2,"Date":"2014-07-02T00:00:00","StrDate":"07/02/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+    {"list":[],"Day":3,"Date":"2014-07-03T00:00:00","StrDate":"07/03/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+    {"list":[],"Day":4,"Date":"2014-07-04T00:00:00","StrDate":"07/04/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+    {"list":[],"Day":5,"Date":"2014-07-05T00:00:00","StrDate":"07/05/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+    {"list":[],"Day":6,"Date":"2014-07-06T00:00:00","StrDate":"07/06/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+    {"list":[],"Day":7,"Date":"2014-07-07T00:00:00","StrDate":"07/07/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+    {"list":[],"Day":8,"Date":"2014-07-08T00:00:00","StrDate":"07/08/2014","Month":"七月_2014","Type":1,"MoreEvent":false},
+    {"list":[],"Day":9,"Date":"2014-07-09T00:00:00","StrDate":"07/09/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":10,"Date":"2014-07-10T00:00:00","StrDate":"07/10/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":11,"Date":"2014-07-11T00:00:00","StrDate":"07/11/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":12,"Date":"2014-07-12T00:00:00","StrDate":"07/12/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":13,"Date":"2014-07-13T00:00:00","StrDate":"07/13/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":14,"Date":"2014-07-14T00:00:00","StrDate":"07/14/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":15,"Date":"2014-07-15T00:00:00","StrDate":"07/15/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":16,"Date":"2014-07-16T00:00:00","StrDate":"07/16/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":17,"Date":"2014-07-17T00:00:00","StrDate":"07/17/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":18,"Date":"2014-07-18T00:00:00","StrDate":"07/18/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":19,"Date":"2014-07-19T00:00:00","StrDate":"07/19/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":20,"Date":"2014-07-20T00:00:00","StrDate":"07/20/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":21,"Date":"2014-07-21T00:00:00","StrDate":"07/21/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":22,"Date":"2014-07-22T00:00:00","StrDate":"07/22/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":23,"Date":"2014-07-23T00:00:00","StrDate":"07/23/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":24,"Date":"2014-07-24T00:00:00","StrDate":"07/24/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":25,"Date":"2014-07-25T00:00:00","StrDate":"07/25/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":26,"Date":"2014-07-26T00:00:00","StrDate":"07/26/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":27,"Date":"2014-07-27T00:00:00","StrDate":"07/27/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":28,"Date":"2014-07-28T00:00:00","StrDate":"07/28/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":29,"Date":"2014-07-29T00:00:00","StrDate":"07/29/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":30,"Date":"2014-07-30T00:00:00","StrDate":"07/30/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[{"ID":495,"Title":"8:00AM aaaa","Name":"aaaa","Icon":"/Images/EventIcons/event_icon_8s.png","date":"七月 31, 2014 at 8:00AM","CreatedAt":18,"Invited":false,"InviteStatus":0,"FullName":"","IsEdit":false}],"Day":31,"Date":"2014-07-31T00:00:00","StrDate":"07/31/2014","Month":"七月_2014","Type":1,"MoreEvent":false},{"list":[],"Day":1,"Date":"2014-08-01T00:00:00","StrDate":"08/01/2014","Month":"八月_2014","Type":3,"MoreEvent":false},{"list":[{"ID":499,"Title":"8:00AM sss","Name":"sss","Icon":"/Images/EventIcons/event_icon_8s.png","date":"八月 2, 2014 at 8:00AM","CreatedAt":18,"Invited":false,"InviteStatus":0,"FullName":"","IsEdit":true}],"Day":2,"Date":"2014-08-02T00:00:00","StrDate":"08/02/2014","Month":"八月_2014","Type":4,"MoreEvent":false}],"is-->

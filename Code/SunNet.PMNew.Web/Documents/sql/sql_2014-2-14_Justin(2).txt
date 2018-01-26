@@ -1,0 +1,120 @@
+﻿
+/****** Object:  Table [dbo].[EventShares]    Script Date: 2014/2/14 14:29:27 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[EventShares](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[EventID] [int] NOT NULL,
+	[RoleID] [int] NOT NULL,
+	[CreatedID] [int] NOT NULL,
+	[FromDay] [datetime] NOT NULL,
+ CONSTRAINT [PK_EventShares] PRIMARY KEY NONCLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+ALTER TABLE [dbo].[EventShares] ADD  DEFAULT ((0)) FOR [CreatedID]
+GO
+
+ALTER TABLE [dbo].[EventShares] ADD  DEFAULT (getdate()) FOR [FromDay]
+GO
+
+
+
+
+CREATE TABLE [dbo].[Events](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[Icon] [int] NOT NULL,
+	[Name] [nvarchar](500) NULL,
+	[Details] [nvarchar](1000) NOT NULL,
+	[Where] [nvarchar](200) NOT NULL,
+	[AllDay] [bit] NOT NULL,
+	[FromDay] [datetime] NOT NULL,
+	[FromTime] [varchar](5) NOT NULL,
+	[FromTimeType] [int] NOT NULL,
+	[ToDay] [datetime] NOT NULL,
+	[ToTime] [varchar](5) NOT NULL,
+	[ToTimeType] [int] NOT NULL,
+	[Privacy] [int] NOT NULL,
+	[CreatedBy] [int] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[Highlight] [bit] NOT NULL,
+	[Alert] [int] NOT NULL,
+	[UpdatedOn] [datetime] NOT NULL,
+	[groupId] [varchar](50) NOT NULL,
+	[HasInvite] [bit] NOT NULL,
+	[HasAlert] [bit] NOT NULL,
+	[ProjectID] [int] NOT NULL,
+ CONSTRAINT [PK_Events] PRIMARY KEY NONCLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Events] ADD  DEFAULT ('') FOR [groupId]
+GO
+
+ALTER TABLE [dbo].[Events] ADD  DEFAULT ((0)) FOR [HasInvite]
+GO
+
+ALTER TABLE [dbo].[Events] ADD  DEFAULT ((0)) FOR [HasAlert]
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'1、只限自己；2、全公开；3、指定组；4、特邀；5、指定组与特邀' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'Events', @level2type=N'COLUMN',@level2name=N'Privacy'
+GO
+
+
+
+
+CREATE TABLE [dbo].[EventInvites](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[CreatedID] [int] NOT NULL,
+	[EventID] [int] NOT NULL,
+	[UserID] [int] NOT NULL,
+	[Status] [int] NOT NULL,
+	[FromDay] [datetime] NOT NULL,
+ CONSTRAINT [PK_EventInvites] PRIMARY KEY NONCLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'1:邀请; 2:加入; 3:拒绝; 4:忽略' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'EventInvites', @level2type=N'COLUMN',@level2name=N'Status'
+GO
+
+
+
+CREATE TABLE [dbo].[EventComments](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[EventID] [int] NOT NULL,
+	[UserID] [int] NOT NULL,
+	[Context] [varchar](500) NOT NULL,
+	[CreateOn] [datetime] NOT NULL,
+	[ParentID] [int] NOT NULL,
+ CONSTRAINT [PK_EventComments] PRIMARY KEY NONCLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+

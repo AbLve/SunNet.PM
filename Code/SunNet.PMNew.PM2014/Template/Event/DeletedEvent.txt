@@ -1,0 +1,12 @@
+﻿Dear [ClientName],<br/>
+
+This event has been canceled. <br/>
+<br/>
+Project : [Project]<br/>
+Title : [Title]<br/>
+Where : [Where]<br/>
+Detail : [Detail]<br/>
+Time : [Time]<br/>
+Host : [Host]<br/>
+<br/>
+Thank you.<br/>

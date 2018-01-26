@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6EDD8750-D5CD-4A8B-A0C4-3BAF230131F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SunNet.PMNew.Impl</RootNamespace>
+    <AssemblyName>SunNet.PMNew.Impl</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Web\Lib\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Web\Lib\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Web\Lib\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity, Version=1.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\SunNet.PMNew.Web\Lib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlDataProvider\Common\SqlHelper.cs" />
+    <Compile Include="SqlDataProvider\Company\CompanysRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Complaint\ComplaintHistoryRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Events\EventCommentsSqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Events\EventsRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Events\EventsRepositorySqlDataProvider2.cs" />
+    <Compile Include="SqlDataProvider\File\DirectoryObjectRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\File\DirectoryRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\File\FilesRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Invoice\InvoiceRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Invoice\TSInvoiceRelationRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\KPI\KPICaterogryRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Log\LogRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Project\ProjectPrincipalSqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Project\ProjectsRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Project\ProjectUsersRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Complaint\ComplaintRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Complaint\SystemRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Schedules\SchedulesRepositorySqlDataProvide.cs" />
+    <Compile Include="SqlDataProvider\Seal\SealFilesRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Seal\SealNotesRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Seal\SealRequestsRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Seal\SealsRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Seal\SealUnionRequestsRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Seal\WorkflowHistoryRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Share\ShareRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Ticket\CateGoryRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Ticket\CateGoryTicketsRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Ticket\FeedBackMessagesRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Ticket\FeedBacksRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Ticket\TasksRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Ticket\TicketEsDetailRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Ticket\TicketHistorysRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Ticket\TicketsRelationRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Ticket\TicketsOrderRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Ticket\TicketsRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Ticket\TicketUsersRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\Ticket\WeekPlanRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\TimeSheet\TimeSheetsRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\User\HideUsersRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\User\ModulesRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\User\RoleModulesRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\User\RolesRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\User\UsersRepositorySqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\ProposalTracker\ProposalTrackerNoteSqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\ProposalTracker\ProposalTrackerRelationSqlDataProvider.cs" />
+    <Compile Include="SqlDataProvider\ProposalTracker\ProposalTrackerSqlDataProvider.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SunNet.PMNew.Core\SunNet.PMNew.Core.csproj">
+      <Project>{4E1E2933-E955-49FE-A367-51D6D2C43396}</Project>
+      <Name>SunNet.PMNew.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Entity\SunNet.PMNew.Entity.csproj">
+      <Project>{129AD4D5-62F8-424B-AEE1-438744E1E065}</Project>
+      <Name>SunNet.PMNew.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SunNet.PMNew.Framework\SunNet.PMNew.Framework.csproj">
+      <Project>{3D3DAFD1-AFD8-48E5-8E11-BDF5C2A3FDC5}</Project>
+      <Name>SunNet.PMNew.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

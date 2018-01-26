@@ -1,0 +1,23 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="SunNet.PMNew.WinLogin.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="CheckUpdateDate" Type="System.DateTime" Scope="User">
+      <Value Profile="(Default)">2014-01-01</Value>
+    </Setting>
+    <Setting Name="ISCheckUpdate" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="LocalVersion" Type="System.Single" Scope="User">
+      <Value Profile="(Default)">1</Value>
+    </Setting>
+    <Setting Name="ErrorFormat" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Sorry to tell you the application get an error, we'll appreciate if you send the error informations to us, our email: project@sunnet.us. The error messages:
+{0}
+-----------Sunnet(www.sunnet.us) </Value>
+    </Setting>
+    <Setting Name="ShowScriptErrors" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

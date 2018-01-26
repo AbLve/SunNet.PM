@@ -1,0 +1,55 @@
+﻿/*
+ *@Copyright lhgcore.js (c) 2009 By LiHuiGang Reserved
+ *@Author 本皮肤由网友陆奕堂提供 extjs样式
+ */
+ 
+html, body{	background-color: transparent;	margin: 0;	padding: 0;}
+
+body{height: 100%;	width: 100%;	overflow: hidden;	background-color: transparent;	padding: 0;	font: 12px Verdana, Arial, sans-serif;}
+
+.contain{position: absolute;	top: 27px;	left: 7px;	right: 7px;	bottom: 6px;	z-index: 1;	background-color: #fff;	overflow: hidden;}
+
+.tl, .tr, .bl, .br, .ml, .mr, #xbtn, .ico{ position: absolute;	background-image: url(d_bg.gif);background-repeat: no-repeat;}
+.tc, .bc{position: absolute;	background-image: url(d_x.gif);	background-repeat: repeat-x;}
+
+.tl{top: 0px;	left: 0px;	width: 7px;	height: 28px;	background-position: -46px -49px;}
+.tc{top: 0px;	right: 5px;	left: 7px;	height: 27px;	background-position: 0px 0px;cursor: move;}
+.tr{top: 0px;	right: 0px;	width: 7px;	height: 27px;	background-position: -53px -49px;}
+#txt{position: absolute;	height: 28px;	left: 15px;	color: #000;	line-height: 29px;	font-weight: bold;}
+.ico{height: 13px;    width: 13px;    top: 6px;    background-position: -21px -65px;}
+
+
+.ml, .mr{background-repeat: repeat-y;}
+.ml{top: 27px;	left: 0px;	width: 7px;	bottom: 5px;	background-position: -60px 0px;}
+.mr{top: 27px;	right: 0px;	width: 7px;	bottom: 5px;	background-position: -67px 0px;}
+
+.bl{bottom: 0px;left: 0px;	width: 8px;	height: 8px;background-position: -20px -51px;}
+.bc{bottom: 0px;left: 7px;  right: 0px;	height: 6px; background-position: 0px -35px;}
+.br{bottom: 0px;right: 0px;	width: 8px;	height: 8px; background-position: -30px -51px;cursor: nw-resize;	}
+
+.xbtn{cursor: default;top: 7px;right: 10px;width: 15px;height: 14px;background-position: -2px -50px;}
+.xbtnover{ background-position: -2px -64px; }
+.btnover{ background-position: 0px -21px;}
+
+.dlgfoot{position: absolute;	height: 28px;	right: 0px;	left: 0px;	bottom: 1px;border-top: #dadee5 1px solid;	background-color: #fcfcfc;}
+.dlgfoot ul{  list-style: none;	margin-top: 4px;	margin-right: 10px !important;	margin-right: 0;}
+.dlgfoot ul li{	float: right;	cursor: default;	margin-right: 10px;	text-align: center;}
+.dlgfoot .sbtn{    width: 60px;	height: 21px;	background-image: url(d_bg.gif);	background-repeat: no-repeat;	background-position: 0 0;}
+.dlgfoot .btnover{    background-position: 0 -21px;}
+.dlgfoot ul li span{    position: relative;	top: 3px;	_top: 5px;	font: 12px Verdana, Arial, sans-serif;}
+.dlgfoot>ul li span{ +top: 5px; }
+
+#throbber
+{
+    width: 180px;
+    height: 25px;
+	top: 50%;
+	left: 50%;
+	margin-left: -90px;
+    margin-top: -12px;	
+	z-index: 2;
+	text-align: right;
+	font: 12px Verdana, Arial, sans-serif;
+	background-image: url(wait.gif);
+	background-repeat: no-repeat;
+}

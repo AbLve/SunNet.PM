@@ -1,0 +1,58 @@
+/******** Add column "Type" to table "SealRequests" ********/
+
+use newpm2014
+
+ALTER TABLE SealRequests ADD Type int NULL
+
+update SealRequests set Type=0
+
+
+
+
+/******** Add column "WorkflowHistoryID" to table "SealFiles" ********/
+
+use newpm2014
+
+ALTER TABLE SealFiles ADD WorkflowHistoryID int NULL
+
+update SealFiles set WorkflowHistoryID=-1
+
+
+
+
+
+/******** Create table [WorkflowHistory] ********/
+
+USE [NewPM2014]
+GO
+
+/****** Object:  Table [dbo].[WorkflowHistory]    Script Date: 8/19/2015 4:40:29 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[WorkflowHistory](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[WorkflowRequestID] [int] NOT NULL,
+	[CreatedTime] [datetime] NOT NULL,
+	[ProcessedBy] [varchar](50) NOT NULL,
+	[ProcessedTime] [datetime] NULL,
+	[Action] [int] NOT NULL,
+	[Comment] [varchar](250) NULL,
+ CONSTRAINT [PK_WorkflowHistory] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+

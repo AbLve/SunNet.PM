@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="InputPop.master.cs" Inherits="SunNet.PMNew.Web.Sunnet.InputPop" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="/Styles/InputPop.Master.css" rel="stylesheet" type="text/css" />
+    <base target="_self" />
+
+    <script src="/do/js.ashx" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var ISModalPage = true;
+        var ValueToReturnOnClose = -1;
+        function RefreshParentWindowAfterClose() {
+            ValueToReturnOnClose = 0;
+        }
+        function CloseAndRefreshParent() {
+            RefreshParentWindowAfterClose();
+            jQuery("#closePopWindow").click();
+        }
+        function getUrlParam(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+            var r = window.location.search.substr(1).match(reg);
+            if (r != null) return unescape(r[2]); return null;
+        }
+        function CloseWindow() {
+            window.returnValue = ValueToReturnOnClose;
+            window.opener = self;
+            window.close();
+        }
+    </script>
+
+    <style type="text/css">
+        .owmainrightBoxtwoMinH
+        {
+            min-height: 600px;
+            position: relative;
+        }
+        .btnBoxone
+        {
+            /*position:absolute;
+    	top:640px;
+    	width:94%;*/
+        }
+        .owBoxone
+        {
+            padding-top: 5px;
+            margin: 0 auto;
+        }
+    </style>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div class="owBoxone customWidth">
+        <div class="owTopone">
+            <div class="owTopone_left" style="width: auto;">
+                <asp:ContentPlaceHolder ID="cphTitle" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="owTopone_right">
+                <a id="closePopWindow" container="add_module" href="#">
+                    <img src="/icons/15.gif" border="0" align="absmiddle" />
+                    Close</a></div>
+        </div>
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+
+    <script type="text/javascript">
+        jQuery(function() {
+            jQuery("#closePopWindow").click(function() {
+            //                jQuery("#frame_Main").dialog("close");
+            $(this).attr('clicked', '1');
+                CloseWindow();
+            });
+
+            jQuery("#btnClientCancel").click(function() {
+                jQuery("input[type='text']").add("textarea").val("");
+                jQuery("input[type='checkbox']").removeAttr("checked");
+            });
+        });
+    </script>
+
+    </form>
+</body>
+</html>

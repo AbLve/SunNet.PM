@@ -1,0 +1,3044 @@
+body {
+    background-image: url(../Images/mainbg.png);
+    margin: 0;
+    overflow-y: scroll;
+    background-position: top;
+    background-repeat: repeat-x;
+}
+
+td, div {
+    font-family: 'Open Sans', sans-serif;
+    color: #04466a;
+    font-size: 13px;
+}
+
+img {
+    border: 0;
+}
+
+a {
+    outline: none;
+}
+
+    a:focus {
+        outline: none;
+    }
+
+.modal {
+    overflow: hidden;
+}
+
+.topBox {
+    height: 60px;
+    min-width: 1100px;
+}
+
+.sepline1 {
+    background-image: url(../Images/underblue_sep.png);
+    height: 31px;
+    min-width: 1100px;
+}
+
+.headerBox {
+    width: 1100px;
+    margin: 0 auto;
+    height: 43px;
+}
+
+.headerBox_logo {
+    position: absolute;
+    float: left;
+    width: 255px;
+    overflow: hidden;
+}
+
+.headerBox_navi {
+    float: left;
+    width: 480px;
+    margin-left: 260px;
+}
+
+.headerBox_logoff {
+    float: right;
+    width: 70px;
+    text-align: right;
+    font-size: 13px;
+    padding-top: 20px;
+}
+
+    .headerBox_logoff a {
+        color: #04466a;
+        text-decoration: none;
+    }
+
+        .headerBox_logoff a:hover {
+            color: #04466a;
+            text-decoration: underline;
+        }
+
+.headeruserBox {
+    float: right;
+    width: 150px;
+    text-align: right;
+    font-size: 13px;
+    padding-top: 10px;
+}
+
+span.editprofilelink a {
+    color: #666666;
+    font-size: 12px;
+}
+
+.headeruserBox a {
+    color: #04466a;
+    text-decoration: none;
+}
+
+    .headeruserBox a:hover {
+        color: #666;
+        text-decoration: underline;
+    }
+
+.homebannerBox {
+    width: 1100px;
+    margin: 0 auto;
+    height: 59px;
+    background-image: url(../Images/blue_topbg.png);
+}
+
+.homebannerBox_left {
+    float: left;
+    font-size: 30px;
+    color: #fff;
+    width: 350px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.homebannerBox_right {
+    float: right;
+    color: #000;
+    width: 300px;
+    text-align: right;
+    font-size: 13px;
+    padding-top: 15px;
+}
+
+.bannerUser {
+    margin-left: 5px;
+}
+
+.bannerProfile {
+    font-size: 13px;
+    color: #055787;
+    margin-left: 20px;
+}
+
+    .bannerProfile a {
+        color: #055787;
+        text-decoration: none;
+    }
+
+        .bannerProfile a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+div.mainBox {
+    background-color: #fff;
+    min-height: 450px;
+    width: 1098px;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+}
+
+table.mainBox {
+    width: 100%;
+    margin: 0 auto;
+    table-layout: fixed;
+}
+
+.maincontainer {
+    width: 1100px;
+    margin: 0 auto;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.mainBoxtop_left {
+    background-color: #eee;
+    border-right: 1px solid #fff;
+    width: 260px;
+    height: 40px;
+    padding-left: 5px;
+}
+
+.mainBoxtop_right {
+    background-color: #eee;
+    padding-right: 15px;
+}
+/*Tree Menu Begin*/
+.maintleftBox {
+    border-right: 1px solid #ddd;
+    vertical-align: top;
+}
+
+.mainleftBoxdiv {
+    margin: 10px 20px;
+    overflow: auto;
+    padding-bottom: 20px;
+    min-height: 500px;
+}
+
+    .mainleftBoxdiv img {
+        vertical-align: middle;
+        margin-right: 5px;
+    }
+
+ul.treeMenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    word-break: keep-all;
+}
+
+
+    ul.treeMenu li span {
+        font-size: 13px;
+    }
+
+    ul.treeMenu li {
+        font-size: 13px;
+        padding: 5px 8px 5px 10px;
+        cursor: pointer;
+        font-weight: bold;
+        width: 90%;
+    }
+
+        ul.treeMenu li.currenttreemenu {
+            background-image: url(../Images/document/treemenu_bgover.png);
+            background-position: top;
+            background-repeat: repeat-x;
+        }
+
+        ul.treeMenu li a {
+            color: #4a4a4a;
+            text-decoration: none;
+        }
+
+        ul.treeMenu li ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            border-left: 1px dotted #4798cc;
+            margin-left: 5px;
+            margin-top: 4px;
+        }
+
+            ul.treeMenu li ul li {
+                font-size: 13px;
+                padding: 5px 8px 5px 20px;
+                cursor: pointer;
+                font-weight: normal;
+            }
+/*Tree Menu End*/
+
+.maintrightBox {
+    padding: 10px;
+    vertical-align: top;
+}
+
+.doclist1 {
+    border: 0;
+}
+
+    .doclist1 td {
+        padding: 6px;
+        line-height: 16px;
+        font-size: 13px;
+        color: #444;
+    }
+
+        .doclist1 td td {
+            padding: 0px 0px 5px 0px;
+        }
+
+    .doclist1 tr.doclist1Title td {
+        background-color: #f0f9ff;
+        font-size: 15px;
+        color: #04466a;
+        border-top: 1px solid #96c4ea;
+        border-bottom: 1px solid #96c4ea;
+        padding: 10px 6px;
+    }
+
+tr.doclist1_tronclick {
+    background-color: #388ec8;
+    color: #FFF;
+}
+
+    tr.doclist1_tronclick td {
+        color: #FFF;
+        padding: 10px 6px;
+        min-height: 24px;
+    }
+
+        tr.doclist1_tronclick td a {
+            color: #FFF;
+        }
+
+tr.doclist1_trwhite td {
+    background-color: #Fff;
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #edf1f5;
+    padding: 10px 6px;
+    min-height: 24px;
+}
+
+tr.doclist1_trwhite:hover td {
+    background-color: #f7fcff;
+    border-bottom: 1px solid #c6d8e4;
+    border-top: 1px solid #c6d8e4;
+}
+
+.docclickBox {
+    border-radius: 5px;
+    background-color: #fff;
+    width: 150px;
+    border: 1px solid #1d99ff;
+    -webkit-box-shadow: 10px 10px 25px #ccc;
+    -moz-box-shadow: 10px 10px 25px #ccc;
+    box-shadow: 10px 10px 25px #ccc;
+    padding: 5px 0px;
+}
+
+    .docclickBox ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .docclickBox ul li {
+            padding: 5px 20px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+            .docclickBox ul li:hover {
+                background-color: #ddf0ff;
+            }
+
+            .docclickBox ul li img {
+                margin-right: 6px;
+                vertical-align: middle;
+            }
+
+
+/*Videos*/
+.mainBoxtop {
+    background-color: #eee;
+    border-radius: 5px 5px 0 0;
+    height: 40px;
+}
+
+.mainBoxcontent {
+    padding: 10px;
+}
+
+ul.videoBox {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+    ul.videoBox li {
+        float: left;
+        background-image: url(..../Images/videoalbum_bg.png);
+        width: 223px;
+        background-position: top;
+        background-repeat: no-repeat;
+        height: 250px;
+        margin: 10px 10px 10px 30px;
+    }
+
+.moreaction {
+    font-size: 13px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+    .moreaction a {
+        margin-right: 15px;
+        color: #04466a;
+        text-decoration: none;
+    }
+
+    .moreaction img {
+        vertical-align: middle;
+        margin-right: 3px;
+    }
+
+.moreactionDown {
+    position: absolute;
+    background-color: #fff;
+    width: 175px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    -moz-box-shadow: 0 0 10px #ccc;
+    padding: 5px 0px;
+    margin-top: 10px;
+    margin-left: -21px;
+    visibility: visible;
+}
+
+ul.topactionItem li .moreactionDown ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.topactionItem li .moreactionDown ul li {
+        padding: 5px 10px 5px 20px;
+        font-size: 12px;
+        cursor: pointer;
+        border: 0px;
+        clear: both;
+        width: 145px;
+        text-align: left;
+    }
+
+        ul.topactionItem li .moreactionDown ul li:hover {
+            background-color: #ddf0ff;
+        }
+
+        ul.topactionItem li .moreactionDown ul li img {
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+.photoactionBox {
+    position: absolute;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 180px;
+    margin-left: 150px;
+}
+
+/*Videos 2*/
+.breadnaviBox1 {
+    padding: 30px 4px 5px 4px;
+    font-size: 13px;
+    color: #04466a;
+    width: 1092px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ddd;
+}
+
+    .breadnaviBox1 img {
+        vertical-align: middle;
+        margin-right: 4px;
+    }
+
+    .breadnaviBox1 a {
+        color: #04466a;
+        text-decoration: none;
+    }
+
+        .breadnaviBox1 a:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+
+.topactionbox {
+    width: 1098px;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 40px;
+    padding-bottom: 20px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+ul.topactionItem {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.topactionItem li {
+        float: right;
+        border-bottom: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+        ul.topactionItem li:hover {
+            background-color: #eee;
+        }
+
+        ul.topactionItem li img {
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        ul.topactionItem li a {
+            color: #04466a;
+            text-decoration: none;
+        }
+
+ul a li {
+    color: #04466a;
+}
+
+.shareText1 {
+    font-size: 13px;
+    color: #666;
+    padding-left: 10px;
+}
+
+span.rightLink1 {
+    font-size: 13px;
+    margin-left: 5px;
+}
+
+    span.rightLink1 a {
+        margin-right: 10px;
+        color: #666;
+        text-decoration: none;
+    }
+
+        span.rightLink1 a:hover {
+            color: #4a4a4a;
+            text-decoration: underline;
+        }
+
+    span.rightLink1 img {
+        vertical-align: middle;
+        margin-right: 3px;
+    }
+
+span.rightLink2 {
+    font-size: 13px;
+    margin-right: 15px;
+    color: #04466a;
+    cursor: pointer;
+}
+
+.videoBoxright {
+    background-image: url(../Images/videoalbum_bg.png);
+    width: 223px;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 224px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+    .videoBoxright td {
+        line-height: 25px;
+    }
+
+.videoalbumTitle1 {
+    font-size: 13px;
+    color: #04466a;
+    font-weight: bold;
+    text-align: center;
+}
+
+.adBox {
+    text-align: center;
+    padding: 5px 0px;
+}
+
+ul.videolistBox {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.videolistBox li {
+        float: left;
+        width: 180px;
+        height: 150px;
+        margin: 10px 10px;
+    }
+
+.videolistSlink {
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+    .videolistSlink img {
+        margin-right: 2px;
+        vertical-align: middle;
+    }
+
+    .videolistSlink a {
+        color: #04466a;
+        text-decoration: none;
+    }
+
+        .videolistSlink a:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+
+.photoactionBox2 {
+    position: absolute;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 95px;
+    width: 60px;
+    background-color: #ccc;
+    margin-left: 95px;
+    visibility: hidden;
+}
+/*
+.scrollSphoto img
+{
+	vertical-align: middle;
+	margin: 0px 15px;
+}
+.scrollSphoto img .photocurrent
+{
+	border: 3px solid #4FCDDC;
+}*/
+.photoNotCurrent {
+    padding: 2px;
+    border: #dadada solid 1px;
+}
+
+.photocurrents {
+    border: 3px solid #4FCDDC;
+}
+
+.videoRight {
+    width: 190px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+    .videoRight td {
+        line-height: 35px;
+    }
+
+.viewRight_title1 {
+    font-weight: bold;
+    color: #04466a;
+    margin-bottom: 10px;
+    font-size: 13px;
+    text-align: center;
+}
+
+.viewRight_text1 {
+    margin-bottom: 10px;
+}
+
+.scrollLphoto {
+    border: 1px solid #eee;
+}
+
+.commentsTop {
+    padding: 25px 0px 5px 5px;
+    border-bottom: 1px solid #ddd;
+    height: 20px;
+}
+
+.commentsTop_left {
+    width: 70%;
+    float: left;
+}
+
+.commentsTop_right {
+    width: 25%;
+    float: right;
+    text-align: right;
+}
+
+.addCommentbox {
+    margin-top: 15px;
+}
+
+.expressBox {
+    position: absolute;
+    margin-top: -30px;
+    visibility: hidden;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.commentList {
+    padding: 5px 0px 10px 10px;
+    margin: 10px 0px 5px 0px;
+    border-bottom: 1px solid #eee;
+    overflow: auto;
+}
+
+    .commentList:hover {
+        background-color: #edeff5;
+    }
+
+    .commentList a {
+        color: #04466a;
+    }
+
+        .commentList a:hover {
+            color: #666;
+        }
+
+    .commentList strong {
+        color: #04466a;
+    }
+
+.commentList_left {
+    float: left;
+    padding-top: 2px;
+    width: 40px;
+}
+
+.commentList_right {
+    float: left;
+    width: 85%;
+}
+
+.commentListdate {
+    color: #999999;
+    margin-right: 15px;
+}
+
+.replyinputBox {
+    margin: 5px 0px;
+}
+
+.commentReply {
+    padding: 5px;
+    margin: 5px 0px 5px 0px;
+    overflow: auto;
+}
+
+    .commentReply:hover {
+        background: #fff;
+    }
+
+.commentReplyt a {
+    color: #04466a;
+}
+
+.commentReply textarea {
+    overflow-y: hidden;
+}
+
+.commentReply a:hover {
+    color: #666;
+}
+
+.commentReply strong {
+    color: #04466a;
+}
+
+.commentReply_left {
+    width: 40px;
+    float: left;
+    padding-top: 2px;
+}
+
+.commentReply_right {
+    float: left;
+    width: 85%;
+    word-break: break-all;
+}
+
+.commentList_right .commentReply_right .reply {
+    display: none;
+}
+
+.eventTitle {
+    padding-left: 10px;
+    font-size: 13px;
+}
+
+    .eventTitle strong {
+        font-size: 16px;
+    }
+
+    .eventTitle a {
+        margin: 0px 20px 0px 0px;
+        color: #04466a;
+        text-decoration: none;
+    }
+
+    .eventTitle strong a {
+        color: #4a4a4a;
+    }
+
+    .eventTitle a:hover {
+        color: #666;
+    }
+
+.eventTitle1 {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 8px;
+}
+
+.eventitemBox {
+    margin: 0;
+    padding-bottom: 0;
+}
+
+.eventitemTitle1 {
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    color: #04466A;
+    font-size: 13px;
+    padding: 6px 6px 6px 8px;
+}
+
+.eventitemMain {
+    padding-left: 40px;
+    margin: 10px;
+    overflow: auto;
+}
+
+    .eventitemMain td {
+        padding: 2px;
+        color: #999999;
+        vertical-align: top;
+    }
+
+        .eventitemMain td.itemtime {
+            text-align: right;
+            width: 120px;
+        }
+
+        .eventitemMain td.itemcontent {
+            padding: 2px 4px;
+            color: #666;
+            line-height: 20px;
+        }
+
+.eventlistItem {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.eventShowmore {
+    background-color: #f0f9ff;
+    font-size: 12px;
+    color: #04466a;
+    border: 1px solid #c0e3ff;
+    padding: 5px;
+    text-align: center;
+}
+
+    .eventShowmore a {
+        color: #04466a;
+        text-decoration: none;
+    }
+
+.itemcontent a {
+    color: #04466a;
+    text-decoration: none;
+}
+
+    .itemcontent a:hover {
+        color: #666;
+        text-decoration: underline;
+    }
+
+.calendarTopinvite {
+    margin: 5px 0px 5px 0px;
+    overflow: auto;
+    padding: 10px 0px;
+    border: 1px solid #ddd;
+}
+
+ul.calendarInvite {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.calendarInvite li {
+        float: left;
+        margin: 0px 10px 10px 10px;
+        width: 240px;
+    }
+
+    ul.calendarInvite a {
+        color: #04466a;
+        text-decoration: none;
+    }
+
+        ul.calendarInvite a:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+
+    ul.calendarInvite td {
+        padding-right: 5px;
+        vertical-align: top;
+    }
+
+.alleventsLink {
+    text-align: right;
+}
+
+.owEventBox1 td {
+    border-top: 1px solid #eee;
+    padding: 8px;
+    vertical-align: top;
+}
+
+    .owEventBox1 td td {
+        border: 0;
+    }
+
+        .owEventBox1 td td a {
+            color: #04466a;
+            text-decoration: none;
+        }
+
+            .owEventBox1 td td a:hover {
+                color: #666;
+                text-decoration: underline;
+            }
+
+        .owEventBox1 td td.oweventTime {
+            color: #666;
+        }
+
+.friendprofileTitle {
+    background-color: #eee;
+    border-radius: 5px 0 0 0;
+    border-left: 1px solid #fff;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.friendgroupBox {
+    margin-bottom: 20px;
+    overflow: auto;
+    border: 1px solid #ddd;
+    padding-bottom: 4px;
+}
+
+.friendgroupTitle {
+    padding: 8px;
+    overflow: auto;
+    background-color: #f7f7ff;
+    border-bottom: 1px solid #ddd;
+}
+
+.friendgroupTitle_left {
+    width: 77%;
+    float: left;
+    padding-left: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.friendgroupTitle_right {
+    width: 20%;
+    float: right;
+    text-align: right;
+    padding-right: 5px;
+}
+
+ul.friendlistBox {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.friendlistBox li {
+        float: left;
+        width: 252px; 
+        margin: 10px 5px 10px 10px;
+        text-align: center;
+        padding: 8px;
+    }
+
+        ul.friendlistBox li.friendselected {
+            background-color: #c2e7ff;
+        }
+
+        ul.friendlistBox li:hover {
+            background-color: #eee;
+        }
+
+        ul.friendlistBox li img {
+            margin-bottom: 5px;
+        }
+
+    ul.friendlistBox .friendselected_name {
+        width: 252px;
+        display: block;
+        overflow:hidden;
+        white-space:nowrap;
+        text-overflow:ellipsis;
+    }
+
+ul.myfriendlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.myfriendlist li {
+        padding: 8px;
+        border-bottom: 1px solid #ddd;
+    }
+
+        ul.myfriendlist li:hover {
+            background-color: #edeff5;
+        }
+
+    ul.myfriendlist a {
+        color: #04466a;
+        text-decoration: none;
+    }
+
+        ul.myfriendlist a:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+
+    ul.myfriendlist td {
+        padding-right: 5px;
+        vertical-align: middle;
+    }
+
+.viewRight_pic1 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.viewRight_text1 strong {
+    color: #000;
+}
+
+.mainBoxcontent2 {
+    padding: 10px;
+    border-left: 1px solid #ddd;
+}
+
+.headerBox_notice {
+    float: left;
+    width: 160px;
+    text-align: left;
+    font-size: 13px;
+    padding-top: 20px;
+    height: 39px;
+}
+
+.notice_Highlight {
+    color: Red;
+    font-weight: bold;
+}
+
+.headerBox_notice a {
+    color: #04466a;
+    text-decoration: none;
+}
+
+    .headerBox_notice a:hover {
+        color: #04466a;
+        text-decoration: underline;
+    }
+
+ul.topmenuBox {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.topmenuBox li {
+        float: left;
+        width: 50px;
+        height: 60px;
+        text-align: center;
+        cursor: pointer;
+    }
+
+        ul.topmenuBox li:hover {
+            background-color: #8ddaeb;
+        }
+
+    ul.topmenuBox a {
+        display: block;
+        width: 100%;
+        height: 59px;
+        line-height: 59px;
+    }
+
+.sendstatus {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    background-image: url(..../Images/but_bg2.png);
+    border: 1px solid #c2c2c2;
+    border-radius: 3px;
+    margin-right: 5px;
+    padding: 1px 10px;
+    float: right;
+}
+/*Calendar Begin*/
+.calendartop1 {
+    padding: 5px 5px;
+    font-size: 18px;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    margin-top: 15px;
+}
+
+.calendartop {
+    text-align: center;
+    padding: 5px 0px;
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.calendartopArrow {
+    padding: 0px 5px 2px 5px;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+    .calendartopArrow:hover {
+        background-image: url(../Images/but_bg2.png);
+        border: 1px solid #c2c2c2;
+    }
+
+    .calendartopArrow img {
+        vertical-align: middle;
+    }
+
+.monthlyviewBox {
+    border-left: 1px solid #ddd;
+    margin: 0 auto;
+}
+
+ul.monthlyviewweek {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.monthlyviewweek li {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        color: #666;
+        float: left;
+        font-size: 12px;
+        height: 20px;
+        padding-top: 5px;
+        text-align: center;
+        width: 14.17%;
+    }
+
+ul.monthlyview, ul.monthlyviewwweek, ul.onscdTicket {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+    ul.monthlyview li {
+        border-bottom: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        float: left;
+        width: 14.17%;
+        height: 105px;
+    }
+
+        ul.monthlyview li:hover {
+            background-color: #f7f7ff;
+        }
+
+        ul.monthlyview li a {
+            color: #000;
+            text-decoration: none;
+        }
+
+            ul.monthlyview li a:hover {
+                color: #666;
+                text-decoration: underline;
+            }
+
+    ul.monthlyviewwweek li {
+        border-bottom: 1px solid #ddd;
+        border-right: 1px solid #ddd;
+        border-top: 1px solid #ddd;
+        float: left;
+        width: 14.17%;
+        height: 20px;
+        background-color: #cfdeef;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 11px;
+        color: #000;
+        font-weight: bold;
+        padding-top: 5px;
+        text-align: center;
+    }
+
+.dateToday {
+    vertical-align: top;
+    background-color: #fff4ca;
+}
+
+ul.onscdTicket li {
+    color: #1952b3;
+    font-size: 12px;
+    border: 0;
+    padding: 1px 5px;
+    width: 91%;
+    height: 15px;
+    margin: 2px;
+    overflow: hidden;
+    background-color: #e7ebf1;
+    line-height: 16px;
+    overflow: hidden;
+}
+
+    ul.onscdTicket li:hover {
+        background-color: #e7ebf1;
+    }
+
+    ul.onscdTicket li a {
+        color: #055787;
+    }
+
+.dateDisable {
+    background-color: #F5F5F5;
+    color: #CCCCCC;
+    vertical-align: top;
+}
+
+/*Calendar End*/
+
+
+/* Profile */
+.profileBox td {
+    padding-right: 5px;
+    font-weight: bold;
+}
+
+span.profileItem {
+    margin-right: 10px;
+    color: #666;
+    font-weight: normal;
+}
+
+.profileBox td a {
+    color: #04466a;
+    text-decoration: none;
+}
+
+    .profileBox td a:hover {
+        color: #666;
+        text-decoration: underline;
+    }
+
+.viewRight_text2 {
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.profilewelcome {
+    padding-left: 20px;
+    font-size: 18px;
+    color: #04466a;
+    font-weight: bold;
+}
+
+.planwelcome {
+    padding: 75px 0px 20px 0px;
+    margin: 0 auto;
+    overflow: auto;
+    font-size: 40px;
+    text-align: center;
+    color: #000;
+}
+
+.planmainBox {
+    margin: 0 auto;
+    background-color: #fff;
+    overflow: auto;
+    padding: 30px;
+}
+
+.freeplanBox {
+    background-image: url(..../Images/free_bg.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+    .freeplanBox td {
+        font-size: 16px;
+        color: #000;
+    }
+
+.freeplanTitle {
+    font-size: 48px;
+    color: #567300;
+    font-weight: bold;
+}
+
+.preminumBox {
+    background-image: url(..../Images/preminum_bg.png);
+    background-position: bottom right;
+    background-repeat: no-repeat;
+}
+
+    .preminumBox td {
+        font-size: 16px;
+        color: #787878;
+    }
+
+.preminumplanTitle {
+    font-size: 48px;
+    color: #00AFF0;
+    font-weight: bold;
+}
+
+.comingsoonText {
+    font-size: 24px;
+    color: #00aff0;
+}
+/* Profile End */
+
+.profileinfoTitle {
+    background-color: #f0f9ff;
+    font-size: 13px;
+    color: #04466a;
+    border-top: 1px solid #96c4ea;
+    padding: 5px;
+    margin: 15px -5px 15px -5px;
+}
+
+.profilebtntopline {
+    border-top: 1px solid #eee;
+    text-align: center;
+}
+
+
+/*Event Group DIV*/
+.groupSelect {
+    border: 1px solid #ccc;
+    padding: 3px 15px 3px 3px;
+    width: 183px;
+    color: #666;
+    font-size: 13px;
+    background-image: url(../Images/icons/selectarrow.png);
+    background-position: right;
+    background-repeat: no-repeat;
+    height: 16px;
+    line-height: 20px;
+    overflow: hidden;
+}
+
+.groupitemBox {
+    position: absolute;
+    width: 200px;
+    max-height: 100px;
+    overflow: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+
+ul.groupitem {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.groupitem li {
+        padding: 2px 5px;
+        color: #666;
+    }
+
+        ul.groupitem li:hover {
+            background-color: #c2e7ff;
+        }
+
+/*Timeline*/
+ul.timelineDate {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.timelineDate li {
+        border-left: 5px solid #ddd;
+        padding-left: 10px;
+        min-height: 20px;
+        margin-bottom: 3px;
+        cursor: pointer;
+        font-size: 13px;
+    }
+
+        ul.timelineDate li:hover {
+            color: #04466a;
+            border-left: 5px solid #96c4ea;
+        }
+
+        ul.timelineDate li.currentyear {
+            border-left: 5px solid #60B5FB;
+            color: #055787;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+            ul.timelineDate li.currentyear ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+                ul.timelineDate li.currentyear ul li {
+                    border: 0;
+                    color: #666;
+                    font-size: 13px;
+                    font-weight: normal;
+                    padding: 1px 4px 1px 15px;
+                    margin-top: 0;
+                    margin-bottom: 0;
+                    margin-left: -15px;
+                    border-left: 5px solid #ddd;
+                }
+
+                    ul.timelineDate li.currentyear ul li:hover {
+                        text-decoration: underline;
+                    }
+
+                    ul.timelineDate li.currentyear ul li.currenmonth {
+                        color: #04466a;
+                    }
+
+.timelineeventTop {
+    font-size: 13px;
+    margin: 10px 0px 0px 10px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ddd;
+}
+/*Notice DIV*/
+.noticeBox {
+    z-index: 1000;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -60px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #939393;
+    -webkit-box-shadow: 0 0 10px #939393;
+    -moz-box-shadow: 0 0 10px #939393;
+    display: none;
+}
+
+.noticearrowBox {
+    margin-top: -19px;
+    text-align: center;
+    margin-bottom: -1px;
+}
+
+ul.noticeItem {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.noticeItem li {
+        background-color: #edeff5;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #fff;
+        padding: 7px;
+    }
+
+        ul.noticeItem li:hover {
+            background-color: #fff;
+        }
+
+        ul.noticeItem li td {
+            padding-right: 7px;
+            vertical-align: top;
+            text-align: left;
+        }
+
+.noticeTitme {
+    color: #666;
+}
+
+    .noticeTitme img {
+        vertical-align: middle;
+        margin-right: 2px;
+    }
+
+ul.noticeItem li td a {
+    color: #04466a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    ul.noticeItem li td a:hover {
+        color: #666;
+        text-decoration: underline;
+    }
+
+.noticeAction {
+    display: none;
+    margin-bottom: 5px;
+}
+
+.noticeItem li:hover .noticeAction, .noticemoreItem li:hover .noticeAction, .myfriendlist:hover .noticeAction {
+    display: inline-block;
+    cursor: pointer;
+}
+
+/*Photos Begin */
+ul.photoBox {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+    ul.photoBox li {
+        float: left;
+        background-image: url(../Images/photoalbum_bg.png);
+        width: 223px;
+        background-position: top;
+        background-repeat: no-repeat;
+        height: 250px;
+        margin: 10px 10px 10px 30px;
+    }
+
+.photoBoxright {
+    background-image: url(../Images/photoalbum_bg.png);
+    width: 223px;
+    background-position: top;
+    background-repeat: no-repeat;
+    min-height: 224px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+    .photoBoxright td {
+        line-height: 25px;
+    }
+
+.pointalbumDiv {
+    position: absolute;
+    background-color: #3AADEE;
+    padding: 10px;
+    width: 320px;
+    margin-left: -90px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.pointphotoDiv {
+    position: absolute;
+    background-color: #3AADEE;
+    padding: 10px;
+    width: 320px;
+    margin-left: -210px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.pointDivarrow {
+    text-align: right;
+    margin-right: 60px;
+    margin-top: -30px;
+}
+
+.pointalbumDiv td, .pointphotoDiv td {
+    font-size: 14px;
+    color: #fff;
+}
+
+    .pointalbumDiv td a, .pointphotoDiv td a {
+        color: #fff;
+        font-size: 18px;
+    }
+
+        .pointalbumDiv td a:hover, .pointphotoDiv td a:hover {
+            color: #efff9f;
+        }
+
+.selectphotoBox {
+    max-height: 300px;
+    overflow: auto;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+}
+
+ul.selectphotoItem {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.selectphotoItem li {
+        float: left;
+        width: 170px;
+        height: 114px;
+        margin: 10px 8px 5px 8px;
+    }
+
+.selectphotoCheck {
+    position: relative;
+    float: right;
+    margin-bottom: -20px;
+}
+
+.cursorLeft {
+    cursor: url("../Images/photos/pre.cur"),auto;
+}
+
+.cursorRight {
+    cursor: url("../Images/photos/next.cur"),auto;
+}
+
+span.fullpicIcon {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+    span.fullpicIcon img {
+        filter: alpha(opacity=70);
+        -moz-opacity: 0.7;
+        opacity: 0.7;
+        cursor: pointer;
+    }
+
+        span.fullpicIcon img:hover {
+            filter: alpha(opacity=100);
+            -moz-opacity: 1;
+            opacity: 1;
+            cursor: pointer;
+        }
+/*Photos End */
+
+
+.eventlistBox {
+    /*border: 1px solid #ddd;*/
+    overflow: auto;
+    border-radius: 5px;
+}
+
+    .eventlistBox a {
+        color: #04466a;
+        text-decoration: none;
+    }
+
+.eventlistTitle1 {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.eventactionBox {
+    padding: 5px 5px;
+    overflow: auto;
+    text-align: right;
+}
+
+
+/*Personal Home*/
+.personalBox {
+    border: 1px solid #ddd;
+    overflow: auto;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+
+    .personalBox a {
+        color: #04466a;
+        text-decoration: none;
+    }
+
+        .personalBox a:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+
+.personalbasic td {
+    padding: 5px;
+    vertical-align: top;
+}
+
+    .personalbasic td td {
+        padding: 3px 0px 3px 8px;
+        vertical-align: top;
+    }
+
+.personalbasicTitle {
+    color: #666;
+}
+
+.personalBox_title {
+    background-color: #f0f9ff;
+    border-bottom: 1px solid #96c4ea;
+}
+
+.nicknameBox {
+    background-color: #f7f7ff;
+    border-bottom: 1px solid #ddd;
+}
+
+.nickname {
+    font-size: 18px;
+    color: #04466a;
+}
+
+.personalother {
+    background-color: #f7f7ff;
+    border-bottom: 1px solid #ddd;
+}
+
+    .personalother td {
+        padding: 4px;
+    }
+
+.personalotherTitle1 {
+    font-size: 14px;
+    font-weight: bold;
+}
+/*Friend Profile*/
+.unfriendbox {
+    position: absolute;
+    text-align: right;
+    margin-top: -20px;
+    margin-left: 83px;
+    width: 107px;
+}
+
+.viewprofileText {
+    margin-bottom: 5px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.rightfriendbox {
+    border: 1px solid #ccc;
+    border-top: 0px;
+}
+
+.rightfriendTitle {
+    padding: 2px 5px;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    background-color: #f7f7ff;
+    font-weight: bold;
+}
+
+.rightfriendText {
+    padding: 2px 5px;
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.rightfriendbox a {
+    color: #04466a;
+    text-decoration: none;
+}
+
+    .rightfriendbox a:hover {
+        color: #666;
+        text-decoration: underline;
+    }
+
+.frgroupitemBox {
+    position: absolute;
+    width: 188px;
+    max-height: 150px;
+    overflow: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    margin: 0 -1px -1px -2px;
+}
+
+ul.frgroupitem {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.frgroupitem li {
+        padding: 2px 5px;
+        color: #666;
+    }
+
+        ul.frgroupitem li:hover {
+            background-color: #c2e7ff;
+        }
+
+#viewprofilebtnBox {
+    position: absolute;
+    widows: 28px;
+    height: 18px;
+    margin-top: 107px;
+    margin-left: 107px;
+    cursor: pointer;
+    visibility: hidden;
+}
+/*Friend Search*/
+#searchContainer, .friendSearchContainer {
+    position: relative;
+    z-index: 999;
+}
+
+#SearchContent, .friendSearchContent {
+    position: absolute;
+    top: 26;
+    left: 0;
+    background-color: #fff;
+    width: 254px;
+    margin-left: 10px;
+    border: 1px solid #ddd;
+    display: none;
+}
+
+    #SearchContent ul, .friendSearchContent ul {
+        list-style: none outside none;
+        margin: 0;
+        padding: 0;
+    }
+
+        #SearchContent ul li, .friendSearchContent ul li {
+            padding: 5px;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #ddd;
+            background-color: #edeff5;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+            #SearchContent ul li ul, .friendSearchContent ul li ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+                #SearchContent ul li ul li, .friendSearchContent ul li ul li {
+                    font-weight: normal;
+                    background-color: #edeff5;
+                    border: 0px;
+                }
+
+                    #SearchContent ul li ul li:hover, .friendSearchContent ul li ul li:hover {
+                        background-color: #ddd;
+                    }
+
+.searchRelation {
+    padding: 10px 15px 0 0;
+    color: #B6B0B0;
+    float: right;
+}
+/*Friend Invites*/
+ul.friendInvite {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 25px;
+}
+
+    ul.friendInvite li {
+        float: left;
+        margin: 10px 5px 0px 10px;
+        width: 240px;
+        padding: 8px;
+        height: 80px;
+    }
+
+    ul.friendInvite a {
+        color: #04466a;
+        text-decoration: none;
+    }
+
+        ul.friendInvite a:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+
+    ul.friendInvite td {
+        padding-right: 5px;
+        vertical-align: top;
+    }
+
+ul.itemTop_list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    ul.itemTop_list li {
+        background-color: #fff;
+        float: left;
+        color: #666;
+        display: block;
+        margin: 6px 5px 2px 3px;
+        padding: 2px;
+        line-height: 16px;
+        border: 1px solid #AACCEE;
+        border-radius: 4px;
+        width: 135px;
+    }
+
+        ul.itemTop_list li:hover {
+            background-color: #eee;
+            color: #000;
+        }
+
+        ul.itemTop_list li span.rightClose {
+            background-color: #ddd;
+            padding: 0px 3px;
+            /*margin-left: 3px;*/
+            float: right;
+            cursor: pointer;
+        }
+
+            ul.itemTop_list li span.rightClose:hover {
+                background-color: #b0e7ff;
+            }
+
+
+.timelineeventBox {
+    margin: 5px 0px;
+}
+
+ul.timelineeventlist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.timelineeventlist li {
+        float: left;
+        margin: 10px 5px 0px 10px;
+        width: 250px;
+        padding: 8px;
+        height: 80px;
+    }
+
+    ul.timelineeventlist a {
+        color: #04466a;
+        text-decoration: none;
+    }
+
+        ul.timelineeventlist a:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+
+    ul.timelineeventlist li td {
+        vertical-align: top;
+        padding-left: 5px;
+    }
+
+.timelineeventdate {
+    color: #666;
+}
+
+.eventdetailBox {
+    position: absolute;
+    margin-top: -120px;
+    height: 110px;
+    width: 300px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #939393;
+    -webkit-box-shadow: 0 0 10px #939393;
+    -moz-box-shadow: 0 0 10px #939393;
+}
+
+.eventdetailarrowBox {
+    margin-top: -16px;
+    text-align: center;
+    margin-bottom: -1px;
+}
+
+.eventdetailBox td {
+    background-color: #edeff5;
+    border-top: 1px solid #ccc;
+    padding: 7px;
+    vertical-align: top;
+}
+
+    .eventdetailBox td strong {
+        font-size: 13px;
+        color: #04466a;
+    }
+
+.eventdetailarrowBox {
+    margin-top: -1px;
+    padding-left: 40px;
+    position: absolute;
+}
+
+.invitefriendbox {
+    /* jack overflow: auto;*/
+}
+
+ul.invitefriendlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.invitefriendlist li {
+        height: 30px;
+        float: left;
+        width: 140px;
+        padding: 5px 5px;
+        margin: 10px 10px 0px 0px;
+    }
+
+        ul.invitefriendlist li img {
+            vertical-align: middle;
+        }
+
+        ul.invitefriendlist li:hover {
+            background-color: #eee;
+        }
+
+.timelinelistTitle {
+    height: 18px;
+    overflow: hidden;
+}
+
+/* home page */
+.homecoverBox {
+    height: 230px;
+    background-image: url(../Images/coversample.png);
+    position: relative;
+}
+
+    .homecoverBox:hover .homeeditCover {
+        display: block;
+    }
+
+.homeUserphoto {
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 20px;
+    padding: 5px;
+    background-color: #fff;
+}
+
+    .homeUserphoto:hover .homeUserphotoEdit {
+        display: block;
+    }
+
+.homeUserphotoEdit {
+    display: none;
+    position: absolute;
+    margin-left: 20px;
+    margin-top: -20px;
+}
+
+.homemoodBox {
+    font-size: 13px;
+    color: #000;
+    line-height: 16px;
+    width: 835px;
+    margin-left: 5px;
+}
+
+.homemoodBox-bg {
+    position: absolute;
+    background: #fff;
+    height: 70px;
+    width: 650px;
+    top: 150px;
+    left: 220px;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.homemoodBox-bg2 {
+    position: absolute;
+    height: 70px;
+    width: 650px;
+    top: 150px;
+    left: 220px;
+}
+
+.homemoodBox a, .homemoodBox .showMood {
+    color: #000;
+    text-decoration: none; /* Dave Add */
+    display: inline-block;
+    width: 540px;
+    white-space: nowrap;
+    overflow: hidden;
+    word-spacing: normal;
+    height: 17px;
+    padding-left: 4px;
+    padding-bottom: 2px;
+    padding-top: 4px; /* Dave Add End */
+}
+
+.homemoodBox .showMood {
+    cursor: default;
+}
+
+.homemoodBox a:hover {
+    /* Dave Edit */ /*color:#04466a;*/
+    background: #CCC;
+    color: #000;
+    filter: alpha(opacity=40);
+    -moz-opacity: 0.4;
+    opacity: 0.4; /* Dave Edit End */
+}
+
+.homeusername {
+    font-size: 22px;
+    font-weight: bold;
+    color: #000;
+    cursor: default;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+.homeeditCover {
+    position: absolute;
+    top: 160px;
+    left: 900px;
+    display: none;
+}
+
+.homeeventDate {
+    border-bottom: 1px solid #DDDDDD;
+    border-top: 1px solid #DDDDDD;
+    color: #04466A;
+    font-size: 13px;
+    padding: 6px 6px 6px 8px;
+}
+
+.homedefaultpic {
+    text-align: center;
+    padding: 2px;
+}
+
+.recentActivityBox {
+    overflow: auto;
+    padding: 5px;
+    margin-top: -10px;
+}
+
+ul.recentActivity {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.recentActivity li {
+        height: 60px;
+        float: left;
+        width: 380px;
+        padding: 5px 5px;
+        margin: 10px 10px 0px 0px;
+    }
+/* Dave Edit */
+.recentActivityBox ul.recentActivity li {
+    width: 373px;
+}
+
+ul.recentActivity li span {
+    display: inline-table;
+    cursor: default;
+    line-height: 18px;
+}
+/* Dave Edit End*/
+ul.recentActivity li img {
+    vertical-align: middle;
+    margin-right: 6px;
+}
+
+ul.recentActivity li:hover {
+    background-color: #eee;
+}
+
+.homefixedbox1 {
+}
+
+ul.homefriendlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.homefriendlist li {
+        padding: 5px;
+        height: 60px;
+        overflow: hidden;
+    }
+
+        ul.homefriendlist li:hover {
+            background-color: #eee;
+        }
+
+/* Dave add */
+
+.home-list-firendname {
+    margin-top: 5px;
+    line-height: 14px;
+    display: block;
+    width: 100%;
+    height: 32px;
+    overflow: hidden;
+}
+
+ul.homefriendlist li a {
+    color: #04466a;
+}
+
+    ul.homefriendlist li a:hover {
+        cursor: pointer;
+    }
+
+/* Dave add */
+
+
+/*More Notice*/
+ul.noticemoreItem {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.noticemoreItem li {
+        padding: 5px;
+        width: 385px;
+        margin: 5px;
+        float: left;
+        height: 55px;
+    }
+
+        ul.noticemoreItem li:hover {
+            background-color: #edeff5;
+        }
+
+        ul.noticemoreItem li td {
+            padding-right: 7px;
+            vertical-align: top;
+            text-align: left;
+        }
+
+            ul.noticemoreItem li td a {
+                color: #04466a;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+ul.noticemoreItemli td a:hover {
+    color: #666;
+    text-decoration: underline;
+}
+
+ul.invitefriendlist li.disableitem:hover {
+    background: none;
+}
+
+ul.invitefriendlist li.disableitem td {
+    color: #b2b2b2;
+}
+
+ul.invitefriendlist li.disableitem img {
+    filter: alpha(opacity=40);
+    -moz-opacity: 0.4;
+    opacity: 0.4;
+}
+
+/* Home 12/20/2013 */
+.homelinkBox {
+    padding: 8px 8px 8px 222px;
+    border: 1px solid #ddd;
+    background: #eee;
+    margin-bottom: 15px;
+    height: 20px;
+    font-size: 12px;
+    color: #666;
+}
+
+    .homelinkBox a {
+        color: #4a4a4a;
+        text-decoration: none;
+        font-size: 17px;
+        margin: 0px 8px;
+    }
+
+        .homelinkBox a:hover {
+            color: #04466a;
+        }
+
+.dateforclick {
+    width: 135px;
+    float: left;
+    cursor: pointer;
+}
+
+.calendartop td {
+    font-size: 18px;
+}
+
+/* FamilyTree 12/21/2013 */
+.addfmBox {
+    background-image: url(../Images/addfm_bg.png);
+    width: 462px;
+    height: 308px;
+    margin: 0 auto;
+}
+
+    .addfmBox td {
+        text-align: center;
+        font-size: 18px;
+    }
+
+        .addfmBox td a {
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+            .addfmBox td a:hover {
+                color: #666;
+                text-decoration: underline;
+            }
+
+.genderaddfm {
+    color: #666;
+}
+
+.btnAlign {
+    text-align: center;
+    border-top: 1px solid #ddd;
+    margin-top: 10px;
+}
+
+/*2013-12-21 message center*/
+.commentListdm {
+    padding: 5px 0px 10px 10px;
+    margin: 10px 0px 10px 0px;
+    border: 1px solid #ddd;
+    overflow: auto;
+}
+
+    .commentListdm:hover {
+        background-color: #edeff5;
+    }
+
+    .commentListdm a {
+        color: #04466a;
+    }
+
+        .commentListdm a:hover {
+            color: #666;
+        }
+
+._32m {
+    width: 32px;
+    height: 32px;
+}
+
+._50m {
+    height: 30px;
+    width: 30px;
+}
+
+._30m {
+    height: 30px;
+    width: 30px;
+}
+
+.mbs {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 1.38;
+    margin-bottom: 5px;
+    margin-left: 5px;
+    word-break: break-all;
+}
+
+.moodbtn {
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    background-image: url(../Images/but_bg2.png);
+    border: 1px solid #c2c2c2;
+    border-radius: 3px;
+    margin-left: 10px;
+    margin-right: -3px;
+    padding: 3px 4px 2px 2px;
+    cursor: pointer;
+    float: left;
+}
+
+    .moodbtn:hover {
+        color: #333;
+        background-image: url(../Images/homelog_btnbgover.png);
+        border: 1px solid #666;
+    }
+
+.icon_cacel {
+    background-image: url(../Images/icons/cancel.png);
+    width: 16px;
+    height: 16px;
+}
+
+/* 2013.12.22 */
+.reportError {
+    margin-left: 30px;
+}
+
+    .reportError a {
+        color: #333;
+        text-decoration: none;
+    }
+
+.eventitemTitle1 td {
+    font-weight: normal;
+}
+
+.eventitemTitle1 strong {
+    color: #04466a;
+    font-size: 13px;
+}
+
+/* 2013.12.23*/
+.commentowBox {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: -60px;
+    width: 340px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #939393;
+    -webkit-box-shadow: 0 0 10px #939393;
+    -moz-box-shadow: 0 0 10px #939393;
+    display: none;
+}
+
+    .commentowBox table {
+        background-color: #edeff5;
+        border-top: 1px solid #ddd;
+        border-bottom: 1px solid #fff;
+        padding: 7px;
+    }
+
+        .commentowBox table td {
+            padding-right: 7px;
+            vertical-align: top;
+            text-align: left;
+        }
+
+            .commentowBox table td img {
+                margin-top: 3px;
+            }
+
+.noticeTitme {
+    color: #666;
+}
+
+.commentowBox table td a {
+    color: #04466a;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .commentowBox table td a:hover {
+        color: #666;
+        text-decoration: underline;
+    }
+
+.commentowBox table.qcomment {
+    background-color: #edeff5;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #fff;
+    padding: 7px;
+}
+
+    .commentowBox table.qcomment td {
+        vertical-align: middle;
+    }
+
+/* for header */
+ul.topmenuBox li.tmenucurrent {
+    float: left;
+    width: 50px;
+    height: 60px;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    background-image: url(../Images/tmenucurren_bg.png);
+}
+
+/* 2013.12.23 end*/
+
+/*alert*/
+.alertBoxtop {
+    height: 8px;
+}
+
+.alertDangertitle {
+    font-size: 30px;
+    color: #ff0000;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.alertDangertext {
+    font-size: 18px;
+    color: #ff0000;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.alertSuccesstitle {
+    font-size: 30px;
+    color: #839e00;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.alertSuccesstext {
+    font-size: 18px;
+    color: #839e00;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.alertInfotitle {
+    font-size: 30px;
+    color: #067bff;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.alertInfotext {
+    font-size: 18px;
+    color: #067bff;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.alertWarningtitle {
+    font-size: 30px;
+    color: #ff6600;
+    padding-bottom: 5px;
+    text-align: center;
+    margin-top: -10px;
+}
+
+.alertWarningtext {
+    font-size: 18px;
+    color: #ff6600;
+    text-align: center;
+    padding-bottom: 5px;
+}
+
+.eventiconBox {
+    position: absolute;
+    width: 250px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    background-color: #fff;
+}
+
+ul.eventiconitem {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    ul.eventiconitem li {
+        float: left;
+        width: 50px;
+        height: 55px;
+        margin: 5px;
+        border: 1px solid #ddd;
+    }
+
+        ul.eventiconitem li:hover {
+            background-color: #eee;
+        }
+
+        ul.eventiconitem li img {
+            margin-top: 10px;
+        }
+
+.radiobutBox1 {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+}
+
+.eventdetailTitle {
+    background-color: #f7f7ff;
+    border: 1px solid #ddd;
+    padding: 6px;
+    font-size: 22px;
+    padding: 5px 10px;
+}
+
+.eventby {
+    font-size: 13px;
+    font-weight: normal;
+    color: #666;
+}
+
+    .eventby a {
+        color: #04466a;
+        text-decoration: none;
+    }
+
+        .eventby a:hover {
+            color: #888;
+            text-decoration: underline;
+        }
+
+.eventdetailDate {
+    border: 1px solid #ddd;
+    padding: 8px;
+    margin-top: 15px;
+}
+
+.eventdetailtext {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-top: 0;
+}
+
+    .eventdetailtext td {
+        vertical-align: top;
+        padding: 3px;
+        color: #666;
+        font-size: 13px;
+    }
+
+.eventdetailDate td {
+    vertical-align: top;
+    padding: 3px;
+    color: #666;
+    font-size: 13px;
+}
+
+span.rightLink3 {
+    font-size: 13px;
+    color: #04466a;
+    cursor: pointer;
+}
+
+    span.rightLink3:hover {
+        color: #666;
+    }
+
+.textoverflow {
+    text-overflow: ellipsis;
+    display: inline-block;
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+.eventactionBox2 {
+    padding: 5px 8px;
+    overflow: auto;
+    color: #666;
+}
+
+.alleventTable {
+    margin-bottom: 10px;
+}
+
+.eventlistTitle1 a:hover {
+    text-decoration: none;
+}
+
+.alleventDate {
+    color: #666;
+    padding-top: 3px;
+    vertical-align: top;
+}
+
+.ownothingText {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+}
+
+.eventdetailtop {
+    font-size: 18px;
+    line-height: 18px;
+    padding-bottom: 5px;
+    color: #04466a;
+}
+
+/*12/26/2013 doc*/
+.doctoplinkBox {
+    /*padding: 10px 6px;
+    min-height: 24px;*/
+    overflow: hidden;
+}
+
+ul.doctoplink {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    font-size: 13px;
+}
+
+    ul.doctoplink li {
+        float: left;
+        margin-right: 20px;
+    }
+
+        ul.doctoplink li img {
+            vertical-align: middle;
+        }
+
+        ul.doctoplink li a {
+            color: #04466a;
+            text-decoration: none;
+        }
+
+            ul.doctoplink li a:hover {
+                color: #666;
+            }
+
+        ul.doctoplink li.doctopmore a:hover {
+            color: #04466a;
+        }
+
+/**/
+.groupitemBoxMessage {
+    position: absolute;
+    width: 130px;
+    max-height: 180px;
+    overflow: auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    z-index: 1;
+    margin: 5px 0px 0px 145px;
+    display: none;
+}
+
+.addmember-button {
+    display: inline-block;
+    height: 50px;
+    width: 100%;
+    color: #04466a;
+    cursor: pointer;
+    padding-top: 25px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.addmember-disabled {
+    color: #666;
+    cursor: default;
+}
+
+/* 2014.01.02 */
+.updatephotoBox {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+
+.updatephotoClose {
+    position: absolute;
+    background-color: #fff;
+    padding: 5px;
+    margin-left: 828px;
+    margin-top: 2px;
+}
+
+/*Home Calendar*/
+.homecalendarBox {
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-radius: 3px;
+}
+
+.homecalendar {
+    background-color: #f7f7ff;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+}
+
+    .homecalendar td {
+        padding: 4px 0px;
+    }
+
+ul.homecalendarWeek {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.homecalendarWeek li {
+        float: left;
+        font-size: 10px;
+        color: #666;
+        width: 24.6px;
+        border-bottom: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        text-align: center;
+        height: 15px;
+        padding-top: 3px;
+    }
+
+ul.homecalendarDay {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.homecalendarDay li {
+        float: left;
+        font-size: 11px;
+        color: #888;
+        width: 24.6px;
+        border-bottom: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+        text-align: center;
+        height: 15px;
+        padding-top: 3px;
+    }
+
+        ul.homecalendarDay li a {
+            color: #888;
+            text-decoration: none;
+        }
+
+            ul.homecalendarDay li a:hover {
+                text-decoration: underline;
+            }
+
+        ul.homecalendarDay li.haveevent {
+            color: #04466a;
+        }
+
+            ul.homecalendarDay li.haveevent a {
+                color: #04466a;
+            }
+
+        ul.homecalendarDay li.ontoday {
+            color: #f00;
+        }
+
+            ul.homecalendarDay li.ontoday a {
+                color: #f00;
+            }
+
+        ul.homecalendarDay li.nothismonthy {
+            color: #999;
+            background-color: #eee;
+        }
+
+            ul.homecalendarDay li.nothismonthy a {
+                color: #999;
+            }
+
+.homefriendName {
+    height: 20px;
+    margin-top: 4px;
+    width: 119px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.homefriendMood {
+    font-size: 12px;
+    color: #666;
+    height: 33px;
+    line-height: 15px;
+    margin-top: 2px;
+    width: 119px;
+    overflow: hidden;
+}
+
+.homecalendarArrow {
+    border: 1px solid #f7f7ff;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 2px;
+}
+
+    .homecalendarArrow:hover {
+        background-image: url(../Images/but_bg2.png);
+        border: 1px solid #ddd;
+    }
+
+    .homecalendarArrow img {
+        vertical-align: middle;
+    }
+
+.allfriendDiv {
+    margin: 5px 5px;
+    padding: 2px 5px;
+    float: right;
+    color: #04466a;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    width: 120px;
+    background-image: url(../Images/icons/selectarrow.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+}
+
+    .allfriendDiv:hover {
+        background-color: #eee;
+    }
+
+.allfrienddivDown {
+    position: absolute;
+    background-color: #fff;
+    width: 130px;
+    max-width: 180px;
+    border: 1px solid #ddd;
+    margin-top: 3px;
+    visibility: visible;
+    float: right;
+    box-shadow: 0 0 10px #ccc;
+    -webkit-box-shadow: 0 0 10px #ccc;
+    -moz-box-shadow: 0 0 10px #ccc;
+}
+
+    .allfrienddivDown ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+        .allfrienddivDown ul li {
+            padding: 5px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+            .allfrienddivDown ul li:hover {
+                background-color: #eee;
+            }
+
+/* 2014.01.13 */
+ul.eventrightlist {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.eventrightlist li {
+        padding: 5px;
+    }
+
+        ul.eventrightlist li:hover {
+            background-color: #eee;
+        }
+
+.eventrightTitle {
+    height: 18px;
+    overflow: hidden;
+    margin-top: -4px;
+}
+
+.eventrightDate {
+    font-size: 12px;
+    color: #666;
+    height: 16px;
+    overflow: hidden;
+    line-height: 15px;
+}
+/* 2014.01.13 end */
+
+/* 2014.01.15 */
+.eventlistBox2 {
+    border: 1px solid #ddd;
+    overflow: auto;
+    border-radius: 5px;
+    color: #666;
+}
+
+    .eventlistBox2 a {
+        color: #04466a;
+        text-decoration: none;
+    }
+
+.eventlistTitle2 {
+    padding: 5px 8px 0px 8px;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+    .eventlistTitle2 a:hover {
+        text-decoration: underline;
+    }
+/* 2014.01.15 end */
+
+/*2014 01.20*/
+
+.selectFriends {
+    margin-bottom: 15px;
+    overflow: auto;
+}
+
+ul.itemTop_list li div.rightClose {
+    padding: 0px 3px;
+    cursor: pointer;
+    float: right;
+    margin-top: -3px;
+}
+
+    ul.itemTop_list li div.rightClose:hover {
+        background-color: #b0e7ff;
+    }
+
+ul.itemTop_list td, ul.invitefriendlist td {
+    line-height: 14px;
+}
+
+ul.itemTop_list li label, .invitefriendlist li label {
+    display: inline-block;
+    overflow: hidden;
+    max-height: 30px;
+    margin-bottom: 0px;
+    font-weight: normal;
+    word-break: break-word;
+}
+/*2014 01.20 end*/
+
+/*2014.01.21*/
+.action-container table {
+    margin-left: 10px;
+    margin-bottom: 15px;
+}
+
+.action-container td {
+    line-height: 18px;
+}
+
+.action-container label {
+    font-weight: normal;
+    margin-bottom: 0px;
+}
+/*2014.01.21 end*/

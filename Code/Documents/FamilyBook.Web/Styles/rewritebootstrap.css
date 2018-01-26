@@ -1,0 +1,157 @@
+﻿.input-confirm {
+    color: #999999;
+}
+
+.modal-open {
+    overflow-y: scroll;
+}
+
+.fixedContainer {
+    width: 100%;
+}
+
+.modal-open .fixedContainer {
+    position: fixed !important;
+}
+
+.popover-title {
+    font-size: 16px;
+    color: #0462ae;
+    font-weight: bold;
+    background-color: #edeff5;
+    height: auto;
+    line-height: 20px;
+    /*white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;*/
+}
+
+.popover-content .popover-action {
+    border-top: 1px solid #ccc;
+    text-align: right;
+    height: 15px;
+    padding-top: 8px;
+}
+
+.popover {
+    border: 1px solid #ccc;
+    box-shadow: 0 0 10px #939393;
+    background-color: #edeff5;
+    border-bottom: 1px solid #ccc;
+    min-width: 240px;
+    max-width: 300px;
+}
+
+    .popover.right .arrow:after {
+        border-right-color: #edeff5;
+    }
+
+    .popover.bottom .arrow:after {
+        border-bottom-color: #edeff5;
+    }
+
+    .popover.left .arrow:after {
+        border-left-color: #edeff5;
+    }
+
+    .popover.top .arrow:after {
+        border-top-color: #edeff5;
+    }
+
+.modal-dialog {
+    width: 600px;
+    margin: 90px auto 30px;
+}
+
+@media screen and (min-width: 768px) {
+    .modal-dialog {
+        width: 600px; /*Jack 12/15/2013*/
+        margin: 90px auto 30px;
+    }
+}
+
+
+.alert, .alert-success, .alert-info, .alert-warning, .alert-danger {
+    background-image: url(/Images/signbox_bg.png);
+    background-position: top;
+    background-repeat: repeat-x;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    width: 300px;
+    min-height: 80px;
+}
+
+    .alert h3 {
+        text-align: center;
+        margin-top: 0px;
+    }
+
+    .alert p {
+        margin: 20px 0px 0px;
+    }
+
+        .alert p + p {
+            margin: 5px 0px 0px;
+        }
+
+.alert-dismissable .close {
+    background-image: url(/images/icons/close.png);
+    width: 24px;
+    height: 24px;
+    opacity: 1;
+    filter: alpha(opacity=100);
+}
+
+.alert-success {
+    color: #04466a;
+}
+
+.alert-info {
+    /*color: #067bff;*/
+    color: #04466a;
+}
+
+.alert-warning {
+    /*color: #ff6600;*/
+    color: #04466a;
+}
+
+.alert-danger {
+    /*color: #ff0000;*/
+    color: #04466a;
+}
+
+.alert .btn-danger {
+   font-size: 13px;
+color: #fff;
+border: 1px solid #5b7708;
+background-image: url(/Images/homelog_btnbg.png);
+padding: 3px 15px;
+margin-right: 5px;
+margin-left: 5px;
+border-radius: 3px;
+}
+
+    .alert .btn-danger:hover {
+        border: 1px solid #036bab;
+background-image: url(/Images/homelog_btnbgover.png);
+    }
+
+.alert .btn-default {
+    font-size: 13px;
+color: #666;
+border: 1px solid #ddd;
+background-image: url(/Images/cacelbtn_bg.png);
+padding: 3px 15px;
+margin-right: 5px;
+margin-left: 5px;
+border-radius: 3px;
+}
+
+    .alert .btn-default:hover {
+        background-image: url(/Images/cacelbtn_bgover.png);
+    }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+font-family: 'Open Sans', sans-serif;
+}

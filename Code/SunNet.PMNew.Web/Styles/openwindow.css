@@ -1,0 +1,1093 @@
+body {
+    margin: 2px;
+    background-color: #bad8f0;
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+div, td, th, span {
+    font-family: Arial;
+    font-size: 11px;
+    color: #333;
+}
+
+img {
+    border: none;
+}
+
+.owBoxone {
+    width: 100%;
+}
+
+.owBoxtwo {
+    min-width: 1000px;
+}
+
+.owTopone {
+    background-image: url(/images/owtop_bg1.gif);
+    padding-top: 8px;
+    height: 26px;
+    border: 1px solid #81bae8;
+}
+
+.owTopone_left {
+    float: left;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #083583;
+    font-weight: bold;
+    width: 500px;
+}
+/*hacksl 2012-12-20 10:59:39*/
+.owTopone_left1 {
+    float: left;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #083583;
+    font-weight: bold;
+    width: 400px;
+}
+
+.owTopone_left2 {
+    float: left;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #083583;
+    font-weight: bold;
+    width: 600px;
+}
+
+.owTopone_right {
+    float: right;
+    padding-right: 20px;
+    color: #000;
+    width: 100px;
+    text-align: right;
+}
+
+    .owTopone_right a {
+        color: #000;
+        text-decoration: none;
+    }
+
+        .owTopone_right a:hover {
+            color: #f60;
+        }
+
+.owToptwo {
+    background-image: url(/images/owtop_bg2.gif);
+    padding: 5px 0px 0px 15px;
+    height: 23px;
+    border: 1px solid #81bae8;
+    color: #000;
+    font-weight: bold;
+}
+
+.owmainBox {
+    border: 1px solid #81bae8;
+    background-color: #eff5fb;
+    padding: 10px;
+    overflow: auto;
+    margin-bottom: 5px;
+}
+
+    .owmainBox th {
+        text-align: left;
+    }
+
+.prority span {
+    margin-right: 20px;
+}
+
+.owscBox {
+    width: 630px;
+    border: 1px solid #79abd3;
+    background-color: #fff;
+    overflow: auto;
+}
+
+.owscBox_top {
+    background-image: url(/images/owsc_bg.gif);
+    height: 21px;
+    text-align: right;
+}
+
+    .owscBox_top span {
+        margin-right: 5px;
+        margin-left: 15px;
+    }
+
+        .owscBox_top span a {
+            color: #333;
+            text-decoration: none;
+        }
+
+.owscpicBox {
+    float: left;
+    width: 94px;
+    margin: 15px 15px 0px 15px;
+    background-color: #e1e1e1;
+}
+
+.owscpicMore {
+    padding: 10px 10px 10px 15px;
+    color: #003764;
+}
+
+    .owscpicMore a {
+        color: #003764;
+        text-decoration: none;
+    }
+
+        .owscpicMore a:hover {
+            color: #f60;
+        }
+
+.owscpicfile {
+    padding: 10px 10px 10px 15px;
+    color: #003764;
+}
+
+    .owscpicfile span {
+        margin-right: 20px;
+    }
+
+.owscpicfilee a {
+    color: #003764;
+    text-decoration: none;
+}
+
+/*Top Menu*/
+.owtopMenu {
+    height: 34px;
+    padding: 0px 20px 0px 200px;
+    background-image: url(/images/owmenu_bg.gif);
+    border-bottom: 1px solid #81bae8;
+    border-left: 1px solid #81bae8;
+    border-right: 1px solid #81bae8;
+}
+
+.owtopMenu1 {
+    background-image: url(/images/owmenu_bg.gif);
+    border-bottom: #81bae8 1px solid;
+    border-left: #81bae8 1px solid;
+    padding-bottom: 0px;
+    padding-left: 200px;
+    padding-right: 20px;
+    height: 34px;
+    border-right: #81bae8 1px solid;
+    padding-top: 0px;
+}
+
+.owtopMenu_left {
+    float: left;
+}
+
+    .owtopMenu_left ul {
+        padding-bottom: 0px;
+        list-style-type: none;
+        margin: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        list-style-image: none;
+        padding-top: 0px;
+    }
+
+        .owtopMenu_left ul a {
+            color: #000;
+            text-decoration: none;
+        }
+
+        .owtopMenu_left ul li {
+            padding-bottom: 0px;
+            padding-left: 8px;
+            padding-right: 8px;
+            float: left;
+            height: 26px;
+            color: #000;
+            font-weight: bold;
+            padding-top: 8px;
+        }
+
+            .owtopMenu_left UL LI:hover {
+                background-image: url(/images/btn_over.gif);
+            }
+
+            .owtopMenu_left UL LI IMG {
+                vertical-align: middle;
+                margin-right: 2px;
+            }
+
+            .owtopMenu_left UL LI.sepline {
+                padding-bottom: 0px;
+                padding-left: 0px;
+                width: 2px;
+                padding-right: 0px;
+                float: left;
+                padding-top: 0px;
+            }
+
+/*Main Content*/
+.owmainBox {
+    /*min-width:800px;*/
+}
+
+.owmainBox_left {
+    width: 195px;
+    border-bottom: 1px solid #81bae8;
+    border-right: 1px solid #81bae8;
+    background-color: #E0ECF8;
+    vertical-align: top;
+}
+
+.owmainBox_right {
+    padding: 6px 6px 0px 6px;
+    vertical-align: top;
+}
+
+.owmainrightBox {
+    border: 1px solid #81bae8;
+    overflow: auto;
+    padding: 20px;
+}
+
+.owmainactionBox {
+    border-top: 1px solid #81bae8;
+    border-bottom: 1px solid #81bae8;
+    background-image: url(/images/action_bg.jpg);
+    padding: 5px 5px 0px 10px;
+    color: #083583;
+    font-size: 12px;
+    font-weight: bold;
+    height: 24px;
+    margin-bottom: 15px;
+}
+
+.owmainrightBoxtwo {
+    border-left: 1px solid #81bae8;
+    border-right: 1px solid #81bae8;
+    border-bottom: 1px solid #81bae8;
+    background-color: #eff5fb;
+    overflow: auto;
+}
+
+    .owmainrightBoxtwo th {
+        text-align: left;
+    }
+
+.owlisttopone {
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 5px;
+    font-weight: bold;
+    color: #c68200;
+}
+
+    .owlisttopone span {
+        color: #000;
+        margin-right: 40px;
+    }
+
+    .owlisttopone a {
+        color: #c68200;
+        text-decoration: none;
+    }
+
+        .owlisttopone a:hover {
+            color: #000;
+        }
+
+.owmainTitle {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.owmainTitletwo {
+    font-size: 12px;
+    font-weight: bold;
+    background-color: #bce9f7;
+}
+
+    .owmainTitletwo span {
+        margin-right: 15px;
+    }
+
+        .owmainTitletwo span a:hover {
+            color: #b80606;
+        }
+
+        .owmainTitletwo span a {
+            color: #083583;
+            text-decoration: none;
+        }
+
+        .owmainTitletwo span.text {
+            margin-right: 55px;
+            font-size: 12px;
+            color: #000;
+        }
+
+        .owmainTitletwo span img {
+            vertical-align: middle;
+        }
+
+.linkBtn {
+    background-image: url(/images/link_bg1.gif);
+    padding: 4px 10px;
+    height: 18px;
+    color: #000;
+    font-weight: bold;
+    border: 1px solid #dea303;
+    margin-left: 20px;
+}
+
+    .linkBtn:hover {
+        background-image: url(/images/btn_bg1.gif);
+        border: 1px solid #9db0bc;
+    }
+
+    .linkBtn a {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .linkBtn img {
+        vertical-align: middle;
+    }
+
+.tickettop_left {
+    float: left;
+    width: 200px;
+    color: #083583;
+    font-size: 12px;
+}
+
+.tickettop_right {
+    float: right;
+    width: 200px;
+    height: 28px;
+}
+
+.tickettop_right_hacksl {
+    width: 660px;
+    height: 28px;
+}
+
+.tickettop_right img {
+    vertical-align: middle;
+}
+
+/*Workflow*/
+.flowBox {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.greenBox {
+    background-color: #9ed53d;
+    color: #fff;
+    font-size: 18px;
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    overflow: auto;
+}
+
+.orangeBox {
+    background-color: #ffaf25;
+    color: #fff;
+    font-size: 18px;
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    overflow: auto;
+}
+
+.lightyellow {
+    background-color: #EECFA1;
+    color: #fff;
+    font-size: 18px;
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    overflow: auto;
+}
+
+.grayBox {
+    background-color: #d3d3d3;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    width: 600px;
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+    overflow: auto;
+    min-height: 40px;
+    padding-top: 30px;
+}
+
+.orangeBoxClient {
+    background-color: #ffaf25;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: auto;
+    height: 16px;
+}
+
+.redBoxClient {
+    background-color: red;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: auto;
+    height: 16px;
+}
+
+.grayBoxClient {
+    background-color: #d3d3d3;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: auto;
+    height: 16px;
+}
+
+.greenBoxClient {
+    background-color: #9ed53d;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    width: 100px;
+    margin: 0 auto;
+    text-align: center;
+    overflow: auto;
+    height: 16px;
+}
+
+.redText {
+    color: #f00;
+    font-size: 12px;
+}
+
+.flowarrowBox {
+    padding: 5px;
+    text-align: center;
+}
+
+.clientBox {
+    border: 1px solid #81bae8;
+    padding: 30px 0px 20px 0px;
+    overflow: visible;
+    margin: 0 auto;
+    width: 650px;
+}
+
+.clientTitle {
+    font-size: 18px;
+    color: #083583;
+    margin-left: 20px;
+    margin-top: -50px;
+    margin-bottom: 10px;
+    background-color: #eff5fb;
+    width: 200px;
+    text-align: center;
+}
+
+ul.flowsubBox {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.flowsubBox li {
+        border: 1px solid #4daf04;
+        padding: 5px 15px;
+        text-align: center;
+        font-size: 12px;
+        color: #000;
+        background-color: #fff;
+        float: left;
+        margin: 5px 10px;
+    }
+/*List*/
+.owlistone {
+    border: 1px solid #81bae8;
+    margin-bottom: 15px;
+}
+
+    .owlistone td {
+        border-right: 1px solid #ddd;
+    }
+
+.owlistTitle td, .owlistTitle th {
+    background-image: url(/images/listsub_bg.jpg);
+    padding: 3px 6px 3px 8px;
+    color: #083583;
+    font-weight: bold;
+    border-bottom: 1px solid #ccc;
+}
+
+.owlistrowone td, .owlistrowone th {
+    padding: 3px 6px 3px 8px;
+    background-color: #e0ecf9;
+    color: #083583;
+}
+
+.owlistone td a {
+    color: #083583;
+}
+
+    .owlistone td a:hover {
+        color: #f60;
+    }
+
+.owlistrowtwo td, .owlistrowtwo th {
+    padding: 3px 6px 3px 8px;
+    background-color: #fff;
+    color: #083583;
+}
+
+.owUser {
+    margin-bottom: 15px;
+}
+
+    .owUser strong {
+        color: #000;
+    }
+
+/*Left Menu*/
+ul.owleftmenu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 195px;
+}
+
+    ul.owleftmenu li {
+        padding: 5px 0px 0px 15px;
+        color: #fff;
+        background-image: url(/images/leftmenu_bg.jpg);
+        height: 20px;
+        font-weight: bold;
+    }
+
+        ul.owleftmenu li.currentleft {
+            padding: 5px 0px 0px 15px;
+            color: #000;
+            background-image: url(/images/leftmenuthis_bg.jpg);
+            height: 20px;
+            font-weight: bold;
+        }
+
+            ul.owleftmenu li.currentleft a {
+                color: #000;
+            }
+
+        ul.owleftmenu li.sub {
+            padding: 5px 0px 0px 15px;
+            color: #fff;
+            background-image: url(/images/leftmenuarw_bg.jpg);
+            height: 20px;
+            font-weight: bold;
+        }
+
+            ul.owleftmenu li a, ul.owleftmenu li.sub a {
+                color: #fff;
+                text-decoration: none;
+            }
+
+.infogray {
+    margin-right: 25px;
+    color: #666;
+}
+
+/*Open DIV Style*/
+.opendivBox1 {
+    border: 1px solid #81bae8;
+    width: 466px;
+    background-color: #eff5fb;
+    overflow: auto;
+    height: 348px;
+    margin-bottom: 10px;
+}
+
+    .opendivBox1 th {
+        text-align: left;
+    }
+
+.opendivTopone {
+    background-image: url('/images/owtop_bg1.gif');
+    padding-top: 8px;
+    height: 17px;
+    border-bottom: 1px solid #81bae8;
+    width: 457px;
+}
+
+.opendivTopone_left {
+    float: left;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #083583;
+    font-weight: bold;
+    width: 200px;
+}
+
+.opendivTopone_right {
+    float: right;
+    padding-right: 20px;
+    color: #000;
+    width: 100px;
+    text-align: right;
+}
+
+    .opendivTopone_right a {
+        color: #000;
+        text-decoration: none;
+    }
+
+.opendivTopone a:hover {
+    color: #f60;
+}
+
+.opendivTable {
+    margin-top: 20px;
+}
+
+.opendivText1 {
+    font-size: 18px;
+}
+
+/*iCalendar*/
+.icldText {
+    border-bottom: 1px solid #81bae8;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+    .icldText strong {
+        font-size: 18px;
+        padding-bottom: 20px;
+    }
+
+.icldText2, .icldText3 {
+    color: #002b56;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+    .icldText3 a {
+        color: #066fd8;
+    }
+
+        .icldText3 a:hover {
+            color: #f60;
+        }
+
+.oritickeInfo {
+    border: 1px solid #84bce9;
+    padding: 20px;
+}
+
+.categoryList {
+    position: absolute;
+    background-color: #e1eefe;
+    border: 1px solid #82bae9;
+    margin-top: 8px;
+    margin-left: 5px;
+    min-width: 140px;
+    visibility: hidden;
+}
+
+ul.category {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.category li {
+        padding: 4px 20px;
+    }
+
+        ul.category li:hover {
+            background-color: #80bef1;
+        }
+
+        ul.category li a {
+            color: #000;
+            text-decoration: none;
+        }
+            /*2012-11-07new category*/
+            ul.category li a.newcate {
+                color: #F60;
+                text-decoration: none;
+            }
+
+.redstar {
+    color: #FF0000;
+    font-size: 12px;
+}
+
+
+/*11-20-2012*/
+.feedbackdescription {
+    padding: 5px 8px;
+    border-top: 1px solid #ddd;
+    margin: -3px -6px -2px -8px;
+    color: #555;
+    overflow: auto;
+}
+
+*html .feedbackdescription {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+    .feedbackdescription strong {
+        color: #083583;
+    }
+
+div.feedbackdescription span {
+    float: left;
+}
+
+    div.feedbackdescription span strong {
+        margin-right: 3px;
+        float: left;
+    }
+
+div.feedbackdescription a {
+    color: #555;
+    margin-right: 10px;
+    display: block;
+    white-space: nowrap;
+}
+/*12/14/2012*/
+.tickettopbtnBox {
+    padding: 1px 0px;
+    overflow: auto;
+    border: 1px red solid;
+    background: red;
+}
+
+.tickettopBtn {
+    font-family: Arial;
+    font-size: 11px;
+    color: #116097;
+    font-weight: bold;
+    border: 1px solid #86b2d1;
+    height: 21px;
+    min-width: 100px;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    background-image: url('/images/tickettopbtn_bg.gif');
+    padding: 2px;
+}
+
+    .tickettopBtn:hover {
+        background-image: url('/images/tickettopbtn_bgover.gif');
+        border: 1px solid #dea303;
+        color: #000;
+    }
+
+ul.workflowStatus {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+    ul.workflowStatus li {
+        padding: 1px 4px;
+        margin-right: 5px;
+        margin-bottom: 2px;
+        float: left;
+    }
+
+        ul.workflowStatus li.statusDone {
+            color: #fff;
+            font-weight: bold;
+            border: 1px solid #7fb51f;
+            background-image: url(../images/statusbg1.gif);
+        }
+
+            ul.workflowStatus li.statusDone span {
+                color: #000;
+                font-weight: normal;
+            }
+
+        ul.workflowStatus li.statusOndoing {
+            color: #fff;
+            font-weight: bold;
+            border: 1px solid #d1890d;
+            background-image: url(../images/statusbg2.gif);
+        }
+
+            ul.workflowStatus li.statusOndoing span {
+                color: #000;
+                font-weight: normal;
+            }
+
+        ul.workflowStatus li.statusOnhold {
+            color: #fff;
+            font-weight: bold;
+            border: 1px solid #bbb;
+            background-color: #d3d3d3;
+        }
+
+/*09/23/2013*/
+ul.timeNum {
+    font-size: 9px;
+    font-weight: normal;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.timeNum li {
+        width: 16px;
+        float: left;
+        height: 10px;
+    }
+
+ul.timeTable {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.timeTable li {
+        border: 1px solid #ddd;
+        width: 14px;
+        float: left;
+        height: 10px;
+    }
+
+        ul.timeTable li.onscheduleTime {
+            background-color: #f60;
+            border: 1px solid #f60;
+        }
+/*Top*/
+.mainTop {
+    height: 39px;
+    min-width: 1100px;
+}
+
+.mainTop_left {
+    width: 395px;
+    float: left;
+}
+
+.mainTop_right {
+    color: #bbb;
+    width: auto;
+    float: right;
+    padding: 15px 5px 0px 0px;
+    text-align: right;
+}
+
+    .mainTop_right a {
+        color: #000;
+        margin: 0px 15px 0px 15px;
+        font-weight: bold;
+        text-decoration: none;
+    }
+
+.mainTop_rightUser {
+    color: #a48c2b;
+    padding-right: 20px;
+}
+/*Feedback Start*/
+.feedbackBox {
+    width: 95%;
+    margin: 0 auto;
+    overflow: auto;
+}
+
+ul.fdItembox {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    ul.fdItembox li.otherbox {
+        font-family: Arial;
+        font-size: 11px;
+        margin-bottom: 10px;
+        float: left;
+        width: 85%;
+        display: inline-table;
+    }
+
+    ul.fdItembox li.myselfbox {
+        font-family: Arial;
+        font-size: 11px;
+        margin-bottom: 10px;
+        float: right;
+        width: 85%;
+        display: inline-table;
+    }
+
+        ul.fdItembox li.myselfbox table {
+            float: right;
+        }
+
+.fdcontentBox1 {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    vertical-align: top;
+    border-radius: 8px;
+    padding: 8px;
+    color: #444;
+}
+
+.fdcontentTitle {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.fdcontentBox2 {
+    background-color: #29BFF9;
+    vertical-align: top;
+    border-radius: 8px;
+    padding: 8px 20px 8px 8px;
+    color: #fff;
+}
+
+.fdcontentTitleself {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.fdUser {
+    font-weight: bold;
+    color: #375b84;
+    width: 80px;
+}
+
+.fdDate {
+    color: #9c9494;
+}
+
+.fdPublic {
+    color: #8f8f8f;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.rightClose {
+    padding: 0px 3px;
+    cursor: pointer;
+    float: right;
+    font-size: 18px;
+    margin: -5px -15px 0px 10px;
+}
+
+    .rightClose:hover {
+        background-color: #b0e7ff;
+        color: #000;
+        border-radius: 4px;
+    }
+
+.fdfileBox {
+    margin-top: 5px;
+}
+
+.fdfile {
+    margin-right: 20px;
+    display: inline-table;
+    color: #083583;
+}
+
+    .fdfile a {
+        color: #083583;
+        text-decoration: none;
+    }
+
+        .fdfile a:hover {
+            text-decoration: underline;
+        }
+
+.fdtdLeft {
+    text-align: right;
+    vertical-align: text-bottom;
+    padding: 8px 15px 8px 4px;
+}
+
+.fdtdright {
+    text-align: left;
+    vertical-align: text-bottom;
+    padding: 8px 4px 8px 15px;
+}
+
+ul.fdItembox li.fdmessageDate {
+    font-family: Arial;
+    font-size: 12px;
+    margin: 10px 0px;
+    text-align: center;
+    color: #9c9494;
+    font-weight: bold;
+    display: inline-table;
+    width: 100%;
+}
+
+.fdNotice {
+    color: #F00;
+    font-weight: bold;
+}
+
+.fdarrowbox1 {
+    float: left;
+    margin-left: -20px;
+    margin-top: -8px;
+}
+
+.fdarrowbox2 {
+    float: left;
+    margin-left: -16px;
+    margin-top: -8px;
+}
+
+.inputfd {
+    background-color: #FFFFFF;
+    border: 1px solid #79ABD3;
+    padding: 2px;
+    width: 99%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+.fdsaveBtn {
+    background-color: #ff7b1a;
+    padding: 10px 10px;
+    margin-right: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    border: 0px;
+    cursor: pointer;
+}
+
+    .fdsaveBtn:hover {
+        background-color: #FF3300;
+    }
+/*Feedback End*/

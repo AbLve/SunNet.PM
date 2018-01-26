@@ -1,0 +1,24 @@
+﻿
+ALTER FUNCTION [dbo].[GetUserNamesByTicket]
+( 
+	 @TicketId int,
+	 @RoleName   nvarchar(20)
+)
+RETURNS NVARCHAR(2000)
+AS
+BEGIN
+	DECLARE @UsrNames nvarchar(2000)
+	DECLARE @RoleId int
+	
+
+		SELECT @RoleId = RoleId from Roles where RoleName = @RoleName 
+		SET @UsrNames = (
+		 SELECT  FirstName+', '  from  TicketUsers TU left join Users U on TU.UserID = U.UserID
+													left join Roles R on R.RoleId = U.RoleID
+		WHERE TICKETid = @TicketId and  R.RoleId = @RoleId for xml path(''))
+	   IF @UsrNames IS NULL
+	   BEGIN
+	   SET @UsrNames='';
+	   END
+		RETURN @UsrNames
+END

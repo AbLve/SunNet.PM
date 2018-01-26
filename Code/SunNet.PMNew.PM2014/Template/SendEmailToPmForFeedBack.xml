@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<emails>
+  <email>
+    <subject>Ticket #{TicketID} {TicketTitle} needs your feedback.</subject>
+    <content>
+      <![CDATA[
+                 {userName} has sent a message regarding ticket {TicketID} and is requiring feedback.<br />
+
+                 Please log in to <a href="https://pm.sunnet.us" target="_blank">pm.sunnet.us</a> to review the ticket.
+        ]]>
+    </content>
+  </email>
+</emails>

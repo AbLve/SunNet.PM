@@ -1,0 +1,8 @@
+﻿  ALTER TABLE [dbo].[WeekPlan]
+  ADD [MondayEstimate] int default 8  NOT NULL ,
+  [TuesdayEstimate] int default 8 NOT NULL ,
+  [WednesdayEstimate] int default 8 NOT NULL ,
+  [ThursdayEstimate] int default 8 NOT  NULL ,
+  [FridayEstimate] int default 8 NOT NULL ,
+  [SaturdayEstimate] int default 8 NOT NULL ,
+  [SundayEstimate] int default 8 NOT NULL 

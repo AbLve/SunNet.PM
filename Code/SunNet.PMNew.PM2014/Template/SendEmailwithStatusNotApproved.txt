@@ -1,0 +1,3 @@
+﻿
+Ticket [ticketId] is not approved by [clientUserName].
+

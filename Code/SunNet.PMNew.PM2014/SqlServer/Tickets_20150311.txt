@@ -1,0 +1,1 @@
+﻿alter table tickets add  ResponsibleUser int not null default(0)

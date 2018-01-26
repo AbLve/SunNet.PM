@@ -1,0 +1,339 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SunNet Solutions Project Management system</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans&subset=latin">
+    <link href="/content/styles/public.css" rel="stylesheet" type="text/css" />
+    <link href="/content/styles/forms.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="toploginInfo">Wecome David<span>|</span><a href="#">Logout</a></div>
+    <div class="topBox">
+        <div class="topBox_logo">
+            <img src="/Images/sunnet_logo.png" />
+        </div>
+        <div class="topBox_menu">
+            <ul class="topmenu">
+                <li class="ticket">
+                    <div class="image"></div>
+                    Tickets
+                    <div class="downarrow"></div>
+                    <a href="javascript:;"></a>
+                </li>
+                <li class="ticket active">
+                    <div class="image"></div>
+                    Tickets
+                     <div class="downarrow"></div>
+                    <a href="javascript:;"></a>
+                </li>
+                <li class="document">
+                    <div class="image"></div>
+                    Documents
+                    <div class="downarrow"></div>
+                    <a href="javascript:;"></a>
+                </li>
+                <li class="document active">
+                    <div class="image"></div>
+                    Documents
+                    <div class="downarrow"></div>
+                    <a href="javascript:;"></a>
+                </li>
+                <li class="event">
+                    <div class="image"></div>
+                    Events
+                    <div class="downarrow"></div>
+                    <a href="javascript:;"></a></li>
+                <li class="event active">
+                    <div class="image"></div>
+                    Events
+                    <div class="downarrow"></div>
+                    <a href="javascript:;"></a></li>
+                <li class="forum">
+                    <div class="image"></div>
+                    Forums
+                    <div class="downarrow"></div>
+                    <a href="javascript:;"></a>
+                </li>
+                <li class="forum active">
+                    <div class="image"></div>
+                    Forums
+                    <div class="downarrow"></div>
+                    <a href="javascript:;"></a>
+                </li>
+
+                <li class="profile">
+                    <div class="image"></div>
+                    Profile
+                    <div class="downarrow"></div>
+                    <a href="javascript:;"></a>
+                </li>
+                <li class="profile active">
+                    <div class="image"></div>
+                    Profile
+                    <div class="downarrow"></div>
+                    <a href="javascript:;"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+        <tr>
+            <td class="mainleftTd">
+                <div class="leftmenuBox">
+                    <ul class="newticketBtn">
+                        <a href="#">
+                            <li>New Ticket</li>
+                        </a>
+                    </ul>
+                    <ul class="leftMenu">
+                        <li class="dashboard active">
+                            <span class="icon">Dashboard</span>
+                             <div class="rightarrow"></div><a href="javascript:;"></a>
+                        </li>
+                        <li class="waitting">
+                            <span class="icon">Waitting for Response</span><div class="rightarrow"></div> <a href="javascript:;"></a></li>
+                        <li class="ongoing active">
+                            <span class="icon">Ongoing Tickets</span><div class="rightarrow"></div><a href="javascript:;"></a>
+                        </li>
+                        <li class="draft">
+                            <span class="icon">Draft Tickets</span><div class="rightarrow"></div><a href="javascript:;"></a></li>
+                        <li class="completed active">
+                            <span class="icon">Completed Tickets</span><div class="rightarrow"></div><a href="javascript:;"></a></li>
+                        <li class="cancelled">
+                            <span class="icon">Cancelled Tickets</span><div class="rightarrow"></div><a href="javascript:;"></a></li>
+                        <li class="reports active">
+                            <span class="icon">Tickets Report</span><div class="rightarrow"></div><a href="javascript:;"></a>
+                        </li>
+                    </ul>
+                </div>
+            </td>
+            <td class="mainrightTd">
+                <div class="mainrightBox">
+                    <div class="searchItembox">
+                        <table border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td width="50" align="right">Keyword:</td>
+                                <td>
+                                    <input name="textfield" type="text" class="inputw1" /></td>
+                                <td width="55" align="right">Status:</td>
+                                <td>
+                                    <select name="select" class="selectw1">
+                                        <option>All</option>
+                                    </select>
+                                </td>
+                                <td width="60" align="right">Project:</td>
+                                <td>
+                                    <select name="select2" class="selectw1">
+                                        <option>All</option>
+                                    </select></td>
+                                <td width="55" align="right">Type:</td>
+                                <td>
+                                    <select name="select3" class="selectw1">
+                                        <option>All</option>
+                                    </select></td>
+                                <td width="30">
+                                    <input type="submit" class="searchBtn" value=" "></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <table width="100%" border="0" cellpadding="0" cellspacing="0" class="table-advance">
+                        <thead>
+                            <tr>
+                                <th width="33" class="aligncenter"><a href="#">
+                                    <img src="/Images/icons/adjust_priority.png" border="0" title="Adjust Priority"></a></th>
+                                <th width="120">Projects Name<img src="/Images/icons/orderarro_down.png" />
+                                </th>
+                                <th width="70">Ticket ID</th>
+                                <th width="90">Priority<img src="/Images/icons/orderarrow_up.png" /></th>
+                                <th>Title</th>
+                                <th width="79">Status</th>
+                                <th width="120">Updated Date</th>
+                                <th width="106" class="aligncenter">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="aligncenter">
+                                    <img src="/Images/icons/message.png" width="20" height="20" /></td>
+                                <td>UT TOMS Video </td>
+                                <td>R688</td>
+                                <td><span class="noticeRed">Emergency</span></td>
+                                <td>
+                                    <div class="contentOverflow tickettitle" title="This UT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video U">UT TOMS Video UT UT TOMS Video U  TOMS Video U</div>
+                                </td>
+                                <td>PM Reviewed </td>
+                                <td>04/15/2014</td>
+                                <td class="aligncenter"><a href="ticketdetail.html">
+                                    <img src="/Images/icons/view.png" border="0" title="View Ticket"></a><img src="/Images/icons/delete.png" title="Delete"><img src="/Images/icons/edit.png" title="edit"><img src="/Images/icons/deny.png" title="Deny" /></td>
+                            </tr>
+                            <tr class="whiterow">
+                                <td class="aligncenter">
+                                    <img src="/Images/icons/packup.png" /></td>
+                                <td>UT TOMS Video </td>
+                                <td>R688</td>
+                                <td>Medium</td>
+                                <td>
+                                    <div class="contentOverflow tickettitle" title="This UT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video U">UT TOMS Video UT UT TOMS Video U  TOMS Video U</div>
+                                </td>
+                                <td>&nbsp;</td>
+                                <td>04/15/2014</td>
+                                <td class="aligncenter"><a href="ticketdetail.html">
+                                    <img src="/Images/icons/view.png" border="0" title="View Ticket" /></a><img src="/Images/icons/approve.png" title="Approve"></td>
+                            </tr>
+                            <tr>
+                                <td class="aligncenter">&nbsp;</td>
+                                <td>UT TOMS Video </td>
+                                <td>R688</td>
+                                <td>High</td>
+                                <td>
+                                    <div class="contentOverflow tickettitle" title="This UT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video U">UT TOMS Video UT UT TOMS Video U  TOMS Video U</div>
+                                </td>
+                                <td>&nbsp;</td>
+                                <td>04/15/2014</td>
+                                <td class="aligncenter"><a href="ticketdetail.html">
+                                    <img src="/Images/icons/view.png" border="0" title="View Ticket" /></a></td>
+                            </tr>
+                            <tr class="onclick">
+                                <td class="aligncenter">
+                                    <img src="/Images/icons/expansion.png" /></td>
+                                <td>UT TOMS Video </td>
+                                <td>R688</td>
+                                <td>High</td>
+                                <td>
+                                    <div class="contentOverflow tickettitle" title="This UT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video UUT TOMS Video UT UT TOMS Video U">UT TOMS Video UT UT TOMS Video U  TOMS Video U</div>
+                                </td>
+                                <td>&nbsp;</td>
+                                <td>04/15/2014</td>
+                                <td class="aligncenter"><a href="ticketdetail.html">
+                                    <img src="/Images/icons/view.png" border="0" title="View Ticket" /></a></td>
+                            </tr>
+                            <tr class="sublist">
+                                <td class="aligncenter">&nbsp;</td>
+                                <td colspan="7">
+                                    <div class="subcontentBox">
+                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td width="80" valign="top"><strong>Description:</strong></td>
+                                                <td>SunNet Solutions is a premier customer software development company located in Houston, TX. We focus on finding the right solutions specific for your business<br />
+                                                    1. Testing<br />
+                                                    2. See attachments </td>
+                                            </tr>
+                                            <tr>
+                                                <td valign="top"><strong>Feedback</strong>:</td>
+                                                <td>SunNet Solutions is a premier customer software development company located in Houston, TX.<span class="subfeedbackDate">
+                                                    <br />
+                                                    4/16/2014</span> <span class="subfeedbackUser">Client</span> </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="aligncenter">
+                                    <img src="/Images/icons/expansion.png" /></td>
+                                <td>UT TOMS Video </td>
+                                <td>R688</td>
+                                <td>Low</td>
+                                <td>
+                                    <div class="contentOverflow tickettitle">UT TOMS Video UT UT TOMS V</div>
+                                </td>
+                                <td>&nbsp;</td>
+                                <td>04/15/2014</td>
+                                <td class="aligncenter"><a href="ticketdetail.html">
+                                    <img src="/Images/icons/view.png" border="0" title="View Ticket" /></a></td>
+                            </tr>
+                            <tr class="whiterow">
+                                <td class="aligncenter">&nbsp;</td>
+                                <td>UT TOMS Video </td>
+                                <td>R688</td>
+                                <td><span class="noticeRed">Emergency</span></td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>04/15/2014</td>
+                                <td class="aligncenter"><a href="ticketdetail.html">
+                                    <img src="/Images/icons/view.png" border="0" title="View Ticket" /></a></td>
+                            </tr>
+                            <tr>
+                                <td class="aligncenter">&nbsp;</td>
+                                <td>UT TOMS Video </td>
+                                <td>R688</td>
+                                <td>Medium</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>04/15/2014</td>
+                                <td class="aligncenter"><a href="ticketdetail.html">
+                                    <img src="/Images/icons/view.png" border="0" title="View Ticket" /></a></td>
+                            </tr>
+                            <tr class="whiterow">
+                                <td class="aligncenter">&nbsp;</td>
+                                <td>UT TOMS Video </td>
+                                <td>R688</td>
+                                <td>Medium</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>04/15/2014</td>
+                                <td class="aligncenter"><a href="ticketdetail.html">
+                                    <img src="/Images/icons/view.png" border="0" title="View Ticket" /></a></td>
+                            </tr>
+                            <tr>
+                                <td class="aligncenter">&nbsp;</td>
+                                <td>UT TOMS Video </td>
+                                <td>R688</td>
+                                <td>Medium</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>04/15/2014</td>
+                                <td class="aligncenter"><a href="ticketdetail.html">
+                                    <img src="/Images/icons/view.png" border="0" title="View Ticket" /></a></td>
+                            </tr>
+                            <tr class="whiterow">
+                                <td class="aligncenter">&nbsp;</td>
+                                <td>UT TOMS Video </td>
+                                <td>R688</td>
+                                <td>Medium</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>04/15/2014</td>
+                                <td class="aligncenter"><a href="ticketdetail.html">
+                                    <img src="/Images/icons/view.png" border="0" title="View Ticket" /></a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="pagebox">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tr>
+                                <td>Showing 1 to 10 of 100 Items </td>
+                                <td align="right">Show
+      <select name="select4">
+          <option selected="selected">10</option>
+          <option>25</option>
+          <option>50</option>
+          <option>100</option>
+      </select>
+                                    Rows </td>
+                                <td width="290" align="right">
+                                    <ul class="pagination pagination-sm">
+                                        <li class="prev disabled"><a href="#"><i class="icon-double-angle-left"></i>Previous</a></li>
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">5</a></li>
+                                        <li class="next"><a href="#">Next <i class="icon-double-angle-right"></i></a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="footerBox">
+                    <div class="footerBox_left"><a href="faq.html">FAQ</a> <span>|</span><a href="survey.html">Survey</a><span>|</span><a href="contact_us.html">Contact Us</a></div>
+                    <div class="footerBox_right">Copyright &copy; 2014 <a href="http://www.sunnet.us" target="_blank">SunNet Solutions</a>. </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<email>
+  <content>
+    <![CDATA[
+              <tr>
+                <td>{{ProjectId}}</td>
+                <td>{{ProjectName}}</td>
+                <td>{{TicketId}}</td>
+                <td>{{TicketTitle}}</td>
+                <td>{{TicketModeifiedOn}}</td>
+              </tr>
+        ]]>
+  </content>
+</email>

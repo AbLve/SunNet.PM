@@ -1,0 +1,9 @@
+﻿if not exists(select * from syscolumns where id=object_id('TicketHistorys') and name='ResponsibleUserId')
+   alter table  TicketHistorys add ResponsibleUserId  int  
+
+go
+update TicketHistorys set ResponsibleUserId =0 where ResponsibleUserId is null
+go
+
+
+alter table  TicketHistorys alter column ResponsibleUserId  int  not null

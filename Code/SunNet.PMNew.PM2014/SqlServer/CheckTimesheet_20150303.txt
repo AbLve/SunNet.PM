@@ -1,0 +1,41 @@
+﻿
+IF EXISTS  (SELECT  * FROM dbo.SysObjects WHERE ID = object_id(N'[CheckTimesheet]')) 
+DROP PROCEDURE [dbo].[CheckTimesheet]
+GO
+
+/****** Object:  StoredProcedure [dbo].[CheckTimesheet]    Script Date: 2015/3/3 15:10:54 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[CheckTimesheet]
+	@BeginDate datetime,
+	@EndDate datetime
+AS
+
+
+
+with plandate as (
+select dateadd(day,number,@BeginDate) as TimesheetDate from 
+master..spt_values s 
+where type = 'p' and dateadd(day,number,@BeginDate) < @EndDate
+and datepart(weekday,dateadd(day,number,@BeginDate)) in (2,3,4,5,6)
+),
+planUserDate as (
+select u.UserId,u.FirstName,u.LastName,u.Email,TimesheetDate from plandate p
+left join users u on u.companyid = 1 and u.IsNotice=1 and u.roleid != 1 and u.status = 'ACTIVE' and u.UserType = 'SUNNET'
+)
+,
+list as (
+select userid ,sheetdate  from TimeSheets 
+where sheetdate >=  @BeginDate and sheetdate <= @EndDate 
+group by sheetdate,userid
+)
+select p.* from planUserDate p 
+left join list l on p.userid = l.userid and p.TimesheetDate = l.sheetdate
+where l.userid is null
+GO
+
+

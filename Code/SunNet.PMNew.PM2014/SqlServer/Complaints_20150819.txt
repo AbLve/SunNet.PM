@@ -1,0 +1,417 @@
+/**** Create Table [Systems] ****/
+
+USE [NewPM2014]
+GO
+
+/****** Object:  Table [dbo].[Systems]    Script Date: 8/19/2015 4:23:15 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Systems](
+	[SystemID] [int] NOT NULL,
+	[SystemName] [varchar](50) NOT NULL,
+	[MD5Key] [varchar](50) NOT NULL,
+	[IP] [varchar](50) NULL,
+	[Port] [varchar](50) NULL,
+	[DBLocation] [varchar](50) NOT NULL,
+	[UserName] [varchar](50) NOT NULL,
+	[UserPwd] [varchar](50) NOT NULL,
+	[Procedure] [varchar](500) NOT NULL,
+ CONSTRAINT [PK_Systems] PRIMARY KEY CLUSTERED 
+(
+	[SystemID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Systems]  WITH CHECK ADD  CONSTRAINT [FK_Systems_Systems] FOREIGN KEY([SystemID])
+REFERENCES [dbo].[Systems] ([SystemID])
+GO
+
+ALTER TABLE [dbo].[Systems] CHECK CONSTRAINT [FK_Systems_Systems]
+GO
+
+
+
+
+/**** Insert 1 Record into [Systems] ****/
+
+INSERT INTO [dbo].[Systems]
+           ([SystemID]
+           ,[SystemName]
+           ,[MD5Key]
+           ,[IP]
+           ,[Port]
+           ,[DBLocation]
+           ,[UserName]
+           ,[UserPwd]
+           ,[Procedure])
+     VALUES
+           (1
+           ,'MyFamilyBook'
+           ,'MFBUY#!982015'
+           ,'testing'
+           ,''
+           ,'FamilyBook'
+           ,'spUser'
+		   ,'spOnly'
+		   ,'spComplaint'
+		   )
+GO
+
+
+
+/******** Create Table [Complaints] ********/
+
+/****** Object:  Table [dbo].[Complaints]    Script Date: 7/9/2015 6:18:12 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Complaints](
+	[ComplaintID] [int] IDENTITY(1,1) NOT NULL,
+	[Type] [int] NOT NULL,
+	[TargetID] [int] NOT NULL,
+	[Reason] [int] NOT NULL,
+	[AdditionalInfo] [varchar](200) NULL,
+	[SystemID] [int] NOT NULL,
+	[AppSrc] [int] NOT NULL,
+	[ReporterID] [int] NOT NULL,
+	[ReporterEmail] [varchar](50) NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[UpdatedOn] [datetime] NULL,
+	[UpdatedByID] [int] NULL,
+	[Status] [int] NOT NULL,
+	[Comments] [varchar](200) NULL,
+ CONSTRAINT [PK__Reports__D5BD48E5119F9925] PRIMARY KEY CLUSTERED 
+(
+	[ComplaintID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Complaints]  WITH CHECK ADD  CONSTRAINT [fk_system] FOREIGN KEY([SystemID])
+REFERENCES [dbo].[Systems] ([SystemID])
+GO
+
+ALTER TABLE [dbo].[Complaints] CHECK CONSTRAINT [fk_system]
+GO
+
+
+
+
+/******** Create Table [ComplaintHistory] ********/
+
+USE [NewPM2014]
+GO
+
+/****** Object:  Table [dbo].[ComplaintHistory]    Script Date: 8/19/2015 4:27:22 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ComplaintHistory](
+	[CHID] [int] IDENTITY(1,1) NOT NULL,
+	[ComplaintID] [int] NOT NULL,
+	[ModifiedBy] [int] NOT NULL,
+	[ModifiedOn] [datetime] NOT NULL,
+	[Comments] [varchar](200) NULL,
+	[Action] [varchar](200) NULL,
+ CONSTRAINT [PK_ComplaintHistory] PRIMARY KEY CLUSTERED 
+(
+	[CHID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
+
+/******** Insert 2 records into Table [Modules] ********/
+
+GO
+
+INSERT INTO [dbo].[Modules]
+           ([ModuleTitle]
+           ,[ModulePath]
+           ,[DefaultPage]
+           ,[Status]
+           ,[Orders]
+           ,[ShowInMenu]
+           ,[PageOrModule]
+           ,[ClickFunctioin]
+           ,[ParentID])
+     VALUES
+           ('Complaint'
+           ,'/OA/Complaints/Complaints.aspx'
+           ,''
+           ,0
+           ,20
+           ,1
+           ,0
+           ,''
+           ,11)
+
+
+INSERT INTO [dbo].[Modules]
+           ([ModuleTitle]
+           ,[ModulePath]
+           ,[DefaultPage]
+           ,[Status]
+           ,[Orders]
+           ,[ShowInMenu]
+           ,[PageOrModule]
+           ,[ClickFunctioin]
+           ,[ParentID])
+     VALUES
+           ('ComplaintReview'
+           ,'/OA/Complaints/ComplaintReview.aspx'
+           ,''
+           ,0
+           ,696
+           ,0
+           ,0
+           ,''
+           ,11)
+
+
+
+
+/******** Insert several records into Table [RoleModules] ********/
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (1
+           ,153)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (1
+           ,154)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (2
+           ,153)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (2
+           ,154)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (3
+           ,153)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (3
+           ,154)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (4
+           ,153)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (4
+           ,154)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (6
+           ,153)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (6
+           ,154)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (7
+           ,153)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (7
+           ,154)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (10
+           ,153)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (10
+           ,154)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (16
+           ,153)
+
+INSERT INTO [dbo].[RoleModules]
+           ([RoleID]
+           ,[ModuleID])
+     VALUES
+           (16
+           ,154)
+
+GO
+
+-- 说明:这两个ModuleID(153,154)是之前2个页面添加入Modules表所获得的ModuleID。如果插入Modules表获得了不同ModuleID，应进行替换. 
+
+
+
+
+
+
+/******** Create stored procedure "spComplaint" in FamilyBook Database ********/
+
+USE [FamilyBook]
+GO
+/****** Object:  StoredProcedure [dbo].[spComplaint]    Script Date: 8/19/2015 4:11:44 PM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- Author:		Willard Liu
+-- Create date: 8/10/2015
+-- Description:	View or delete data from FamilyBook databse
+-- =============================================
+CREATE PROCEDURE [dbo].[spComplaint]
+@Action varchar(50),
+@Type varchar(50),
+@ID int
+AS
+BEGIN
+	Declare @MediaPrefix varchar(50);
+	set @MediaPrefix = 'http://test.myfamilybook.us/Files'  -- 将来进行替换
+
+	if @Action = 'View' begin
+		if @Type = 'Photo' begin
+			select @MediaPrefix + Path as Path from Photos where id = @ID
+			end
+
+		else if @Type = 'Video' begin
+			select @MediaPrefix + Path as Path from Videos where id = @ID
+			end
+
+		else if @Type = 'User' begin
+			select up.FirstName+' '+up.LastName as UserName, up.emailaccount as UserEmail from useraccounts ua, userprofiles up 
+				where ua.id = @ID and ua.UserProfileID = up.id
+			end
+
+		else if @Type = 'Group' begin
+			select up.FirstName+' '+up.LastName as UserName, g.groupname as GroupName from groups g, userprofiles up, UserAccounts ua
+				where g.ID = @ID and g.UserID = ua.ID and ua.UserProfileID = up.id
+			end
+
+		else if @Type = 'Post' begin
+			select up.FirstName+' '+up.LastName as UserName, m.Message as Message from DynamicMessageCenters m, userprofiles up, UserAccounts ua
+				where m.ID = @ID and m.UserID = ua.ID and ua.UserProfileID = up.id
+			end end
+
+	else if @Action = 'Delete' begin
+		if @Type = 'Photo' begin
+			Delete from Photos where id = @ID
+			end
+
+		else if @Type = 'Video' begin
+			Delete from Videos where id = @ID
+			end
+
+		else if @Type = 'User' begin
+			update UserAccounts set status = 2 where id = @ID  /* Disable user */
+			end
+
+		else if @Type = 'Group' begin
+			if exists (select * from sysobjects where name='Groups_Deleted') begin
+				insert into Groups_Deleted Select * from groups where id = @ID; end
+			else begin
+				select * into Groups_Deleted from Groups where id = @ID; end
+
+			Delete from Groups where id = @ID
+			end
+
+		else if @Type = 'Post' begin
+			if exists (select * from sysobjects where name='DynamicMessage_Deleted') begin
+				insert into DynamicMessage_Deleted Select * from DynamicMessageCenters where id = @ID; end
+			else begin
+				select * into DynamicMessage_Deleted from DynamicMessageCenters where id = @ID; end
+
+			Delete from DynamicMessageCenters where id = @ID
+			end end
+
+END
+
+
+
+
+/******** Create User "spUser" to execute spComplaint ********/
+
+-- Create User "spUser" with password "spOnly"
+-- Add "Execute" permission for "spComplaint"

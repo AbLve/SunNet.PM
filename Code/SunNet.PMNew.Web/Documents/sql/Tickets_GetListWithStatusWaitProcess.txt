@@ -1,0 +1,111 @@
+﻿
+ALTER PROCEDURE [dbo].[Tickets_GetListWithStatusWaitProcess]
+(
+    @FeedBackID int = NULL OUTPUT,
+	@Client varchar(100) =null,
+	@Company varchar(100) = NULL,
+	@KeyWord varchar(100) = NULL,
+	@Project varchar(1000) = NULL,
+	@Status varchar(100) = NULL,
+	@Type varchar(100) = NULL, 
+	@Start int = 0,
+	@End int = 0,
+	@sortBy varchar(100) = NULL, 
+	@direction varchar(100) = NULL,
+	@IsInternal varchar(100) =null,
+    @feedback varchar(max)
+)
+AS
+	SET NOCOUNT ON
+    declare @sqlWhere nvarchar(max);	
+    
+		 set @sqlWhere = 'select ROW_NUMBER() OVER( Order BY   [TicketID] desc ) AS INDEX_ID, 
+								   [TicketID]
+								  ,[CompanyID]
+								  ,[ProjectID]
+								  ,[Title]
+								  ,[TicketCode]
+								  ,[TicketType]
+								  ,SUBSTRING([Description],0,100) as [Description]
+								  ,[CreatedOn]
+								  ,[CreatedBy]
+								  ,[ModifiedOn]
+								  ,[ModifiedBy]
+								  ,[PublishDate]
+								  ,[ClientPublished]
+								  ,[StartDate]
+								  ,[DeliveryDate]
+								  ,[ContinueDate]
+								  ,[URL]
+								  ,[Priority]
+								  ,[Status]
+								  ,[ConvertDelete]
+								  ,[IsInternal]
+								  ,[CreateType]
+								  ,[SourceTicketID]
+								  ,[IsEstimates]
+								  ,[InitialTime]
+								  ,[FinalTime]
+								  ,[EsUserID]
+								  ,[Star]
+								  ,[Source]
+								   from Tickets where ConvertDelete <= 3 ' 
+		  
+         if(@Project<>'')
+            begin
+			    set @sqlWhere = @sqlWhere + ' and ProjectID in (' + @Project + ') ' end    
+		 if(@Company<>'')
+            begin
+				set @sqlWhere = @sqlWhere + ' and CompanyID in(' + @Company + ') and ProjectID in ('
+				+ ' select ProjectID from ProjectUsers where UserID = (' + @Client + '))'
+			end  
+		 if(@Type<>'')
+            begin
+				set @sqlWhere = @sqlWhere + ' and TicketType = ''' +  @Type  + ''' ' end
+		 if(@KeyWord<>'')
+            begin
+				set @sqlWhere = @sqlWhere +
+					' and (Title like ''%' + @KeyWord + '%'' ' +
+					' or Description like ''%'+ @KeyWord + '%'' '+ 
+					' or TicketID like ''%'+ @KeyWord + '%'' '+ 
+					' or ticketCode like ''%'+ @KeyWord + '%'' '+ 
+					' or url like ''%' + @KeyWord + '%'') ' end  
+		if(@IsInternal <> '')
+			 begin
+			    set @sqlWhere = @sqlWhere + ' and IsInternal = ' + @IsInternal + ' ' end   		
+		if(@Status<>'')
+            begin
+				/*get wait process ticket list with status in specific status or
+			     feedback was create by himself and waiting for feedback
+			     write by hacks*/
+				set @sqlWhere = @sqlWhere + ' and ( Status in (' +@Status+ ') or 
+				 ticketid  in( 
+				 select t.TicketID  from  tickets  t 
+				 inner join  FeedBackMessages fbMsg
+				 on  fbMsg.ticketid = t.ticketid
+				 and fbMsg.UserId = '+@Client+' 
+                 and fbMsg.WaitClientFeedback > 0 ))' 
+				 end
+		 if(@feedback <>'')
+			begin
+				set @sqlWhere = @sqlWhere + ' and ( ticketid  in( 
+					 select t.TicketID  from  tickets  t 
+					 inner join  FeedBackMessages fbMsg
+					 on  fbMsg.ticketid = t.ticketid
+					 and fbMsg.UserId = '+ @Client +' 
+					 and fbMsg.WaitClientFeedback > 0))' 
+			end  	    	  	    	
+
+			     	    
+    set @sqlWhere = 'select  p.projectCode ,p.title as ProjectTitle , tb.* from ('+@sqlWhere+') tb inner join dbo.Projects as p on tb.ProjectID = p.ProjectID '+' 
+                     where INDEX_ID BETWEEN '+ cast( @Start as varchar) + ' AND ' +cast( @End as varchar) + ' ';
+   
+    set @sqlWhere = @sqlWhere +	'  order by '+ @sortBy+' ' + @direction;
+   
+    print  (@sqlWhere); 
+     
+	exec(@sqlWhere); 
+	
+	SELECT @FeedBackID =ISNULL( SCOPE_IDENTITY(),0);
+
+	RETURN @@Error

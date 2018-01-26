@@ -1,0 +1,8 @@
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Entity\bin\Debug\SunNet.PMNew.Entity.dll
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Entity\bin\Debug\SunNet.PMNew.Entity.pdb
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Entity\bin\Debug\SunNet.PMNew.Framework.dll
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Entity\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Entity\bin\Debug\SunNet.PMNew.Framework.pdb
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Entity\obj\Debug\SunNet.PMNew.Entity.csprojResolveAssemblyReference.cache
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Entity\obj\Debug\SunNet.PMNew.Entity.dll
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Entity\obj\Debug\SunNet.PMNew.Entity.pdb

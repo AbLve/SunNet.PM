@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{129AD4D5-62F8-424B-AEE1-438744E1E065}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SunNet.PMNew.Entity</RootNamespace>
+    <AssemblyName>SunNet.PMNew.Entity</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.VisualStudio.TeamSystem.Data.UnitTesting, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\IShowUserName.cs" />
+    <Compile Include="CompanyModel\CompanysEntity.cs" />
+    <Compile Include="CompanyModel\CompanysMessage\CompanyProjectModel.cs" />
+    <Compile Include="CompanyModel\CompanysMessage\SearchCompaniesRequest.cs" />
+    <Compile Include="CompanyModel\Factory\CompanyFactory.cs" />
+    <Compile Include="CompanyModel\CompanysMessage\SearchCompaniesResponse.cs" />
+    <Compile Include="ComplaintModel\ComplaintHistoryEntity.cs" />
+    <Compile Include="ComplaintModel\ComplaintItem.cs" />
+    <Compile Include="EventModel\Enums\AlertType.cs" />
+    <Compile Include="EventModel\CalendarView.cs" />
+    <Compile Include="EventModel\Enums\EndType.cs" />
+    <Compile Include="EventModel\Enums\RepeatType.cs" />
+    <Compile Include="EventModel\EventCalendar.cs" />
+    <Compile Include="EventModel\EventCommentEntity.cs" />
+    <Compile Include="EventModel\EventEntity.cs" />
+    <Compile Include="EventModel\EventIconAgent.cs" />
+    <Compile Include="EventModel\EventInviteEntity.cs" />
+    <Compile Include="EventModel\EventPtoView.cs" />
+    <Compile Include="EventModel\EventsView.cs" />
+    <Compile Include="EventModel\Enums\Privates.cs" />
+    <Compile Include="EventModel\PtoView.cs" />
+    <Compile Include="EventModel\UpcomingEvent.cs" />
+    <Compile Include="EventModel\WorkTimeEntity.cs" />
+    <Compile Include="EventModel\WorkTimeView.cs" />
+    <Compile Include="FileModel\Directories.cs" />
+    <Compile Include="FileModel\DirectoryObjects.cs" />
+    <Compile Include="FileModel\Enums\FileEnum.cs" />
+    <Compile Include="FileModel\Enums\FileSourceType.cs" />
+    <Compile Include="FileModel\Factory\FileFactory.cs" />
+    <Compile Include="FileModel\FilesDTO\FileDetailDto.cs" />
+    <Compile Include="FileModel\FilesEntity.cs" />
+    <Compile Include="FileModel\FilesMessage\SearchFilesRequest.cs" />
+    <Compile Include="InvoiceModel\Enums\InvoiceStatus.cs" />
+    <Compile Include="InvoiceModel\InvoiceEntity.cs" />
+    <Compile Include="InvoiceModel\Proposal\POListModel.cs" />
+    <Compile Include="InvoiceModel\Proposal\ProposalInvoiceModel.cs" />
+    <Compile Include="InvoiceModel\Proposal\TimesheetInvoiceModel.cs" />
+    <Compile Include="InvoiceModel\Search\SearchInvoiceRequest.cs" />
+    <Compile Include="InvoiceModel\Search\SearchInvoiceResponse.cs" />
+    <Compile Include="InvoiceModel\TSInvoiceRelationEntity.cs" />
+    <Compile Include="KPIModel\KPICategoriesEntity.cs" />
+    <Compile Include="KPIModel\KPIFactory.cs" />
+    <Compile Include="LogModel\Enums\LogType.cs" />
+    <Compile Include="LogModel\LogEntity.cs" />
+    <Compile Include="ProjectModel\Enums\Enum.cs" />
+    <Compile Include="ProjectModel\ProjectPrincipalEntity.cs" />
+    <Compile Include="ProjectModel\ProjectsDTO\ProjectDetailDTO.cs" />
+    <Compile Include="ProjectModel\ProjectsEntity.cs" />
+    <Compile Include="ProjectModel\Factory\ProjectsFactory.cs" />
+    <Compile Include="ProjectModel\ProjectsMessage\SearchProjectsRequest.cs" />
+    <Compile Include="ProjectModel\ProjectsMessage\SearchProjectsResponse.cs" />
+    <Compile Include="ProjectModel\ProjectTicket\ProjectTicketModel.cs" />
+    <Compile Include="ProjectModel\ProjectTicket\TicketStatusModel.cs" />
+    <Compile Include="ProjectModel\ProjectUsersEntity.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ComplaintModel\Enums\ComplaintAppSrc.cs" />
+    <Compile Include="ComplaintModel\Enums\ComplaintReason.cs" />
+    <Compile Include="ComplaintModel\Enums\ComplaintStatus.cs" />
+    <Compile Include="ComplaintModel\Enums\ComplaintSystem.cs" />
+    <Compile Include="ComplaintModel\Enums\ComplaintType.cs" />
+    <Compile Include="ComplaintModel\ComplaintEntity.cs" />
+    <Compile Include="ComplaintModel\ComplaintSearchEntity.cs" />
+    <Compile Include="ComplaintModel\SystemEntity.cs" />
+    <Compile Include="ProposalTrackerModel\ProjectPaymentEntity.cs" />
+    <Compile Include="ProposalTrackerModel\ProposalViewModel.cs" />
+    <Compile Include="SchedulesModel\SchedulesEntity.cs" />
+    <Compile Include="SchedulesModel\ScheduleTimeHelpers.cs" />
+    <Compile Include="SealModel\Enum\WorkflowAction.cs" />
+    <Compile Include="SealModel\WorkflowHistoryEntity.cs" />
+    <Compile Include="SealModel\Enum\RequestStatus.cs" />
+    <Compile Include="SealModel\SealNotesEntity.cs" />
+    <Compile Include="SealModel\SealRequestsEntity.cs" />
+    <Compile Include="SealModel\SealFileEntity.cs" />
+    <Compile Include="SealModel\SealsEntity.cs" />
+    <Compile Include="SealModel\Enum\Status.cs" />
+    <Compile Include="SealModel\SealUnionRequestsEntity.cs" />
+    <Compile Include="ShareModel\DTO\SearchShareRequest.cs" />
+    <Compile Include="ShareModel\DTO\SearchShareResponse.cs" />
+    <Compile Include="ShareModel\ShareEntity.cs" />
+    <Compile Include="ShareModel\ShareTypeEntity.cs" />
+    <Compile Include="TicketModel\CateGoryEntity.cs" />
+    <Compile Include="TicketModel\Enums\AccountingState.cs" />
+    <Compile Include="TicketModel\Enums\ClientProgressState.cs" />
+    <Compile Include="TicketModel\Enums\ClientTicketState.cs" />
+    <Compile Include="TicketModel\Enums\FeedbackReplyStatus.cs" />
+    <Compile Include="TicketModel\Enums\TicketUserStatus.cs" />
+    <Compile Include="TicketModel\Enums\TicketUsersType.cs" />
+    <Compile Include="TicketModel\Enums\UserTicketStatus.cs" />
+    <Compile Include="TicketModel\ExpandTicketsEntity.cs" />
+    <Compile Include="TicketModel\Factory\CateGoryFactory.cs" />
+    <Compile Include="TicketModel\FeedBackMessagesEntity.cs" />
+    <Compile Include="TicketModel\TicketEsTime.cs" />
+    <Compile Include="TicketModel\CateGoryTicketEntity.cs" />
+    <Compile Include="TicketModel\Factory\TicketsOrderFactory.cs" />
+    <Compile Include="TicketModel\Factory\TicketsSerachConditionFactory.cs" />
+    <Compile Include="TicketModel\TicketsDTO\SearchTicketCondition.cs" />
+    <Compile Include="TicketModel\TicketsDTO\TicketsSearchConditionDTO.cs" />
+    <Compile Include="TicketModel\Enums\CovertDeleteState.cs" />
+    <Compile Include="TicketModel\Enums\PriorityState.cs" />
+    <Compile Include="TicketModel\Enums\TicketsState.cs" />
+    <Compile Include="TicketModel\Enums\TicketsType.cs" />
+    <Compile Include="TicketModel\FeedBacksEntity.cs" />
+    <Compile Include="TicketModel\TasksEntity.cs" />
+    <Compile Include="TicketModel\TicketHistorysEntity.cs" />
+    <Compile Include="TicketModel\TicketsEntity.cs" />
+    <Compile Include="TicketModel\TicketsMessage\GetProjectIdAndUserIDResponse.cs" />
+    <Compile Include="TicketModel\TicketsMessage\GetTicketsListByConditionRequest.cs" />
+    <Compile Include="TicketModel\TicketsMessage\SearchTicketsRequest.cs" />
+    <Compile Include="TicketModel\TicketsMessage\SearchTicketsResponse.cs" />
+    <Compile Include="TicketModel\TicketsMessage\TicketDistinctUsersResponse.cs" />
+    <Compile Include="TicketModel\TicketsOrderEntity.cs" />
+    <Compile Include="TicketModel\TicketsRelationEntity.cs" />
+    <Compile Include="TicketModel\TicketsSearchCondition.cs" />
+    <Compile Include="TicketModel\TicketUsersEntity.cs" />
+    <Compile Include="TicketModel\UserTicket\TicketHistoryModel.cs" />
+    <Compile Include="TicketModel\UserTicket\TicketListModel.cs" />
+    <Compile Include="TicketModel\UserTicket\UserTicketModel.cs" />
+    <Compile Include="TicketModel\WeekPlanEntity.cs" />
+    <Compile Include="TimeSheetModel\CheckTimesheetEntity.cs" />
+    <Compile Include="TimeSheetModel\ExpandTimeSheetsEntity.cs" />
+    <Compile Include="TimeSheetModel\Factory\TimeSheetFactory.cs" />
+    <Compile Include="TimeSheetModel\TimeSheetsEntity.cs" />
+    <Compile Include="TimeSheetModel\TimeSheetsMessage\SearchTimeSheetsRequest.cs" />
+    <Compile Include="TimeSheetModel\TimeSheetsMessage\SearchTimeSheetsResponse.cs" />
+    <Compile Include="TimeSheetModel\TimeSheetTicket.cs" />
+    <Compile Include="UserModel\Enums\RolesEnum.cs" />
+    <Compile Include="UserModel\Enums\UserEnum.cs" />
+    <Compile Include="UserModel\Factory\UsersFactory.cs" />
+    <Compile Include="UserModel\HideUserEntity.cs" />
+    <Compile Include="UserModel\ModulesEntity.cs" />
+    <Compile Include="UserModel\RoleModulesEntity.cs" />
+    <Compile Include="UserModel\RolesEntity.cs" />
+    <Compile Include="UserModel\UserModel\DashboardUserModel.cs" />
+    <Compile Include="UserModel\UserModel\SelectUserModel.cs" />
+    <Compile Include="UserModel\UsersMessages\SearchUserResponse.cs" />
+    <Compile Include="UserModel\UsersMessages\SearchUsersRequest.cs" />
+    <Compile Include="UserModel\UsersEntity.cs" />
+    <Compile Include="ProposalTrackerModel\Enums\PaymentEnum.cs" />
+    <Compile Include="ProposalTrackerModel\Enums\ProposalTrackerStatusEnum.cs" />
+    <Compile Include="ProposalTrackerModel\SearchProposalTrackerRequest.cs" />
+    <Compile Include="ProposalTrackerModel\ProposalTrackerEntity.cs" />
+    <Compile Include="ProposalTrackerModel\ProposalTrackerNoteEntity.cs" />
+    <Compile Include="ProposalTrackerModel\ProposalTrackerRelationEntity.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SunNet.PMNew.Framework\SunNet.PMNew.Framework.csproj">
+      <Project>{3D3DAFD1-AFD8-48E5-8E11-BDF5C2A3FDC5}</Project>
+      <Name>SunNet.PMNew.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="CompanyModel\CompanysDTO\" />
+    <Folder Include="CompanyModel\Enums\" />
+    <Folder Include="TimeSheetModel\TimeSheetDTO\" />
+    <Folder Include="UserModel\UsersDTO\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

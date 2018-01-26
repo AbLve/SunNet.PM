@@ -1,0 +1,149 @@
+﻿@{
+    ViewBag.Title = "Upload";
+    Layout = "~/Views/Shared/_PopLayout.cshtml";
+    ViewBag.Width = 432;
+}
+<style type="text/css">
+   .uploadify-button {
+        background:url(@Url.Content("~/Images/New2014_Image/upload.png") );
+    }
+    .uploadify:hover .uploadify-button {
+        background:url(@Url.Content("~/Images/New2014_Image/upload.png") );
+    }
+</style>
+<script type="text/javascript">
+        
+    var upload_message={
+        uploadsucess:"Upload successful.",
+        uploadfailed:"Upload failed.",
+        lackspace:"Lack of space.",
+        notfile:"Please select a file to upload."
+    };
+
+    jQuery(function(){
+        if(chkFlash())
+        {
+            initUpload();
+            jQuery("#file_upload-button").css("height","33").css("width","125px");
+        }else
+        {
+            jQuery("#file_upload").hide();
+            jQuery("#divFlash").show();
+        }
+    });
+    function chkFlash() {
+        var isIE = (navigator.appVersion.indexOf("MSIE") >= 0);
+        var hasFlash = true;
+
+        if(isIE) {
+            try{
+                var objFlash = new ActiveXObject("ShockwaveFlash.ShockwaveFlash");
+            } catch(e) {
+                hasFlash = false;
+            }
+        } else {
+            if(!navigator.plugins["Shockwave Flash"]) {
+                hasFlash = false;
+            }
+        }
+        return hasFlash;
+    }
+
+        
+    var upload_totalSize = 0;
+    var upload_filecount = 0;
+    ///upload function
+    function initUpload() {
+        $("#file_upload").uploadify({
+            auto: false,
+            successTimeout: 100000,
+            'buttonClass' : 'abc',
+            buttonImage:"@Url.Content("~/Images/New2014_Image/upload.png")",
+            swf: ajaxVirtualDir+'/Scripts/uploadify/uploadify.swf'
+            ,fileSizeLimit:"20MB"
+            , uploader: ajaxVirtualDir+'/Channels/UploadDocument.ashx?userId=@ViewBag.UserID&projectId=@ViewBag.ProjectID'
+                , removeCompleted: true
+                , onUploadSuccess: function (file, data, response) {
+                    upload_GetFileContent(data)
+                }
+                , onSelect: function (file) {
+                    $(".uploadify-progress-bar").css("width", "100%");
+                    upload_totalSize += file.size;
+                }
+                , onSelectError: function (file, errorCode, errorMsg) {
+                    switch(errorCode)
+                    {
+                        case -110:
+                            uploadifyCustomMsg();
+                            break;
+                    }
+                }
+                , onQueueComplete: function (que) {
+                    if (que.uploadsSuccessful == upload_filecount) {
+                        upload_postData();
+                    }
+                }
+        });
+        jQuery("#file_upload-button").css("text-indent","1px");
+        jQuery("#file_upload-button").css("width","121px");
+        jQuery("#file_upload-button").css("text-align","center");
+    }
+        
+    function uploadifyCustomMsg() {
+        top.jQuery.alert("warning", "The maximum size of an uploadable file in 20MB.");
+    }
+
+    var upload_dataArray = new Array();
+    function upload_GetFileContent(data) {
+        upload_dataArray.push(data);
+        upload_filecount = upload_filecount+1;
+    }
+
+    function upload_postData() {
+        upload_totalSize = 0;
+        var pid = '@ViewBag.ID';
+        if (upload_dataArray.toString() == "Lack of space") {
+            jQuery("#modalUpload").modal("toggle");
+            return false;
+        }
+        if (upload_dataArray.toString() == "false") {
+            jQuery("#modalUpload").modal("toggle");
+            top.jQuery.alert("danger", upload_message.uploadfailed);
+            return false;
+        }
+
+        jQuery.post("SaveFile", { projectId:'@ViewBag.ProjectId', jsondata: '[' + upload_dataArray.toString() + ']', parentId: pid }, function (result) {
+            if(result=="True")
+            {
+                //jQuery.alert("success", upload_message.uploadsucess);
+                top.jQuery.alert("success", upload_message.uploadsucess);
+                _callbackUpload(pid,'@ViewBag.ProjectId');
+            }else
+            {
+                top.jQuery.alert("danger-upload", upload_message.uploadfailed);
+            }
+        });
+    }
+    ///end upload
+</script>
+<style type="text/css">
+    .mainowConbox {
+        margin-left: 15px;
+    }
+</style>
+<div class="alert alert-danger alert-danger-upload fade hide">
+    <img src="/Images/icons/failed.png" />
+    <a class="close" data-dismiss="alert" href="###" aria-hidden="true">&times;</a>
+    Operation failed. 
+</div>
+<div class="mainowConbox">
+    You can select one or more files to upload. Each file cannot exceed 20MB.
+        <div class="content" style="border: none; max-height: 395px; min-height: 158px; overflow-y: auto;">
+            <input type="file" id="file_upload" value="select" />
+            <div id="divFlash" style="display:none;"><a href="http://www.adobe.com/software/flash/about/" target="_blank"><img src="@Url.Content("~/Images/New2014_Image/flashpng.png")" /></a></div>
+        </div>
+    <div class="buttonBox2">
+        <input class="saveBtn1 mainbutton" type="button" onclick="$('#file_upload').uploadify('upload', '*');" value="Upload" />
+        <input name="button23" type="button" value="Cancel" class="cancelBtn1 mainbutton" data-dismiss="modal" aria-hidden="true" onclick="javascript:top._callbackUpload()" />
+    </div>
+</div>

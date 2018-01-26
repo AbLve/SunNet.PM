@@ -1,0 +1,22 @@
+
+
+ALTER TABLE dbo.ProposalTracker
+	ADD	 PoTotalLessThenProposalTotal BIT NULL
+GO
+
+
+UPDATE dbo.ProposalTracker SET PoTotalLessThenProposalTotal = 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+

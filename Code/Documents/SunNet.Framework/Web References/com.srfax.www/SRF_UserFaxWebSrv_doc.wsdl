@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns="http://schemas.xmlsoap.org/wsdl/" targetNamespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema elementFormDefault="qualified" targetNamespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xsd:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+      <xsd:complexType name="FaxInDetails">
+        <xsd:all>
+          <xsd:element name="FileName" type="xsd:string" />
+          <xsd:element name="ReceiveStatus" type="xsd:string" />
+          <xsd:element name="Date" type="xsd:string" />
+          <xsd:element name="CallerID" type="xsd:string" />
+          <xsd:element name="RemoteID" type="xsd:string" />
+          <xsd:element name="Pages" type="xsd:string" />
+          <xsd:element name="Size" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="InboundFaxes">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:FaxInDetails[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Fax_InboxRequestType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="access_id" type="xsd:string" />
+          <xsd:element form="unqualified" name="access_pwd" type="xsd:string" />
+          <xsd:element form="unqualified" name="sPeriod" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Fax_InboxResponseType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="Status" type="xsd:string" />
+          <xsd:element form="unqualified" name="Result" type="tns:InboundFaxes" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FaxOutDetails">
+        <xsd:all>
+          <xsd:element name="FileName" type="xsd:string" />
+          <xsd:element name="SentStatus" type="xsd:string" />
+          <xsd:element name="DateQueued" type="xsd:string" />
+          <xsd:element name="DateSent" type="xsd:string" />
+          <xsd:element name="ToFaxNumber" type="xsd:string" />
+          <xsd:element name="Pages" type="xsd:string" />
+          <xsd:element name="Duration" type="xsd:string" />
+          <xsd:element name="RemoteID" type="xsd:string" />
+          <xsd:element name="ErrorCode" type="xsd:string" />
+          <xsd:element name="Size" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="OutboundFaxes">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:FaxOutDetails[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Fax_OutboxRequestType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="access_id" type="xsd:string" />
+          <xsd:element form="unqualified" name="access_pwd" type="xsd:string" />
+          <xsd:element form="unqualified" name="sPeriod" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Get_Fax_OutboxResponseType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="Status" type="xsd:string" />
+          <xsd:element form="unqualified" name="Result" type="tns:OutboundFaxes" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="CdrDetails">
+        <xsd:all>
+          <xsd:element name="CDRID" type="xsd:string" />
+          <xsd:element name="UserID" type="xsd:string" />
+          <xsd:element name="AuthCode" type="xsd:string" />
+          <xsd:element name="Date" type="xsd:string" />
+          <xsd:element name="Duration" type="xsd:string" />
+          <xsd:element name="Orig_Number" type="xsd:string" />
+          <xsd:element name="Term_Number" type="xsd:string" />
+          <xsd:element name="Charge" type="xsd:string" />
+          <xsd:element name="Billing_Number" type="xsd:string" />
+          <xsd:element name="Usage_Type" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="CDRS">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:CdrDetails[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Delete_FaxRequestType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="access_id" type="xsd:string" />
+          <xsd:element form="unqualified" name="access_pwd" type="xsd:string" />
+          <xsd:element form="unqualified" name="sDirection" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName1" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName2" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName3" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName4" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName5" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Delete_FaxResponseType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="Status" type="xsd:string" />
+          <xsd:element form="unqualified" name="Result" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Queue_FaxRequestType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="access_id" type="xsd:string" />
+          <xsd:element form="unqualified" name="access_pwd" type="xsd:string" />
+          <xsd:element form="unqualified" name="sCallerID" type="xsd:string" />
+          <xsd:element form="unqualified" name="sSenderEmail" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFaxType" type="xsd:string" />
+          <xsd:element form="unqualified" name="sToFaxNumber" type="xsd:string" />
+          <xsd:element form="unqualified" name="sAccountCode" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName_1" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileContent_1" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName_2" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileContent_2" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName_3" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileContent_3" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName_4" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileContent_4" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName_5" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileContent_5" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Queue_FaxResponseType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="Status" type="xsd:string" />
+          <xsd:element form="unqualified" name="Result" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Queue_Fax_WRRequestType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="access_id" type="xsd:string" />
+          <xsd:element form="unqualified" name="access_pwd" type="xsd:string" />
+          <xsd:element form="unqualified" name="sCallerID" type="xsd:string" />
+          <xsd:element form="unqualified" name="sSenderEmail" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFaxType" type="xsd:string" />
+          <xsd:element form="unqualified" name="sToFaxNumber" type="xsd:string" />
+          <xsd:element form="unqualified" name="sAccountCode" type="xsd:string" />
+          <xsd:element form="unqualified" name="sRetries" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName_1" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileContent_1" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName_2" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileContent_2" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName_3" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileContent_3" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName_4" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileContent_4" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileName_5" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFileContent_5" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Queue_Fax_WRResponseType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="Status" type="xsd:string" />
+          <xsd:element form="unqualified" name="Result" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Retrieve_FaxRequestType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="access_id" type="xsd:string" />
+          <xsd:element form="unqualified" name="access_pwd" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFaxFileName" type="xsd:string" />
+          <xsd:element form="unqualified" name="sDirection" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFaxFormat" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Retrieve_FaxResponseType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="Status" type="xsd:string" />
+          <xsd:element form="unqualified" name="Result" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FaxStatusDetails">
+        <xsd:all>
+          <xsd:element name="FileName" type="xsd:string" />
+          <xsd:element name="SentStatus" type="xsd:string" />
+          <xsd:element name="DateQueued" type="xsd:string" />
+          <xsd:element name="DateSent" type="xsd:string" />
+          <xsd:element name="ToFaxNumber" type="xsd:string" />
+          <xsd:element name="Pages" type="xsd:string" />
+          <xsd:element name="Duration" type="xsd:string" />
+          <xsd:element name="RemoteID" type="xsd:string" />
+          <xsd:element name="ErrorCode" type="xsd:string" />
+          <xsd:element name="Size" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="FaxesStatus">
+        <xsd:complexContent mixed="false">
+          <xsd:restriction base="SOAP-ENC:Array">
+            <xsd:attribute wsdl:arrayType="tns:FaxStatusDetails[]" ref="SOAP-ENC:arrayType" />
+          </xsd:restriction>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="Get_FaxStatusRequestType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="access_id" type="xsd:string" />
+          <xsd:element form="unqualified" name="access_pwd" type="xsd:string" />
+          <xsd:element form="unqualified" name="sFaxDetailID" type="xsd:string" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:complexType name="Get_FaxStatusResponseType">
+        <xsd:all>
+          <xsd:element form="unqualified" name="Status" type="xsd:string" />
+          <xsd:element form="unqualified" name="Result" type="tns:FaxesStatus" />
+        </xsd:all>
+      </xsd:complexType>
+      <xsd:element name="Get_Fax_Inbox" type="tns:Get_Fax_InboxRequestType" />
+      <xsd:element name="Get_Fax_InboxResponse" type="tns:Get_Fax_InboxResponseType" />
+      <xsd:element name="Get_Fax_Outbox" type="tns:Get_Fax_OutboxRequestType" />
+      <xsd:element name="Get_Fax_OutboxResponse" type="tns:Get_Fax_OutboxResponseType" />
+      <xsd:element name="Delete_Fax" type="tns:Delete_FaxRequestType" />
+      <xsd:element name="Delete_FaxResponse" type="tns:Delete_FaxResponseType" />
+      <xsd:element name="Queue_Fax" type="tns:Queue_FaxRequestType" />
+      <xsd:element name="Queue_FaxResponse" type="tns:Queue_FaxResponseType" />
+      <xsd:element name="Queue_Fax_WR" type="tns:Queue_Fax_WRRequestType" />
+      <xsd:element name="Queue_Fax_WRResponse" type="tns:Queue_Fax_WRResponseType" />
+      <xsd:element name="Retrieve_Fax" type="tns:Retrieve_FaxRequestType" />
+      <xsd:element name="Retrieve_FaxResponse" type="tns:Retrieve_FaxResponseType" />
+      <xsd:element name="Get_FaxStatus" type="tns:Get_FaxStatusRequestType" />
+      <xsd:element name="Get_FaxStatusResponse" type="tns:Get_FaxStatusResponseType" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="Get_Fax_InboxRequest">
+    <wsdl:part name="parameters" element="tns:Get_Fax_Inbox" />
+  </wsdl:message>
+  <wsdl:message name="Get_Fax_InboxResponse">
+    <wsdl:part name="parameters" element="tns:Get_Fax_InboxResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_Fax_OutboxRequest">
+    <wsdl:part name="parameters" element="tns:Get_Fax_Outbox" />
+  </wsdl:message>
+  <wsdl:message name="Get_Fax_OutboxResponse">
+    <wsdl:part name="parameters" element="tns:Get_Fax_OutboxResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_FaxRequest">
+    <wsdl:part name="parameters" element="tns:Delete_Fax" />
+  </wsdl:message>
+  <wsdl:message name="Delete_FaxResponse">
+    <wsdl:part name="parameters" element="tns:Delete_FaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="Queue_FaxRequest">
+    <wsdl:part name="parameters" element="tns:Queue_Fax" />
+  </wsdl:message>
+  <wsdl:message name="Queue_FaxResponse">
+    <wsdl:part name="parameters" element="tns:Queue_FaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="Queue_Fax_WRRequest">
+    <wsdl:part name="parameters" element="tns:Queue_Fax_WR" />
+  </wsdl:message>
+  <wsdl:message name="Queue_Fax_WRResponse">
+    <wsdl:part name="parameters" element="tns:Queue_Fax_WRResponse" />
+  </wsdl:message>
+  <wsdl:message name="Retrieve_FaxRequest">
+    <wsdl:part name="parameters" element="tns:Retrieve_Fax" />
+  </wsdl:message>
+  <wsdl:message name="Retrieve_FaxResponse">
+    <wsdl:part name="parameters" element="tns:Retrieve_FaxResponse" />
+  </wsdl:message>
+  <wsdl:message name="Get_FaxStatusRequest">
+    <wsdl:part name="parameters" element="tns:Get_FaxStatus" />
+  </wsdl:message>
+  <wsdl:message name="Get_FaxStatusResponse">
+    <wsdl:part name="parameters" element="tns:Get_FaxStatusResponse" />
+  </wsdl:message>
+  <wsdl:portType name="SRFaxWebServicesPortType">
+    <wsdl:operation name="Get_Fax_Inbox">
+      <documentation>Get_Fax_Inbox</documentation>
+      <wsdl:input message="tns:Get_Fax_InboxRequest" />
+      <wsdl:output message="tns:Get_Fax_InboxResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_Fax_Outbox">
+      <documentation>Get_Fax_Outbox</documentation>
+      <wsdl:input message="tns:Get_Fax_OutboxRequest" />
+      <wsdl:output message="tns:Get_Fax_OutboxResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Fax">
+      <documentation>Delete_Fax</documentation>
+      <wsdl:input message="tns:Delete_FaxRequest" />
+      <wsdl:output message="tns:Delete_FaxResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Queue_Fax">
+      <documentation>Queue_Fax</documentation>
+      <wsdl:input message="tns:Queue_FaxRequest" />
+      <wsdl:output message="tns:Queue_FaxResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Queue_Fax_WR">
+      <documentation>Queue_Fax_WR</documentation>
+      <wsdl:input message="tns:Queue_Fax_WRRequest" />
+      <wsdl:output message="tns:Queue_Fax_WRResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Retrieve_Fax">
+      <documentation>Retrieve_Fax</documentation>
+      <wsdl:input message="tns:Retrieve_FaxRequest" />
+      <wsdl:output message="tns:Retrieve_FaxResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="Get_FaxStatus">
+      <documentation>Get_FaxStatus</documentation>
+      <wsdl:input message="tns:Get_FaxStatusRequest" />
+      <wsdl:output message="tns:Get_FaxStatusResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SRFaxWebServicesBinding" type="tns:SRFaxWebServicesPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_Fax_Inbox">
+      <soap:operation soapAction="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php#Get_Fax_Inbox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_Fax_Outbox">
+      <soap:operation soapAction="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php#Get_Fax_Outbox" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_Fax">
+      <soap:operation soapAction="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php#Delete_Fax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Queue_Fax">
+      <soap:operation soapAction="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php#Queue_Fax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Queue_Fax_WR">
+      <soap:operation soapAction="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php#Queue_Fax_WR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Retrieve_Fax">
+      <soap:operation soapAction="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php#Retrieve_Fax" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Get_FaxStatus">
+      <soap:operation soapAction="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php#Get_FaxStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" namespace="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SRFaxWebServices">
+    <wsdl:port name="SRFaxWebServicesPort" binding="tns:SRFaxWebServicesBinding">
+      <soap:address location="https://www.srfax.com/SRF_UserFaxWebSrv_doc.php" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

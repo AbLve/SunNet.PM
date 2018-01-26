@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://pm.sunnet.us/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://pm.sunnet.us/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://pm.sunnet.us/">
+      <s:element name="SendTimeSheetEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendTimeSheetEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendTimeSheetEmailResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SendTimeSheetEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:SendTimeSheetEmail" />
+  </wsdl:message>
+  <wsdl:message name="SendTimeSheetEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:SendTimeSheetEmailResponse" />
+  </wsdl:message>
+  <wsdl:portType name="TimeSheetNotcieSoap">
+    <wsdl:operation name="SendTimeSheetEmail">
+      <wsdl:input message="tns:SendTimeSheetEmailSoapIn" />
+      <wsdl:output message="tns:SendTimeSheetEmailSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TimeSheetNotcieSoap" type="tns:TimeSheetNotcieSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendTimeSheetEmail">
+      <soap:operation soapAction="http://pm.sunnet.us/SendTimeSheetEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="TimeSheetNotcieSoap12" type="tns:TimeSheetNotcieSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SendTimeSheetEmail">
+      <soap12:operation soapAction="http://pm.sunnet.us/SendTimeSheetEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TimeSheetNotcie">
+    <wsdl:port name="TimeSheetNotcieSoap" binding="tns:TimeSheetNotcieSoap">
+      <soap:address location="http://localhost:27273/Do/TimeSheetNotcie.asmx" />
+    </wsdl:port>
+    <wsdl:port name="TimeSheetNotcieSoap12" binding="tns:TimeSheetNotcieSoap12">
+      <soap12:address location="http://localhost:27273/Do/TimeSheetNotcie.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

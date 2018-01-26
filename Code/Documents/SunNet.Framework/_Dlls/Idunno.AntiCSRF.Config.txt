@@ -1,0 +1,12 @@
+﻿<?xml version="1.0"?>
+<configuration>
+  <configSections>
+    <section name="csrfSettings"  type="Idunno.AntiCsrf.Configuration.CsrfSettings, Idunno.AntiCsrf" />
+  </configSections>
+  <csrfSettings cookieName="__CSRFCOOKIE" formFieldName="__CSRFTOKEN" detectionResult="RaiseException" errorPage="" />
+  <system.webServer>
+    <modules>
+      <add name="AntiCSRF" type="Idunno.AntiCsrf.AntiCsrfModule, Idunno.AntiCsrf"/>
+    </modules>
+  </system.webServer>
+</configuration>

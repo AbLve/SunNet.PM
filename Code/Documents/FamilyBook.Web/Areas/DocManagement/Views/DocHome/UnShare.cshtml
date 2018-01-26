@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "Shared members";
+    Layout = "~/Views/Shared/_PopLayout.cshtml";
+    ViewBag.Width = 432;
+}
+@Styles.Render("~/bundles/dcoument/css")
+@Scripts.Render("~/bundles/documment/js")
+<script type="text/javascript">
+    jQuery(function () {
+        jQuery.get("GetShareUser", { docId: '@ViewBag.UnShare_DocID' }, function (data) {
+            var sharecount = 0;
+            for (var i = 0; i < data.length; i++) {
+                if (data[i].ShareToEmail != "") {
+                    unshare_addelemli(data[i].ShareToEmail, data[i].ShareToEmail, 2);
+                    sharecount++;
+                } else if (data[i].UserName != "") {
+                    if (unshare_isExists(data[i].ShareToUserID)) {
+                        unshare_addelemli(data[i].UserName, data[i].ShareToUserID, 1);
+                        sharecount++;
+                    }
+                }
+            }
+            jQuery("#unshare_count").text(sharecount);
+        }, 'json');
+    });
+
+    function unshare_isExists(id)
+    {
+        return jQuery("li[_v='" + id + "']").length == 0;
+    }
+
+    function unshare_removeuser(obj) {
+        var parentli = jQuery(obj).parents("li").filter(":first");
+        var _t = parentli.attr("_t");
+        parentli.remove();
+    }
+
+    function unshare_addelemli(name, value, type) {
+        var branch = "<li _v='" + value + "' _t='" + type + "' style='width:auto;'><span>" + name + "</span><span class='rightClose' onclick='unshare_removeuser(this)'>&times;</span></li>";
+        jQuery("#unshare_list").append(branch);
+    }
+
+    function unshare_save() {
+        jQuery.post("/DocManagement/DocHome/UnShareById", { docId: '@ViewBag.UnShare_DocID' }, function () {
+            top._callbackUnShare(@ViewBag.UnShareParentID);
+        });
+    }
+
+    function unshare_done() {
+        var id = selectId;
+        if (selectObj && jQuery(selectObj).length > 0)
+            id = jQuery(selectObj).attr("id");
+
+        var ids = "";
+        var emails = "";
+        jQuery("#unshare_list li").each(function () {
+            if (jQuery(this).attr("_t") == 1) {
+                if (ids != "") {
+                    ids += ",";
+                }
+                ids += jQuery(this).attr("_v");
+            } else if (jQuery(this).attr("_t") == 2) {
+                if (emails != "") {
+                    emails += ",";
+                }
+                emails += jQuery(this).attr("_v");
+            }
+        });
+
+        jQuery.post("ShareToUsers", { folderid: id, userids: ids, emails: emails, groupid: 0 }, function (result) {
+            if (result == "True") {
+                top._callbackUnShare(@ViewBag.UnShareParentID);
+            } else {
+                jQuery.alert("danger", messageobj.sharefail);
+            }
+        });
+    }
+
+</script>
+<div class="mainowConbox">
+    <div class="tab-content" style="min-height: 150px;">
+        <span id="unshare_count"></span> members
+        <ul class="itemTop_list" id="unshare_list" style="margin-top: 5px;">
+        </ul>
+    </div>
+    <div class="owBtnbox1">
+        <button class="smallcancelBtn1" id="btnDone" onclick="unshare_save()" style="float: left">
+            UnShare</button>
+        <span style="float: right;">
+            <button class="smallBtn1" id="btnDone" onclick="unshare_done()">
+                Done</button>
+            <input name="button23" type="button" value="Cancel" class="smallcancelBtn1" data-dismiss="modal" aria-hidden="true" />
+        </span>
+    </div>
+</div>

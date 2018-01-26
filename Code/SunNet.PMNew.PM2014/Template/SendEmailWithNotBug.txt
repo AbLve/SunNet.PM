@@ -1,0 +1,7 @@
+﻿[Project] ticket [TicketID] submitted. <br />
+
+[userName] think ticket [TicketID] is not a bug.<br />
+
+please check ticket [TicketID].<br />
+
+Thanks. 

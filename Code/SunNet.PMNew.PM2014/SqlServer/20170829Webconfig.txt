@@ -1,0 +1,6 @@
+﻿    如果webconfig已经有email的发送配置就不需要再添加此配置
+    <!-- email发送配置 begin-->
+    <add key="FromEmailAddress" value="xujingfei123@163.com" />
+    <add key="SenderEmail" value="xujingfei123@163.com" />
+    <add key="EnableSSL" value="1"/>
+    <!-- email发送配置 end -->

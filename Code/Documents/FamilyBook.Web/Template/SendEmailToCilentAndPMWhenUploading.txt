@@ -1,0 +1,8 @@
+﻿
+
+Dear [FirstName] [LastName]
+
+	[UploadUser] uploaded [FileDescription] under [ProjectTitle] on [DateTime]
+
+File Path:
+[FilePath]

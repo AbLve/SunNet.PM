@@ -1,0 +1,1521 @@
+﻿<!DOCTYPE html>
+<!-- saved from url=(0043)https://pm.sunnet.us/demo/page_ticket2.html -->
+<html xmlns="http://www.w3.org/1999/xhtml" class="hb-loaded">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>SunNet Solutions - Project Management - SunNet Solutions</title>
+    <link rel="shortcut icon" href="https://pm.sunnet.us/favicon.ico" type="image/x-icon">
+    <link href="https://pm.sunnet.us/Content/styles/bootstrap_1.css" rel="stylesheet">
+    <link href="https://pm.sunnet.us/Content/styles/public.css" rel="stylesheet">
+    <link href="https://pm.sunnet.us/Content/styles/forms.css" rel="stylesheet">
+    <script src="./images/jquery.js"></script>
+    <script src="./images/bootstrap.js"></script>
+    <script src="./images/global.js"></script>
+    <script src="./images/jquery.sunnet.js"></script>
+    <script src="./images/jquery.validate.js"></script>
+    <script src="./images/additional-methods.js"></script>
+    <script src="./images/knockout-3.1.0.debug.js"></script>
+    <script type="text/javascript">
+        var isPostBack = 'False';
+
+        var defaultMessageProvider = {
+            required: function (result, element) {
+                var $label = $(element).siblings("label:not(.error):first");
+                if (!$label.length) {
+                    $label = $(element).parent().prev("label:first");
+                }
+                return $label.text().replace(/:/g, "").replace(/\*/g, "") + " is required.";
+            }
+        }
+        $(function () {
+            $.validator.setDefaults({
+                focusCleanup: true,
+                ignore: ".novalidate"
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        jQuery(function () {
+
+        });
+    </script>
+    <style>
+        #body_body_dataSection_ticketBasicInfo_rdoPriority {
+            border: 0;
+        }
+
+        .form-group {
+            display: block;
+        }
+
+        .col-right-1.righttext {
+            width: auto;
+        }
+
+        .mainTable {
+            border-radius: 5px;
+            background: #ffffff;
+            border: 1px solid #dddddd;
+            table-layout: initial;
+        }
+
+        .ProcessBox {
+            padding: 20px 0px 10px 0px;
+            height: 20px;
+            width: 100%;
+        }
+
+        .ProcessBox-td {
+            padding: 20px;
+        }
+
+        .mainleftTd {
+            width: 90%;
+            padding: 20px;
+            border-right: 1px solid #dddddd;
+            border-top: 1px solid #dddddd;
+        }
+
+        .leftmenuBox {
+            height: auto;
+            min-width: 100%;
+            min-height: 350px;
+            border: 0px;
+        }
+
+        .mainrightBox {
+            min-width: 150px;
+            border-radius: 0px;
+            padding: 0px;
+            min-height: 350px;
+            overflow: hidden;
+            position: relative;
+            border: 0px;
+            border-top: 1px solid #6ca632;
+        }
+
+        .form-group .col-lab-con {
+            display: inline-block;
+            width: 33%;
+        }
+
+            .form-group .col-lab-con .righttext {
+                border-bottom: 1px dashed #ddd;
+            }
+
+        .form-group .form-group-status {
+            background-color: #6ca632;
+            border-radius: 5px;
+            padding: 0px 10px;
+            font-weight: bold;
+            color: #fff;
+            height: 42px;
+            line-height: 42px;
+        }
+
+            .form-group .form-group-status .col-left-status {
+                margin-right: 60px;
+            }
+
+            .form-group .form-group-status span {
+            }
+
+            .form-group .form-group-status .btn_ReviewE {
+                color: #6ca632;
+                background-color: #FFF;
+                border-radius: 5px;
+                margin: 5px;
+                line-height: 32px;
+                padding: 0 10px;
+                display: inline-block;
+                float: right;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+                .form-group .form-group-status .btn_ReviewE:hover {
+                    color: #333;
+                }
+
+        .righttext_description {
+            height: 100px;
+            overflow-y: auto;
+            margin-left: 115px;
+            margin-top: -20px;
+        }
+
+        .titleeventlist {
+            margin: 0px;
+            padding: 15px 10px 10px 0px;
+            color: #333;
+            text-transform: none;
+            font-size: 16px;
+            color: #6ca632;
+        }
+
+            .titleeventlist .titleeventlist_icons {
+                margin-right: 5px;
+                margin-left: 10px;
+            }
+
+            .titleeventlist .titleeventlist_input {
+                font-size: 14px;
+                font-weight: normal;
+                float: right;
+                color: #333;
+            }
+
+        .fdcontentBox1 {
+            background-color: #fff;
+        }
+
+        .chat_peoples {
+            overflow: hidden;
+            padding: 15px 10px 10px;
+            border-bottom: 1px #ddd dashed;
+        }
+
+            .chat_peoples .chat_peoples_s {
+                margin-bottom: 10px;
+                display: inline-block;
+                color: #999;
+            }
+
+            .chat_peoples ul.assignUser li {
+                width: 30%;
+                margin-bottom: 8px;
+            }
+
+        .feedbackBox {
+            background-color: #f5f5f5;
+            padding: 0 10px;
+        }
+
+            .feedbackBox #dvShowEarlier {
+                background: none;
+                margin: 5px 0px;
+            }
+
+                .feedbackBox #dvShowEarlier a {
+                    color: #666;
+                    padding: 3px 10px;
+                    border-radius: 15px;
+                    background-color: #e3e2e2;
+                    text-decoration: none;
+                }
+
+                    .feedbackBox #dvShowEarlier a:hover {
+                        color: #333;
+                        background-color: #ddd;
+                    }
+
+            .feedbackBox .requestfrom {
+                text-align: center;
+                padding: 5px;
+                margin: 5px 0px;
+                cursor: pointer;
+            }
+
+                .feedbackBox .requestfrom a {
+                    color: #eee;
+                    padding: 3px 10px;
+                    border-radius: 15px;
+                    background-color: #F60;
+                    text-decoration: none;
+                }
+
+                    .feedbackBox .requestfrom a:hover {
+                        color: #ffffff;
+                        background-color: #F60;
+                    }
+
+        .chat_input_box {
+            padding: 20px 10px;
+            text-align: center;
+        }
+
+        .chat_btn_upload {
+            background-color: #d0762d;
+            padding: 20px 11px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+            .chat_btn_upload:hover {
+                background-color: #c16b25;
+            }
+
+        .chat_btn_push {
+            background-color: #6ca632;
+            padding: 20px 11px;
+            border-radius: 30px;
+            cursor: pointer;
+        }
+
+            .chat_btn_push:hover {
+                background-color: #609629;
+            }
+
+        .chat_btns_u {
+            text-align: right;
+        }
+
+        .chat_btns_p {
+            text-align: left;
+        }
+
+        .inputFeedback {
+            height: 50px;
+            width: 60%;
+            padding: 0px;
+            vertical-align: middle;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 0 10px;
+        }
+
+        .form-group-btns {
+            overflow: inherit;
+            margin-top: 15px;
+            margin-right: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .footerBox {
+            width: auto;
+            min-width: 0;
+        }
+
+        .topBox {
+            min-width: 1220px;
+        }
+
+        .toploginInfo {
+            min-width: 700px;
+        }
+
+        .fdUser {
+            padding-right: 10px;
+        }
+
+        .otherbox .fdUser > span {
+            width: auto;
+            line-height: 26px;
+        }
+
+        .fdDate {
+            line-height: 22px;
+        }
+
+        ul.fdItembox li {
+            width: 96%;
+        }
+
+        .fdarrowbox {
+            left: 35px;
+            margin-left: 0px;
+            margin-top: 12px;
+            position: absolute;
+        }
+
+        .myselfbox .fdarrowbox {
+            float: none;
+            right: 35px;
+            margin-left: 0px;
+            margin-top: 10px;
+            position: absolute;
+        }
+
+        .col-right-col2 {
+            width: 150px;
+        }
+
+        .btn_showRight {
+            display: none;
+        }
+
+        .btn_disRight {
+            display: none;
+        }
+
+        @media (max-width: 1420px) {
+            .chat_peoples ul.assignUser li {
+                width: 45%;
+            }
+
+            .form-group .col-lab-con {
+                display: inline-block;
+                width: 49%;
+            }
+        }
+
+        @media (max-width: 1320px) {
+        }
+
+        @media (max-width: 1250px) {
+        }
+
+        .feedback_waiting {
+            border-radius: 5px;
+        }
+    </style>
+    <script>
+        $(function () {
+            $("body").on("click", ".btn_showRight", function (event) {
+                $(".mainrightTd").toggleClass("show-chat");
+            });
+
+            $("body").on("click", ".btn_disRight", function (event) {
+                $(".mainrightTd").removeClass("show-chat");
+            });
+        })
+
+
+    </script>
+    <script type="text/javascript" src="chrome-extension://bfbmjmiodbnnpllbbbfblcplfjjepjdn/js/injected.js"></script>
+</head>
+<body huaban_collector_injected="true" mycollectionplug="bind">
+    <form method="post" action="https://pm.sunnet.us/demo/Detail.aspx?tid=1646&returnurl=%2fSunnetTicket%2fDashboard.aspx" id="form1" novalidate>
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTI2OTkwNzQ3Ng9kFgJmD2QWAmYPZBYCZg9kFgICAw9kFgICAQ9kFgQCAw8PFgIeB1Zpc2libGVnZBYCZg8WAh4LXyFJdGVtQ291bnQCBxYOZg9kFgRmDxUDBnN1bm5ldAZhY3RpdmUcL1N1bm5ldFRpY2tldC9EYXNoYm9hcmQuYXNweGQCAQ8VAgdUaWNrZXRzHC9TdW5uZXRUaWNrZXQvRGFzaGJvYXJkLmFzcHhkAgEPZBYEZg8VAwJvYQAXL09BL1RpbWVzaGVldC9EYXRlLmFzcHhkAgEPFQICT0EXL09BL1RpbWVzaGVldC9EYXRlLmFzcHhkAgIPZBYEZg8VAwVmb3J1bQAXL2ZvcnVtcy9sb2dpbi9wbS9maW5pc2hkAgEPFQIGRm9ydW1zFy9mb3J1bXMvbG9naW4vcG0vZmluaXNoZAIDD2QWBGYPFQMGcmVwb3J0ABgvUmVwb3J0L015VGltZXNoZWV0LmFzcHhkAgEPFQIHUmVwb3J0cxgvUmVwb3J0L015VGltZXNoZWV0LmFzcHhkAgQPZBYEZg8VAwhkb2N1bWVudAAlL2RvY3VtZW50L0RvY01hbmFnZW1lbnQvRG9jSG9tZS9JbmRleGQCAQ8VAglEb2N1bWVudHMlL2RvY3VtZW50L0RvY01hbmFnZW1lbnQvRG9jSG9tZS9JbmRleGQCBQ9kFgRmDxUDBWV2ZW50ABEvRXZlbnQvSW5kZXguYXNweGQCAQ8VAgZFdmVudHMRL0V2ZW50L0luZGV4LmFzcHhkAgYPZBYEZg8VAwdwcm9maWxlABUvQWNjb3VudC9Qcm9maWxlLmFzcHhkAgEPFQIHUHJvZmlsZRUvQWNjb3VudC9Qcm9maWxlLmFzcHhkAgUPZBYEAgEPFgIfAQIBFgJmD2QWAmYPFQICMzADY2xpZAIHD2QWCAIBD2QWAgIBDxYCHgRUZXh0BZAFPGxpIGNsYXNzPSJyb3VuZGljb24gY29tcGxldGVkIj48L2xpPjwvbGk+PGxpIGNsYXNzPSJwcm9jZXNzdGV4dCBjb21wbGV0ZWR0ZXh0IiA+RHJhZnQ8L2xpPjxsaSBjbGFzcz0icm91bmRpY29uIGNvbXBsZXRlZCI+PC9saT48bGkgY2xhc3M9InByb2Nlc3N0ZXh0IGNvbXBsZXRlZHRleHQiID5TdWJtaXQ8L2xpPjxsaSBjbGFzcz0icm91bmRpY29uIGNvbXBsZXRlZCI+PC9saT48bGkgY2xhc3M9InByb2Nlc3N0ZXh0IGNvbXBsZXRlZHRleHQiID5QTSBSZXZpZXc8L2xpPjxsaSBjbGFzcz0icm91bmRpY29uIGNvbXBsZXRlZCI+PC9saT48bGkgY2xhc3M9InByb2Nlc3N0ZXh0IG5vZmluaXNodGV4dCIgPkRldmVsb3Bpbmc8L2xpPjxsaSBjbGFzcz0icm91bmRpY29uIG5vZmluaXNoIj48L2xpPjxsaSBjbGFzcz0icHJvY2Vzc3RleHQgbm9maW5pc2h0ZXh0IiA+VGVzdGluZzwvbGk+PGxpIGNsYXNzPSJyb3VuZGljb24gbm9maW5pc2giPjwvbGk+PGxpIGNsYXNzPSJwcm9jZXNzdGV4dCBub2ZpbmlzaHRleHQiID5DbGllbnQgQ29uZmlybTwvbGk+PGxpIGNsYXNzPSJyb3VuZGljb24gbm9maW5pc2giPjwvbGk+PGxpIGNsYXNzPSJwcm9jZXNzdGV4dCBub2ZpbmlzaHRleHQiID5Db21wbGV0ZWQ8L2xpPjxsaSBjbGFzcz0icm91bmRpY29uIG5vZmluaXNoIj5kAgIPZBYCAgEPZBYCZg8WAh8CBQlXb3JraW5nT25kAgMPZBYCAgIPZBYCAgMPZBYCZg9kFgYCAQ8QDxYCHwBoZGRkZAIDDxAPFgIfAGhkZGRkAgUPEA8WAh8AaGRkZGQCBQ9kFgICAw8WAh8BAgEWAmYPZBYCZg8VBwAAHENoYW5nZSBzdGF0dXMgdG8gUE0gUmV2aWV3ZWQAFzxzcGFuPkpvcmRhbiBZYW48L3NwYW4+AAowMy8xMC8yMDE1ZGShzM6dqNm/4yYuygWyTBN1igf7qj489+ks79wrejfa0A==">
+        </div>
+        <div class="aspNetHidden">
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAQ44ze9Z5fEDdwQrHFnUoAWRI2xNSSs9eM7UX8WMPW1FZ1l+K1HTYei+XavtG7kuKwUY6E+C5h/7vGDOk93s/GDARkDfIf/VqVaH9UlC2x3hP5msyRjzCEmDBRdjqF9IJE=">
+        </div>
+        <div class="toploginInfo"><span class="mainTop_rightUser" style="padding-left:0px;padding-right:0px;">Welcome<strong><span>Cristina</span></strong></span>&nbsp;|&nbsp;<a href="https://pm.sunnet.us/Logout.aspx" target="_top">Log Out</a> </div>
+        <div class="topBox">
+            <div class="topBox_logo">
+                <img src="./images/sunnet_logo.png" alt="Logo">
+            </div>
+            <div class="topBox_menu">
+                <ul class="topmenu">
+                    <li class="sunnet active"><a href="https://pm.sunnet.us/SunnetTicket/Dashboard.aspx" target="_self">
+                        <div class="image"></div>
+                        Tickets
+          <div class="downarrow"></div>
+                    </a><a class="full" href="https://pm.sunnet.us/SunnetTicket/Dashboard.aspx" target="_self"></a></li>
+                    <li class="oa "><a href="https://pm.sunnet.us/OA/Timesheet/Date.aspx" target="_self">
+                        <div class="image"></div>
+                        OA
+          <div class="downarrow"></div>
+                    </a><a class="full" href="https://pm.sunnet.us/OA/Timesheet/Date.aspx" target="_self"></a></li>
+                    <li class="forum "><a href="https://pm.sunnet.us/forums/login/pm/finish" target="_self">
+                        <div class="image"></div>
+                        Forums
+          <div class="downarrow"></div>
+                    </a><a class="full" href="https://pm.sunnet.us/forums/login/pm/finish" target="_self"></a></li>
+                    <li class="report "><a href="https://pm.sunnet.us/Report/MyTimesheet.aspx" target="_self">
+                        <div class="image"></div>
+                        Reports
+          <div class="downarrow"></div>
+                    </a><a class="full" href="https://pm.sunnet.us/Report/MyTimesheet.aspx" target="_self"></a></li>
+                    <li class="document "><a href="https://pm.sunnet.us/document/DocManagement/DocHome/Index" target="_self">
+                        <div class="image"></div>
+                        Documents
+          <div class="downarrow"></div>
+                    </a><a class="full" href="https://pm.sunnet.us/document/DocManagement/DocHome/Index" target="_self"></a></li>
+                    <li class="event "><a href="https://pm.sunnet.us/Event/Index.aspx" target="_self">
+                        <div class="image"></div>
+                        Events
+          <div class="downarrow"></div>
+                    </a><a class="full" href="https://pm.sunnet.us/Event/Index.aspx" target="_self"></a></li>
+                    <li class="profile "><a href="https://pm.sunnet.us/Account/Profile.aspx" target="_self">
+                        <div class="image"></div>
+                        Profile
+          <div class="downarrow"></div>
+                    </a><a class="full" href="https://pm.sunnet.us/Account/Profile.aspx" target="_self"></a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="categorycontainer" style="display: none;">
+            <ul class="categoryBox">
+                <li><a href="https://pm.sunnet.us/demo/page_ticket2.html###" action="addtocategory" category="30">cli</a></li>
+                <li><a href="https://pm.sunnet.us/SunnetTicket/NewCateGory.aspx" data-target="#modalsmall" data-toggle="modal">New Category</a></li>
+            </ul>
+        </div>
+        <div class="btn_showRight"><a class="">Chat</a> </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+            <tbody>
+                <tr>
+                    <td colspan="2" class="ProcessBox-td">
+                        <div class="ProcessBox">
+                            <ul class="ticketProcess">
+                                <li class="roundicon completed"></li>
+                                <li class="processtext completedtext">Draft</li>
+                                <li class="roundicon completed"></li>
+                                <li class="processtext completedtext">Submit</li>
+                                <li class="roundicon completed"></li>
+                                <li class="processtext completedtext">PM Review</li>
+                                <li class="roundicon completed"></li>
+                                <li class="processtext completedtext">Estimation</li>
+                                <li class="roundicon completed"></li>
+                                <li class="processtext nofinishtext">Developing</li>
+                                <li class="roundicon nofinish"></li>
+                                <li class="processtext nofinishtext">Testing</li>
+                                <li class="roundicon nofinish"></li>
+                                <li class="processtext nofinishtext">Client Confirm</li>
+                                <li class="roundicon nofinish"></li>
+                                <li class="processtext nofinishtext">Completed</li>
+                                <li class="roundicon nofinish"></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="mainleftTd">
+                        <div class="mainleftBox">
+                            <div class="limitwidth">
+                                <div class="loading"></div>
+                                <iframe id="iframeDownloadFile" style="display: none;"></iframe>
+                                <div class="form-group-container" style="width: 100%;">
+                                    <div class="alert alert-success fade hide">
+                                        <img src="/Images/icons/success.png">Operation successful. </div>
+                                    <div class="alert alert-danger fade hide">
+                                        <img src="/Images/icons/failed.png">
+                                        <a class="close" data-dismiss="alert" href="https://pm.sunnet.us/demo/page_ticket2.html###" aria-hidden="true">×</a> Operation failed. </div>
+                                    <div class="form-group">
+                                        <label class="col-left-1 lefttext">Title:</label>
+                                        <div class="col-right-1 righttext">SunNet Home page </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-left-1 lefttext">Description:</label>
+                                        <div class="col-right-1 righttext righttext_description">Add "Things you may be interesting" section on the home page and list several quick link under it, like "News &amp; Events, Resources, Service Level Guidance, etc"Add "Things you may be interesting" section on the home page and list several quick link under it, like "News &amp; Events, Resources, Service Level Guidance, etc"Add "Things you may be interesting" section on the home page and list several quick link under it, like "News &amp; Events, Resources, Service Level Guidance, etc"Add "Things you may be interesting" section on the home page and list several quick link under it, like "News &amp; Events, Resources, Service Level Guidance, etc"Add "Things you may be interesting" section on the home page and list several quick link under it, like "News &amp; Events, Resources, Service Level Guidance, etc"Add "Things you may be interesting" section on the home page and list several quick link under it, like "News &amp; Events, Resources, Service Level Guidance, etc"Add "Things you may be interesting" section on the home page and list several quick link under it, like "News &amp; Events, Resources, Service Level Guidance, etc"Add "Things you may be interesting" section on the home page and list several quick link under it, like "News &amp; Events, Resources, Service Level Guidance, etc" </div>
+                                    </div>
+                                    <div class="form-group" style="border-bottom: 1px #ddd solid; padding-bottom: 10px;">
+                                        <label class="col-left-1 lefttext">URL:</label>
+                                        <div class="col-right-1 righttext nowrap"><a href="" target="_blank"></a></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-left-1 lefttext">Screen Capture:</label>
+                                        <div class="col-right-1 righttext">
+                                            <script type="text/javascript">
+                                                function deleteImgWhenStatusDraft(s) {
+                                                    $.ajax({
+                                                        type: "post",
+                                                        data: {
+                                                            fileid: s
+                                                        },
+                                                        url: "/Do/DoRemoveFileHandler.ashx",
+                                                        success: function (result) {
+                                                            window.location.reload();
+                                                        }
+                                                    });
+                                                }
+                                            </script>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Project:</label>
+                                            <div class="col-right-col2 righttext">Design</div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Ticket ID:</label>
+                                            <div class="col-right-col2 righttext">1646</div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Type:</label>
+                                            <div class="col-right-col2 righttext">Request </div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Priority:</label>
+                                            <div class="col-right-col2 righttext">High </div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Estimation:</label>
+                                            <div class="col-right-col2 righttext"><span class="rightItem">No need </span></div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Is Internal:</label>
+                                            <div class="col-right-col2 righttext">No</div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Source:</label>
+                                            <div class="col-right-col2 righttext">CLIENT</div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Created By:</label>
+                                            <div class="col-right-col2 righttext">CLIENT</div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Created Date:</label>
+                                            <div class="col-right-col2 righttext">03/09/2015</div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="form-group-status">
+                                            <label class="col-left-status">Status:</label>
+                                            <span>Pending Estimation Apprpval</span> <a class="btn_ReviewE">Review Estimation</a>
+                                        </div>
+                                    </div>
+                                    <!--- <div class="buttonBox1">
+                  <table border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                    <tbody>
+                      <tr class="buttonClass">
+                        <td align="center" style="text-align: center;"><input type="button" value="Back" class="backBtn mainbutton redirectback">
+                          <div class="btn-group" style="vertical-align: top;" data-remote="workingon">
+                            <button type="button" class="backBtn mainbutton dropdown-toggle" data-workingstatus="1646" data-toggle="dropdown"> <span>WorkingOn</span> <span class="caret"></span> </button>
+                            <ul class="dropdown-menu" role="menu">
+                              <li><a href="javascript:;" ticket="1646" data-action="setworkingon">WorkingOn</a></li>
+                              <li><a href="javascript:;" ticket="1646" data-action="setworkingcomplete">Completed</a></li>
+                              <li><a href="javascript:;" ticket="1646" data-action="setworkingcancelled">Cancelled</a></li>
+                              <li class="divider"></li>
+                              <li><a href="javascript:;" ticket="1646" data-action="setworkingonnone">None</a></li>
+                            </ul>
+                          </div></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>   --->
+                                    <div class="fdshowmore" style="display: none;" id="Div1" onclick="showMore();"><strong>Show More</strong></div>
+                                </div>
+                                <div id="divmore" style="display: block;">
+
+                                    <div class="contentTitle titleeventlist">Change History </div>
+                                    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table-advance">
+                                        <thead>
+                                            <tr>
+                                                <th orderby="Description">Description
+                                                </th>
+                                                <th orderby="ModifiedBy">Modified By
+                                                </th>
+                                                <th orderby="ModifiedOn">Changed Date
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+
+
+                                            <tr class="">
+                                                <td class="">Change status to PM Reviewed
+                                                </td>
+                                                <td class="">
+                                                    <span>Jordan Yan</span>
+                                                </td>
+                                                <td class="">03/10/2015
+                                                </td>
+                                            </tr>
+
+                                        </tbody>
+                                    </table>
+
+                                </div>
+                                <script type="text/javascript">
+                                    $(function () {
+                                        var currentscore = $("#body_body_dataSection_hdStar").val();
+                                        if ($.trim(currentscore) !== "0" || "False" !== "True") {
+                                            setStar(currentscore);
+                                        }
+                                    });
+
+                                    function setStar(currentScore) {
+                                        if (currentScore === "0") {
+                                            for (var i = 1; i <= 5; i++) {
+                                                $("#dvStar #star" + i).attr("src", "/Images/icons/star_grey.png");
+                                            }
+                                        }
+                                        else {
+                                            for (var i = 1; i <= currentScore; i++) {
+                                                $("#dvStar #star" + i).attr("src", "/Images/icons/star_orange.png");
+                                            }
+                                            for (; i <= 5; i++) {
+                                                $("#dvStar #star" + i).attr("src", "/Images/icons/star_grey.png");
+                                            }
+                                            setRank(currentScore);
+                                        }
+                                    }
+
+                                    function setRank(score) {
+                                        var rank = null;
+                                        switch (score) {
+                                            case "1":
+                                                rank = "Poor";
+                                                break;
+                                            case "2":
+                                                rank = "Fair";
+                                                break;
+                                            case "3":
+                                                rank = "Average";
+                                                break;
+                                            case "4":
+                                                rank = "Good";
+                                                break;
+                                            case "5":
+                                                rank = "Excellent";
+                                                break;
+                                            default: rank = "";
+                                                break;
+                                        }
+                                        $("#lblRank").text(rank);
+                                    }
+
+                                    function showMore() {
+                                        $("#dvshowmore").css("display", "none");
+                                        $("#divmore").toggle("fast");
+                                    }
+                                </script>
+                            </div>
+                            <script type="text/javascript">
+                                $(function () {
+                                    var currentscore = $("#body_body_dataSection_hdStar").val();
+                                    if ($.trim(currentscore) !== "0" || "False" !== "True") {
+                                        setStar(currentscore);
+                                    }
+                                });
+
+                                function setStar(currentScore) {
+                                    if (currentScore === "0") {
+                                        for (var i = 1; i <= 5; i++) {
+                                            $("#dvStar #star" + i).attr("src", "/Images/icons/star_grey.png");
+                                        }
+                                    }
+                                    else {
+                                        for (var i = 1; i <= currentScore; i++) {
+                                            $("#dvStar #star" + i).attr("src", "/Images/icons/star_orange.png");
+                                        }
+                                        for (; i <= 5; i++) {
+                                            $("#dvStar #star" + i).attr("src", "/Images/icons/star_grey.png");
+                                        }
+                                        setRank(currentScore);
+                                    }
+                                }
+
+                                function setRank(score) {
+                                    var rank = null;
+                                    switch (score) {
+                                        case "1":
+                                            rank = "Poor";
+                                            break;
+                                        case "2":
+                                            rank = "Fair";
+                                            break;
+                                        case "3":
+                                            rank = "Average";
+                                            break;
+                                        case "4":
+                                            rank = "Good";
+                                            break;
+                                        case "5":
+                                            rank = "Excellent";
+                                            break;
+                                        default: rank = "";
+                                            break;
+                                    }
+                                    $("#lblRank").text(rank);
+                                }
+
+                                function showMore() {
+                                    $("#dvshowmore").css("display", "none");
+                                    $("#divmore").toggle("fast");
+                                }
+                            </script>
+                        </div>
+                        </div></td>
+
+                    <td >
+                        <div class="mainrightBox">
+                            <div class="contentTitle titleeventlist">
+                                <span class="titleeventlist_icons">
+                                    <img src="images/chat_icon.png"></span>Chat<span class="titleeventlist_input">
+                                        <input name="Input" type="checkbox" value="100" id="chkClient100" checked="checked" user="100" update="9610">
+                                        <label for="chkClient100">Visible to client </label>
+                                    </span>
+                            </div>
+                            <iframe id="iframe1" style="display: none;"></iframe>
+                            <div class="chat_peoples">
+                                <span class="chat_peoples_s">Request response from:</span>
+                                <ul id="fbl_clients_container" class="assignUser">
+                                    <li class="">
+                                        <input name="Input" type="checkbox" value="18" id="chkClient18" checked="checked" user="18" update="9610">
+                                        <label for="chkClient18">Cristina </label>
+                                    </li>
+                                    <li class="">
+                                        <input name="Input" type="checkbox" value="19" id="chkClient19" checked="checked" user="19" update="9612">
+                                        <label for="chkClient19">April Crawford </label>
+                                    </li>
+                                    <li class="">
+                                        <input name="Input" type="checkbox" value="20" id="chkClient20" checked="checked" user="20" update="9612">
+                                        <label for="chkClient20">David Oesper </label>
+                                    </li>
+                                    <li class="">
+                                        <input name="Input" type="checkbox" value="21" id="chkClient21" checked="checked" user="21" update="9612">
+                                        <label for="chkClient21">Donalddon Swofford </label>
+                                    </li>
+                                    <li class="">
+                                        <input name="Input" type="checkbox" value="22" id="chkClient22" checked="checked" user="22" update="9612">
+                                        <label for="chkClient22">Gregory Jonason </label>
+                                    </li>
+                                    <li class="">
+                                        <input name="Input" type="checkbox" value="23" id="chkClient23" checked="checked" user="23" update="9612">
+                                        <label for="chkClient23">LeeC2F LeeC2L </label>
+                                    </li>
+                                    <li class="">
+                                        <input name="Input" type="checkbox" value="24" id="chkClient24" checked="checked" user="24" update="9612">
+                                        <label for="chkClient24">LeeC2F LeeC2L </label>
+                                    </li>
+                                    <li class="">
+                                        <input name="Input" type="checkbox" value="25" id="chkClient25" checked="checked" user="25" update="9612">
+                                        <label for="chkClient25">LeeC2F LeeC2L </label>
+                                    </li>
+                                    <li class="">
+                                        <input name="Input" type="checkbox" value="26" id="chkClient26" checked="checked" user="26" update="9612">
+                                        <label for="chkClient26">LeeC2F LeeC2L </label>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="feedbackBox" id="feedbackBox">
+                                <div class="fdshowmore" id="dvShowEarlier"><a>Load Earlier Messages</a></div>
+                                <div class="requestfrom"><a>Request response from Cristina</a></div>
+                                <ul class="fdItembox">
+                                    <li class="fdmessageDate" date="02/11/2015">02/11/2015</li>
+                                    <li class="otherbox" index="4" date="02/11/2015">
+                                        <span class="fdUser">Client</span>
+                                        <span class="fdDate">15:50</span>
+                                            <span class="fdarrowbox">
+                                        <img src="./images/a_t.png"></span>
+                                        <table border="0" cellspacing="0" cellpadding="4">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="fdcontentBox1 fdcontent">
+                                                        <div class="fdarrowboxleft"></div>
+                                                        <span title="Waiting Sunnet feedback" class="feedback_waiting">#4</span>. Seems to be an issue with the sending of Coach and VIP assignments. Making it difficult to test. See Attachment.
+                                                        <br>
+                                                        <span class="fdfileBox"><span class="fdfile"><a href="http://pm.sunnet.us//do/DoDownloadFileHandler.ashx?FileID=1071&size=377196.00" target="_blank">
+                                                            <img src="./images/file.png" width="13px">
+                                                            CT_error_021115.docx</a></span></span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                    <li class="fdmessageDate" date="02/17/2015">02/17/2015</li>
+                                    <li class="otherbox" index="6" date="02/17/2015">
+                                        <span class="fdUser">Client</span>
+                                        <span class="fdDate">16:46</span><span class="fdarrowbox">
+                                        <img src="./images/a_t.png"></span>
+                                        <table border="0" cellspacing="0" cellpadding="4">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="fdcontentBox1 fdcontent">#6. Here is a completed second review - there was a lot of group discussion/input this time.
+                                                        <br>
+                                                        <span class="fdfileBox"><span class="fdfile"><a href="http://pm.sunnet.us//do/DoDownloadFileHandler.ashx?FileID=1075&size=1787099.00" target="_blank">
+                                                            <img src="./images/file.png" width="13px">
+                                                            CT_Review_aw021715(1).docx</a></span></span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                    <li class="myselfbox" index="1" date="04/24/2015">
+                                        <div style="text-align: right;"><span class="fdDate">01:01</span> <span class="fdUser"><span>Cristina</span></span> <span class="fdarrowbox">
+                                            <img src="./images/a2_t.png">
+                                        </span></div>
+                                        <table border="0" cellpadding="4" cellspacing="0">
+                                            <tbody>
+                                                <tr>
+                                                    <td class="fdcontentBox2 fdcontent">
+                                                        <div class="rightClose" onclick="deleteOwnFeedBack(this,1597,63)" title="Delete">×</div>
+                                                        #1. 
+                          Project:<br>
+                                                        Sunnet.HR
+                                                        <br>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                </ul>
+                            </div>
+                            <a href="https://pm.sunnet.us/demo/page_ticket2.html###" name="lastFeedback"></a>
+                            <div id="body_body_dataSection_feedbacks_divAddFeedback" class="chat_input_box">
+                                <span class="chat_btns_u"><a class="chat_btn_upload">
+                                    <img src="images/chat_fj_icon.png" /></a></span>
+                                <textarea data-msg="Please enter your message." rows="4" class="inputFeedback" placeholder="Enter your message..."></textarea>
+                                <span class="chat_btns_p"><a class="chat_btn_push">
+                                    <img src="images/chat_push_icon.png" /></a></span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <table style="width: 100%;">
+            <tr>
+                <td>
+                    <div class="footerBox">
+                        <div class="footerBox_left"><a href="https://pm.sunnet.us/About/Faqs.aspx?returnurl=%2fSunnetTicket%2fDashboard.aspx">FAQ</a> <span>|</span> <a href="https://pm.sunnet.us/About/Survey.aspx?returnurl=%2fSunnetTicket%2fDashboard.aspx">Survey</a><span>|</span> <a href="https://pm.sunnet.us/About/ContactUs.aspx?returnurl=%2fSunnetTicket%2fDashboard.aspx">Contact Us</a> </div>
+                        <div class="footerBox_right">Copyright © 2014 <a href="http://www.sunnet.us/" target="_blank">SunNet Solutions</a>. </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <script type="text/html" id="ticketExpend">
+            <tr class="sublist">
+                <td class="aligncenter">&nbsp;</td>
+                <td colspan="8">
+                    <div class="subcontentBox">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td width="120" valign="top"><strong>Description:</strong></td>
+                                    <td>{% this.description %}
+                                    </td>
+                                </tr>
+                                {% if ( this.feedback && this.feedback.length) { %}
+                            <tr>
+                                <td valign="top"><strong>Latest Notes</strong>:</td>
+                                <td>{% for ( var i = 0; i < this.feedback.length ; i++) { %}
+                                        {% if(this.feedback[i].text) { %}
+                                            {% this.feedback[i].text %}
+                                            <br />
+                                    {% } %}
+                                        {% if( this.feedback[i].files && this.feedback[i].files.length) { %}
+                                            {% for ( var file = 0; file < this.feedback[i].files.length ; file++) { %}
+                                                <a href="/Do/DoDownloadFileHandler.ashx?fileid={% this.feedback[i].files[file].id %}" target="_blank">
+                                                    <img src="/Images/icons/file.png" style="width: 13px" alt="File">{% this.feedback[i].files[file].title %}
+                                                </a>&nbsp;&nbsp;
+                                            {% } %}
+                                            <br />
+                                    {% } %}
+                                    <span class="subfeedbackDate">{% this.feedback[i].date %}
+                                    </span>
+                                    <span class="subfeedbackUser">{% this.feedback[i].author %}</span>
+                                    <br />
+                                    {% } %}
+                                </td>
+                            </tr>
+                                {% } %}
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </script>
+    </form>
+    <div id="HUABAN_WIDGETS">
+        <div class="HUABAN-f-button" style="display: none;">采集</div>
+        <style>
+            #HUABAN_WIDGETS {
+                font-family: "helvetica neue",arial,sans-serif;
+                color: #444;
+                font-size: 14px;
+            }
+
+                #HUABAN_WIDGETS * {
+                    box-sizing: content-box;
+                }
+
+                #HUABAN_WIDGETS .HUABAN-main {
+                    position: fixed;
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: #e5e5e5;
+                    background: rgba(229,229,229,.95);
+                    max-height: 100%;
+                    overflow: hidden;
+                    z-index: 9999999999999;
+                }
+
+                #HUABAN_WIDGETS a img {
+                    border: 0;
+                }
+
+                #HUABAN_WIDGETS .HUABAN-header {
+                    height: 50px;
+                    background: white;
+                    box-shadow: 0 0 4px rgba(0,0,0,.2);
+                    width: 100%;
+                    left: 0;
+                    top: 0;
+                    position: absolute;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-header .HUABAN-inner {
+                        margin: 0 auto;
+                        position: relative;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-header .HUABAN-close {
+                        width: 60px;
+                        height: 50px;
+                        border-left: 1px solid #ddd;
+                        position: absolute;
+                        right: 0;
+                        top: 0;
+                        background: url(//huaban.com/img/widgets/btn_close.png) 20px 14px no-repeat;
+                        cursor: pointer;
+                    }
+
+                        #HUABAN_WIDGETS .HUABAN-header .HUABAN-close:hover {
+                            background-position: 20px -26px;
+                        }
+
+                        #HUABAN_WIDGETS .HUABAN-header .HUABAN-close:active {
+                            background-position: 20px -66px;
+                        }
+
+                    #HUABAN_WIDGETS .HUABAN-header .HUABAN-logo {
+                        display: block;
+                        position: absolute;
+                        top: 12px;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-waterfall-holder {
+                    position: relative;
+                    overflow-y: auto;
+                    height: 100%;
+                }
+
+                #HUABAN_WIDGETS .HUABAN-waterfall {
+                    position: relative;
+                    margin-top: 50px;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-waterfall .HUABAN-empty {
+                        position: absolute;
+                        left: 50%;
+                        top: 30px;
+                        height: 36px;
+                        line-height: 36px;
+                        width: 216px;
+                        text-align: left;
+                        margin-left: -128px;
+                        color: #777;
+                        background: url(//huaban.com/img/widgets/icon_notice.png) 12px 8px no-repeat white;
+                        padding-left: 40px;
+                        font-size: 15px;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-btn {
+                    display: inline-block;
+                    border-radius: 2px;
+                    font-size: 14px;
+                    padding: 0 12px;
+                    height: 30px;
+                    line-height: 30px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    white-space: nowrap;
+                    -moz-user-select: none;
+                    -webkit-user-select: none;
+                    user-select: none;
+                    text-align: center;
+                    background: #D53939;
+                    color: white;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-btn:hover {
+                        background: #E54646;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-btn:active {
+                        background: #C52424;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-wbtn {
+                    background: #EDEDED;
+                    color: #444;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-wbtn:hover {
+                        background: #F2F2F2;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-wbtn:active {
+                        background: #DDD;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-f-button {
+                    position: absolute;
+                    display: none;
+                    z-index: 9999999999998;
+                    box-shadow: 0 0 0 2px rgba(255,255,255,.2);
+                    background: #aaa;
+                    background: rgba(0,0,0,.3);
+                    color: white;
+                    cursor: pointer;
+                    padding: 0 12px;
+                    height: 30px;
+                    line-height: 30px;
+                    border-radius: 2px;
+                    font-size: 14px;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-f-button:hover {
+                        background-color: #999;
+                        background-color: rgba(0,0,0,.5);
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-f-button:active {
+                        background-color: rgba(0,0,0,.6);
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-red-normal-icon-button {
+                    width: 36px;
+                    height: 24px;
+                    border: 0px;
+                    line-height: 24px;
+                    padding-left: 24px;
+                    padding-right: 0px;
+                    text-align: left;
+                    background: url(//huaban.com/img/widgets/widget_icons.png) 0 -200px no-repeat;
+                    box-shadow: none !important;
+                    font-size: 14px;
+                    background-color: transparent !important;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-red-normal-icon-button:hover {
+                        background-position: -130px -200px;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-red-normal-icon-button:active {
+                        background-position: -260px -200px;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-red-large-icon-button {
+                    width: 80px;
+                    height: 24px;
+                    border: 0px;
+                    line-height: 24px;
+                    padding-left: 24px;
+                    padding-right: 0px;
+                    text-align: left;
+                    background: url(//huaban.com/img/widgets/widget_icons.png) 0 -150px no-repeat;
+                    box-shadow: none !important;
+                    font-size: 14px;
+                    background-color: transparent !important;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-red-large-icon-button:hover {
+                        background-position: -130px -150px;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-red-large-icon-button:active {
+                        background-position: -260px -150px;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-red-small-icon-button {
+                    width: 30px;
+                    height: 21px;
+                    border: 0px;
+                    line-height: 21px;
+                    padding-left: 20px;
+                    padding-right: 0px;
+                    text-align: left;
+                    background: url(//huaban.com/img/widgets/widget_icons.png) 0 -250px no-repeat;
+                    box-shadow: none !important;
+                    font-size: 12px;
+                    background-color: transparent !important;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-red-small-icon-button:hover {
+                        background-position: -130px -250px;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-red-small-icon-button:active {
+                        background-position: -260px -250px;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-white-normal-icon-button {
+                    width: 36px;
+                    height: 24px;
+                    border: 0px;
+                    line-height: 24px;
+                    padding-left: 24px;
+                    padding-right: 0px;
+                    text-align: left;
+                    background: url(//huaban.com/img/widgets/widget_icons.png) 0 -500px no-repeat;
+                    box-shadow: none !important;
+                    color: #444;
+                    font-size: 14px;
+                    background-color: transparent !important;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-white-normal-icon-button:hover {
+                        background-position: -130px -500px;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-white-normal-icon-button:active {
+                        background-position: -260px -500px;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-white-large-icon-button {
+                    width: 80px;
+                    height: 24px;
+                    border: 0px;
+                    line-height: 24px;
+                    padding-left: 24px;
+                    padding-right: 0px;
+                    text-align: left;
+                    background: url(//huaban.com/img/widgets/widget_icons.png) 0 -450px no-repeat;
+                    box-shadow: none !important;
+                    color: #444;
+                    font-size: 14px;
+                    background-color: transparent !important;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-white-large-icon-button:hover {
+                        background-position: -130px -450px;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-white-large-icon-button:active {
+                        background-position: -260px -450px;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-white-small-icon-button {
+                    width: 30px;
+                    height: 21px;
+                    border: 0px;
+                    line-height: 21px;
+                    padding-left: 20px;
+                    padding-right: 0px;
+                    text-align: left;
+                    background: url(//huaban.com/img/widgets/widget_icons.png) 0 -550px no-repeat;
+                    box-shadow: none !important;
+                    color: #444;
+                    font-size: 12px;
+                    background-color: transparent !important;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-white-small-icon-button:hover {
+                        background-position: -130px -550px;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-white-small-icon-button:active {
+                        background-position: -260px -550px;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-cell {
+                    width: 236px;
+                    position: absolute;
+                    background: white;
+                    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+                    transition: left .3s ease-in-out, top .3s linear;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-cell .HUABAN-img-holder {
+                        overflow: hidden;
+                        position: relative;
+                    }
+
+                        #HUABAN_WIDGETS .HUABAN-cell .HUABAN-img-holder:hover img.HUABAN-cell-img {
+                            opacity: .8;
+                        }
+
+                    #HUABAN_WIDGETS .HUABAN-cell .HUABAN-video-icon {
+                        width: 72px;
+                        height: 62px;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        margin: -31px auto auto -36px;
+                        background: url(//huaban.com/img/widgets/media_video.png) 0 0 no-repeat;
+                        display: none;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-cell.HUABAN-video .HUABAN-video-icon {
+                        display: block;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-cell .HUABAN-over {
+                        display: none;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-cell:hover .HUABAN-over {
+                        display: block;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-cell .HUABAN-over .HUABAN-btn {
+                        width: 60px;
+                        height: 34px;
+                        padding: 0;
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        margin: -18px 0 0 -31px;
+                        line-height: 34px;
+                        box-shadow: 0 0 0 2px rgba(255,255,255,.2);
+                        font-size: 16px;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-cell.HUABAN-long .HUABAN-img-holder {
+                        height: 600px;
+                    }
+
+                        #HUABAN_WIDGETS .HUABAN-cell.HUABAN-long .HUABAN-img-holder:after {
+                            content: "";
+                            display: block;
+                            position: absolute;
+                            width: 236px;
+                            height: 12px;
+                            left: 0;
+                            bottom: 0;
+                            background: url(//huaban.com/img/widgets/long_image_shadow_2.png) repeat-x 4px top;
+                        }
+
+                    #HUABAN_WIDGETS .HUABAN-cell img {
+                        width: 236px;
+                        display: block;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-cell .HUABAN-size {
+                        margin: 8px 16px;
+                        font-size: 12px;
+                        color: #999;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-cell .HUABAN-description {
+                        display: block;
+                        width: 202px;
+                        margin: 0 6px 6px;
+                        padding: 6px 10px;
+                        border: 0;
+                        resize: none;
+                        outline: 0;
+                        border: 1px solid transparent;
+                        line-height: 18px;
+                        font-size: 13px;
+                        overflow: hidden;
+                        word-wrap: break-word;
+                        background: url(//huaban.com/img/widgets/icon_edit.png) 500px center no-repeat;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-cell:hover .HUABAN-description {
+                        background-color: #fff9e0;
+                        background-position: right top;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-cell .HUABAN-description:focus {
+                        background-color: #F9F9F9;
+                        background-position: 500px center;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-cell .HUABAN-select-btn {
+                        width: 34px;
+                        height: 34px;
+                        background: url(//huaban.com/img/widgets/checkbox.png) 0 0 no-repeat;
+                        position: absolute;
+                        right: 5px;
+                        top: 5px;
+                        cursor: pointer;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-cell .HUABAN-pinned-label {
+                        position: absolute;
+                        left: 0;
+                        top: 10px;
+                        height: 24px;
+                        line-height: 24px;
+                        padding: 0 10px;
+                        background: #CE0000;
+                        background: rgba(200, 0, 0, 0.9);
+                        color: white;
+                        font-size: 12px;
+                        display: none;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-cell.HUABAN-pinned .HUABAN-pinned-label {
+                        display: block;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-selected .HUABAN-select-btn {
+                    background-position: 0 -40px;
+                }
+
+                #HUABAN_WIDGETS .HUABAN-multi .HUABAN-cell .HUABAN-img-holder {
+                    cursor: pointer;
+                }
+
+                #HUABAN_WIDGETS .HUABAN-multi .HUABAN-cell .HUABAN-cell-pin-btn {
+                    display: none;
+                }
+
+                #HUABAN_WIDGETS .HUABAN-multi .HUABAN-cell .HUABAN-over {
+                    display: block;
+                }
+
+                #HUABAN_WIDGETS .HUABAN-header .HUABAN-multi-buttons {
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                    display: none;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-header .HUABAN-multi-buttons .HUABAN-btn {
+                        margin-right: 10px;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-header .HUABAN-multi-noti {
+                    display: none;
+                    height: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                    font-size: 16px;
+                    color: #999;
+                    font-weight: bold;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-header .HUABAN-multi-noti span {
+                        font-weight: normal;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-header .HUABAN-multi-noti i {
+                        font-style: normal;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-header .HUABAN-notice {
+                    padding: 0 10px;
+                    height: 30px;
+                    line-height: 30px;
+                    position: absolute;
+                    left: 50%;
+                    top: 10px;
+                    margin-left: -83px;
+                    background: #fff9e2;
+                    text-align: center;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-header .HUABAN-notice i {
+                        display: inline-block;
+                        width: 18px;
+                        height: 18px;
+                        background: url(//huaban.com/img/widgets/icon_notice.png) 0 0 no-repeat;
+                        vertical-align: top;
+                        margin: 6px 6px 0 0;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-switcher {
+                    height: 50px;
+                    width: 100px;
+                    position: relative;
+                }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher .HUABAN-title {
+                        position: absolute;
+                        right: 75px;
+                        top: 13px;
+                        color: #999;
+                        white-space: nowrap;
+                        line-height: 24px;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher:hover .HUABAN-title {
+                        visibility: visible;
+                        opacity: 1;
+                        -webkit-transition: opacity .2s linear;
+                        -webkit-transition-delay: .2s;
+                        transition: opacity .2s linear;
+                        transition-delay: .2s;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher .HUABAN-bar {
+                        width: 40px;
+                        height: 24px;
+                        background: #EB595F;
+                        border-radius: 12px;
+                        color: white;
+                        position: absolute;
+                        right: 0;
+                        top: 13px;
+                        cursor: pointer;
+                        font-size: 14px;
+                        -webkit-transition: all .2s linear;
+                        transition: all .2s linear;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher:hover .HUABAN-bar {
+                        width: 64px;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher.HUABAN-on .HUABAN-bar {
+                        background: #7DD100;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher .HUABAN-bar .HUABAN-round {
+                        width: 20px;
+                        height: 20px;
+                        background: white;
+                        border-radius: 50%;
+                        position: absolute;
+                        left: 2px;
+                        top: 2px;
+                        -webkit-transition: left .2s linear;
+                        box-shadow: 0px 0px 3px rgba(0,0,0,0.15);
+                        transition: left .2s linear;
+                        box-shadow: 0px 0px 3px rgba(0,0,0,0.15);
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher.HUABAN-on .HUABAN-bar .HUABAN-round {
+                        left: 17px;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher.HUABAN-on:hover .HUABAN-bar .HUABAN-round {
+                        left: 41px;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher .HUABAN-bar .HUABAN-text-1 {
+                        height: 24px;
+                        line-height: 24px;
+                        position: absolute;
+                        right: 17px;
+                        top: 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        -webkit-transition: all .2s linear;
+                        transition: all .2s linear;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher:hover .HUABAN-bar .HUABAN-text-1 {
+                        right: 9px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher.HUABAN-on:hover .HUABAN-bar .HUABAN-text-1 {
+                        right: 17px;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher .HUABAN-bar .HUABAN-text-2 {
+                        height: 24px;
+                        line-height: 24px;
+                        position: absolute;
+                        left: 17px;
+                        top: 0;
+                        opacity: 0;
+                        visibility: hidden;
+                        -webkit-transition: all .2s linear;
+                        transition: all .2s linear;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher:hover .HUABAN-bar .HUABAN-text-2 {
+                        left: 17px;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    #HUABAN_WIDGETS .HUABAN-switcher.HUABAN-on:hover .HUABAN-bar .HUABAN-text-2 {
+                        left: 9px;
+                        opacity: 1;
+                        visibility: visible;
+                    }
+
+                #HUABAN_WIDGETS .HUABAN-header .HUABAN-switcher {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                }
+            <!--
+
+            [if IE 6] > #HUABAN_WIDGETS .HUABAN-red-normal-icon-button, .HUABAN-red-large-icon-button, .HUABAN-red-small-icon-button, .HUABAN-white-normal-icon-button, .HUABAN-white-large-icon-button, .HUABAN-white-small-icon-button {
+                background-image: url({{imgBase}}/widget_icons_ie6.png) <![endif]; -->
+        </style>
+    </div>
+</body>
+<div></div>
+</html>

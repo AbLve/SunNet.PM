@@ -1,0 +1,50 @@
+Time:2014-01-21 13:47:33
+IP:127.0.0.1
+Url:http://familybook.com/DocManagement/DocHome/Download/518
+UrlRef:http://familybook.com/DocManagement/DocHome/Index
+Message:System.Security.Cryptography.CryptographicException: 要解密的数据的长度无效。
+   在 System.Security.Cryptography.CryptoAPITransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 SF.Framework.File.Providers.RealFileSystem.DESDecryptFile(String filePhysicalPath) 位置 e:\Projects\Sunnet.FamilyBook\Code\SunNet.Framework\File\Providers\RealFileSystem.cs:行号 403
+
+
+Time:2014-01-21 13:48:34
+IP:127.0.0.1
+Url:http://familybook.com/DocManagement/DocHome/Download/513
+UrlRef:http://familybook.com/DocManagement/DocHome/Index
+Message:System.Security.Cryptography.CryptographicException: 要解密的数据的长度无效。
+   在 System.Security.Cryptography.CryptoAPITransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 SF.Framework.File.Providers.RealFileSystem.DESDecryptFile(String filePhysicalPath) 位置 e:\Projects\Sunnet.FamilyBook\Code\SunNet.Framework\File\Providers\RealFileSystem.cs:行号 403
+
+
+Time:2014-01-21 13:48:53
+IP:127.0.0.1
+Url:http://familybook.com/DocManagement/DocHome/Download/518
+UrlRef:http://familybook.com/DocManagement/DocHome/Index
+Message:System.Security.Cryptography.CryptographicException: 要解密的数据的长度无效。
+   在 System.Security.Cryptography.CryptoAPITransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 SF.Framework.File.Providers.RealFileSystem.DESDecryptFile(String filePhysicalPath) 位置 e:\Projects\Sunnet.FamilyBook\Code\SunNet.Framework\File\Providers\RealFileSystem.cs:行号 403
+
+
+Time:2014-01-21 13:49:29
+IP:127.0.0.1
+Url:http://familybook.com/DocManagement/DocHome/Download/518
+UrlRef:http://familybook.com/DocManagement/DocHome/Index
+Message:System.Security.Cryptography.CryptographicException: 要解密的数据的长度无效。
+   在 System.Security.Cryptography.CryptoAPITransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 SF.Framework.File.Providers.RealFileSystem.DESDecryptFile(String filePhysicalPath) 位置 e:\Projects\Sunnet.FamilyBook\Code\SunNet.Framework\File\Providers\RealFileSystem.cs:行号 403
+
+
+Time:2014-01-21 13:50:32
+IP:127.0.0.1
+Url:http://familybook.com/DocManagement/DocHome/Download/518
+UrlRef:http://familybook.com/DocManagement/DocHome/Index
+Message:System.Security.Cryptography.CryptographicException: 要解密的数据的长度无效。
+   在 System.Security.Cryptography.CryptoAPITransform.TransformFinalBlock(Byte[] inputBuffer, Int32 inputOffset, Int32 inputCount)
+   在 System.Security.Cryptography.CryptoStream.FlushFinalBlock()
+   在 SF.Framework.File.Providers.RealFileSystem.DESDecryptFile(String filePhysicalPath) 位置 e:\Projects\Sunnet.FamilyBook\Code\SunNet.Framework\File\Providers\RealFileSystem.cs:行号 403
+
+

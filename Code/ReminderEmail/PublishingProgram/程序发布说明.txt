@@ -1,0 +1,12 @@
+﻿发布步骤：
+1、执行PM数据的SQL语句(创建新表)
+
+2、运行解决方案进行发布（或者去拷贝bin目录）
+
+3、添加相关目录及文件。目录结构为：
+   主目录：
+			bin目录（运行程序目录）
+			EmailTemps（邮件模板目录）
+			ReminderLog（日志目录）
+			PublishingProgram（发布说明，可以不要）
+4、修改 bin 目录里 SunNet.PMNew.EmailSender.exe.config 的各项配置参数(当然，也可以在运行发布之前，修改app.config里的参数)

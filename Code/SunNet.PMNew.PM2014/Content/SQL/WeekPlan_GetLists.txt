@@ -1,0 +1,54 @@
+﻿														 ALTER PROCEDURE [dbo].[WeekPlan_GetList]
+	@UserId int ,
+	@StartDate datetime,
+	@EndDate datetime ,
+	@PageNo INT,
+	@PageSize int,
+	@Role int,
+	@RecordCount int output
+AS
+	DECLARE @Min INT
+	DECLARE @Max INT
+	SET @Min = (@PageNo -1) * @PageSize + 1
+	SET @Max = @PageNo * @PageSize
+	IF @UserId != 0 BEGIN
+		SELECT @RecordCount= COUNT(0) FROM WeekPlan 
+		WHERE UserId = @UserId AND [WeekDay] >= @StartDate AND [WeekDay] <= @EndDate
+		
+		SELECT * FROM (
+					SELECT ROW_NUMBER() OVER( ORDER BY w.WeekDay DESC ,u.LastName) AS INDEX_ID, w.* ,u.lastname ,u.firstName
+					,u2.lastname as EditLastname,u2.firstName as EditFirstName
+					FROM weekplan w LEFT JOIN Users u ON u.userid = w.userid 
+					LEFT JOIN Users u2 ON u2.userid = w.UpdateUserID
+					WHERE w.userid = @UserId AND [WeekDay] >= @StartDate AND [WeekDay] <= @EndDate AND [IsDeleted] = 0) AS result
+		WHERE INDEX_ID BETWEEN @Min AND @Max 
+	END
+	ELSE BEGIN
+		IF(@Role = 4 OR @Role = 3 OR @Role = 7) BEGIN --dev ,qa ,leader
+				
+			SELECT @RecordCount= COUNT(0) FROM WeekPlan w LEFT JOIN Users u ON u.userid = w.userid
+			 WHERE [WeekDay] >= @StartDate AND [WeekDay] <= @EndDate
+			AND u.RoleID IN (3,4,7)
+	
+			SELECT * FROM (
+						SELECT ROW_NUMBER() OVER( ORDER BY w.WeekDay DESC ,u.LastName) AS INDEX_ID
+						, w.* ,u.lastname ,u.firstName
+						,u2.lastname as EditLastname,u2.firstName as EditFirstName
+						FROM weekplan w LEFT JOIN Users u ON u.userid = w.userid 
+						LEFT JOIN Users u2 ON u2.userid = w.UpdateUserID
+						WHERE [WeekDay] >= @StartDate AND [WeekDay] <= @EndDate AND u.RoleID IN (3,4,7) AND [IsDeleted] = 0) AS result
+			WHERE INDEX_ID BETWEEN @Min AND @Max 
+		END 
+		ELSE BEGIN 
+			SELECT @RecordCount= COUNT(0) FROM WeekPlan WHERE [WeekDay] >= @StartDate AND [WeekDay] <= @EndDate
+	
+			SELECT * FROM (
+						SELECT ROW_NUMBER() OVER( ORDER BY w.WeekDay DESC ,u.LastName) AS INDEX_ID
+						, w.* ,u.lastname ,u.firstName
+						,u2.lastname as EditLastname,u2.firstName as EditFirstName
+						FROM weekplan w LEFT JOIN Users u ON u.userid = w.userid 
+						LEFT JOIN Users u2 ON u2.userid = w.UpdateUserID
+						WHERE [WeekDay] >= @StartDate AND [WeekDay] <= @EndDate AND [IsDeleted] = 0) AS result
+			WHERE INDEX_ID BETWEEN @Min AND @Max 
+		END
+	END

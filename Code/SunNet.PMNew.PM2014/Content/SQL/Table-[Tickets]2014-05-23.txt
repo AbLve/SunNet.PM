@@ -1,0 +1,1 @@
+﻿ alter table [dbo].[Tickets] add  AdditionalState int not null default(1) 

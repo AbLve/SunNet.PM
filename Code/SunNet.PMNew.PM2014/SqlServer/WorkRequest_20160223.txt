@@ -1,0 +1,3 @@
+GO
+
+DROP TABLE dbo.WorkRequest;

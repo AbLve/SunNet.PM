@@ -1,0 +1,67 @@
+﻿
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[GetTicketsView]    Script Date: 7/25/2014 3:11:52 AM ******/
+DROP FUNCTION [dbo].[GetTicketsView]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[GetTicketsView]    Script Date: 7/25/2014 3:11:52 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		Jack
+-- Create date: 2014-7-23
+-- Description:	Reset ticket properties by ticket users
+-- =============================================
+CREATE FUNCTION [dbo].[GetTicketsView]
+(	
+	-- Add the parameters for the function here
+	@UserId int
+)
+RETURNS TABLE 
+AS
+RETURN 
+(
+	-- Add the SELECT statement with parameter references here
+	SELECT DISTINCT * FROM(
+	SELECT T.[TicketID] ,T.[CompanyID] ,T.[ProjectID] ,T.[Title] ,T.[TicketCode] ,T.[TicketType] ,T.[Description]
+      ,T.[CreatedOn]
+      ,T.[CreatedBy]
+      ,T.[ModifiedOn]
+      ,T.[ModifiedBy]
+      ,T.[PublishDate]
+      ,T.[ClientPublished]
+      ,T.[StartDate]
+      ,T.[DeliveryDate]
+      ,T.[ContinueDate]
+      ,T.[URL]
+      ,T.[Priority]
+      --,T.[Status]
+      ,T.[ConvertDelete]
+      ,T.[IsInternal]
+      ,T.[CreateType]
+      ,T.[SourceTicketID]
+      ,T.[IsEstimates]
+      ,T.[InitialTime]
+      ,T.[FinalTime]
+      ,T.[EsUserID]
+      ,T.[Star]
+      ,T.[Source]
+      ,T.[AdditionalState]
+      ,[Status] = (CASE TU.[TicketStatus] 
+							  WHEN 0 THEN T.[Status] 
+							  WHEN NULL THEN T.[Status] 
+							  ELSE ISNULL(TU.[TicketStatus],T.[Status]) END)
+	  ,[ShowNotification] = ISNULL(TU.[ShowNotification],0)
+	  ,[WorkingOnStatus]  = ISNULL(TU.[Status],0)
+  FROM [dbo].[Tickets] T LEFT JOIN [dbo].[TicketUsers] TU ON T.[TicketID] = TU.[TicketID] AND TU.[UserID] = @UserId
+    ) T
+)
+
+GO
+
+

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3D3DAFD1-AFD8-48E5-8E11-BDF5C2A3FDC5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SunNet.PMNew.Framework</RootNamespace>
+    <AssemblyName>SunNet.PMNew.Framework</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=0.86.0.518, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>_Dlls\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config.cs" />
+    <Compile Include="Controls\ExtendedDropdownList.cs" />
+    <Compile Include="Core\BaseApp.cs" />
+    <Compile Include="Core\BaseEntity.cs" />
+    <Compile Include="Core\BaseMgr.cs" />
+    <Compile Include="Core\BrokenMessage\BrokenMessageEnabled.cs" />
+    <Compile Include="Core\BrokenMessage\BrokenRuleMessage.cs" />
+    <Compile Include="Core\IdentityContext.cs" />
+    <Compile Include="Core\Notify\INotify.cs" />
+    <Compile Include="Core\Repository\IRepository.cs" />
+    <Compile Include="Core\UI\BaseWebPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Core\UI\JS\JSDownloaderHttpHandler.cs" />
+    <Compile Include="Core\UI\JS\JSValidatorHttpHandler.cs" />
+    <Compile Include="Core\Validator\BaseValidator.cs" />
+    <Compile Include="Core\Validator\UserControls\AutoBindValidator.cs" />
+    <Compile Include="Extensions\EnumExpand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utils\EncryptType.cs" />
+    <Compile Include="Utils\Helpers\CommonHelper.cs" />
+    <Compile Include="Utils\Helpers\CookieHelper.cs" />
+    <Compile Include="Utils\Helpers\Expand.cs" />
+    <Compile Include="Utils\Helpers\FileHelper.cs" />
+    <Compile Include="Utils\Helpers\HtmlHelper.cs" />
+    <Compile Include="Utils\Helpers\JSONHelper.cs" />
+    <Compile Include="Utils\Helpers\MessageInfo.cs" />
+    <Compile Include="Utils\Helpers\SqlHelper.cs" />
+    <Compile Include="Utils\Helpers\ThumbnailHelper.cs" />
+    <Compile Include="Utils\Helpers\XMLSerializerHelper.cs" />
+    <Compile Include="Utils\ICache.cs" />
+    <Compile Include="Utils\IEmailSender.cs" />
+    <Compile Include="Utils\IEncrypt.cs" />
+    <Compile Include="Utils\IFile.cs" />
+    <Compile Include="Utils\IIDMap.cs" />
+    <Compile Include="Utils\ILog.cs" />
+    <Compile Include="Utils\IStringZipper.cs" />
+    <Compile Include="Utils\ISysDateTime.cs" />
+    <Compile Include="Utils\Providers\DESEncrypt.cs" />
+    <Compile Include="Utils\Providers\DictionaryIDMap.cs" />
+    <Compile Include="Utils\Providers\HttpRuntimeCache.cs" />
+    <Compile Include="Utils\Providers\ICSharpCodeStringZipper.cs" />
+    <Compile Include="Utils\Providers\MD5Encrypt.cs" />
+    <Compile Include="Utils\Providers\RealFileSystem.cs" />
+    <Compile Include="Utils\Providers\RealSystemDateTime.cs" />
+    <Compile Include="Utils\Providers\SmtpClientEmailSender.cs" />
+    <Compile Include="Utils\Providers\TextFileLogger.cs" />
+    <Compile Include="Utils\Providers\WebLogAgent.cs" />
+    <Compile Include="Utils\SNF.cs" />
+    <Compile Include="Utils\UtilFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Core\UI\JS\SunNetCore.js" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

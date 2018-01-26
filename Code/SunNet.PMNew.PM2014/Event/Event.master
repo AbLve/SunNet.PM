@@ -1,0 +1,30 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Normal.master" AutoEventWireup="true" CodeBehind="Event.master.cs" Inherits="SunNet.PMNew.PM2014.Event.Event" %>
+
+<%@ Register TagPrefix="uc3" TagName="messager" Src="~/UserControls/Messager.ascx" %>
+<%@ Register TagPrefix="uc1" TagName="footer" Src="~/UserControls/Footer.ascx" %>
+<%@ Register Src="../UserControls/Event/LeftMenu.ascx" TagName="LeftMenu" TagPrefix="uc2" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+        <tr>
+            <td class="mainleftTd">
+                <uc2:LeftMenu ID="LeftMenu1" runat="server" />
+            </td>
+            <td class="mainrightTd">
+                <div class="mainrightBox"> <div class="limitwidth">
+                    <uc3:messager ID="Messager1" runat="server" />
+                    <asp:ContentPlaceHolder ID="searchSection" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="dataSection" runat="server">
+                    </asp:ContentPlaceHolder>
+                    <asp:ContentPlaceHolder ID="pagerSection" runat="server">
+                    </asp:ContentPlaceHolder></div>
+                </div>
+                <uc1:footer ID="Footer1" runat="server" />
+            </td>
+        </tr>
+    </table>
+</asp:Content>

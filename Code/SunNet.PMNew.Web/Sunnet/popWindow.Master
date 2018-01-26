@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="popWindow.master.cs" Inherits="SunNet.PMNew.Web.Sunnet.popWindow" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style type="text/css">
+        .owmainrightBoxtwoMinH {
+            min-height: 600px;
+            position: relative;
+        }
+
+        .owBoxone {
+            padding-top: 5px;
+            margin: 0 auto;
+        }
+    </style>
+    <base target="_self" />
+    <link href="../Styles/form.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/public.css" rel="stylesheet" type="text/css" />
+    <link href="../Styles/openwindow.css" rel="stylesheet" type="text/css" />
+    <link href="../Scripts/Dialog/imgAndCss/zebra_dialog.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <div class="owBoxone customWidth">
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1244 @@
+﻿@{
+    ViewBag.Title = "Documents";
+    ViewBag.MenuName = FamilyBook.Common.CommonConst.MenuDocuments;
+    string userType = ViewBag.UserType == null ? "":ViewBag.UserType.ToString();
+}
+@section Styles
+{
+    @Styles.Render("~/bundles/dcoument/css")
+    @Styles.Render("~/bundles/upload/css")
+    <style type="text/css">
+        .popover {
+            min-width: 470px;
+        }
+
+        .mainowConbox .content {
+            border-bottom: 1px solid #CCCCCC;
+            border-top: 1px solid #CCCCCC;
+            margin-top: 10px;
+            max-height: 365px;
+            min-height: 120px;
+            overflow-x: hidden;
+            overflow-y: auto;
+            width: 100%;
+        }
+
+        #divDownloadFiles {
+            padding-top: 4px;
+        }
+        ul li {
+            cursor: auto !important; 
+        }
+        ul span {
+            cursor: pointer !important; 
+        }
+    </style>
+}
+@section Scripts
+{
+    @Scripts.Render("~/bundles/documment/js")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/upload/js")
+    <script type="text/javascript">
+        var ajaxVirtualDir = "/document";
+
+        var messageobj = {
+            operationissuccessfule: "Operation is successful.",
+            creatfoldersucess: "The folder is created.",
+            createfolderfail: "Created folder failed.",
+            renamefoldersucess: "The {0} name has been updated.",
+            renamefolderfail: "Rename failed.",
+            deleteconfirm: "Are you sure you want to delete '{0}'?",
+            deletesucess: "Deleted successfully.",
+            deletefail: "Deleted failed.",
+            movesucess: "Operation successful.",
+            movefail: "Moved failed.",
+            sharesucess: "Share successfully.",
+            sharefail: "Share failed.",
+            selecterrordir: "Please select a valid folder.",
+            selectproject: "Please select a project.",
+            notAutorized: "Not autorized."
+        };
+        var $tree;
+        $(function() {
+            $tree = $("#doc_tree");
+            initTree();
+            @* var parentId= @ViewBag.FolerId;
+            requestListData(parentId,@ViewBag.ProjectID);*@
+            $('#modalContext').on('shown.bs.modal', function(e) {
+                if (jQuery("form input") != undefined)
+                    jQuery("form input").focus();
+            });
+            $('#modalContext').on("hide.bs.modal", function(e) {
+                var $control = $('#modalContext').find("#file_upload");
+                $control.data() && $control.data().uploadify && $control.uploadify('destroy');
+            });
+            if ('@(ViewBag.ProjectID != 0)' == "True") {
+                $tree.find("span.folder[projectid=" + @ViewBag.ProjectID + "][id=0]").click();
+                if ('@(ViewBag.FolerId != 0)' == 'True') {
+                    var $selectedFolder = $tree.find("span.folder[projectid=@(ViewBag.ProjectID)][id=@(ViewBag.FolerId)]");
+                    var $parents = $selectedFolder.parents("li.expandable");
+                    $parents.each(function(index, li) {
+                        $(li).find("span.folder:first").click();
+                    });
+                    $selectedFolder.click();
+                }
+            }
+
+            $("#statusDesc").popover(
+            {
+                title: "How to create folder and upload files?",
+                container: "body",
+                placement: "bottom",
+                content: window["temp_ticketStatus_desc"].innerHTML,
+                trigger: "hover click",
+                html: true
+            });
+
+            fnChangeHeight();
+            $(window).resize(function(){
+                fnChangeHeight();
+            });
+            //debugger
+            setTimeout(function() {
+                orderTable('DisplayFileName', $("#displayName")[0]);
+            }, 500);
+        });
+
+        function fnChangeHeight(){
+            var winHeight=$(window).height();
+            //alert(winHeight);
+
+            $("#divMainLeft").css({
+                height:winHeight-242
+            });
+
+            $(".mainrightBox").css({
+                overflow:"auto"
+            });
+            $("#divMainRight").css({
+                height:$(window).height()-242-5
+            });
+
+        }
+
+        function openDashboadSeletedFolder() {
+            var folderId = '@ViewBag.FolerId';
+            if (folderId != 0) {
+                var dashboardSelectedFolder = $('tr[_id=' + folderId + '] a');
+                console.log(dashboardSelectedFolder);
+                if (dashboardSelectedFolder) {
+                    dashboardSelectedFolder.click();
+                }
+            }
+        }
+
+        //reload tree
+        function reloadTree() {
+            initTree();
+        }
+
+        //init tree
+        function initTree() {
+            jQuery.ajax({
+                url: ajaxVirtualDir + "/DocManagement/DocHome/GetInitJson",
+                type: "get",
+                async: false,
+                dataType: 'json',
+                success: function(d) {
+                    var treeNodes = d; //get tree data
+                    $('#doc_tree').empty().append(createtree(treeNodes)); //create tree
+
+                    bindContextMenu(); // bind context menu
+
+                    $('#doc_tree').treeview({
+                        animated: "fast",
+                        collapsed: true
+                    });
+                    jQuery("span[id=0][userid=0][projectid=0]").click();
+                },
+                error: function(e) {
+                    console.log(e);
+                }
+            });
+        }
+
+        //create tree
+        function createtree(d) {
+            var list = '';
+            $.each(d, function(i, n) {
+                var cls = 'folder';
+                if (n.type == '@((int) FamilyBook.Entity.DocManagements.DocType.File)')
+                    cls = 'file';
+
+                list += '<li _type="' + cls + '">';
+
+
+                list += getItemStr(cls, n.id, n.parentid, n.projectid, n.userid, "" + getSubTitle(n.text, 25, 8) + "");
+
+                if (n.children.length > 0) { // is childrend node
+                    list += "<ul>";
+                    list += createtree(n.children);
+                    list += "</ul>"
+                }
+
+                list += "</li>";
+            });
+            return list;
+        }
+
+        //item
+        function getItemStr(cls, id, parentid, projectid, userid, html) {
+            if (cls == "folder")
+                return '<span class="' + cls + '" ref="' + id + '" projectid="' + projectid + '" userid="' + userid + '" pid="' + parentid + '" id="' + id + '" onclick="setLiBg(this);requestListData(' + id + ')" >&nbsp;' + html + '</span>';
+            else
+                return '<span class="' + cls + '" ref="' + id + '" projectid="' + projectid + '" userid="' + userid + '" pid="' + parentid + '" id="' + id + '" onclick="download(' + id + ')">&nbsp;' + html + '</span>';
+        }
+
+        //subtring title
+        function getSubTitle(text, totallen, sublen, istitle) {
+            if (text == undefined)
+                return;
+            var tempText = text;
+            if (tempText.length > totallen) {
+                tempText = tempText.substring(0, sublen) + "..." + tempText.substring(tempText.length - sublen);
+                console.log(text);
+
+                if (istitle)
+                    return tempText;
+                return "<a title=\"" + text + "\">" + tempText + "</a>";
+            } else {
+                return text;
+            }
+        }
+        function getFullTitle(text,totallen){
+            if (text==undefined||text=="") {
+                return ;
+            }
+            var num=text.length/totallen==0?text.length/totallen-1:text.length/totallen;
+            var result="";
+            for (var i = 0; i < num; i++) {
+                result+=text.substr(i*totallen,totallen)+"<br/>";
+            }
+            return result;
+        }
+
+        ///get left tree li object
+        function getLiObj(id) {
+            return jQuery(jQuery("span[id=" + id + "]")[0]).parents("li:first");
+        }
+
+        // get tr obj
+        function getTrObj(id) {
+            return jQuery("tr[_id=" + id + "]");
+        }
+
+        ///get left tree li text object
+        function getLiSpanObj(id) {
+            return jQuery("span[id=" + id + "]")[0];
+        }
+
+        // get tr text object
+        function getTrSpanObj(id) {
+            return jQuery("tr span[_id=" + id + "]");
+        }
+
+        //set tr backgroud color
+        function setTrbg(obj) {
+            setGloabSelectObj(obj);
+            jQuery("tr .onclick").removeClass("onclick").addClass("doclist1_trwhite");
+            jQuery(obj).removeClass("doclist1_trwhite").addClass("onclick");
+            if (obj.tagName == "TR") {
+                setHeader(obj);
+                setLiBg(obj);
+            } else {
+                //jQuery("#tbdata tr[id='title']").show();
+                //jQuery("#tbdata tr[id='tbTopMenu']").hide();
+                jQuery("#spanextfunction").hide();
+            }
+
+        }
+
+        function Menu(name, project, folder) {
+            this.name = name;
+            this.project = project;
+            this.folder = folder;
+        }
+
+        Menu.prototype.toString = function() {
+            return "<a href='Index?projectId=" + this.project + "&folderId=" + this.folder + "' >" + this.name + "</a>";
+        }
+
+        function setFolderPath() {
+            var $container = $("#divFolders").empty();
+            var $selected = $tree.find("li.currenttreemenu");
+            var $parents = $selected.parents("li.collapsable");
+            var parents = [];
+            var $selSpan = $selected.find("span.folder:first");
+            parents.push(new Menu($selSpan.text().trim(), $selSpan.attr("projectid"), $selSpan.attr("id")));
+            $parents.each(function(index, li) {
+                var span = $(li).find("span.folder:first");
+                parents.push(new Menu(span.text().trim(), span.attr("projectid"), span.attr("id")));
+            });
+            parents = parents.reverse();
+            console.log(parents);
+            $container.append(parents.join(" > "));
+        }
+
+        //set right tree li background
+        function setLiBg(obj) {
+            setGloabSelectObj(obj);
+
+            jQuery("#doc_tree li > span").on("click", function() {
+                jQuery(".totalRoolTree li.currenttreemenu").removeClass("currenttreemenu");
+                jQuery(this).parents("li").filter(":first").addClass("currenttreemenu");
+                //jQuery("#tbdata tr[id='title']").show();
+                //jQuery("#tbdata tr[id='tbTopMenu']").hide();
+                jQuery("#spanextfunction").hide();
+            });
+            if (selectObj != undefined) {
+                jQuery(".totalRoolTree li.currenttreemenu").removeClass("currenttreemenu");
+                //if (selectId == 0) {
+                //    jQuery(selectObj).parents("li").filter(":first").addClass("currenttreemenu");
+                //} else {
+                //    jQuery(selectObj).parents("li").filter(":first").addClass("currenttreemenu");
+                //}
+                jQuery(selectObj).parents("li").filter(":first").addClass("currenttreemenu");
+            }
+
+            setFolderPath();
+        }
+
+        //set header is function or title
+        function setHeader(obj) {
+            var userid = jQuery(obj).attr("userid");
+            if (userid == '@ViewBag.UserID') {
+                //jQuery("tr[id='title']").hide();
+                //jQuery("tr[id='tbTopMenu']").show();
+                jQuery("#spanextfunction").show();
+                jQuery("#spanextNewfunction").show();
+            } else {
+                //jQuery("tr[id='title']").show();
+                //jQuery("tr[id='tbTopMenu']").hide();
+                jQuery("#spanextfunction").hide();
+                //jQuery("#spanextNewfunction").hide();
+            }
+            var text = jQuery(selectObj).find("span").length == 0 ? jQuery(selectObj).text() : jQuery(selectObj).find("span").attr("title");
+            jQuery("#litopLinkTitle").html(getSubTitle(text, 50, 20));
+        }
+
+        var isloadData = true; // is load data
+        var isGloabInit = true; // is init load all data
+
+        // bind  list  data
+        var _loadEvents = 0;
+
+        function requestListData(id, proid) {
+            clearTimeout(_loadEvents);
+            _loadEvents = setTimeout(function() {
+                isGloabInit = false;
+                getSiteMap(id);
+
+                var projectId = 0;
+                if (selectObj != undefined)
+                    projectId = jQuery(selectObj).attr("projectid");
+                if (proid != undefined)
+                    projectId = proid;
+                //request list data
+                if (isloadData) {
+                    jQuery.post(ajaxVirtualDir + "/DocManagement/DocHome/GetListByParentID", { parentid: id, projectId: projectId }, function(data) {
+                        jQuery("#tbdata").find("tr[class!='doclist1Title']").remove(); // delete list
+                        bindList(data);
+                    }, 'json');
+                }
+                if (id == 0 && projectId == 0) {
+                    isGloabInit = true;
+                }
+            }, 300);
+        }
+
+        var parentidsObj = new Array();
+
+        function clickTrReuquest(id, proid) {
+            jQuery("span[id=" + id + "][projectid=" + proid + "]").click();
+        }
+
+        //get site map
+        function getSiteMap(pid) {
+            @*  var sitemap = "<img src='" + ajaxVirtualDir + "/Images/document/folder.png' /><a href='javascript:void(0)' onclick='javascript:requestListData(0)'>My Document</a>";
+            jQuery.get(ajaxVirtualDir + "/DocManagement/DocHome/GetSiteMap", { id: pid }, function (data) {
+                for (var i = data.length - 1; i >= 0; i--) {
+                    if (data[i].Type == '@((int)FamilyBook.Entity.DocManagements.DocType.Folder)')
+                        sitemap += " > <a href='javascript:void(0)' onclick='requestListData(" + data[i].ID + ")'>" + getSubTitle(data[i].DisplayFileName, 15, 5) + "</a>";
+                }
+                jQuery(".breadnaviBox1").html(sitemap);
+            }, 'json');*@
+        }
+
+        //search list
+        function searchList() {
+            jQuery(".totalRoolTree li.currenttreemenu").removeClass("currenttreemenu");
+            jQuery("#tbdata").find("tr[class!='doclist1Title']").remove(); //delete old list
+
+            var fileName = jQuery("#txtSearch").val();
+            //get list response
+            jQuery.post(ajaxVirtualDir + "/DocManagement/DocHome/SearchList", { filename: fileName }, function(data) {
+                bindList(data);
+            }, 'json');
+        }
+
+        function getFullUrl(document) {
+            return encodeURI("/document/Comment/Comment/Index?documentID=" + document.ID + '&fileName='
+                + document.DisplayFileName + '&author='
+                + document.FirstAndLastName + '&time=' + document.UpdatedOn);
+        }
+
+        function getUrl(document) {
+            return encodeURI("/document/Comment/Comment/Index?documentID=" + document.ID + '&fileName='
+                + getSubTitle(document.DisplayFileName, 44, 21) + '&author='
+                + document.FirstAndLastName + '&time=' + document.UpdatedOn);
+        }
+        // 格式化名称，若名称超过33个，格式化 ,eg:abc...def.jpg
+        function formatName(name) {
+            if (name.length>eval(30)) {
+                name = name.substr(0, 15) + "..." + name.substr(name.length - 12);
+            }
+            return name;
+        }
+
+        //bind table data
+        function bindList(data) {
+            //jQuery("tr[id='title']").find("img").remove();
+            //jQuery("tr[id='title'] td:first").append("<img src='" + ajaxVirtualDir + "/Images/icons/arrowup1.png' />");
+            for (var i = 0; i < data.length; i++) {
+                var str = "";
+                if (data[i].Type == '@((int) FamilyBook.Entity.DocManagements.DocType.Folder)') //folder
+                {
+                    str += "<tr _id=" + data[i].ID + " _type='folder' projectid='" + data[i].ProjectID + "' userid='" + data[i].UserID + "' ondblclick='javascript:clickTrReuquest(" + data[i].ID + "," + data[i].ProjectID + ")' onclick='javascript:setTrbg(this)' class='whiterow'>"; //双击文件夹列表
+                    str += "<td><input type='checkbox' /><img src='" + ajaxVirtualDir + "/Images/document/icons_doc/" + getIcon(data[i].Extenstions) + ".png' />&nbsp;<a href='javascript:void(0)' onclick='javascript:clickTrReuquest(" + data[i].ID + "," + data[i].ProjectID + ")'><span _id='" + data[i].ID + "'>" + getFullTitle(data[i].DisplayFileName, 29) + "</span></a></td>";
+                } else //file
+                {
+                    str += "<tr _id=" + data[i].ID + " _type='file' projectid='" + data[i].ProjectID + "' userid='" + data[i].UserID + "' onclick='javascript:setTrbg(this)' class='whiterow'>";
+                    str += "<td  width='*'><input type='checkbox' /><img src='" + ajaxVirtualDir + "/Images/document/icons_doc/" + getIcon(data[i].Extenstions) + ".png' onerror='javascript:this.src=\"" + ajaxVirtualDir + "/Images/document/icons_doc/otherfile.png\"' />&nbsp;<span style='cursor:pointer' onclick='download(" + data[i].ID + ")'><a><span _id='" + data[i].ID + "'>" + data[i].DisplayFileName + "</span></a></span></td>";
+                }
+
+                str += "<td width='20%'>" + data[i].ProjectName + "</td>";
+                str += "<td width='10%'>" + getDocSize(data[i].FileSize) + "</td>";
+                str += "<td width='10%'>" + getDocType(data[i].Extenstions) + "</td>";
+                str += "<td width='10%'>" + data[i].FirstAndLastName + "</td>";
+                str += "<td width='15%'>" + data[i].CreatedOn + "</td>";
+                // lyq 20140722
+                str += "<td width='8%' style='text-align:center;'>";
+                if (getDocSize(data[i].FileSize) != "") {
+                    str += '<img style="width:20px;height:20px;" data-target="#modalComment2" href="' + getFullUrl(data[i]) + '" data-toggle="modal" src="@Url.Content("~/Areas/Comment/Style/comment.png")"/>';
+                }
+                @*else {
+                    str += '<img style="width:20px;height:20px;" data-target="#modalComment2" href="' + getUrl(data[i]) + '" data-toggle="modal" src="@Url.Content("~/Areas/Comment/Style/comment_none.png")"/>';
+                }*@
+
+                str += "</td>";
+                str += "</tr>";
+                jQuery(str).appendTo("#tbdata");
+            }
+            if (data.length == 0) {
+                var msgCount = $("#tbdata tbody tr.none_record").size();
+                if (msgCount == 0) {
+                    var str = "<tr class='none_record'><td style='color:red;font-weight:bold;' colspan='6'>No record found.</td></tr>";
+                    jQuery(str).appendTo("#tbdata");
+                }
+            }
+            bindTableContextMenu();
+        }
+
+        //get document type
+        function getDocType(extenstions) {
+            if (extenstions == "") {
+                return "folder";
+            } else if (extenstions == ".png" || extenstions == ".gif" || extenstions == ".jpg" || extenstions == ".psd")
+                return "image <span style='color:#999'>" + extenstions.substring(1, extenstions.length) + "</span>";
+            else
+                return "<span style='color:#999'>" + extenstions.substring(1, extenstions.length) + "</span>";
+        }
+
+        //get file size
+        function getDocSize(size) {
+            if (size == 0)
+                return "";
+            else {
+                size = parseFloat(size / 1024).toFixed(1);
+                if (size >= 1000)
+                    return parseFloat(size / 1024).toFixed(2) + " MB";
+                else
+                    return size + " KB";
+            }
+        }
+
+        //get list icon
+        function getIcon(ext) {
+            if (ext == "")
+                ext = ".folderdoc";
+            if (ext == ".docx")
+                ext = ".doc";
+            if (ext == ".xlsx")
+                ext = ".xls";
+            if (ext == ".pptx")
+                ext == ".ppt";
+            return ext.substring(1, ext.length).toLowerCase();
+        }
+
+
+        var selectObj; //contenxt menu select obj
+        var selectId = 0;
+
+        function bindContextMenu() //bind tree contenxt menu
+        {
+            $("#doc_tree span[userid='@ViewBag.UserID'][class='folder']").contextMenu('myMenu1', {
+                bindings: {
+                    'newfolder': function(t) {
+                        newFolder();
+                    },
+                    'rename': function(t) {
+                        renamefortr();
+                    },
+                    'move': function(t) {
+                        movetofortr();
+                    },
+                    'delete': function(t) {
+                        deletefortr();
+                    },
+                    'move': function(t) {
+                        movetofortr();
+                    },
+                    'download': function(t) {
+                        downloadfortr();
+                    },
+                    'upload': function(t) {
+                        newUpload();
+                    }
+                }
+            });
+
+            $("#doc_tree span[userid!='@ViewBag.UserID']").contextMenu('myMenu3', {
+                bindings: {
+                    'newfolder': function(t) {
+                        newFolder();
+                    },
+                    'upload': function(t) {
+                        newUpload();
+                    },
+                    'download': function(t) {
+                        downloadfortr();
+                    }
+                }
+            });
+
+            jQuery("#doc_tree span[userid='@ViewBag.UserID'][class='file']").contextMenu('myMenuTab', {
+                bindings: {
+                    'renameitem': function(t) {
+                        renamefortr();
+                    },
+                    'moveitem': function(t) {
+                        movetofortr();
+                    },
+                    'deleteitem': function(t) {
+                        deletefortr();
+                    },
+                    'downloaditem': function(t) {
+                        downloadfortr();
+                    }
+                }
+            });
+
+            $("#doc_tree span[id='0']").contextMenu('myMenu3', {
+                bindings: {
+                    'newfolder': function(t) {
+                        newFolder();
+                    },
+                    'upload': function(t) {
+                        newUpload();
+                    },
+                    'download': function(t) {
+                        downloadfortr();
+                    }
+                }
+            });
+
+            $("#doc_tree span[id='0'][userid=0][projectid=0]").contextMenu('myMenu4', {
+                bindings: {
+                    'newfolder': function(t) {
+                        newFolder();
+                    },
+                    'upload': function(t) {
+                        newUpload();
+                    }
+                }
+            });
+        }
+
+        //bind table list context menu
+        function bindTableContextMenu() {
+            jQuery("#tbdata tr[userid='@ViewBag.UserID']").contextMenu('myMenuTab', {
+                bindings: {
+                    'renameitem': function(t) {
+                        renamefortr();
+                    },
+                    'moveitem': function(t) {
+                        movetofortr();
+                    },
+                    'deleteitem': function(t) {
+                        deletefortr();
+                    },
+                    'downloaditem': function(t) {
+                        downloadfortr();
+                    }
+                }
+            });
+            jQuery("#tbdata tr[userid!='@ViewBag.UserID']").contextMenu('myMenu3', {
+                bindings: {
+                    'newfolder': function(t) {
+                        newFolder();
+                    },
+                    'upload': function(t) {
+                        newUpload();
+                    },
+                    'download': function(t) {
+                        downloadfortr();
+                    }
+                }
+            });
+        }
+
+        //context extentend click
+        function extContentMenu(obj) {
+            setTrbg(obj);
+            setLiBg(obj);
+            setGloabSelectObj(obj);
+        }
+
+        //set gloab select object and selectid
+        function setGloabSelectObj(obj) {
+            if (obj.tagName == "TR") {
+                selectObj = jQuery("span[id=" + jQuery(obj).attr("_id") + "]")[0];
+                selectId = jQuery(obj).attr("_id");
+            } else {
+                selectObj = obj;
+                selectId = jQuery(obj).attr("id");
+            }
+            if (isNaN(selectId)) {
+                selectId = 0;
+                //selectObj = jQuery("#rootDoc");
+            }
+        }
+
+        //download
+        function download(id) {
+            var projectId = jQuery(selectObj).attr("projectid");
+            var projectname = "";
+
+            if (id == 0)
+                projectname = jQuery("span[projectid=" + projectId + "][id=0]").text();
+            jQuery("#ifrdownload").prop("src", "Download?projectId=" + projectId + "&id=" + id + "&tempFolderName=" + projectname);
+        }
+
+        //delete file
+        function delete_confirm(id, projectid, delete_fileName) {
+            var _t = jQuery(selectObj).attr("_type");
+            if (_t == undefined) {
+                _t = "file";
+            }
+            jQuery.confirm(messageobj.deleteconfirm.replace("{0}", delete_fileName),
+            {
+                yesText: "Delete",
+                noText: "Cancel",
+                yesCallback: function() {
+                    jQuery.post(ajaxVirtualDir + "/DocManagement/DocHome/Delete", { projectId: projectid, id: id }, function() {
+                        var parentId = jQuery("span[id=" + id + "]").attr("pid");
+                        //var parentObj = jQuery("span[id="+parentId+"][projectid="+projectid+"]");
+
+                        jQuery('#doc_tree').treeview({ remove: getLiObj(id) });
+                        jQuery(getTrObj(id)).remove();
+                        jQuery("#litopLinkTitle").text("");
+                        //selectObj = parentObj;
+                        //selectId= getSelectId();
+                        $("span.folder[projectid=" + projectid + "][id=" + parentId + "]").click();
+                        jQuery("#spanextfunction").hide();
+                    });
+                },
+                noCallback: function() {}
+            });
+        }
+
+        // add folder call back
+        function _callbackNewFolder(pid, text) {
+            jQuery("#modalContext").modal("toggle");
+            if (pid != undefined) {
+                var to = jQuery(selectObj).next();
+                var projectId = jQuery(selectObj).attr("projectid");
+                var userId = @ViewBag.UserID;
+                jQuery.post(ajaxVirtualDir + "/DocManagement/DocHome/AddFolder", { parentId: pid, projectId: projectId, folderName: text }, function(id) {
+                    var branches = "";
+                    if (to.length == 0) {
+                        to = jQuery(selectObj).parent();
+                        branches = jQuery("<ul><li>" + getItemStr("folder", id, pid, projectId, userId, text) + "</li></ul>").appendTo(to);
+                    } else {
+                        branches = jQuery("<li>" + getItemStr("folder", id, pid, projectId, userId, text) + "</li>").appendTo(to);
+                    }
+                    jQuery('#doc_tree').treeview({ add: branches });
+                    bindContextMenu();
+                    requestListData(pid);
+                    jQuery("#editObject").modal("hide");
+                    jQuery.alert("success", messageobj.creatfoldersucess);
+                    //ShowMessage(messageobj.creatfoldersucess,"success");
+                });
+            }
+        }
+
+        //rename call back
+        function _callbackRename(id, text) {
+            jQuery("#modalContext").modal("toggle");
+            if (id != undefined) {
+                jQuery.post(ajaxVirtualDir + "/DocManagement/DocHome/Modify", { id: id, text: text }, function(result) {
+                    if (result == "True") {
+                        var _li = getLiSpanObj(id);
+                        var _tr = getTrSpanObj(id);
+                        jQuery(_li).html("&nbsp;" + text);
+                        jQuery(_tr).html(text);
+                        jQuery(_tr).parent().next().remove();
+                        jQuery.alert("success", messageobj.operationissuccessfule);
+                    } else {
+                        jQuery.alert("danger", messageobj.renamefolderfail);
+                    }
+                });
+            }
+        }
+
+        //move call back
+        function _callbackMove(projectId, selectid, moveid) {
+            jQuery("#modalContext").modal("toggle");
+
+            var checkobj = jQuery("span[id=" + selectid + "]");
+            if (selectid == 0) {
+                //checkobj = jQuery("#rootDoc");
+            }
+            var to = checkobj.next();
+
+            jQuery.post(ajaxVirtualDir + "/DocManagement/DocHome/MoveTo", { projectid: projectId, movetoid: selectid, moveid: moveid }, function() {
+                var branches = "";
+                if (selectObj.tagName == "TR") {
+                    jQuery(selectObj).remove();
+                    selectObj = jQuery("span[id=" + moveid + "]")[0];
+                }
+                selectObj = $(selectObj).parents("li").filter(":first");
+                if (to.length == 0) {
+                    to = checkobj.parent();
+                    branches = jQuery("<ul><li>" + selectObj.html() + "</li></ul>").appendTo(to);
+                } else {
+                    branches = jQuery("<li>" + selectObj.html() + "</li>").appendTo(to);
+                }
+                jQuery('#doc_tree').treeview({ add: branches });
+                bindContextMenu();
+                requestListData(selectid, projectId);
+                jQuery.alert("success", messageobj.movesucess);
+
+                var removeElem = selectObj;
+                jQuery('#doc_tree').treeview({ remove: removeElem });
+
+                reloadTree();
+
+
+                parentidsObj = new Array();
+                isInitToggler = false;
+                clickParentEmle(selectid, projectId);
+                for (var i = parentidsObj.length - 1; i >= 0; i--) {
+                    if (i == 0) {
+                        isloadData = true;
+                    } else {
+                        isloadData = false;
+                    }
+                    jQuery(parentidsObj[i]).click();
+                }
+            });
+        }
+
+        //upload call back
+        var isInitToggler = false;
+
+        function _callbackUpload(pid, projectid) {
+            //jQuery("#modalUpload").modal("toggle");
+            jQuery("#modalContext").modal("toggle");
+            if (pid != undefined) {
+                reloadTree();
+                requestListData(pid);
+
+                parentidsObj = new Array();
+
+                isInitToggler = false;
+
+                clickParentEmle(pid, projectid);
+                for (var i = parentidsObj.length - 1; i >= 0; i--) {
+                    if (i == 0) {
+                        isloadData = true;
+                    } else {
+                        isloadData = false;
+                    }
+                    jQuery(parentidsObj[i]).click();
+                }
+            }
+        }
+
+        function clickParentEmle(id, projectid) {
+            var tempobj = jQuery("span[id=" + id + "][projectid=" + projectid + "]");
+            parentidsObj.push(tempobj);
+            if (id == 0 && projectid != 0) {
+                isInitToggler = true;
+            }
+            if (tempobj.attr("id") != 0 || (tempobj.attr("id") == 0 && tempobj.attr("projectid") != 0)) {
+                if (tempobj.attr("pid") != 0) {
+                    clickParentEmle(tempobj.attr("pid"), tempobj.attr("projectid"));
+                } else if (tempobj.attr("projectid") != 0) {
+                    if (!isInitToggler) {
+                        clickParentEmle(tempobj.attr("pid"), tempobj.attr("projectid"));
+                    }
+                }
+            }
+        }
+
+
+        function getSelectId() {
+            var pid = selectId;
+            if (selectObj && jQuery(selectObj).length > 0) {
+                pid = jQuery(selectObj).attr("id");
+                if (isNaN(pid))
+                    pid = 0;
+            }
+            return pid;
+        }
+
+        //rename function
+        function renamefortr() {
+            var _id = getSelectId();
+            if (_id == 0) {
+                jQuery.alert("danger", messageobj.selecterrordir);
+                return;
+            }
+            if (jQuery(selectObj).attr("userid") != '@ViewBag.UserID') {
+                jQuery.alert("danger", messageobj.notAutorized);
+                return;
+            }
+            jQuery("#modalContext").modal("refresh", "Rename/" + _id);
+        }
+
+        //move function
+        function movetofortr() {
+            var _id = getSelectId();
+            if (_id == 0) {
+                jQuery.alert("danger", messageobj.selecterrordir);
+                return;
+            }
+            if (jQuery(selectObj).attr("userid") != '@ViewBag.UserID') {
+                jQuery.alert("danger", messageobj.notAutorized);
+                return;
+            }
+            var projectId = jQuery(selectObj).attr("projectid");
+            jQuery("#modalContext").modal("refresh", "move?id=" + _id + "&projectId=" + projectId);
+        }
+
+        //download function
+        function downloadfortr() {
+            var _id = getSelectId();
+            download(_id);
+        }
+
+        //delete function
+        function deletefortr() {
+            var _id = getSelectId();
+            if (_id == 0) {
+                jQuery.alert("danger", messageobj.selecterrordir);
+                return;
+            }
+            if (jQuery(selectObj).attr("userid") != '@ViewBag.UserID') {
+                jQuery.alert("danger", messageobj.notAutorized);
+                return;
+            }
+            delete_confirm(_id, jQuery(selectObj).attr("projectid"), jQuery(selectObj).text());
+        }
+
+        // add folder function
+        function newFolder() {
+            var pid = getSelectId();
+            if (selectObj == undefined) {
+                jQuery.alert("danger", messageobj.selecterrordir);
+                return;
+            }
+            if (getTrObj(pid).attr("_type") == "file") {
+                //jQuery.alert("danger", messageobj.selecterrordir);
+                //return;
+                var tempParentId = jQuery(selectObj).attr("pid");
+                var tempProjectId = jQuery(selectObj).attr("projectid");
+                var tempSelectObj = jQuery("span[id=" + tempParentId + "][projectid=" + tempProjectId + "]");
+
+                setLiBg(tempSelectObj);
+                setTrbg(tempSelectObj);
+
+                selectObj = tempSelectObj;
+                selectId = tempParentId;
+                pid = selectId;
+            }
+            if (jQuery(selectObj).attr("userid") != 0 ||
+                jQuery(selectObj).attr("projectid") != 0 ||
+                jQuery(selectObj).attr("id") != 0) {
+
+            }
+            jQuery("#modalContext").modal("refresh", "NewFolder/" + pid);
+
+        }
+
+        //upload function
+        function newUpload() {
+
+            var id = selectId;
+            var dir = "";
+            if (selectObj == undefined || selectObj == null || selectObj.length == 0) {
+                jQuery.alert("danger", messageobj.selectproject);
+                return;
+            } else {
+                dir = jQuery(selectObj).text();
+                jQuery("#span_uploadPFolder").text(jQuery(selectObj).text());
+                if (getTrObj(id).attr("_type") == "file") {
+
+                    var tempParentId = jQuery(selectObj).attr("pid");
+                    var tempProjectId = jQuery(selectObj).attr("projectid");
+                    var tempSelectObj = jQuery("span[id=" + tempParentId + "][projectid=" + tempProjectId + "]");
+
+                    setLiBg(tempSelectObj);
+                    setTrbg(tempSelectObj);
+
+                    selectObj = tempSelectObj;
+                    selectId = tempParentId;
+                    id = selectId;
+                }
+            }
+            var projectId = jQuery(selectObj).attr("projectid");
+            jQuery("#modalContext").modal("refresh", "UploadDoc?projectId=" + projectId + "&id=" + id + "&dir=" + encodeURIComponent(jQuery.trim(dir)));
+        }
+
+        function fnSelectAll(){
+            if ($("#tbdata tbody tr").eq(0).find(":checkbox")[0]==undefined) {
+                $("#tbdata tbody tr").each(function (){
+                    $(this).children().eq(0).prepend("<input type='checkbox' />");
+                });
+                $("#liDownloadFiles").show();
+            }else{
+                $("#tbdata tbody tr").each(function (){
+                    $(this).children().eq(0).find(":checkbox").remove();
+                });
+                $("#liDownloadFiles").hide();
+            }
+        }
+        function fnDownloadFiles(){
+            var arrId=new Array();
+
+            $("#tbdata tbody tr :checked").each(function () {
+                arrId.push($(this).closest("tr").attr("_id"));
+            })
+            if (arrId.length > 0) {
+                var projectId = 0;
+                $("#tbdata tbody tr").each(function() {
+                    if ($(this).attr("_type") == "folder") {
+                        projectId = $(this).attr("projectid");
+                        return false;
+                    }
+                });
+
+                jQuery("#ifrdownload").prop("src", "DownloadFiles?projectId=" + projectId + "&strId=" + arrId.join("_"));
+            } else {
+                jQuery.alert("warning", "Please select a file to download.");
+            }
+        }
+
+        //// enter key down search
+        function search_onkeydown(event) {
+            if (event.keyCode == 13) {
+                searchList();
+            }
+        }
+
+        //columns order by
+        function orderTable(field, obj) {
+            var sort = "";
+            var tempField = "";
+            $.ajax({
+                url: ajaxVirtualDir + "/DocManagement/DocHome/GetOrderByInfo",
+                async: false,
+                dataType: "json",
+                success: function(data) {
+                    tempField = data[0].Order;
+                    sort = data[0].Sort;
+                }
+            });
+            if (field == tempField) {
+                if (sort == "DESC")
+                    sort = "ASC";
+                else if (sort == "ASC")
+                    sort = "DESC";
+            } else {
+                sort = "DESC";
+            }
+            var projectId = jQuery(selectObj).attr("projectid");
+            jQuery.post(ajaxVirtualDir + "/DocManagement/DocHome/GetListByParentID", { parentid: selectId, projectId: projectId, order: field, sort: sort }, function(data) {
+                jQuery("#tbdata").find("tr[id!='title']").remove(); // delete list
+                bindList(data);
+                jQuery("tr[id='title']").find("img").remove();
+                var branches = "";
+                if (sort == "ASC")
+                    branches = "<img src='@Url.Content("~/Images/icons/arrowup1.png")' />";
+                else
+                    branches = "<img src='@Url.Content("~/Images/icons/arrowdown1.png")' />";
+                jQuery(obj).append(branches);
+            }, 'json');
+        }
+
+        function toggler(liElem) {
+            $(liElem)
+                // swap classes for hitarea
+                .find("* > .hitarea")
+                .swapClass("collapsable-hitarea", "expandable-hitarea")
+                .swapClass("lastCollapsable-hitarea", "lastExpandable-hitarea")
+                .end()
+                // swap classes for parent li
+                .swapClass("collapsable", "expandable")
+                .swapClass("lastCollapsable", "lastExpandable")
+                // find child lists
+                .find("* > ul")
+                // toggle them
+                .heightToggle('fast', undefined);
+        }
+
+    </script>
+    <script id="temp_ticketStatus_desc" type="text/html">
+        <div class="faqsText">
+            <p style="margin-left: -20px; margin-top: -10px;">
+                1.Clicking the right mouse button will open a shortcut menu.( According to permission,display different menus )
+                <div>
+                    <img src="@Url.Content("~/Images/New2014_Image/document_alert1.png")" />
+                </div>
+            </p>
+            <p style="margin-left: -20px;">
+                2.Clicking the button on the top of the table. ( According to permission,display different menus )
+                <div>
+                    <img src="@Url.Content("~/Images/New2014_Image/document_alert2.png")" />
+                </div>
+            </p>
+
+        </div>
+    </script>
+}
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+    <tr id="trMain">
+        <td class="mainleftTd">
+            <div class="leftmenuBox">
+                <ul class="newticketBtn">
+                    
+                    @if (userType.ToUpper() == "CLIENT")
+                    {
+                        <a href="/Ticket/New.aspx">
+                            <li>New Ticket</li>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/SunnetTicket/New.aspx">
+                            <li>New Ticket</li>
+                        </a>
+                    }
+                </ul>
+                <div id="divMainLeft" class="mainleftBoxdiv totalRoolTree">
+                    <ul id="doc_tree" class="filetree treeMenu" style="width: 85%;height:100%;"></ul>
+                </div>
+            </div>
+        </td>
+        <td class="mainrightTd">
+            <div class="mainrightBox" style="height:100%;" id="divMainRight">
+                <div class="alert alert-success fade hide">
+                    <img src="/Images/icons/success.png" />Operation successful.
+                </div>
+                <div class="alert alert-danger fade hide">
+                    <img src="/Images/icons/failed.png" />
+                    <a class="close" data-dismiss="alert" href="###" aria-hidden="true">&times;</a>
+                    Operation failed.
+                </div>
+                <div class="searchItembox" id="divFolders">
+                </div>
+                <div class="topbtnbox searchItembox" id="spanextNewfunction">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="400">
+                                <ul class="listtopBtn">
+                                    <li onclick="javascript:newFolder();">
+                                        <div class="listtopBtn_icon">
+                                            <img src="@Url.Content("~/Images/New2014_Image/documenticon/wfolder.png")" />
+                                        </div>
+                                        <div class="listtopBtn_text">New Folder</div>
+                                    </li>
+                                    <li onclick="javascript:newUpload()">
+                                        <div class="listtopBtn_icon">
+                                            <img src="@Url.Content("~/Images/New2014_Image/documenticon/wdocument.png")" />
+                                        </div>
+                                        <div class="listtopBtn_text">Upload File</div>
+                                    </li>
+                                    <li onclick="javascript:fnDownloadFiles()" id="liDownloadFiles">
+                                        <div class="listtopBtn_icon" id="divDownloadFiles">
+                                            <img src="@Url.Content("~/Images/New2014_Image/documenticon/download.png")" />
+                                        </div>
+                                        <div class="listtopBtn_text">Download</div>
+                                    </li>
+                                </ul>
+                            </td>
+                            <td width="200">
+                                <table border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <td>
+                                            <input id="txtSearch" type="text" placeholder="Search the entire directory" onkeydown="search_onkeydown(event)" maxlength="20" style="width: 215px" />
+                                        </td>
+                                        <td>
+                                            <input class="searchBtn" id="btnSearch" type="button" onclick=" javascript:searchList()">
+                                        </td>
+                                        <td>
+                                            <a href="#" id="statusDesc" style="display: none;">How to create folder and upload files?</a>
+
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                            <td width="*">
+                                <div class="docTopicon">
+                                    <span id="spanextfunction" style="display: none;">
+                                        <span id="litopLinkTitle"></span>:
+                                        <img src="@Url.Content("~/Images/New2014_Image/documenticon/rename.png")" title="Rename" onclick="renamefortr();" style="cursor:pointer;">
+                                        <img src="@Url.Content("~/Images/New2014_Image/documenticon/moveto.png")" title="Move to" onclick="movetofortr()" style="cursor:pointer;">
+                                        <img src="@Url.Content("~/Images/New2014_Image/documenticon/download.png")" title="Download" onclick="downloadfortr()" style="cursor:pointer;">
+                                        <img src="@Url.Content("~/Images/New2014_Image/documenticon/delete.png")" title="Delete" onclick="deletefortr()" style="cursor:pointer;">
+                                    </span>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <table id="tbdata" width="100%" border="0" cellpadding="0" cellspacing="0" class="table-advance">
+                    <thead>
+                        <tr id="title" class="doclist1Title">
+                            <th style="cursor: pointer;" onclick="orderTable('DisplayFileName',this)" id="displayName">
+                                Name
+                            </th>
+                            <th width="20%">
+                                Project Name
+                            </th>
+                            <th width="10%">
+                                Size
+                            </th>
+                            <th width="10%" style="cursor: pointer;" onclick="orderTable('Extenstions',this)">
+                                Type
+                            </th>
+                            <th width="10%">
+                                Author
+                            </th>
+                            <th width="10%" style="cursor: pointer;" onclick="orderTable('DocManagements.CreatedOn',this)">
+                                Uploaded On
+                            </th>
+                            <!-- lyq 20140722 -->
+                            <th width="8%" style="text-align: center;">
+                                Comment
+                            </th>
+                        </tr>
+                    </thead>
+                </table>
+                <div class="contextMenu" id="myMenu1" style="display: none;">
+                    <ul>
+                        <li id="newfolder">
+                            <img src="@Url.Content("~/Images/icons/folder_add.png")" />New Folder
+                        </li>
+                        <li id="rename">
+                            <img src="@Url.Content("~/Images/icons/rename.png")" />Rename
+                        </li>
+                        <li id="move">
+                            <img src="@Url.Content("~/Images/icons/moveto.png")" />Move to
+                        </li>
+                        <li id="download">
+                            <img src="@Url.Content("~/Images/icons/download.png")" />Download
+                        </li>
+                        <li id="upload">
+                            <img src="@Url.Content("~/Images/icons/upload.png")" />Upload
+                        </li>
+                        <li id="delete">
+                            <img src="@Url.Content("~/Images/icons/delete1.png")" />Delete
+                        </li>
+                    </ul>
+                </div>
+                <div class="contextMenu" id="myMenu2" style="display: none;">
+                    <ul>
+                        <li id="download">
+                            <img src="@Url.Content("~/Images/icons/download.png")" />Download
+                        </li>
+                    </ul>
+                </div>
+                <div class="contextMenu" id="myMenu3" style="display: none;">
+                    <ul>
+                        <li id="newfolder">
+                            <img src="@Url.Content("~/Images/icons/folder_add.png")" />New Folder
+                        </li>
+                        <li id="upload">
+                            <img src="@Url.Content("~/Images/icons/upload.png")" />Upload
+                        </li>
+                        <li id="download">
+                            <img src="@Url.Content("~/Images/icons/download.png")" />Download
+                        </li>
+                    </ul>
+                </div>
+                <div class="contextMenu" id="myMenu4" style="display: none;">
+                    <ul>
+                        <li id="newfolder">
+                            <img src="@Url.Content("~/Images/icons/folder_add.png")" />New Folder
+                        </li>
+                        <li id="upload">
+                            <img src="@Url.Content("~/Images/icons/upload.png")" />Upload
+                        </li>
+                    </ul>
+                </div>
+                <div class="contextMenu" id="myMenuTab" style="display: none;">
+                    <ul>
+                        <li id="renameitem">
+                            <img src="@Url.Content("~/Images/icons/rename.png")" />Rename
+                        </li>
+                        <li id="moveitem">
+                            <img src="@Url.Content("~/Images/icons/moveto.png")" />Move to
+                        </li>
+                        <li id="downloaditem">
+                            <img src="@Url.Content("~/Images/icons/download.png")" />Download
+                        </li>
+                        <li id="deleteitem">
+                            <img src="@Url.Content("~/Images/icons/delete1.png")" />Delete
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerBox">
+                <div class="footerBox_left"><a href="/About/Faqs.aspx">FAQ</a> <span>|</span><a href="/About/Survey.aspx">Survey</a><span>|</span><a href="/About/ContactUs.aspx">Contact Us</a></div>
+                <div class="footerBox_right">Copyright &copy; 2017 <a href="http://www.sunnet.us" target="_blank">SunNet Solutions</a>. </div>
+            </div>
+        </td>
+    </tr>
+</table>
+<div class="modal fade" id="modalContext" tabindex="-1" role="dialog" data-confirm="true" data-backdrop="static"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+</div>
+<div id="modalUpload" class="modal fade" data-backdrop="static">
+    <div class="modal-dialog">
+        <iframe frameborder="0" scrolling="no" style="border-radius: 5px; min-height: 317px;"
+                width="432"></iframe>
+    </div>
+</div>
+<iframe id="ifrdownload" frameborder="0" height="0" width="0" scrolling="no" style="position: fixed; left: -50px; visibility: hidden;"></iframe>
+
+<div class="modal fade" id="modalContext2" tabindex="-1" role="dialog" data-confirm="true"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+</div>

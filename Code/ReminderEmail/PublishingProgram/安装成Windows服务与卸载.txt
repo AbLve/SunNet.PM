@@ -1,0 +1,13 @@
+﻿可以把发布包，做成windows服务
+
+1、整理好发布包
+
+2、管理员身份运行 cmd
+
+安装服务：注意D:XXXX 换成实际路径
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe D:\Project\PM\布署\ReminderEmail\bin\Debug\ReminderEmail.exe
+
+卸载服务：注意D:XXXX 换成实际路径
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\InstallUtil.exe -u D:\Project\PM\布署\ReminderEmail\bin\Debug\ReminderEmail.exe
+
+3、服务管理里，启动服务。并确认开机自启动

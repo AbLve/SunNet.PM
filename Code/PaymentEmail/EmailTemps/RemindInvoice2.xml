@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<emails>
+  <email>
+    <subject>{ProjectTitle} needs invoice(s).</subject>
+    <content>
+      <![CDATA[
+                 The following proposal has been approved. Please create all invoices and fill out invoice numbers in the PM System. <br/><br/>
+                 
+                 Project Title  : {ProjectTitle},<br/><br/>
+                 Proposal Title : {ProposalTitle}.<br/><br/>
+                
+                 <a href="https://pm.sunnet.us" target="_blank"> PM System</a>, {Date}
+        ]]>
+    </content>
+  </email>
+</emails>

@@ -1,0 +1,56 @@
+﻿
+/****** Object:  Table [dbo].[DocManagements]    Script Date: 2014/2/14 17:18:05 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[DocManagements](
+	[ID] [int] IDENTITY(1,1) NOT NULL,
+	[ProjectID] [int] NOT NULL,
+	[CompanyID] [int] NOT NULL,
+	[UserID] [int] NOT NULL,
+	[ParentID] [int] NOT NULL,
+	[Type] [int] NOT NULL,
+	[FileName] [nvarchar](255) NOT NULL,
+	[DisplayFileName] [nvarchar](255) NOT NULL,
+	[FileContentType] [nvarchar](50) NOT NULL,
+	[FileUrl] [nvarchar](255) NOT NULL,
+	[UpdatedOn] [datetime] NOT NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[Extenstions] [nvarchar](20) NOT NULL,
+	[FileSize] [int] NOT NULL,
+	[IsDeleted] [bit] NOT NULL
+) ON [PRIMARY]
+
+GO
+
+/****** Object:  View [dbo].[ProjectFiles]    Script Date: 2014/2/14 17:20:12 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE VIEW [dbo].[ProjectFiles]
+AS
+select * from (
+select f.FileID,f.CompanyID,f.ProjectId,f.TicketId,f.FeedbackId,f.SourceType,f.FileTitle,f.ContentType
+,f.FileSize,f.FilePath,f.ThumbPath,f.CreatedOn,f.CreatedBy,f.IsDelete,f.IsPublic,f.Tags,f.WorkRequestId,1 as TableType
+from [dbo].[Files] as f
+union
+select id as FileID,CompanyID,ProjectID as ProjectId,0 as TicketId,0 as FeedbackId,1 as SourceType,DisplayFileName as FileTitle,FileContentType as ContentType,
+FileSize,FileUrl as FilePath,'' as ThumbPath,CreatedOn,UserID as CreatedBy,IsDeleted as IsDelete,CONVERT(bit,0) as IsPublic,NULL as Tags,NULL as WorkRequestId,2 as TableType
+from [dbo].[DocManagements] where [Type]=2
+) as TempFiles
+
+
+
+
+GO
+
+

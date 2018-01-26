@@ -1,0 +1,6 @@
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Framework\bin\Debug\SunNet.PMNew.Framework.dll
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Framework\bin\Debug\SunNet.PMNew.Framework.pdb
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Framework\bin\Debug\ICSharpCode.SharpZipLib.dll
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Framework\obj\Debug\SunNet.PMNew.Framework.dll
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Framework\obj\Debug\SunNet.PMNew.Framework.pdb
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.Framework\obj\Debug\SunNet.PMNew.Framework.csprojResolveAssemblyReference.cache

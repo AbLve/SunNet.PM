@@ -1,0 +1,9 @@
+﻿
+
+Dear [ClientName],<br/>
+
+&nbsp;&nbsp;[applicant]  申请使用以下公章，已批准。<br/>
+
+[content]<br/>
+
+Thank you.<br/>

@@ -1,0 +1,4 @@
+﻿
+<!--在 appSettings 节点下面 增加-->
+<!--这个键值对用来管理可以 删除 修改 pto_event 的人员列表，value值 自行添加-->
+<add key="PtoAdmin" value="TestPM@sunnet.us;"/> 

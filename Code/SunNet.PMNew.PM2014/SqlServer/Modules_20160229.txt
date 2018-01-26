@@ -1,0 +1,5 @@
+  insert into [PM].[dbo].[Modules]([ModuleTitle],[ModulePath],[DefaultPage],[Status],[Orders],[ShowInMenu],[PageOrModule],[ClickFunctioin],[ParentID]
+  ) values('Tickets Export','/Report/TicketsExport.aspx','',0,300,1,0,'ticketsexport',5);
+
+
+    insert into [PM].[dbo].[RoleModules] values(5,150);

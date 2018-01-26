@@ -1,0 +1,9 @@
+CREATE TABLE [dbo].[WorkTime](
+	[ID] [int] IDENTITY(1,1) NOT NULL primary key,
+	[UserID]  INT NOT NULL,
+	[FromTime] varchar(5) NOT NULL,
+	[FromTimeType] INT NOT NULL,
+	[ToTime] varchar(5) NOT NULL,
+	[ToTimeType] INT NOT NULL,
+	[CreateOn] DATETIME NOT NULL
+)

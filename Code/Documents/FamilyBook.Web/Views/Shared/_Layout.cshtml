@@ -1,0 +1,91 @@
+﻿@using FamilyBook.Common;
+@{
+    int userid = ViewBag.SessionUserID == null ? 0 : ((int)ViewBag.SessionUserID);
+    bool login = userid > 0;
+    string menuName = ViewBag.MenuName;
+    SF.Framework.Utils.IEncrypt encrypt = SF.Framework.Utils.UtilFactory.GetEncryptProvider(SF.Framework.Utils.EncryptType.DES);
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    @Html.Raw(ViewBag.IEEmulator)
+    <link href='//fonts.googleapis.com/css?family=Open+Sans&amp;subset=latin' rel='stylesheet' type='text/css'>
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/bundles/basic")
+    
+    <link href="/content/styles/public.css" rel="stylesheet" type="text/css" />
+    <link href="/content/styles/forms.css" rel="stylesheet" type="text/css" />
+
+    @RenderSection("Styles", false)
+    <link href="/content/styles/bootstrap_1.css" rel="stylesheet" type="text/css" />
+
+    @Scripts.Render("~/bundles/jquery", "~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/global")
+
+    @*<script type="text/javascript" src="/Scripts/jquery.sunnet.js"></script>*@
+    
+</head>
+<body>
+    <div id="messageContainer" style="display: none; position: fixed; z-index: 2000; top: 20px;">
+    </div>
+
+    <div class="fixedContainer">
+        <iframe src="/publicpage/menu.aspx?module=document" style="width: 100%; min-height: 116px; overflow: hidden;min-width:1260px;" frameborder="no">
+        </iframe>
+
+        @RenderBody()
+    </div>
+    @RenderSection("Scripts", required: false)
+    <script type="text/javascript">
+        jQuery(function () {
+           @* if ('@(login)' == "True") {
+                NOTI && NOTI.init(@(userid));
+            }
+            //height= windowHeight - copyRightHeight;
+            var windowHeight = $(window).height() - 50;
+            $("<style type='text/css'>.scroll-button{width:36px; height:36px; background: url('/Images/icons/gotopbtn-all.png') no-repeat; position:fixed; z-index:9000; display:none; cursor:pointer;}.scroll-button:hover{background: url('/Images/icons/gotopbtn-all.png') no-repeat -36px 0px;}</style>").appendTo("body");
+            var top = $("<div class='scroll-button'/>").appendTo("body");
+            top.click(function (e) {
+                scrollTo(0, 0);
+            }).css({ top: windowHeight - 90, left: ($(window).width() - 1100) / 2 + 1100 - 220 });
+            $(window).scroll(function () {
+                var scrollTop = $(window).scrollTop();
+                if (scrollTop > windowHeight) {
+                    top.show();
+                } else {
+                    top.hide();
+                }
+            }).resize(function () {
+                //top= height - copyRightHeight - self - custome, left= marginLeft + mainContainerWidth - custome;
+                top.css({ top: $(window).height() - 60 - 90, left: ($(window).width() - 1100) / 2 + 1100 - 220 });
+            });*@
+
+            //jQuery.get("GetClientTopMenu", function (data) {
+            //    var str = "";
+            //    for (var i = 0; i < data.length; i++) {
+            //        str += "<li class='sepline'>";
+            //        str += "<img src='/images/topsep.jpg' /></li>";
+            //        str += "<li class='" + ((data[i].ModuleTitle).toLowerCase().indexOf("document") > -1 ? "currenttop" : "none") + "'>";
+            //        str += "<a href='" + data[i].ModulePath + data[i].DefaultPage + "'>" + data[i].ModuleTitle + "</a></li>";
+            //    }
+            //    jQuery("#ulTopMenu").append(str);
+            //}, 'json');
+        });
+    </script>
+</body>
+</html>
+@*<script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-46626023-1', 'myfamilybook.us');
+    ga('send', 'pageview');
+</script>*@

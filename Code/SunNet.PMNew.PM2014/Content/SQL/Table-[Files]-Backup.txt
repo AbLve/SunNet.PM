@@ -1,0 +1,52 @@
+﻿
+GO
+
+/****** Object:  Table [dbo].[Files]    Script Date: 5/25 20:23:12 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Files](
+	[FileID] [int] IDENTITY(1,1) NOT NULL,
+	[CompanyID] [int] NOT NULL,
+	[ProjectId] [int] NOT NULL,
+	[TicketId] [int] NOT NULL,
+	[FeedbackId] [int] NOT NULL,
+	[SourceType] [int] NOT NULL,
+	[FileTitle] [nvarchar](300) NULL,
+	[ContentType] [varchar](100) NOT NULL,
+	[FileSize] [decimal](18, 2) NOT NULL,
+	[FilePath] [nvarchar](300) NULL,
+	[ThumbPath] [nvarchar](300) NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[CreatedBy] [int] NOT NULL,
+	[IsDelete] [bit] NOT NULL,
+	[IsPublic] [bit] NOT NULL,
+	[Tags] [varchar](100) NULL,
+	[ProposalTrackerId] [int] NULL
+ CONSTRAINT [PK__ClientTasksFiles__093F5D4E] PRIMARY KEY NONCLUSTERED 
+(
+	[FileID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Files] ADD  CONSTRAINT [DF__ClientTas__FileS__0A338187]  DEFAULT ((0)) FOR [FileSize]
+GO
+
+ALTER TABLE [dbo].[Files] ADD  CONSTRAINT [DF__ClientTas__Creat__0B27A5C0]  DEFAULT (getdate()) FOR [CreatedOn]
+GO
+
+ALTER TABLE [dbo].[Files] ADD  CONSTRAINT [DF__ClientTas__IsDel__0C1BC9F9]  DEFAULT ((0)) FOR [IsDelete]
+GO
+
+

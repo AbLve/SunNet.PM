@@ -1,0 +1,29 @@
+﻿<%--
+默认的外观模板。以下外观仅作为示例提供。
+
+1. 命名的控件外观。SkinId 的定义应唯一，因为在同一主题中不允许一个控件类型有重复的 SkinId。
+
+<asp:GridView runat="server" SkinId="gridviewSkin" BackColor="White" >
+   <AlternatingRowStyle BackColor="Blue" />
+</asp:GridView>
+
+2. 默认外观。未定义 SkinId。在同一主题中每个控件类型只允许有一个默认的控件外观。
+
+<asp:Image runat="server" ImageUrl="~/images/image1.jpg" />
+--%>
+<webdiyer:AspNetPager   
+    ShowCustomInfoSection="Left" CustomInfoSectionWidth="30%" CssClass="pager"
+    NumericButtonCount="5" CustomInfoHTML="Displaying %StartRecordIndex% to %EndRecordIndex% (of %RecordCount% items)"
+    CustomInfoStyle="text-align:left;" HorizontalAlign="Right" PagingButtonsClass=""
+    ShowPageIndexBox="Auto" PageIndexOutOfRangeErrorMessage="Page index out of range."
+    PageSize="10" InvalidPageIndexErrorMessage="Invalid page index." runat="server"
+    ShowPageSizeBox="true" PageSizeBoxText="Display per page" ShowPageSizeBoxValues="10,20,30,1000"
+    UrlPageSizeName="PageSize" PageIndexBoxType="DropDownList" UrlPaging="true" AlwaysShow="true" 
+    FirstPageText="First" PrevPageText="<i class='icon-double-angle-left'></i>Previous"
+    LastPageText="Last" NextPageText="<i class='icon-double-angle-right'></i>Next"  CurrentPageButtonClass="active">
+</webdiyer:AspNetPager>
+<sunnet:ExtendedDropdownList 
+DefaultAllText="ALL" 
+DefaultSelectText="Please select..." 
+DefaultItemValue=""
+runat='server'></sunnet:ExtendedDropdownList>

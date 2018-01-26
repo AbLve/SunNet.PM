@@ -1,0 +1,2 @@
+INSERT INTO [dbo].[Modules] VALUES ('PAY TO OFF', '/OA/Pto/Pto.aspx', '',0,30,1,0,'pto',(SELECT t.ModuleID FROM [dbo].[Modules] t WHERE t.ModuleTitle='OA' OR t.ModuleTitle='办公'))
+INSERT INTO [dbo].[Modules] VALUES ('PTO USER TIME', '/OA/Pto/PtoUserTime.aspx', '',0,26,0,0,'ptousertime',(SELECT t.ModuleID FROM [dbo].[Modules] t WHERE t.ModuleTitle='OA' OR t.ModuleTitle='办公'))

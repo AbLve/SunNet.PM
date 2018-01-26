@@ -1,0 +1,17 @@
+﻿@{
+    Layout = null;
+}
+<div class="modal-dialog" style="width:@(ViewBag.Width)px;">
+    <div class="modal-content" style="width: 100%;">
+        <div class="mainowBox" style="width: 100%;border:none">
+            <div class="mainowBoxtop" style="width: 100%;">
+                <div class="mainowBoxtop_title">
+                    @ViewBag.Title</div>
+                <div class="mainowBoxtop_close" data-dismiss="modal" aria-hidden="true" title="Close">
+                    <img src="@Url.Content("~/Images/New2014_Image/icons/close.png")" alt="&times;" /></div>
+            </div>
+            @RenderBody()
+        </div>
+    </div>
+</div>
+@RenderSection("Scripts", false)

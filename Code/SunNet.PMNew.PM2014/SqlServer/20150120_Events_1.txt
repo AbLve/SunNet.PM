@@ -1,0 +1,2 @@
+﻿ALTER TABLE dbo.Events
+ADD Times INT DEFAULT 0

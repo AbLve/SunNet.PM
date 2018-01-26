@@ -1,0 +1,95 @@
+﻿
+
+ALTER TABLE [dbo].[Tickets] DROP CONSTRAINT [DF__Tickets__Additio__2F650636]
+GO
+
+ALTER TABLE [dbo].[Tickets] DROP CONSTRAINT [DF_Tickets_Star]
+GO
+
+ALTER TABLE [dbo].[Tickets] DROP CONSTRAINT [DF__ClientTas__IsDel__345EC57D]
+GO
+
+ALTER TABLE [dbo].[Tickets] DROP CONSTRAINT [DF__ClientTas__Statu__32767D0B]
+GO
+
+ALTER TABLE [dbo].[Tickets] DROP CONSTRAINT [DF__ClientTas__Clien__336AA144]
+GO
+
+ALTER TABLE [dbo].[Tickets] DROP CONSTRAINT [DF__ClientTas__Creat__318258D2]
+GO
+
+/****** Object:  Table [dbo].[Tickets]    Script Date: 2014/5/23 9:34:27 ******/
+DROP TABLE [dbo].[Tickets]
+GO
+
+/****** Object:  Table [dbo].[Tickets]    Script Date: 2014/5/23 9:34:27 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[Tickets](
+	[TicketID] [int] IDENTITY(1,1) NOT NULL,
+	[CompanyID] [int] NOT NULL,
+	[ProjectID] [int] NOT NULL,
+	[Title] [nvarchar](200) NULL,
+	[TicketCode] [varchar](20) NOT NULL,
+	[TicketType] [varchar](18) NOT NULL,
+	[Description] [nvarchar](max) NULL,
+	[CreatedOn] [datetime] NOT NULL,
+	[CreatedBy] [int] NOT NULL,
+	[ModifiedOn] [datetime] NOT NULL,
+	[ModifiedBy] [int] NOT NULL,
+	[PublishDate] [datetime] NOT NULL,
+	[ClientPublished] [bit] NOT NULL,
+	[StartDate] [datetime] NOT NULL,
+	[DeliveryDate] [datetime] NOT NULL,
+	[ContinueDate] [int] NOT NULL,
+	[URL] [varchar](300) NULL,
+	[Priority] [int] NOT NULL,
+	[Status] [int] NOT NULL,
+	[ConvertDelete] [int] NOT NULL,
+	[IsInternal] [bit] NOT NULL,
+	[CreateType] [int] NOT NULL,
+	[SourceTicketID] [int] NOT NULL,
+	[IsEstimates] [bit] NOT NULL,
+	[InitialTime] [decimal](18, 2) NOT NULL,
+	[FinalTime] [decimal](18, 2) NOT NULL,
+	[EsUserID] [int] NULL,
+	[Star] [int] NOT NULL,
+	[Source] [nvarchar](20) NULL,
+	[AdditionalState] [int] NOT NULL,
+ CONSTRAINT [PK__ClientTasks__308E3499] PRIMARY KEY NONCLUSTERED 
+(
+	[TicketID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[Tickets] ADD  CONSTRAINT [DF__ClientTas__Creat__318258D2]  DEFAULT (getdate()) FOR [CreatedOn]
+GO
+
+ALTER TABLE [dbo].[Tickets] ADD  CONSTRAINT [DF__ClientTas__Clien__336AA144]  DEFAULT ((0)) FOR [ClientPublished]
+GO
+
+ALTER TABLE [dbo].[Tickets] ADD  CONSTRAINT [DF__ClientTas__Statu__32767D0B]  DEFAULT ((0)) FOR [Status]
+GO
+
+ALTER TABLE [dbo].[Tickets] ADD  CONSTRAINT [DF__ClientTas__IsDel__345EC57D]  DEFAULT ((0)) FOR [ConvertDelete]
+GO
+
+ALTER TABLE [dbo].[Tickets] ADD  CONSTRAINT [DF_Tickets_Star]  DEFAULT ((0)) FOR [Star]
+GO
+
+ALTER TABLE [dbo].[Tickets] ADD  DEFAULT ((1)) FOR [AdditionalState]
+GO
+
+

@@ -1,0 +1,312 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1">
+    <title>Events </title>
+    <link type="text/css" rel="stylesheet" href="/Styles/main.master.css">
+
+    <script type="text/javascript" src="/do/js.ashx"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        <!
+        #showleft, #hideleft
+        {
+            clear: both;
+            cursor: pointer;
+            display: none;
+            height: 16px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 16px;
+        }
+        -- ></style>
+</head>
+<body>
+    <iframe frameborder="0" style="display: none; overflow: hidden; width: 100%; height: 100%;"
+        id="frame_Main"></iframe>
+    <div class="mainTop">
+        <div class="mainTop_left">
+            <a target="_blank" href="http://www.sunnet.us">
+                <img src="/images/logomain.jpg" width="126" height="39" style="height: 39px; width: 126px;
+                    border-width: 0px;"></a>
+        </div>
+        <div class="mainTop_right">
+            <span class="mainTop_rightUser">Welcome&nbsp;&nbsp; <strong>Huang, David_Client</strong></span>
+            <span class=""><a href="#">FAQ</a>|<a href="#">Survey</a>|<a href="#">Contact us</a></span><a
+                href="#">Logout</a></div>
+    </div>
+    <div class="topMenu">
+        <div class="topMenu_left">
+            <ul>
+                <li class="sepline">
+                    <img src="/images/topsep.jpg"></li>
+                <li class="currenttop"><a href="#">Clients</a></li>
+                <li class="sepline">
+                    <img src="/images/topsep.jpg"></li>
+                <li class="none"><a href="/Sunnet/Profile/Profile.aspx">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+            <tr>
+                <td rowspan="2" id="leftMMenuContainer" class="mainBox_left">
+                    <div id="leftTitle" class="topTitle_left">
+                        &nbsp;&nbsp;&nbsp; Events
+                      
+                    </div>
+                    <ul style="margin-top: 30px;" class="leftmenu" id="leftMenu">
+                        <li><a href="Activities.html">Calendar</a></li>
+                        <li class="currentleft"><a href="Activities_list.html">List</a></li>
+                    </ul>
+                </td>
+                <td valign="top">
+                    <table width="99%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="74%" height="30">
+                                <div class="topTitle_right" style="width: 700px; padding-top: 6px;">
+                                    <div>
+                                        Family Portal > Events &gt; List
+                                    </div>
+                                </div>
+                            </td>
+                            <td width="26%" align="right">
+                                <strong>Projects:</strong>
+                                <select class="select205" id="ctl00_ContentPlaceHolder1_ddlProject" name="ctl00$ContentPlaceHolder1$ddlProject">
+                                    <option value="">Please select...</option>
+                                    <option value="68" selected="selected">Family Portal</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td vertical-align="top" style="border-bottom: 1px solid rgb(129, 186, 232);">
+                    <table width="97%" cellspacing="0" cellpadding="0" border="0" align="center" class="searchBox">
+                        <tbody>
+                            <tr>
+                                <td width="30">
+                                    Year:
+                                </td>
+                                <td width="120">
+                                    <select style="width: 120px;" class="select205" id="ctl00_ContentPlaceHolder1_ddlYears"
+                                        name="ctl00$ContentPlaceHolder1$ddlYears">
+                                        <option value="2013">2013</option>
+                                        <option value="2014" selected="selected">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                    </select>
+                                </td>
+                                <td width="65" align="right">
+                                    Month:
+                                </td>
+                                <td width="120">
+                                    <select style="width: 120px;" class="select205" id="ctl00_ContentPlaceHolder1_ddlMonths"
+                                        name="ctl00$ContentPlaceHolder1$ddlMonths">
+                                        <option value="1" selected="selected">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </td>
+                                <td width="60" align="right">
+                                    Users:
+                                </td>
+                                <td width="214">
+                                    <select class="select205" id="ctl00_ContentPlaceHolder1_ddlUsers" name="ctl00$ContentPlaceHolder1$ddlUsers">
+                                        <option value="8">buringj@sunnet.us (CN)</option>
+                                        <option value="27">davem@sunnet.us (CN)</option>
+                                        <option value="23">helenz@sunnet.us (CN)</option>
+                                        <option value="19">hr@sunnet.us (CN)</option>
+                                        <option value="22">jackz@sunnet.us (CN)</option>
+                                        <option value="32">justinw@sunnet.us (CN)</option>
+                                        <option value="33">kimyk@sunnet.us (CN)</option>
+                                        <option value="5">Lee@sunnet.us (CN)</option>
+                                        <option value="4">lynnm@sunnet.us (CN)</option>
+                                        <option value="3">magusw@sunnet.us (CN)</option>
+                                        <option value="18">sams@sunnet.us (CN)</option>
+                                        <option value="16" selected="selected">sukiq@sunnet.us (CN)</option>
+                                        <option value="13">susany@sunnet.us (CN)</option>
+                                        <option value="11">xiaowuq@sunnet.us (CN)</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="image" style="border-width: 0px;" src="/images/search_btn.jpg" id="ctl00_ContentPlaceHolder1_iBtnSearch"
+                                        name="ctl00$ContentPlaceHolder1$iBtnSearch">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="mainactionBox">
+                        <div class="mainactionBox_left">
+                            <span><a href="#">
+                                <img src="/images/event.png" width="16" height="18" border="0" align="absmiddle">
+                                Create Event </a></span>
+                        </div>
+                        <div class="mainactionBox_right">
+                        </div>
+                    </div>
+                    <div class="mainrightBoxtwo">
+                        <div class="pdlistTop">
+                           March 5, 2014</div>
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" class="listtwo">
+                            <tr class="listsubTitle">
+                                <td width="120">
+                                    <a href="#">Time</a>
+                                </td>
+                                <td>
+                                    Title
+                                </td>
+                                <td width="150">
+                                    Action
+                                </td>
+                            </tr>
+                            <tr class="listrowone">
+                                <td>
+                                    9:00PM - 5:00PM
+                                </td>
+                                <td>
+                                    Narrative Description of Target Systems
+                                </td>
+                               <td align="center">
+                                   <a href="#">Edit</a>
+                                   |
+                                   <a href="#">Delete</a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="pdlistTop">
+                            Feb 28, 2014</div>
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" class="listtwo">
+                            <tr class="listsubTitle">
+                                <td width="120">
+                                    <a href="#">Time</a>
+                                </td>
+                                <td>
+                                    Title
+                                </td>
+                                <td width="150">
+                                    Action
+                                </td>
+                            </tr>
+                            <tr class="listrowone">
+                                <td>
+                                    9:00PM - 5:00PM
+                                </td>
+                                <td>
+                                    Strategic Plan Report -Daft
+                                </td>
+                                <td align="center">
+                                   <a href="#">Edit</a>
+                                   |
+                                   <a href="#">Delete</a>
+                                </td>
+                            </tr>
+                          
+                        </table>
+                         <div class="pdlistTop">
+                           March 17, 2014</div>
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" class="listtwo">
+                            <tr class="listsubTitle">
+                                <td width="120">
+                                    <a href="#">Time</a>
+                                </td>
+                                <td>
+                                    Title
+                                </td>
+                                <td width="150">
+                                    Action
+                                </td>
+                            </tr>
+                            <tr class="listrowone">
+                                <td>
+                                   all-day
+                                </td>
+                                <td>
+                                    Strategic Plan Report -Final
+                                </td>
+                                <td align="center">
+                                   <a href="#">Edit</a>
+                                   |
+                                   <a href="#">Delete</a>
+                                </td>
+                            </tr>
+                            <tr class="listrowtwo">
+                                <td>
+                                    all-day
+                                </td>
+                                <td>
+                                    Business Requirement Specification -Draft
+                                </td>
+                               <td align="center">
+                                   <a href="#">Edit</a>
+                                   |
+                                   <a href="#">Delete</a>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="mainrightBoxPage">
+                        <div class="pageBox">
+                            <!-- AspNetPager V7.2 for VS2005 & VS2008  Copyright:2003-2008 Webdiyer (www.webdiyer.com) -->
+                            <div style="text-align: right;" id="ctl00_ContentPlaceHolder1_anpUsers">
+                                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                                    <tbody>
+                                        <tr>
+                                            <td valign="bottom" nowrap="true" style="width: 5%; vertical-align: middle;">
+                                                Page 1 of 41
+                                            </td>
+                                            <td valign="bottom" nowrap="true" align="right" style="width: 95%; vertical-align: middle;">
+                                                <a style="margin-right: 5px;" disabled="disabled">
+                                                    <img src="/icons/firstb.gif" style="vertical-align: middle;"></a><a style="margin-right: 5px;"
+                                                        disabled="disabled"><img src="/icons/prevb.gif" style="vertical-align: middle;"></a><span
+                                                            style="margin-right: 5px; font-weight: bold; color: red; vertical-align: middle;">1</span><a
+                                                                style="margin-right: 5px;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','2')">2</a><a
+                                                                    style="margin-right: 5px;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','3')">3</a><a
+                                                                        style="margin-right: 5px;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','4')">4</a><a
+                                                                            style="margin-right: 5px;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','5')">5</a><a
+                                                                                style="margin-right: 5px;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','6')">6</a><a
+                                                                                    style="margin-right: 5px;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','7')">7</a><a
+                                                                                        style="margin-right: 5px;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','8')">8</a><a
+                                                                                            style="margin-right: 5px;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','9')">9</a><a
+                                                                                                style="margin-right: 5px;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','10')">10</a><a
+                                                                                                    style="margin-right: 5px;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','11')">...</a><a
+                                                                                                        style="margin-right: 5px;" href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','2')"><img
+                                                                                                            src="/icons/nextb.gif" style="vertical-align: middle;"></a><a style="margin-right: 5px;"
+                                                                                                                href="javascript:__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','41')"><img src="/icons/lastb.gif"
+                                                                                                                    style="vertical-align: middle;"></a>&nbsp;&nbsp;<input type="text" style="width: 30px;
+                                                                                                                        vertical-align: middle; margin-top: 2px;" onkeydown="ANP_keydown(event,'ctl00$ContentPlaceHolder1$anpUsers_btn');"
+                                                                                                                        id="ctl00$ContentPlaceHolder1$anpUsers_input" name="ctl00$ContentPlaceHolder1$anpUsers_input"
+                                                                                                                        value="1"><input type="image" onclick="if(ANP_checkInput('ctl00$ContentPlaceHolder1$anpUsers_input',41)){__doPostBack('ctl00$ContentPlaceHolder1$anpUsers','')} else{return false}"
+                                                                                                                            id="ctl00$ContentPlaceHolder1$anpUsers_btn" name="ctl00$ContentPlaceHolder1$anpUsers"
+                                                                                                                            src="/images/go.gif" style="margin-top: 3px; vertical-align: middle; margin-left: 5px;
+                                                                                                                            height: 20px;">
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- AspNetPager V7.2 for VS2005 & VS2008 End -->
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer">
+        Copyright &copy; 2014 SunNet Solutions.</div>
+    </form>
+</body>
+</html>

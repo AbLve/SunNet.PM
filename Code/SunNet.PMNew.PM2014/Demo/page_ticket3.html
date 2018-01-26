@@ -1,0 +1,1132 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>SunNet Solutions - Project Management - SunNet Solutions
+    </title>
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link href="/Content/styles/bootstrap_1.css" rel="stylesheet">
+    <link href="/Content/styles/public.css" rel="stylesheet">
+    <link href="/Content/styles/forms.css" rel="stylesheet">
+    <script src="/Scripts/jquery.js"></script>
+
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="/Scripts/global.js"></script>
+    <script src="/Scripts/jquery.sunnet.js"></script>
+    <script src="/Scripts/Validate/jquery.validate.js"></script>
+    <script src="/Scripts/Validate/additional-methods.js"></script>
+    <script src="/Scripts/knockout-3.1.0.debug.js"></script>
+    <script type="text/javascript">
+        var isPostBack = 'False';
+
+        var defaultMessageProvider = {
+            required: function (result, element) {
+                var $label = $(element).siblings("label:not(.error):first");
+                if (!$label.length) {
+                    $label = $(element).parent().prev("label:first");
+                }
+                return $label.text().replace(/:/g, "").replace(/\*/g, "") + " is required.";
+            }
+        }
+        $(function () {
+            $.validator.setDefaults({
+                focusCleanup: true,
+                ignore: ".novalidate"
+            });
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        jQuery(function () {
+
+        });
+    </script>
+
+    <style>
+        #body_body_dataSection_ticketBasicInfo_rdoPriority {
+            border: 0;
+        }
+
+        .form-group {
+            display: block;
+        }
+
+        .col-right-1.righttext {
+            width: auto;
+        }
+
+
+
+        .mainTable {
+            border-radius: 5px;
+            background: #ffffff;
+        }
+
+        .mainleftTd {
+            width: 50%;
+            padding: 20px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            margin-right: 2%;
+            float: left;
+        }
+
+        .leftmenuBox {
+            height: auto;
+            min-width: 100%;
+            min-height: 350px;
+            border: 0px;
+        }
+
+        .mainrightTd {
+            width: 44%;
+            float: left;
+        }
+
+        .mainrightBox {
+            min-width: 150px;
+            border-radius: 5px;
+            padding: 20px;
+            min-height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+
+
+        .titleeventlist {
+            margin-top: 5px;
+        }
+
+        .mainbutton {
+            padding: 6px 20px 7px;
+        }
+
+        .form-group-btns {
+            overflow: inherit;
+            margin-top: 15px;
+            margin-right: 10px;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+
+        .webuploader-pick {
+            padding: 4px 10px;
+            overflow: inherit;
+        }
+
+        .footerBox {
+            width: auto;
+            min-width: 0;
+        }
+
+        .footerBox_left {
+            display: inline-block;
+        }
+
+        .footerBox_right {
+            display: inline-block;
+        }
+
+        .topBox {
+            min-width: 1024px;
+        }
+
+        .toploginInfo {
+            min-width: 700px;
+        }
+
+        .fdUser {
+            padding-right: 10px;
+        }
+
+        .otherbox .fdUser > span {
+            width: auto;
+            line-height: 26px;
+        }
+
+        .fdDate {
+            line-height: 22px;
+        }
+
+        ul.fdItembox li {
+            width: 96%;
+        }
+
+        .fdarrowbox {
+            left: 35px;
+            margin-left: 0px;
+            margin-top: 12px;
+            position: absolute;
+        }
+
+        .col-right-col2 {
+            width: 150px;
+        }
+
+
+        .btn_showRight {
+            display: none;
+        }
+
+        .btn_disRight {
+            display: none;
+        }
+        @media (max-width: 1420px) {
+            .mainleftTd {
+                width: 690px;
+            }
+            .mainrightTd {
+                width: 40%;
+                float: left;
+            }
+        }
+        @media (max-width: 1320px) {
+            .mainleftTd {
+                width: 690px;
+            }
+            .mainrightTd {
+                width: 36%;
+                float: left;
+            }
+        }
+
+
+        @media (max-width: 1250px) {
+            .mainrightTd {
+                width: 34%;
+                float: left;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .mainrightTd {
+                display: none;
+            }
+
+            .topBox_logo img {
+                width: 140px;
+            }
+
+            .topBox_logo {
+                width: 140px;
+            }
+
+            .mainleftTd {
+                width: 95%;
+            }
+
+            .btn_showRight {
+                display: block;
+                width: 70px;
+                height: 36px;
+                position: absolute;
+                top: 155px;
+                right: 0;
+                line-height: 36px;
+                text-align: center;
+                cursor: pointer;
+            }
+
+                .btn_showRight a {
+                    width: 100%;
+                    height: 100%;
+                    display: block;
+                    background-color: #333;
+                    color: #fff;
+                    border-radius: 3px 0px 0px 3px;
+                    border: 1px #ddd solid;
+                    text-decoration: none;
+                }
+
+                    .btn_showRight a:hover {
+                        background-color: #006400;
+                        color: #fff;
+                    }
+
+            .show-chat {
+                display: block;
+                position: fixed;
+                right: 0;
+                background: #fff;
+                top: 0;
+                z-index: 100;
+                height: 100%;
+            }
+
+            .btn_disRight {
+                float: right;
+                margin-top: 4px;
+                display: block;
+            }
+
+                .btn_disRight a {
+                    background: #eee;
+                    border-radius: 15px;
+                    padding: 4px 7px;
+                    cursor: pointer;
+                    color: #333;
+                    font-weight: bold;
+                }
+
+                    .btn_disRight a:hover {
+                        color: #fff;
+                        background-color: #a52a2a;
+                        text-decoration: none;
+                    }
+        }
+
+        @media (max-width: 1024px) {
+
+            .mainrightTd {
+                display: none;
+            }
+
+            .mainleftTd {
+                width: 95%;
+                border: 1px solid #dddddd;
+                border-radius: 5px;
+                margin-right: 2%;
+                float: left;
+            }
+        }
+        .feedback_waiting {
+                border-radius: 5px;
+        }
+        .btn_upload {
+            margin-top: 30px;
+            color: #fff !important;
+            background: #00bfff;
+            cursor: pointer;
+            display: block;
+            text-align: center;
+            border-radius:3px 0px 0px 3px;
+            padding: 6px 0px;
+        }
+
+        .btn_upload:hover {
+            background: #1e90ff;
+        }
+
+        .inputFeedback {
+            height: 50px;
+            padding: 0px;
+            width: 100%;
+            margin: 30px 0px 0px;
+            float: right;
+            border-radius: 0px;
+        }
+
+        .btnFeedback {
+            background: #32cd32;
+            border-radius: 3px;
+            color: #ffffff;
+            margin-top: 30px;
+            float: left;
+            padding: 15px 0;
+            width: 100%;
+        }
+        .btnFeedback:hover {
+            background: #228b22
+        }
+
+    </style>
+    <script>
+        $(function () {
+            $("body").on("click", ".btn_showRight", function (event) {
+                $(".mainrightTd").toggleClass("show-chat");
+            });
+
+            $("body").on("click", ".btn_disRight", function (event) {
+                $(".mainrightTd").removeClass("show-chat");
+            });
+        })
+
+
+    </script>
+
+</head>
+<body>
+    <form method="post" action="Detail.aspx?tid=1646&amp;returnurl=%2fSunnetTicket%2fDashboard.aspx" id="form1" novalidate="novalidate">
+        <div class="aspNetHidden">
+            <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUKLTI2OTkwNzQ3Ng9kFgJmD2QWAmYPZBYCZg9kFgICAw9kFgICAQ9kFgQCAw8PFgIeB1Zpc2libGVnZBYCZg8WAh4LXyFJdGVtQ291bnQCBxYOZg9kFgRmDxUDBnN1bm5ldAZhY3RpdmUcL1N1bm5ldFRpY2tldC9EYXNoYm9hcmQuYXNweGQCAQ8VAgdUaWNrZXRzHC9TdW5uZXRUaWNrZXQvRGFzaGJvYXJkLmFzcHhkAgEPZBYEZg8VAwJvYQAXL09BL1RpbWVzaGVldC9EYXRlLmFzcHhkAgEPFQICT0EXL09BL1RpbWVzaGVldC9EYXRlLmFzcHhkAgIPZBYEZg8VAwVmb3J1bQAXL2ZvcnVtcy9sb2dpbi9wbS9maW5pc2hkAgEPFQIGRm9ydW1zFy9mb3J1bXMvbG9naW4vcG0vZmluaXNoZAIDD2QWBGYPFQMGcmVwb3J0ABgvUmVwb3J0L015VGltZXNoZWV0LmFzcHhkAgEPFQIHUmVwb3J0cxgvUmVwb3J0L015VGltZXNoZWV0LmFzcHhkAgQPZBYEZg8VAwhkb2N1bWVudAAlL2RvY3VtZW50L0RvY01hbmFnZW1lbnQvRG9jSG9tZS9JbmRleGQCAQ8VAglEb2N1bWVudHMlL2RvY3VtZW50L0RvY01hbmFnZW1lbnQvRG9jSG9tZS9JbmRleGQCBQ9kFgRmDxUDBWV2ZW50ABEvRXZlbnQvSW5kZXguYXNweGQCAQ8VAgZFdmVudHMRL0V2ZW50L0luZGV4LmFzcHhkAgYPZBYEZg8VAwdwcm9maWxlABUvQWNjb3VudC9Qcm9maWxlLmFzcHhkAgEPFQIHUHJvZmlsZRUvQWNjb3VudC9Qcm9maWxlLmFzcHhkAgUPZBYEAgEPFgIfAQIBFgJmD2QWAmYPFQICMzADY2xpZAIHD2QWCAIBD2QWAgIBDxYCHgRUZXh0BZAFPGxpIGNsYXNzPSJyb3VuZGljb24gY29tcGxldGVkIj48L2xpPjwvbGk+PGxpIGNsYXNzPSJwcm9jZXNzdGV4dCBjb21wbGV0ZWR0ZXh0IiA+RHJhZnQ8L2xpPjxsaSBjbGFzcz0icm91bmRpY29uIGNvbXBsZXRlZCI+PC9saT48bGkgY2xhc3M9InByb2Nlc3N0ZXh0IGNvbXBsZXRlZHRleHQiID5TdWJtaXQ8L2xpPjxsaSBjbGFzcz0icm91bmRpY29uIGNvbXBsZXRlZCI+PC9saT48bGkgY2xhc3M9InByb2Nlc3N0ZXh0IGNvbXBsZXRlZHRleHQiID5QTSBSZXZpZXc8L2xpPjxsaSBjbGFzcz0icm91bmRpY29uIGNvbXBsZXRlZCI+PC9saT48bGkgY2xhc3M9InByb2Nlc3N0ZXh0IG5vZmluaXNodGV4dCIgPkRldmVsb3Bpbmc8L2xpPjxsaSBjbGFzcz0icm91bmRpY29uIG5vZmluaXNoIj48L2xpPjxsaSBjbGFzcz0icHJvY2Vzc3RleHQgbm9maW5pc2h0ZXh0IiA+VGVzdGluZzwvbGk+PGxpIGNsYXNzPSJyb3VuZGljb24gbm9maW5pc2giPjwvbGk+PGxpIGNsYXNzPSJwcm9jZXNzdGV4dCBub2ZpbmlzaHRleHQiID5DbGllbnQgQ29uZmlybTwvbGk+PGxpIGNsYXNzPSJyb3VuZGljb24gbm9maW5pc2giPjwvbGk+PGxpIGNsYXNzPSJwcm9jZXNzdGV4dCBub2ZpbmlzaHRleHQiID5Db21wbGV0ZWQ8L2xpPjxsaSBjbGFzcz0icm91bmRpY29uIG5vZmluaXNoIj5kAgIPZBYCAgEPZBYCZg8WAh8CBQlXb3JraW5nT25kAgMPZBYCAgIPZBYCAgMPZBYCZg9kFgYCAQ8QDxYCHwBoZGRkZAIDDxAPFgIfAGhkZGRkAgUPEA8WAh8AaGRkZGQCBQ9kFgICAw8WAh8BAgEWAmYPZBYCZg8VBwAAHENoYW5nZSBzdGF0dXMgdG8gUE0gUmV2aWV3ZWQAFzxzcGFuPkpvcmRhbiBZYW48L3NwYW4+AAowMy8xMC8yMDE1ZGShzM6dqNm/4yYuygWyTBN1igf7qj489+ks79wrejfa0A==">
+        </div>
+        <div class="aspNetHidden">
+
+            <input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAAQ44ze9Z5fEDdwQrHFnUoAWRI2xNSSs9eM7UX8WMPW1FZ1l+K1HTYei+XavtG7kuKwUY6E+C5h/7vGDOk93s/GDARkDfIf/VqVaH9UlC2x3hP5msyRjzCEmDBRdjqF9IJE=">
+        </div>
+        <div class="toploginInfo">
+            <span class="mainTop_rightUser" style="padding-left:0px;padding-right:0px;">Welcome<strong>
+                <span>kevin yang</span></strong></span>&nbsp;|&nbsp;<a href="/Logout.aspx" target="_top">Log Out</a>
+        </div>
+        <div class="topBox">
+            <div class="topBox_logo">
+                <img src="/Images/sunnet_logo.png" alt="Logo">
+            </div>
+            <div class="topBox_menu">
+                <ul class="topmenu">
+
+                    <li class="sunnet active">
+                        <a href="/SunnetTicket/Dashboard.aspx" target="_self">
+                            <div class="image"></div>
+                            Tickets
+                            <div class="downarrow"></div>
+                        </a>
+                        <a class="full" href="/SunnetTicket/Dashboard.aspx" target="_self"></a>
+                    </li>
+
+                    <li class="oa ">
+                        <a href="/OA/Timesheet/Date.aspx" target="_self">
+                            <div class="image"></div>
+                            OA
+                            <div class="downarrow"></div>
+                        </a>
+                        <a class="full" href="/OA/Timesheet/Date.aspx" target="_self"></a>
+                    </li>
+
+                    <li class="forum ">
+                        <a href="/forums/login/pm/finish" target="_self">
+                            <div class="image"></div>
+                            Forums
+                            <div class="downarrow"></div>
+                        </a>
+                        <a class="full" href="/forums/login/pm/finish" target="_self"></a>
+                    </li>
+
+                    <li class="report ">
+                        <a href="/Report/MyTimesheet.aspx" target="_self">
+                            <div class="image"></div>
+                            Reports
+                            <div class="downarrow"></div>
+                        </a>
+                        <a class="full" href="/Report/MyTimesheet.aspx" target="_self"></a>
+                    </li>
+
+                    <li class="document ">
+                        <a href="/document/DocManagement/DocHome/Index" target="_self">
+                            <div class="image"></div>
+                            Documents
+                            <div class="downarrow"></div>
+                        </a>
+                        <a class="full" href="/document/DocManagement/DocHome/Index" target="_self"></a>
+                    </li>
+
+                    <li class="event ">
+                        <a href="/Event/Index.aspx" target="_self">
+                            <div class="image"></div>
+                            Events
+                            <div class="downarrow"></div>
+                        </a>
+                        <a class="full" href="/Event/Index.aspx" target="_self"></a>
+                    </li>
+
+                    <li class="profile ">
+                        <a href="/Account/Profile.aspx" target="_self">
+                            <div class="image"></div>
+                            Profile
+                            <div class="downarrow"></div>
+                        </a>
+                        <a class="full" href="/Account/Profile.aspx" target="_self"></a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div id="categorycontainer" style="display: none;">
+            <ul class="categoryBox">
+
+                <li><a href="###" action="addtocategory" category="30">cli</a></li>
+
+                <li><a href="/SunnetTicket/NewCateGory.aspx" data-target="#modalsmall" data-toggle="modal">New Category</a></li>
+            </ul>
+        </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+            <tbody>
+                <tr>
+                    <td class="mainleftTd">
+                        <div class="mainleftBox">
+                            <div class="limitwidth">
+                                <div class="loading"></div>
+                                <iframe id="iframeDownloadFile" style="display: none;"></iframe>
+                                <div class="form-group-container" style="width: 100%;">
+                                    <div class="alert alert-success fade hide">
+                                        <img src="/Images/icons/success.png">Operation successful.
+                                    </div>
+                                    <div class="alert alert-danger fade hide">
+                                        <img src="/Images/icons/failed.png">
+                                        <a class="close" data-dismiss="alert" href="###" aria-hidden="true">×</a>
+                                        Operation failed. 
+                                    </div>
+
+
+                                    <div class="ProcessBox">
+                                        <ul class="ticketProcess">
+                                            <li class="roundicon completed"></li>
+                                            <li class="processtext completedtext">Draft</li>
+                                            <li class="roundicon completed"></li>
+                                            <li class="processtext completedtext">Submit</li>
+                                            <li class="roundicon completed"></li>
+                                            <li class="processtext completedtext">PM Review</li>
+                                            <li class="roundicon completed"></li>
+                                            <li class="processtext nofinishtext">Developing</li>
+                                            <li class="roundicon nofinish"></li>
+                                            <li class="processtext nofinishtext">Testing</li>
+                                            <li class="roundicon nofinish"></li>
+                                            <li class="processtext nofinishtext">Client Confirm</li>
+                                            <li class="roundicon nofinish"></li>
+                                            <li class="processtext nofinishtext">Completed</li>
+                                            <li class="roundicon nofinish"></li>
+                                        </ul>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-left-1 lefttext">Title:</label>
+                                        <div class="col-right-1 righttext">
+                                            SunNet Home page
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-left-1 lefttext">Description:</label>
+                                        <div class="righttext" style="padding-left: 115px; height: 100px; overflow-y: auto;">
+                                            Add "Things you may be interesting" section on the home page and list several quick link under it, like "News &amp; Events, Resources, Service Level Guidance, etc"
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label class="col-left-1 lefttext">URL:</label>
+                                        <div class="col-right-1 righttext nowrap">
+                                            <a href="" target="_blank"></a>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-left-1 lefttext">Attachments:</label>
+                                        <div class="col-right-1 righttext">
+                                            <script type="text/javascript">
+                                                function deleteImgWhenStatusDraft(s) {
+                                                    $.ajax({
+                                                        type: "post",
+                                                        data: {
+                                                            fileid: s
+                                                        },
+                                                        url: "/Do/DoRemoveFileHandler.ashx",
+                                                        success: function (result) {
+                                                            window.location.reload();
+                                                        }
+                                                    });
+                                                }
+                                            </script>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Project:</label>
+                                            <div class="col-right-col2 righttext">Design</div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Ticket ID:</label>
+                                            <div class="col-right-col2 righttext">1646</div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Type:</label>
+                                            <div class="col-right-col2 righttext">
+                                                Request
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Priority:</label>
+                                            <div class="col-right-col2 righttext">
+                                                High
+                                            </div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Estimation:</label>
+                                            <div class="col-right-col2 righttext">
+                                                <span class="rightItem">No need
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext col-left-status">Status:</label>
+                                            <div class="col-right-col2 righttext">
+                                                PM Reviewed
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Is Internal:</label>
+                                            <div class="col-right-col2 righttext">No</div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Source:</label>
+                                            <div class="col-right-col2 righttext">CLIENT</div>
+                                        </div>
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Created By:</label>
+                                            <div class="col-right-col2 righttext">CLIENT</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="col-lab-con">
+                                            <label class="col-left-1 lefttext">Created Date:</label>
+                                            <div class="col-right-col2 righttext">03/09/2015</div>
+                                        </div>
+                                    </div>
+                                    <div class="buttonBox1">
+                                        <table border="0" cellspacing="0" cellpadding="0" style="width: 100%;">
+                                            <tbody>
+                                                <tr class="buttonClass">
+                                                    <td align="center" style="text-align: center;">
+
+                                                        <input type="button" value="Back" class="backBtn mainbutton redirectback">
+
+                                                        <div class="btn-group" style="vertical-align: top;" data-remote="workingon">
+                                                            <button type="button" class="backBtn mainbutton dropdown-toggle" data-workingstatus="1646" data-toggle="dropdown">
+                                                                <span>WorkingOn</span>
+                                                                <span class="caret"></span>
+                                                            </button>
+                                                            <ul class="dropdown-menu" role="menu">
+                                                                <li><a href="javascript:;" ticket="1646" data-action="setworkingon">WorkingOn</a></li>
+                                                                <li><a href="javascript:;" ticket="1646" data-action="setworkingcomplete">Completed</a></li>
+                                                                <li><a href="javascript:;" ticket="1646" data-action="setworkingcancelled">Cancelled</a></li>
+                                                                <li class="divider"></li>
+                                                                <li><a href="javascript:;" ticket="1646" data-action="setworkingonnone">None</a></li>
+                                                            </ul>
+                                                        </div>
+
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="fdshowmore" id="Div1" onclick="showMore();">&gt;&gt; <strong>Show More</strong></div>
+                                    <div id="divmore" style="display: none;">
+
+                                        <div class="contentTitle titleeventlist">Change History </div>
+                                        <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" class="table-advance">
+                                            <thead>
+                                                <tr>
+                                                    <th orderby="Description">Description
+                                                    </th>
+                                                    <th orderby="ModifiedBy">Modified By
+                                                    </th>
+                                                    <th orderby="ModifiedOn">Changed Date
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+
+
+                                                <tr class="">
+                                                    <td class="">Change status to PM Reviewed
+                                                    </td>
+                                                    <td class="">
+                                                        <span>Jordan Yan</span>
+                                                    </td>
+                                                    <td class="">03/10/2015
+                                                    </td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                    <!-- lyq 20140731 Feedback-->
+                                    <script src="/Scripts/webuploader/webuploader.js"></script>
+                                    <script src="/Scripts/webuploader/uploader.js"></script>
+                                    <script type="text/html" id="temp_feedback_date">
+                                        <li class="fdmessageDate" date="{% this.date %}">{% this.date %}</li>
+                                    </script>
+                                    <script type="text/html" id="temp_feedback">
+                                        <li class="myselfbox" date="{% this.date %}" index="{% this.index %}">
+                                            <table border="0" cellpadding="4" cellspacing="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td class="fdcontentBox2 fdcontent">
+                                                            <div class="rightClose" onclick="deleteOwnFeedBack(this,{% this.id %},{% this.createdBy %})" title="Delete">×</div>
+                                                            {% if (this.extraStatus && this.extraStatus.waitSunnet)  { %}
+                                                           <span title="Waiting for Client feedback" class="feedback_waiting">#{% this.order %}.</span>
+                                                            {% } else if (this.extraStatus && this.extraStatus.waitClient)  { %}
+                                                           <span title="Waiting Sunnet feedback" class="feedback_waiting">#{% this.order %}.</span>
+                                                            {% } else { %}
+                                                           #{% this.order %}.
+                                                           {% } %}
+
+                                                           {% this.content %}
+
+                                                           {% if (this.file) { %}
+                                                           <span class="fdfileBox">{% for (var f in this.file) { %}
+                                                               <span class="fdfile"><a href="/do/DoDownloadFileHandler.ashx?FileID={% this.file[f] %}" target="_blank">
+                                                                   <img src="/Images/icons/file.png" width="13px">
+                                                                   {% f %}</a></span>
+                                                               {% } %}
+                                                           </span>
+                                                            {% } %}
+                                                        </td>
+                                                        <td class="fdtdright">
+                                                            <div class="fdarrowbox">
+                                                                <img src="/images/fdarrow2.png">
+                                                            </div>
+                                                            <div class="fdUser"><span title="">{% this.firstname %} {% this.lastname %}</span></div>
+                                                            <div class="fdDate">{% this.time %}</div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </li>
+                                    </script>
+                                    <script type="text/javascript">
+                                        var _ajaxEvent = 0;
+                                        function beforeSubmit(sender) {
+                                            var $sender = $(sender);
+
+                                            function completed() {
+                                                clearTimeout(_ajaxEvent);
+                                                $sender.show();
+                                                $sender.siblings(".loading").hide();
+                                            }
+
+                                            if ($("form").valid()) {
+                                                _ajaxEvent = setTimeout(function () {
+                                                    $sender.hide();
+                                                    $sender.siblings(".loading").show();
+                                                }, 10);
+                                                var uploaderStatus = uploader.getStats();
+                                                var files = uploader.getFiles();
+                                                if (uploader.getStats().queueNum > 0 && uploader.state == "ready") {
+                                                    $sender.data("clicked", true);
+                                                    uploader.upload();
+                                                    return false;
+                                                }
+                                                if (uploaderStatus.successNum < 1 && uploaderStatus.uploadFailNum > 0) {
+                                                    completed();
+                                                    return false;
+                                                }
+                                                var clients = "";
+                                                jQuery("input:checkbox[name='AssignClients']:checked").each(function (index, checkbox) {
+                                                    clients += jQuery(checkbox).attr("user") + ",";
+                                                });
+
+                                                $.ajax({
+                                                    url: "/do/DoFeedBacks.ashx",
+                                                    type: "post",
+                                                    data: {
+                                                        type: "add",
+                                                        project: "110",
+                                                        ticket: "1646",
+                                                        content: jQuery("#body_body_dataSection_feedbacks_txtContent").val(),
+                                                        isPublic: jQuery("#body_body_dataSection_feedbacks_ckIsPublic").prop("checked"),
+                                                        isWaitClientFeedback: jQuery("#body_body_dataSection_feedbacks_chkIsWaitClientFeedback").prop("checked"),
+                                                        isWaitSunnetFeedback: jQuery("#body_body_dataSection_feedbacks_chkIsWaitSunnetFeedback").prop("checked"),
+                                                        uloadFile: jQuery("#body_body_dataSection_feedbacks_hidUploadFile").val(),
+                                                        clients: clients
+                                                    },
+                                                    dataType: "json"
+                                                }).success(function (message) {
+                                                    if (message && message.success) {
+                                                        console.log(message.data.extraStatus);
+                                                        if (message.data && message.data.extraStatus && (
+                                                            message.data.extraStatus.clearClient
+                                                                || message.data.extraStatus.clearSunnet
+                                                                || message.data.extraStatus.waitSunnet
+                                                                || message.data.extraStatus.waitClient)) {
+                                                            location.href = location.pathname + location.search + "&gotofeedback=1";
+                                                        }
+                                                        if (message.data && message.data.extraStatus && message.data.extraStatus.clearClient) {
+                                                            jQuery("#chkClient63").parent().removeClass("feedback_waiting").addClass("feedback_writed");
+                                                        }
+                                                        jQuery("#body_body_dataSection_feedbacks_txtContent").val("");
+
+                                                        //initUploadControls();
+                                                        if (uploaderStatus.successNum > 0) {
+                                                            uploader.removeFile(files[files.length - 1]);
+                                                        }
+
+                                                        $("#thelist").empty();
+                                                        $("#speed").empty();
+
+                                                        var chkIsPublic = jQuery("#body_body_dataSection_feedbacks_ckIsPublic");
+                                                        var chkIsWaitClientFeedback = jQuery("#body_body_dataSection_feedbacks_chkIsWaitClientFeedback");
+                                                        var chkIsWaitSunnetFeedback = jQuery("#body_body_dataSection_feedbacks_chkIsWaitSunnetFeedback");
+
+                                                        chkIsPublic.prop("checked", false).removeAttr("disabled");
+                                                        chkIsWaitClientFeedback.prop("checked", false);
+                                                        chkIsWaitSunnetFeedback.prop("checked", false);
+                                                        jQuery("#body_body_dataSection_feedbacks_hidUploadFile").val("");
+
+                                                        var html = "";
+
+                                                        if (message.data.content)
+                                                            message.data.content = message.data.content + "<br/>";
+
+                                                        var $existsnotes = $feedbackBox.find("li:not(.fdmessageDate)");
+                                                        message.data.index = $existsnotes.length ? (+($existsnotes.last().attr("index")) + 1) : 1;
+
+                                                        if ($feedbackBox.find(".fdmessageDate[date='" + message.data.date + "']").length == 0) {
+                                                            html += TemplateEngine(GetTemplateHtml("temp_feedback_date"), message.data);
+                                                            $(html).hide().appendTo($feedbackBox.find("ul:first")).slideDown();
+                                                            html = "";
+                                                        }
+                                                        html += TemplateEngine(GetTemplateHtml("temp_feedback"), message.data);
+                                                        $(html).hide().appendTo($feedbackBox.find("ul:first")).slideDown();
+                                                    } else {
+                                                        ShowMessage(message.msg, "danger");
+                                                    }
+                                                }).complete(function () {
+                                                    completed();
+                                                });
+                                                return false;
+                                            }
+                                        };
+                                        function getUploaderPrefix() {
+                                            return "63_";
+                                        }
+
+                                        var uploader;
+                                        var $feedbackBox;
+                                        function deleteOwnFeedBack(elem, fbID, userID) {
+                                            $.get("/do/DoFeedBacks.ashx",
+                                                {
+                                                    "FeedbackID": fbID,
+                                                    "UID": userID, type: "delete",
+                                                    "ticket": "1646"
+                                                }
+                                                , function (msg) {
+                                                    if (msg.success) {
+                                                        var $target = $(elem).closest(".myselfbox");
+                                                        $target.slideUp("fast", function () {
+                                                            var date = $(this).attr("date");
+                                                            $(this).remove();
+                                                            if ($feedbackBox.find("li[date='" + date + "']").length == 1) {
+                                                                $feedbackBox.find("li[date='" + date + "']").slideUp("fast", function () {
+                                                                    $(this).remove();
+                                                                });
+                                                            }
+                                                        });
+                                                    }
+                                                    else {
+                                                        ShowMessage(msg.msg, 'error', true, true);
+                                                    }
+                                                }, "json");
+                                        }
+                                        function checkPublic(o) {
+                                            if ($(o).prop('checked')) {
+                                                $("#body_body_dataSection_feedbacks_ckIsPublic").prop('checked', true);
+                                                $("#body_body_dataSection_feedbacks_ckIsPublic").prop('disabled', true);
+                                            }
+                                            else {
+                                                $("#body_body_dataSection_feedbacks_ckIsPublic").prop('disabled', false);
+                                            }
+                                        }
+
+                                        function initUploadControls() {
+                                            uploader = SunnetWebUploader.CreateWebUploader({
+                                                fileNumLimit: 5,
+                                                pick: { id: "#picker", multiple: true },
+                                                container: "#thelist",
+                                                uploadbutton: "#ctlBtn",
+                                                submitbutton: $("input:submit"),
+                                                targetField: "#body_body_dataSection_feedbacks_hidUploadFile"
+                                            });
+                                        }
+
+                                        $(document).ready(function () {
+                                            if (urlParams.gotofeedback) {
+                                                location.href = location.pathname + location.search + "#lastFeedback";
+                                            }
+                                            initUploadControls();
+
+                                            $feedbackBox = $("#feedbackBox");
+                                            $("#dvShowEarlier").on("click", function () {
+                                                $("#dvShowEarlier").slideUp("fast");
+                                                $feedbackBox.find("li:not(:visible)").slideDown("fast");
+                                            });
+
+                                            jQuery.extend(jQuery.validator.messages, defaultMessageProvider);
+                                            $("form").validate({
+                                                errorElement: "div",
+                                                rules: {
+                                                    "ctl00$ctl00$ctl00$body$body$dataSection$feedbacks$txtContent": {
+                                                        required: function () {
+                                                            return $("#body_body_dataSection_feedbacks_hidUploadFile").val().length < 1 && uploader.getStats().queueNum < 1;
+                                                        }
+                                                    }
+                                                }
+                                            });
+
+                                            $("#fbl_clients_container").on("click", "input:checkbox", function () {
+                                                var $this = $(this);
+                                                assignClient($this);
+                                            });
+                                            $("#fbl_clients2_container").on("click", "input:checkbox", function () {
+                                                var chkIsWaitClientFeedback = jQuery("#body_body_dataSection_feedbacks_chkIsWaitClientFeedback");
+                                                if (chkIsWaitClientFeedback.length == 0) {
+                                                    var $this = $(this);
+                                                    assignClient($this);
+                                                }
+                                            });
+                                        });
+
+                                        function assignClient($checkbox) {
+
+                                            var params = {
+                                                action: $checkbox[0].checked ? "set_client_notification_on" : "set_client_notification_off",
+                                                ticket: '1646',
+                                                user: $checkbox.attr("user"),
+                                                update: $checkbox.attr("update")
+                                            };
+                                            $.post("/Service/TicketUser.ashx", params, function (response) {
+                                                if (response.success) {
+                                                    $checkbox.closest("li").removeClass("feedback_writed");
+                                                } else {
+                                                    ShowMessage(response.msg, "danger");
+                                                }
+                                            }, "json");
+                                        }
+
+                                    </script>
+
+
+                                </div>
+                                <script type="text/javascript">
+                                    $(function () {
+                                        var currentscore = $("#body_body_dataSection_hdStar").val();
+                                        if ($.trim(currentscore) !== "0" || "False" !== "True") {
+                                            setStar(currentscore);
+                                        }
+                                    });
+
+                                    function setStar(currentScore) {
+                                        if (currentScore === "0") {
+                                            for (var i = 1; i <= 5; i++) {
+                                                $("#dvStar #star" + i).attr("src", "/Images/icons/star_grey.png");
+                                            }
+                                        }
+                                        else {
+                                            for (var i = 1; i <= currentScore; i++) {
+                                                $("#dvStar #star" + i).attr("src", "/Images/icons/star_orange.png");
+                                            }
+                                            for (; i <= 5; i++) {
+                                                $("#dvStar #star" + i).attr("src", "/Images/icons/star_grey.png");
+                                            }
+                                            setRank(currentScore);
+                                        }
+                                    }
+
+                                    function setRank(score) {
+                                        var rank = null;
+                                        switch (score) {
+                                            case "1":
+                                                rank = "Poor";
+                                                break;
+                                            case "2":
+                                                rank = "Fair";
+                                                break;
+                                            case "3":
+                                                rank = "Average";
+                                                break;
+                                            case "4":
+                                                rank = "Good";
+                                                break;
+                                            case "5":
+                                                rank = "Excellent";
+                                                break;
+                                            default: rank = "";
+                                                break;
+                                        }
+                                        $("#lblRank").text(rank);
+                                    }
+
+                                    function showMore() {
+                                        $("#dvshowmore").css("display", "none");
+                                        $("#divmore").toggle("fast");
+                                    }
+                                </script>
+
+
+
+                            </div>
+                        </div>
+                    </td>
+                    <td class="mainrightTd">
+                        <div class="mainrightBox">
+                            <div class="btn_disRight">
+                                <a>X</a>
+                            </div>
+                            <div class="contentTitle titleeventlist">Chat</div>
+                            <iframe id="iframe1" style="display: none;"></iframe>
+                            <div style="overflow: hidden; padding-top: 10px; border-bottom: 1px #ddd dashed;">
+                                <ul id="fbl_clients_container" class="assignUser">
+
+                                    <li class="">
+                                        <input name="Input" type="checkbox" value="18" id="chkClient18" checked="checked" user="18" update="9610">
+                                        <label for="chkClient18">
+                                            LeeC1F LeeC1L
+                                        </label>
+                                    </li>
+
+                                    <li class="">
+                                        <input name="Input" type="checkbox" value="19" id="chkClient19" checked="checked" user="19" update="9612">
+                                        <label for="chkClient19">
+                                            LeeC2F LeeC2L
+                                        </label>
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="fdshowmore" id="dvShowEarlier">&gt;&gt; <strong>Load Earlier Messages</strong></div>
+
+                            <div class="feedbackBox" id="feedbackBox">
+                                <ul class="fdItembox">
+                                    <li class="fdmessageDate" date="02/11/2015">02/11/2015</li>
+                                    <li class="otherbox" index="4" date="02/11/2015">
+                                        <table border="0" cellspacing="0" cellpadding="4">
+                                            <tbody>
+                                                <tr>
+                                                    <span class="fdUser"><span>Client</span></span>
+                                                    <span class="fdDate">15:50</span>
+                                                    <span class="fdarrowbox">
+                                                        <img src="/images/a_t.png"></span>
+                                                    <td class="fdcontentBox1 fdcontent">
+
+                                                        <div class="fdarrowboxleft">
+                                                        </div>
+                                                        <span title="Waiting Sunnet feedback" class="feedback_waiting">#4</span>. Seems to be an issue with the sending of Coach and VIP assignments. Making it difficult to test. See Attachment.
+                                                        <br>
+                                                        <span class="fdfileBox"><span class="fdfile"><a href="http://pm.sunnet.us//do/DoDownloadFileHandler.ashx?FileID=1071&amp;size=377196.00" target="_blank">
+                                                            <img src="/Images/icons/file.png" width="13px">
+                                                            CT_error_021115.docx</a></span></span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                    <li class="fdmessageDate" date="02/17/2015">02/17/2015</li>
+                                    <li class="otherbox" index="6" date="02/17/2015">
+                                        <table border="0" cellspacing="0" cellpadding="4">
+                                            <tbody>
+                                                <tr>
+                                                    <span class="fdUser"><span>Client</span></span>
+                                                    <span class="fdDate">16:46</span>
+                                                    <span class="fdarrowbox">
+                                                        <img src="/images/a_t.png"></span>
+                                                    <td class="fdcontentBox1 fdcontent">#6. Here is a completed second review - there was a lot of group discussion/input this time.
+                                                        <br>
+                                                        <span class="fdfileBox"><span class="fdfile"><a href="http://pm.sunnet.us//do/DoDownloadFileHandler.ashx?FileID=1075&amp;size=1787099.00" target="_blank">
+                                                                                                         <img src="/Images/icons/file.png" width="13px">
+                                                                                                         CT_Review_aw021715(1).docx</a></span></span></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </li>
+                                    
+                                    <li class="myselfbox" index="1" date="04/24/2015"><table border="0" cellpadding="4" cellspacing="0"><tbody><tr><td class="fdcontentBox2 fdcontent"> <div class="rightClose" onclick="deleteOwnFeedBack(this,1597,63)" title="Delete">×</div>#1. 
+                  Project:<br>Sunnet.HR
+                  <br></td><td class="fdtdright"><div class="fdarrowbox"><img src="/images/fdarrow2.png"></div><div class="fdUser"><span>kevin yang</span></div><div class="fdDate">01:01</div></td></tr></tbody></table></li>
+                                    
+
+                                </ul>
+                            </div>
+
+                            <a href="###" name="lastFeedback"></a>
+                            <div id="body_body_dataSection_feedbacks_divAddFeedback" class="feedbackBox">
+                                <table border="0" cellspacing="0" cellpadding="4" width="100%">
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                <textarea name="ctl00$ctl00$ctl00$body$body$dataSection$feedbacks$txtContent" id="body_body_dataSection_feedbacks_txtContent" data-msg="Please enter your message." rows="4" class="inputfd" style="max-height: 100px; width: 99.6%;" placeholder="Enter your message..."></textarea>
+                                            </td>
+                                        </tr>
+                                        <tr id="body_body_dataSection_feedbacks_trOthers">
+                                            <td id="body_body_dataSection_feedbacks_tdFeedbackControl" valign="top"></td>
+                                            <td valign="top" width="*"></td>
+                                        </tr>
+                                        <tr>
+                                            <td width="18%" style="padding: 0px;"><a class="btn_upload">Select Flies<br/>(5 at most)
+                                                            </a></td>
+                                            <td width="72%" style="padding: 0px;">
+                                                <textarea name="ctl00$ctl00$ctl00$body$body$dataSection$feedbacks$txtContent" id="Textarea1" data-msg="Please enter your message." rows="4" class="inputfd inputFeedback" placeholder="Enter your message..."></textarea>
+                                            </td>
+                                            <td width="10%" style="padding: 0px;"><input type="submit" name="ctl00$ctl00$ctl00$body$body$dataSection$feedbacks$btnSubmit" value="Submit" onclick="return beforeSubmit(this);" id="Submit1" class="btnFeedback"></td>
+                                        </tr>
+                                        <tr id="Tr1">
+                                            <td id="body_body_dataSe
+                                                ction_feedbacks_tdFeedbackControl" valign="top"></td>
+                                            <td valign="top" width="*"></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div>
+
+                    </td>
+                    <div class="btn_showRight">
+                        <a class="">Chat</a>
+                    </div>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="footerBox">
+                            <div class="footerBox_left">
+                                <a href="/About/Faqs.aspx?returnurl=%2fSunnetTicket%2fDashboard.aspx">FAQ</a> <span>|</span>
+                                <a href="/About/Survey.aspx?returnurl=%2fSunnetTicket%2fDashboard.aspx">Survey</a><span>|</span>
+                                <a href="/About/ContactUs.aspx?returnurl=%2fSunnetTicket%2fDashboard.aspx">Contact Us</a>
+                            </div>
+                            <div class="footerBox_right">Copyright © 2014 <a href="http://www.sunnet.us" target="_blank">SunNet Solutions</a>. </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <script type="text/html" id="ticketExpend">
+            <tr class="sublist">
+                <td class="aligncenter">&nbsp;</td>
+                <td colspan="8">
+                    <div class="subcontentBox">
+                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td width="120" valign="top"><strong>Description:</strong></td>
+                                    <td>{% this.description %}
+                                    </td>
+                                </tr>
+                                {% if ( this.feedback && this.feedback.length) { %}
+                            <tr>
+                                <td valign="top"><strong>Latest Notes</strong>:</td>
+                                <td>{% for ( var i = 0; i < this.feedback.length ; i++) { %}
+                                        {% if(this.feedback[i].text) { %}
+                                            {% this.feedback[i].text %}
+                                            <br />
+                                    {% } %}
+                                        {% if( this.feedback[i].files && this.feedback[i].files.length) { %}
+                                            {% for ( var file = 0; file < this.feedback[i].files.length ; file++) { %}
+                                                <a href="/Do/DoDownloadFileHandler.ashx?fileid={% this.feedback[i].files[file].id %}" target="_blank">
+                                                    <img src="/Images/icons/file.png" style="width: 13px" alt="File">{% this.feedback[i].files[file].title %}
+                                                </a>&nbsp;&nbsp;
+                                            {% } %}
+                                            <br />
+                                    {% } %}
+                                    <span class="subfeedbackDate">{% this.feedback[i].date %}
+                                    </span>
+                                    <span class="subfeedbackUser">{% this.feedback[i].author %}</span>
+                                    <br />
+                                    {% } %}
+                                </td>
+                            </tr>
+                                {% } %}
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </script>
+    </form>
+</body>
+</html>

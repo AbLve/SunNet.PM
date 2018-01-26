@@ -1,0 +1,213 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+    <div style="background-color: #fff; border: 6px solid #93aed1; padding: 10px; width: 800px;
+        font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;">
+            <tr>
+                <td width="53%" height="35" bgcolor="#FFFADF" style="padding-left: 3px; font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;">
+                    <strong>Company:
+                        <label>
+                        </label>
+                    </strong>[Company_Name]
+                </td>
+                <td width="47%" bgcolor="#FFFADF" style="font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;">
+                    <strong>Name:</strong> [User_Name]
+                </td>
+            </tr>
+            <tr>
+                <td height="5" colspan="2">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td height="5" colspan="2">
+                    <table width="97%" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+                        <tr>
+                            <td height="10" colspan="2" align="right" valign="top">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="76%" height="35" align="right" bgcolor="#FFFFFF" style="padding-right: 10px;
+                                font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+                                <strong>The Project Manager assigned to me was very courteous.</strong>
+                            </td>
+                            <td width="24%" bgcolor="#FFFFFF" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                [Client_Survey_Email1]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="35" align="right" bgcolor="#FFFFFF" style="padding-right: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                <strong>The Project Manager handled my questions &amp; requests in a timely manner.</strong>
+                            </td>
+                            <td bgcolor="#FFFFFF" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                [Client_Survey_Email2]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="35" align="right" bgcolor="#FFFFFF" style="padding-right: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                <strong>The Project Manager was available when needed. </strong>
+                            </td>
+                            <td bgcolor="#FFFFFF" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                [Client_Survey_Email3]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="35" align="right" bgcolor="#FFFFFF" style="padding-right: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                <strong>The Project Manager was very knowledgeable. </strong>
+                            </td>
+                            <td bgcolor="#FFFFFF" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                [Client_Survey_Email4]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="35" align="right" bgcolor="#FFFFFF" style="padding-right: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                <strong>The Project Manager was on time for client meetings. </strong>
+                            </td>
+                            <td bgcolor="#FFFFFF" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                [Client_Survey_Email5]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="35" align="right" bgcolor="#FFFFFF" style="padding-right: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                <strong>What about the Project Manager could be improved? Were they: (You may select
+                                    multiple answers) </strong>
+                            </td>
+                            <td bgcolor="#FFFFFF" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                [Client_Survey_Email6]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="10" colspan="2">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td height="10" colspan="2">
+                </td>
+            </tr>
+            <tr>
+                <td height="10" colspan="2">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <table width="97%" border="0" align="center" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+                        <tr>
+                            <td height="10" colspan="2" align="right" valign="top">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="76%" height="35" align="right" bgcolor="#FFFFFF" style="padding-right: 10px;
+                                font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+                                <strong>In evaluating your most recent experience with us, what was the quality of service
+                                    you received </strong>
+                            </td>
+                            <td width="24%" bgcolor="#FFFFFF" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                [Client_Survey_Email7]
+                                <br />
+                                [Client_Descriptions7]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="35" align="right" bgcolor="#FFFFFF" style="padding-right: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                <strong>How likely are you to work with SunNet Solutions again?</strong>
+                            </td>
+                            <td bgcolor="#FFFFFF" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                [Client_Survey_Email8]
+                                <br/>
+                                [Client_Descriptions8]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="35" align="right" bgcolor="#FFFFFF" style="padding-right: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                <strong>How likely are you to refer SunNet Solutions? </strong>
+                            </td>
+                            <td bgcolor="#FFFFFF" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                [Client_Survey_Email9]
+                                <br/>
+                                [Client_Descriptions9]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="35" align="right" bgcolor="#FFFFFF" style="padding-right: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                <strong>Compared to other IT vendors that you have worked with, how would you rate SunNet's
+                                    pricing? </strong>
+                            </td>
+                            <td bgcolor="#FFFFFF" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                [Client_Survey_Email10]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="35" align="right" bgcolor="#FFFFFF" style="padding-right: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                <strong>.What is the main reason that led you to select us as your IT provider?
+                                </strong>
+                            </td>
+                            <td bgcolor="#FFFFFF" style="padding-left: 10px; font-family: Arial, Helvetica, sans-serif;
+                                font-size: 12px;">
+                                [Client_Survey_Email11]
+                                <br/>
+                                [Client_Descriptions11]
+                            </td>
+                        </tr>
+                        <tr>
+                            <td height="10" colspan="2">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td height="35" colspan="2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+                    <label>
+                        <strong>We sincerely appreciate any comments or suggestions you may have which will
+                            improve your satisfaction with our service. </strong>
+                    </label>
+                </td>
+            </tr>
+            <tr>
+                <td height="50" colspan="2" valign="top" style="font-family: Arial, Helvetica, sans-serif;
+                    font-size: 12px;">
+                   [Client_Descriptions12]
+                    <br />
+                </td>
+            </tr>
+            <tr>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

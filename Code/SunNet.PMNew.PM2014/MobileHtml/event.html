@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta charset="utf-8" />
+    <link href="/Content/styles/mobileApp.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="header-app">
+        <div class="header">
+            <div class="center-title">CALENDAR</div>
+            <div class="left-back"><img src="/Images/back.png" /></div>
+            <div class="right-menu"><img src="/Images/menu.png" /></div>
+        </div>
+        <div class="app-nav-list">
+            <ul>
+                <li><a style="color:#F08E00;"><img src="/Images/icons/calendar_on.png" />CALENDAR</a></li>
+                <li><a><img src="/Images/icons/list_grey.png" />CALENDAR LIST</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-app">
+        <div class="newtimesheet-app" style="margin-top:0;">
+            <div class="clearfix">
+                <div class="newtimesheet-app-div clearfix">
+                    <label>Year:</label>
+                    <div class="newtimesheet-app-input">
+                        <input type="date" />
+                    </div>
+                </div>
+                <div class="newtimesheet-app-div clearfix">
+                    <label>Month:</label>
+                    <div class="newtimesheet-app-input">
+                        <input type="date" />
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">
+                <div class="newtimesheet-app-div clearfix">
+                    <label>Project:</label>
+                    <div class="newtimesheet-app-input">
+                        <select>
+                            <option>ALL</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="newtimesheet-app-div clearfix">
+                    <label>User:</label>
+                    <div class="newtimesheet-app-input">
+                        <select>
+                            <option>ALL</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">
+                <div class="newtimesheet-app-div clearfix" style="padding-left:15px;">
+                    <button class="new-app">Search <img src="/Images/search-app.png" /></button>
+                    <button class="delete-app">Export <img src="/Images/export-app.png" /></button>
+                </div>
+            </div>
+        </div>
+        <div class="newtimesheet-app-div clearfix" style="width:100%;margin-top:15px;">
+            <button class="new-app">Create Event <img src="/Images/event-app.png" /></button>
+        </div>
+    </div>
+    <div class="footer-app">
+        <ul class="clearfix">
+            <li>
+                <a>
+                    <img src="/Images/ticket-g.png" />
+                    <p>TICKETS</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="/Images/oa-g.png" />
+                    <p>OA</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="/Images/for-g.png" />
+                    <p>FORUMS</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="/Images/rep-g.png" />
+                    <p>REPORTS</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="/Images/doc-g.png" />
+                    <p>DOCUMENTS</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="/Images/eve-o.png" />
+                    <p class="cur">EVENTS</p>
+                </a>
+            </li>
+            <li>
+                <a>
+                    <img src="/Images/pro-g.png" />
+                    <p>PROFILE</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+    <script src="../Scripts/jquery-1.11.0.min.js"></script>
+    <script>
+        $(function () {
+            $('.right-menu').click(function () {
+                $('.app-nav-list').stop().slideToggle();
+            });
+        });
+    </script>
+
+</body>
+</html>

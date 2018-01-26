@@ -1,0 +1,9 @@
+﻿
+
+Dear [ClientName],<br/>
+
+&nbsp;&nbsp;[applicant] has submitted a seal request or work order, please log in <a href="https://pm.sunnet.us" target="_blank">PM website</a> to review it.<br/>
+
+[content] <br>
+
+Thank you.<br/>  

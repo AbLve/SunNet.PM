@@ -1,0 +1,5 @@
+IF EXISTS (SELECT * FROM dbo.Modules WHERE ParentID=11 AND ShowInMenu=1 AND ModuleTitle='waiting process')
+	UPDATE dbo.Modules SET ModuleTitle='Waiting for Response' WHERE ParentID=11 AND ShowInMenu=1 AND ModuleTitle='waiting process'
+ELSE
+   SELECT 'The update failed without querying the updated data'
+

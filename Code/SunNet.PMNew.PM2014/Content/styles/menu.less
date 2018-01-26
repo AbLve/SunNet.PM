@@ -1,0 +1,778 @@
+﻿body {
+}
+@site-bgcolor: #ffffff;
+/*top menu public */
+@top-color: #fff;
+@top-active-bgcolor: #fff;
+ul.topmenu {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+ul.topmenu li {
+width: 110px;
+height: 75px;
+border-radius: 8px;
+text-align: center;
+float: left;
+font-size: 15px;
+font-weight: bold;
+text-transform: uppercase;
+cursor: pointer;
+padding-top: 25px;
+margin-right: 10px;
+position: relative;
+}
+ul.topmenu li, ul.topmenu li a {
+color: @top-color;
+}
+ul.topmenu li.active {
+background-color: @top-active-bgcolor;
+border: 1px solid #ffffff;
+}
+ul.topmenu li a:hover {
+text-decoration: none;
+}
+ul.topmenu li a.full {
+display: block;
+position: absolute;
+z-index: 2;
+width: 100%;
+height: 100%;
+top: 0px;
+left: 0px;
+}
+ul.topmenu li .downarrow {
+border-width: 11px;
+display: none;
+}
+ul.topmenu li .downarrow, ul.topmenu li .downarrow:after {
+position: absolute;
+display: block;
+width: 0;
+height: 0;
+border-color: transparent;
+border-style: solid;
+}
+ul.topmenu li.active .downarrow {
+bottom: -11px;
+left: 50%;
+margin-left: -11px;
+border-bottom-width: 0;
+}
+ul.topmenu li.active .downarrow:after {
+border-width: 10px;
+bottom: 1px;
+margin-left: -10px;
+border-top-color: @site-bgcolor;
+border-bottom-width: 0;
+content: " ";
+}
+ul.topmenu li img {
+margin-bottom: 5px;
+}
+ul.topmenu li .image {
+width: 28px;
+height: 35px;
+margin: 0 auto;
+}
+ul.topmenu li:hover {
+filter: alpha(opacity=80);
+-moz-opacity: 0.8;
+-khtml-opacity: 0.8;
+opacity: 0.8;
+}
+/*top menu public end */
+/*left menu public */
+@left-color: #000;
+@left-hover-bgcolor: #efefef;
+@left-active-hover-bgcolor: #ffffff;
+@left-active-border-color: #073583;
+ul.leftMenu {
+list-style: none;
+margin: 0;
+padding: 0;
+}
+ul.leftMenu li a.full {
+display: block;
+position: absolute;
+width: 100%;
+height: 100%;
+top: 0px;
+left: 0px;
+z-index: 2;
+}
+ul.leftMenu a {
+text-decoration: none;
+color: @left-color;
+}
+ul.leftMenu li {
+height: 20px;
+padding: 12px 10px;
+border-top: 1px solid #ddd;
+text-transform: uppercase;
+cursor: pointer;
+position: relative;
+}
+ul.leftMenu li:hover {
+background-color: @left-hover-bgcolor;
+}
+ul.leftMenu li .icon {
+display: inline-block;
+width: 220px;
+height: 21px;
+background: url("") no-repeat left top;
+padding-left: 25px;
+}
+ul.leftMenu li .rightarrow {
+border-width: 11px;
+display: none;
+}
+ul.leftMenu li .rightarrow, ul.leftMenu li .rightarrow:after {
+position: absolute;
+display: block;
+width: 0;
+height: 0;
+border-color: transparent;
+border-style: solid;
+}
+ul.leftMenu li.active .rightarrow {
+top: 50%;
+right: -11px;
+margin-top: -11px;
+border-right-width: 0;
+}
+ul.leftMenu li.active .rightarrow:after {
+border-width: 10px;
+right: 1px;
+bottom: -10px;
+border-left-color: @site-bgcolor;
+border-right-width: 0;
+content: " ";
+}
+ul.leftMenu li.active {
+color: @left-active-border-color;
+border: 1px solid @left-active-border-color;
+font-weight: bold;
+margin: -1px -1px 0px -1px;
+height: 20px;
+}
+ul.leftMenu li.active:hover {
+background-color: @left-active-hover-bgcolor;
+}
+/*left menu public end*/
+
+/* clients start*/
+@clientdashboard-color:#009c85;
+ul.topmenu .clientdashboard {
+background-color: @clientdashboard-color;
+}
+ul.topmenu li.clientdashboard.active a {
+color: @clientdashboard-color;
+}
+ul.topmenu .clientdashboard .image {
+background: url("/Images/icons/cdashboard_white.png") no-repeat center top;
+}
+ul.topmenu li.active.clientdashboard {
+color: @clientdashboard-color;
+border-color: @clientdashboard-color;
+}
+ul.topmenu li.active.clientdashboard .downarrow {
+border-top-color: @clientdashboard-color;
+}
+ul.topmenu li.active.clientdashboard .image {
+background: url("/Images/icons/cdashboard_on.png") no-repeat center top;
+}
+
+@client-color: #54b1ff;
+ul.topmenu .client {
+background-color: @client-color;
+}
+ul.topmenu li.client.active a {
+color: @client-color;
+}
+ul.topmenu .client .image {
+background: url("/Images/icons/clients_white.png") no-repeat center top;
+}
+ul.topmenu li.active.client {
+color: @client-color;
+border-color: @client-color;
+}
+ul.topmenu li.active.client .downarrow {
+border-top-color: @client-color;
+}
+ul.topmenu li.active.client .image {
+background: url("/Images/icons/clients_on.png") no-repeat center top;
+}
+
+ul.topmenu .clientticket {
+background-color: @client-color;
+}
+ul.topmenu li.clientticket.active a {
+color: @client-color;
+}
+ul.topmenu .clientticket .image {
+background: url("/Images/icons/clientticket_white.png") no-repeat center top;
+}
+ul.topmenu li.active.clientticket {
+color: @client-color;
+border-color: @client-color;
+}
+ul.topmenu li.active.clientticket .downarrow {
+border-top-color: @client-color;
+}
+ul.topmenu li.active.clientticket .image {
+background: url("/Images/icons/clientticket_on.png") no-repeat center top;
+}
+/* client left menu */
+ul.leftMenu.client-left li.active {
+border-color: @client-color;
+}
+ul.leftMenu.client-left li.active a {
+color: @client-color;
+}
+ul.leftMenu.client-left li.active .rightarrow {
+border-left-color: @client-color * 0.9;
+}
+/*client left menu*/
+ul.leftMenu li.dashboard .icon {
+background-image: url("/Images/icons/dashboard_grey.png");
+}
+ul.leftMenu li.dashboard.active .icon {
+background-image: url("/Images/icons/dashboard_on.png");
+}
+ul.leftMenu li.waitting .icon {
+background-image: url("/Images/icons/waiting_grey.png");
+}
+ul.leftMenu li.waitting.active .icon {
+background-image: url("/Images/icons/waiting_on.png");
+}
+ul.leftMenu li.ongoing .icon {
+background-image: url("/Images/icons/ongoing_grey.png");
+}
+ul.leftMenu li.ongoing.active .icon {
+background-image: url("/Images/icons/ongoing_on.png");
+}
+ul.leftMenu li.draft .icon {
+background-image: url("/Images/icons/draft_grey.png");
+}
+ul.leftMenu li.draft.active .icon {
+background-image: url("/Images/icons/draft_on.png");
+}
+ul.leftMenu li.completed .icon {
+background-image: url("/Images/icons/completed_grey.png");
+}
+ul.leftMenu li.completed.active .icon {
+background-image: url("/Images/icons/completed_on.png");
+}
+ul.leftMenu li.cancelled .icon {
+background-image: url("/Images/icons/cancelled_grey.png");
+}
+ul.leftMenu li.cancelled.active .icon {
+background-image: url("/Images/icons/cancelled_on.png");
+}
+ul.leftMenu li.reports .icon {
+background-image: url("/Images/icons/reports_grey.png");
+}
+ul.leftMenu li.reports.active .icon {
+background-image: url("/Images/icons/reports_on.png");
+}
+/* client end*/
+/* sunnet start */
+@sunnet-color: #008954;
+ul.topmenu .sunnet {
+background-color: @sunnet-color;
+}
+ul.topmenu li.sunnet.active a {
+color: @sunnet-color;
+}
+ul.topmenu .sunnet .image {
+background: url("/Images/icons/tickets_white.png") no-repeat center top;
+}
+ul.topmenu li.active.sunnet {
+color: @sunnet-color;
+border-color: @sunnet-color;
+}
+ul.topmenu li.active.sunnet .downarrow {
+border-top-color: @sunnet-color;
+}
+ul.topmenu li.active.sunnet .image {
+background: url("/Images/icons/tickets_on.png") no-repeat center top;
+}
+/* sunnet left menu */
+ul.leftMenu.sunnet-left li.active {
+border-color: @sunnet-color;
+}
+ul.leftMenu.sunnet-left li.active a{
+color: @sunnet-color;
+}
+ul.leftMenu.sunnet-left li.active .rightarrow {
+border-left-color: @sunnet-color * 0.9;
+}
+/*Sunnet left menu*/
+ul.leftMenu li.sunnetdashboard .icon {
+background-image: url("/Images/icons/dashboard_grey.png");
+}
+ul.leftMenu li.sunnetdashboard.active .icon {
+background-image: url("/Images/icons/sunnet_dashboard_on.png");
+}
+ul.leftMenu li.mycategory .icon {
+background-image: url("/Images/icons/mycategories_grey.png");
+}
+ul.leftMenu li.mycategory.active .icon {
+background-image: url("/Images/icons/mycategories_on.png");
+}
+ul.leftMenu li.knowledge .icon {
+background-image: url("/Images/icons/knowledgeshare_grey.png");
+}
+ul.leftMenu li.knowledge.active .icon {
+background-image: url("/Images/icons/knowledgeshare_on.png");
+}
+ul.leftMenu li.myticket .icon {
+background-image: url("/Images/icons/myticket_grey.png");
+}
+ul.leftMenu li.myticket.active .icon {
+background-image: url("/Images/icons/myticket_on.png");
+}
+
+
+ul.leftMenu li.allticket .icon {
+background-image: url("/Images/icons/allticket_grey.png");
+}
+ul.leftMenu li.allticket.active .icon {
+background-image: url("/Images/icons/allticket_on.png");
+}
+ul.leftMenu li.schedule .icon {
+background-image: url("/Images/icons/schedule_grey.png");
+}
+ul.leftMenu li.schedule.active .icon {
+background-image: url("/Images/icons/schedule_on.png");
+}
+
+ul.leftMenu li.undercoordination .icon {
+background-image: url("/Images/icons/undercoordination_grey.png");
+}
+ul.leftMenu li.undercoordination.active .icon {
+background-image: url("/Images/icons/undercoordination_on.png");
+}
+ul.leftMenu li.underdevelop .icon {
+background-image: url("/Images/icons/underdevelop_grey.png");
+}
+ul.leftMenu li.underdevelop.active .icon {
+background-image: url("/Images/icons/underdevelop_on.png");
+}
+ul.leftMenu li.undertest .icon {
+background-image: url("/Images/icons/undertest_grey.png");
+}
+ul.leftMenu li.undertest.active .icon {
+background-image: url("/Images/icons/undertest_on.png");
+}
+/* ticket end */
+/* document start */
+@document-color: #6ca632;
+ul.topmenu .document {
+background-color: @document-color;
+}
+ul.topmenu li.document.active a {
+color: @document-color;
+}
+ul.topmenu .document .image {
+background: url("/Images/icons/documents_white.png") no-repeat center top;
+}
+ul.topmenu li.active.document {
+color: @document-color;
+border-color: @document-color;
+}
+ul.topmenu li.active.document .downarrow {
+border-top-color: @document-color;
+}
+ul.topmenu li.active.document .image {
+background: url("/Images/icons/documents_on.png") no-repeat center top;
+}
+/* event start */
+@event-color: #f08e00;
+ul.topmenu .event {
+background-color: @event-color;
+}
+ul.topmenu li.event.active a {
+color: @event-color;
+}
+ul.topmenu .event .image {
+background: url("/Images/icons/events_white.png") no-repeat center top;
+}
+ul.topmenu li.active.event {
+border-color: @event-color;
+color: @event-color;
+}
+ul.topmenu li.active.event .downarrow {
+border-top-color: @event-color;
+}
+ul.topmenu li.active.event .image {
+background: url("/Images/icons/events_on.png") no-repeat center top;
+}
+/* event left menu */
+ul.leftMenu.event-left li.active {
+border-color: @event-color;
+}
+ul.leftMenu.event-left li.active a {
+color: @event-color;
+}
+ul.leftMenu.event-left li.active .rightarrow {
+border-left-color: @event-color * 0.8;
+}
+
+ul.leftMenu li.calendar .icon {
+background-image: url("/Images/icons/calendar_grey.png");
+}
+ul.leftMenu li.calendar.active .icon {
+background-image: url("/Images/icons/calendar_on.png");
+}
+ul.leftMenu li.eventlist .icon {
+background-image: url("/Images/icons/list_grey.png");
+}
+ul.leftMenu li.eventlist.active .icon {
+background-image: url("/Images/icons/list_on.png");
+}
+/* forum start */
+@forum-color: #d64637;
+ul.topmenu .forum {
+background-color: @forum-color;
+}
+ul.topmenu li.forum.active a {
+color: @forum-color;
+}
+ul.topmenu .forum .image {
+background: url("/Images/icons/forums_white.png") no-repeat center top;
+}
+ul.topmenu li.active.forum {
+border-color: @forum-color;
+color: @forum-color;
+}
+ul.topmenu li.active.forum .downarrow {
+border-top-color: @forum-color;
+}
+ul.topmenu li.active.forum .image {
+background: url("/Images/icons/forums_on.png") no-repeat center top;
+}
+
+ul.leftMenu.forum-left li.active {
+border-color: @forum-color;
+}
+ul.leftMenu.forum-left li.active a {
+color: @forum-color;
+}
+ul.leftMenu.forum-left li.active .rightarrow {
+border-left-color: @forum-color;
+}
+
+
+/* profile start */
+@profile-color: #3a7bb8;
+ul.topmenu .profile {
+background-color: @profile-color;
+}
+ul.topmenu .profile .image {
+background: url("/Images/icons/profile_white.png") no-repeat center top;
+}
+ul.topmenu li.active.profile {
+border-color: @profile-color;
+color: @profile-color;
+}
+ul.topmenu li.profile.active a {
+color: @profile-color;
+}
+ul.topmenu li.active.profile .downarrow {
+border-top-color: @profile-color;
+}
+ul.topmenu li.active.profile .image {
+background: url("/Images/icons/profile_on.png") no-repeat center top;
+}
+/* profile left menu */
+ul.leftMenu.profile-left li.active {
+border-color: @profile-color;
+}
+ul.leftMenu.profile-left li.active a {
+color: @profile-color;
+}
+ul.leftMenu.profile-left li.active .rightarrow {
+border-left-color: @profile-color * 0.7;
+}
+ul.leftMenu li.myprofile .icon {
+background-image: url("/Images/icons/myprofile_grey.png");
+}
+ul.leftMenu li.myprofile.active .icon {
+background-image: url("/Images/icons/myprofile_on.png");
+}
+ul.leftMenu li.mycompany .icon {
+background-image: url("/Images/icons/company_grey.png");
+}
+ul.leftMenu li.mycompany.active .icon {
+background-image: url("/Images/icons/company_on.png");
+}
+ul.leftMenu li.changepwd .icon {
+background-image: url("/Images/icons/password_grey.png");
+}
+ul.leftMenu li.changepwd.active .icon {
+background-image: url("/Images/icons/password_on.png");
+}
+ul.leftMenu li.profileseal .icon {
+background-image: url("/Images/icons/profileseal_grey.png");
+}
+ul.leftMenu li.profileseal.active .icon {
+background-image: url("/Images/icons/profileseal_on.png");
+}
+
+/* profile end */
+/*Report start*/
+@report-color: #15bdb7;
+ul.topmenu .report {
+background-color: @report-color;
+}
+ul.topmenu .report .image {
+background: url("/Images/icons/reports_white.png") no-repeat center top;
+}
+ul.topmenu li.active.report {
+border-color: @report-color;
+color: @report-color;
+}
+ul.topmenu li.report.active a {
+color: @report-color;
+}
+ul.topmenu li.active.report .downarrow {
+border-top-color: @report-color;
+}
+ul.topmenu li.active.report .image {
+background: url("/Images/icons/sunnetreports_on.png") no-repeat center top;
+}
+/*report left menu*/
+ul.leftMenu.report-left li.active {
+border-color: @report-color;
+}
+ul.leftMenu.report-left li.active a{
+color: @report-color;
+}
+ul.leftMenu.report-left li.active .rightarrow {
+border-left-color: @report-color;
+}
+ul.leftMenu li.mytimesheetrpt .icon {
+background-image: url("/Images/icons/mytimesheetreport_grey.png");
+}
+ul.leftMenu li.mytimesheetrpt.active .icon {
+background-image: url("/Images/icons/mytimesheetreport_on.png");
+}
+ul.leftMenu li.timesheetreport .icon {
+background-image: url("/Images/icons/timesheetreport_grey.png");
+}
+ul.leftMenu li.timesheetreport.active .icon {
+background-image: url("/Images/icons/timesheetreport_on.png");
+}
+ul.leftMenu li.consuming .icon {
+background-image: url("/Images/icons/consumingreport_grey.png");
+}
+ul.leftMenu li.consuming.active .icon {
+background-image: url("/Images/icons/consumingreport_on.png");
+}
+ul.leftMenu li.ticketanalysisrpt .icon {
+background-image: url("/Images/icons/ticketanalysis_grey.png");
+}
+ul.leftMenu li.ticketanalysisrpt.active .icon {
+background-image: url("/Images/icons/ticketanalysis_on.png");
+}
+ul.leftMenu li.ticketratingrpt .icon {
+background-image: url("/Images/icons/ticketrating_grey.png");
+}
+ul.leftMenu li.ticketratingrpt.active .icon {
+background-image: url("/Images/icons/ticketrating_on.png");
+}
+ul.leftMenu li.comparisonrpt .icon {
+background-image: url("/Images/icons/consumingcomparisonreport_grey.png");
+}
+ul.leftMenu li.comparisonrpt.active .icon {
+background-image: url("/Images/icons/consumingcomparisonreport_on.png");
+}
+
+ul.leftMenu li.ticketsexport .icon {
+background-image: url("/Images/icons/consumingcomparisonreport_grey.png");
+}
+ul.leftMenu li.ticketsexport.active .icon {
+background-image: url("/Images/icons/consumingcomparisonreport_on.png");
+}
+
+/* report end*/
+/*OA start*/
+@oa-color: #5b429b;
+ul.topmenu .oa {
+background-color: @oa-color;
+}
+ul.topmenu .oa .image {
+background: url("/Images/icons/OA_white.png") no-repeat center top;
+}
+ul.topmenu li.active.oa {
+border-color: @oa-color;
+color: @oa-color;
+}
+ul.topmenu li.oa.active a {
+color: @oa-color;
+}
+ul.topmenu li.active.oa .downarrow {
+border-top-color: @oa-color;
+}
+ul.topmenu li.active.oa .image {
+background: url("/Images/icons/OA_on.png") no-repeat center top;
+}
+/*left menu*/
+ul.leftMenu.oa-left li.active {
+border-color: @oa-color;
+}
+ul.leftMenu.oa-left li.active a {
+color: @oa-color;
+}
+ul.leftMenu.oa-left li.active .rightarrow {
+border-left-color: @oa-color * 0.7;
+}
+ul.leftMenu li.addtimesheet .icon {
+background-image: url("/Images/icons/addtimesheet_grey.png");
+}
+ul.leftMenu li.addtimesheet.active .icon {
+background-image: url("/Images/icons/addtimesheet_on.png");
+}
+ul.leftMenu li.timesheet .icon {
+background-image: url("/Images/icons/mytimesheet_grey.png");
+}
+ul.leftMenu li.timesheet.active .icon {
+background-image: url("/Images/icons/mytimesheet_on.png");
+}
+ul.leftMenu li.weekplan .icon {
+background-image: url("/Images/icons/weekplan_grey.png");
+}
+ul.leftMenu li.weekplan.active .icon {
+background-image: url("/Images/icons/weekplan_on.png");
+}
+ul.leftMenu li.sealrequest .icon {
+background-image: url("/Images/icons/sealrequest_grey.png");
+}
+ul.leftMenu li.sealrequest.active .icon {
+background-image: url("/Images/icons/sealrequest_on.png");
+}
+ul.leftMenu li.watingprocess .icon {
+background-image: url("/Images/icons/watingprocess_grey.png");
+}
+ul.leftMenu li.watingprocess.active .icon {
+background-image: url("/Images/icons/watingprocess_on.png");
+}
+ul.leftMenu li.oacalendar .icon {
+background-image: url("/Images/icons/oacalendar_grey.png");
+}
+ul.leftMenu li.oacalendar.active .icon {
+background-image: url("/Images/icons/oacalendar_on.png");
+}
+ul.leftMenu li.workrequest .icon {
+background-image: url("/Images/icons/workrequest_grey.png");
+}
+ul.leftMenu li.workrequest.active .icon {
+background-image: url("/Images/icons/workrequest_on.png");
+}
+
+/*OA end */
+/* Admin start*/
+@admin-color: #b82fba;
+ul.topmenu .admin {
+background-color: @admin-color;
+}
+ul.topmenu .admin .image {
+background: url("/Images/icons/admin_white.png") no-repeat center top;
+}
+ul.topmenu li.active.admin {
+border-color: @admin-color;
+color: @admin-color;
+}
+ul.topmenu li.admin.active a {
+color: @admin-color;
+}
+ul.topmenu li.active.admin .downarrow {
+border-top-color: @admin-color;
+}
+ul.topmenu li.active.admin .image {
+background: url("/Images/icons/admin_on.png") no-repeat center top;
+}
+/* left menu */
+ul.leftMenu.admin-left li.active {
+border-color: @admin-color;
+}
+ul.leftMenu.admin-left li.active a {
+color:@admin-color;
+}
+ul.leftMenu.admin-left li.active .rightarrow {
+border-left-color: @admin-color*0.7;
+}
+ul.leftMenu li.companies .icon {
+background-image: url("/Images/icons/companiesmanger_grey.png");
+}
+ul.leftMenu li.companies.active .icon {
+background-image: url("/Images/icons/companiesmanger_on.png");
+}
+ul.leftMenu li.module .icon {
+background-image: url("/Images/icons/modulesmanager_grey.png");
+}
+ul.leftMenu li.module.active .icon {
+background-image: url("/Images/icons/modulesmanager_on.png");
+}
+ul.leftMenu li.project .icon {
+background-image: url("/Images/icons/projectsmanager_grey.png");
+}
+ul.leftMenu li.project.active .icon {
+background-image: url("/Images/icons/projectsmanager_on.png");
+}
+ul.leftMenu li.role .icon {
+background-image: url("/Images/icons/rolesmanager_grey.png");
+}
+ul.leftMenu li.role.active .icon {
+background-image: url("/Images/icons/rolesmanager_on.png");
+}
+ul.leftMenu li.seal .icon {
+background-image: url("/Images/icons/sealsmanager_grey.png");
+}
+ul.leftMenu li.seal.active .icon {
+background-image: url("/Images/icons/sealsmanager_on.png");
+}
+ul.leftMenu li.user .icon {
+background-image: url("/Images/icons/usersmanager_grey.png");
+}
+ul.leftMenu li.user.active .icon {
+background-image: url("/Images/icons/usersmanager_on.png");
+}
+/* Admin end*/
+
+/* Invoice start */
+@invoice-color:#cc9900;
+ul.topmenu .invoice {
+background-color: @invoice-color;
+}
+ul.topmenu .invoice .image {
+background: url("/Images/icons/invoice_white.png") no-repeat center top;
+}
+ul.topmenu li.active.invoice {
+border-color: @invoice-color;
+color: @invoice-color;
+}
+ul.topmenu li.invoice.active a {
+color: @invoice-color;
+}
+ul.topmenu li.active.invoice .downarrow {
+border-top-color: @invoice-color;
+}
+ul.topmenu li.active.invoice .image {
+background: url("/Images/icons/invoice_on.png") no-repeat center top;
+}
+
+/* left menu */
+ul.leftMenu.invoice-left li.active {
+border-color: @invoice-color;
+}
+ul.leftMenu.invoice-left li.active a {
+color:@invoice-color;
+}
+ul.leftMenu.invoice-left li.active .rightarrow {
+border-left-color: @invoice-color*0.7;
+}
+/* Invoice end */

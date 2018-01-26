@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/PopSite.Master" AutoEventWireup="true" CodeBehind="Pop.master.cs" Inherits="SunNet.PMNew.PM2014.Pop" %>
+
+<%@ Register Src="UserControls/Messager.ascx" TagName="Messager" TagPrefix="uc1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        body {
+            margin: 0px;
+        }
+
+        .alert {
+            margin: 0px;
+            border-radius: 0px;
+        }
+        .pagination-sm > li > a, .pagination-sm > li > span, .pagebox .pager > a, .pagebox .pager > span {
+padding: 5px 3px;
+}
+    </style>
+    <script type="text/javascript">
+        function ClosePopWindow() {
+            var parentModal = urlParams["parentmodal"];
+          
+            if (!parentModal) {
+                parentModal = window.top.$("div.modal:visible:last").attr("id");
+            }
+            window.top.$("#" + parentModal).modal("hide");
+        }
+
+        $(function () {
+            var $body = $("body");
+            $body.on("click", '[data-dismiss="modal"]', function () {
+                console.log("closing");
+                ClosePopWindow();
+            });
+            // 关闭弹出窗口
+            if (urlParams.close && !urlParams.success) {
+                // 直接关闭
+                ClosePopWindow();
+            }
+            // 弹出层页面布局调整有可能导致父级页面容器尺寸重设
+            $body.on("click", "*", function () {
+                window.top.$("#" + urlParams["parentmodal"]).trigger("loaded.bs.modal", null);
+            }).on("keyup", "*", function () {
+                window.top.$("#" + urlParams["parentmodal"]).trigger("loaded.bs.modal", null);
+            }).on("focus", "input,select", function () {
+                window.top.$("#" + urlParams["parentmodal"]).trigger("loaded.bs.modal", null);
+            }).on("change", "select", function () {
+                window.top.$("#" + urlParams["parentmodal"]).trigger("loaded.bs.modal", null);
+            }).on("DOMNodeInserted", ".DOMNodeInserted", function () {
+                window.top.$("#" + urlParams["parentmodal"]).trigger("loaded.bs.modal", null);
+            });
+        });
+    </script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+    <div class="mainowBox" style="width: <%=WidthValue%>">
+        <div class="mainowBoxtop">
+            <div class="mainowBoxtop_title">
+                <asp:ContentPlaceHolder ID="titleSection" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div class="mainowBoxtop_close" data-dismiss="modal" aria-hidden="true" title="close">
+                <img src="/Images/icons/close.png" alt="close" width="24" height="24" />
+            </div>
+        </div>
+        <uc1:Messager ID="Messager1" runat="server" />
+        <div class="mainowContent">
+            <div class="loading"></div>
+            <asp:ContentPlaceHolder ID="bodySection" runat="server">
+            </asp:ContentPlaceHolder>
+            <div class="buttonBox2">
+                <asp:ContentPlaceHolder ID="buttonSection" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+        </div>
+    </div>
+</asp:Content>

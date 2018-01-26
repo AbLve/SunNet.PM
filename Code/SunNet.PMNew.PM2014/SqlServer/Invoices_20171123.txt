@@ -1,0 +1,5 @@
+﻿alter table Invoices add IsConfirmPayment bit 
+go
+update Invoices set IsConfirmPayment=0
+go
+alter table Invoices alter column IsConfirmPayment bit not null

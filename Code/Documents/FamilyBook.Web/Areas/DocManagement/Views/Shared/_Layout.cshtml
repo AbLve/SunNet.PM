@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="/Styles/global.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/forms.css" rel="stylesheet" type="text/css" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("Styles")
+    <script src="/Scripts/jquery-1.10.2.js" type="text/javascript"></script>
+    <script src="/Scripts/v3.bootstrap/js/bootstrap.js" type="text/javascript"></script>
+    @RenderSection("Scripts")
+    <link href="/Styles/New2014_style/public.css" rel="stylesheet" type="text/css" />
+    <link href="/Styles/New2014_style/forms.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&subset=latin">
+</head>
+<body>
+    <div class="toploginInfo">Wecome  <span class="bannerUser">Jennifer, Zhang</span><span>|</span><a href="#">Logout</a></div>
+    <div class="topBox">
+        <div class="topBox_logo">
+            <img src="/Images/New2014_Image/sunnet_logo.png" /></div>
+        <div class="topBox_menu">
+            <ul class="topmenu">
+                <a href="#">
+                    <li class="ticketsOn">
+                        <div class="ticketToparrow">
+                            <img src="/Images/New2014_Image/ticket_toparrow.png" /></div>
+                        <img src="icons/tickets_on.png"><br />
+                        Tickets</li>
+                </a>
+                <a href="#">
+                    <li class="documentsout">
+                        <img src="/Images/New2014_Image/icons/documents_white.png"><br />
+                        Documents</li>
+                </a>
+                <li class="eventsout">
+                    <img src="/Images/New2014_Image/icons/events_white.png"><br />
+                    Events</li>
+                <li class="forumsout">
+                    <img src="/Images/New2014_Image/icons/forums_white.png"><br />
+                    Forums</li>
+                <li class="profileout">
+                    <img src="/Images/New2014_Image/icons/profile_white.png" /><br />
+                    Profile</li>
+            </ul>
+        </div>
+    </div>
+    @RenderBody()
+    <div class="footerBox">
+        <div class="footer">
+            <div class="footer_left">
+                Home | About Us | Contact | Terms of Use | Privacy</div>
+            <div class="footer_right">
+                Copyright &copy; 2013 All Rights Reserved by myFamilyBook. Designed by <a href="https://www.sunnet.us"
+                    target="_blank">SunNet Solutions</a>.</div>
+        </div>
+    </div>
+</body>
+</html>

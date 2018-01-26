@@ -1,0 +1,3 @@
+﻿ALTER TABLE dbo.Users ADD PTOHoursOfYear INT DEFAULT 40 
+GO
+UPDATE dbo.Users SET PTOHoursOfYear=40

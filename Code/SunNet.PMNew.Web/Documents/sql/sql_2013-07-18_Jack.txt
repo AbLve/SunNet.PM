@@ -1,0 +1,125 @@
+﻿GO
+/****** Object:  StoredProcedure [dbo].[Tickets_GetListByCondition]    Script Date: 07/18/2013 10:22:25 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+ALTER PROCEDURE [dbo].[Tickets_GetListByCondition]
+(
+    @FeedBackID int = NULL OUTPUT,
+	@AssignedUser varchar(100) = NULL ,
+	@Client varchar(100) =null,
+	@ClientPriority varchar(100) = NULL,
+	@Company varchar(100) = NULL,
+	@KeyWord varchar(100) = NULL,
+	@IsInternal varchar(100) =null,
+	@Project varchar(100) = NULL,
+	@Start int = 0,
+	@End int = 0,
+	@sortBy varchar(100) = NULL, 
+	@direction varchar(100) = NULL,
+	@Status varchar(100) = NULL,
+	@Type varchar(100) = NULL, 
+	@feedback varchar(max),
+	@PM int = 0
+)
+AS
+	SET NOCOUNT ON
+    declare @sqlWhere nvarchar(max);	
+    
+		 set @sqlWhere = 'select
+								   [TicketID]
+								  ,[CompanyID]
+								  ,[ProjectID]
+								  ,[Title]
+								  ,[TicketCode]
+								  ,[TicketType]
+								  ,SUBSTRING([Description],0,100) as [Description]
+								  ,[CreatedOn]
+								  ,[CreatedBy]
+								  ,[ModifiedOn]
+								  ,[ModifiedBy]
+								  ,[PublishDate]
+								  ,[ClientPublished]
+								  ,[StartDate]
+								  ,[DeliveryDate]
+								  ,[ContinueDate]
+								  ,[URL]
+								  ,[Priority]
+								  ,[Status]
+								  ,[ConvertDelete]
+								  ,[IsInternal]
+								  ,[CreateType]
+								  ,[SourceTicketID]
+								  ,[IsEstimates]
+								  ,[InitialTime]
+								  ,[FinalTime]
+								  ,[EsUserID]
+								  ,[Star]
+								   from Tickets where ConvertDelete <= 3 ' 
+		  
+         if(@Project<>'')
+            begin
+			    set @sqlWhere = @sqlWhere + ' and ProjectID in (' + @Project + ') ' end    
+		 if(@Company<>'')
+            begin
+				set @sqlWhere = @sqlWhere + ' and CompanyID in(' + @Company + ') ' end  
+		 if(@pm > 0) --wait pm feedback 
+			begin
+				set @sqlWhere = @sqlWhere + ' and ticketId in (select ticketid from FeedBackMessages where waitpmfeedback > 0 and userid = ' 
+				+ cast( @PM as varchar) + ') '  
+			end
+		 else 
+			begin
+			 if(@Status<>'')
+				begin
+					set @sqlWhere = @sqlWhere + ' and Status in (' +@Status+ ') ' end 
+			 end
+		 if(@Type<>'')
+            begin
+				set @sqlWhere = @sqlWhere + ' and TicketType = ''' +  @Type  + ''' ' end
+		 if(@KeyWord<>'')
+            begin
+				set @sqlWhere = @sqlWhere +
+					' and (Title like ''%' + @KeyWord + '%'' ' +
+					' or Description like ''%'+ @KeyWord + '%'' '+ 
+					' or TicketID like ''%'+ @KeyWord + '%'' '+ 
+					' or ticketCode like ''%'+ @KeyWord + '%'' '+ 
+					' or url like ''%' + @KeyWord + '%'') ' end  
+		 if(@AssignedUser<>'')
+            begin
+				 set @sqlWhere = @sqlWhere + 
+								' and TicketID in (select TicketID from dbo.TicketUsers  where UserID = ' + @AssignedUser + ' )'+ ' ' end  
+		 if(@Client<>'')
+            begin
+				set @sqlWhere = @sqlWhere + ' and CreatedBy = ' + @Client + ' ' end  
+		 if(@ClientPriority<>'')
+            begin
+				set @sqlWhere = @sqlWhere + ' and Priority = ' + @ClientPriority + ' ' end 
+				
+		 if(@feedback <> '')
+			 begin
+			    set @sqlWhere = @sqlWhere + ' and TicketID in  (' +@feedback+ ') '  end  		
+         if(@IsInternal <> '')
+			 begin
+			    set @sqlWhere = @sqlWhere + ' and IsInternal = ' + @IsInternal + ' ' end   
+			     	    
+    set @sqlWhere = 'select * from (
+					select ROW_NUMBER() OVER( Order BY   ' + @sortBy + ' ' + @direction + ' ) AS INDEX_ID, result.* 
+					from(
+						select  p.projectCode ,p.title as ProjectTitle , tb.* from ('+@sqlWhere+') tb inner join dbo.Projects as p on tb.ProjectID = p.ProjectID 
+						)  as result )  result2 
+					where INDEX_ID BETWEEN '+ cast( @Start as varchar) + ' AND ' +cast( @End as varchar) + ' ';
+    set @sqlWhere = @sqlWhere +	'  order by '+ @sortBy+' ' + @direction;
+   
+    print  (@sqlWhere); 
+     
+	exec(@sqlWhere); 
+	
+	SELECT @FeedBackID =ISNULL( SCOPE_IDENTITY(),0);
+
+	RETURN @@Error
+
+

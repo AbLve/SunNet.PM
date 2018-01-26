@@ -1,0 +1,42 @@
+﻿
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[GetFeedbackIndexByTicket]    Script Date: 5/21 23:27:05 ******/
+DROP FUNCTION [dbo].[GetFeedbackIndexByTicket]
+GO
+
+/****** Object:  UserDefinedFunction [dbo].[GetFeedbackIndexByTicket]    Script Date: 5/21 23:27:05 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+-- =============================================
+-- Author:		Jack
+-- Create date: 5/22/2014
+-- Description:	查询Ticket的最新的Feedback索引ID
+-- =============================================
+CREATE FUNCTION [dbo].[GetFeedbackIndexByTicket]
+(
+	-- Add the parameters for the function here
+	@TicketID int
+)
+RETURNS int
+AS
+BEGIN
+	DECLARE @Index int;
+	set @Index = 1;
+
+	IF(Exists(select 1 from [dbo].[FeedBacks] where [TicketID] = @TicketID and [Order] > 0 ) )
+	BEGIN
+		set @Index = (select top 1 [Order] from [dbo].[FeedBacks] where [TicketID] = @TicketID and [Order] > 0 order by FeedBackID desc);
+		set @Index = @Index + 1; 
+	END
+
+	RETURN @Index
+
+END
+
+GO
+

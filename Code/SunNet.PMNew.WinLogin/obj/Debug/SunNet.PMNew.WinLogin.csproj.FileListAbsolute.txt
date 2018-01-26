@@ -1,0 +1,15 @@
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\bin\Debug\SunNet.PMNew.WinLogin.exe.config
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\bin\Debug\SunNet.PMNew.WinLogin.exe.manifest
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\bin\Debug\SunNet.PMNew.WinLogin.application
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\bin\Debug\SunNet.PMNew.WinLogin.exe
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\bin\Debug\SunNet.PMNew.WinLogin.pdb
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\obj\Debug\SunNet.PMNew.WinLogin.BrowserControl.resources
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\obj\Debug\SunNet.PMNew.WinLogin.frmLogin.resources
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\obj\Debug\SunNet.PMNew.WinLogin.frmTestBrowser.resources
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\obj\Debug\SunNet.PMNew.WinLogin.Properties.Resources.resources
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\obj\Debug\SunNet.PMNew.WinLogin.frmWinEmbedBrowser.resources
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\obj\Debug\SunNet.PMNew.WinLogin.csproj.GenerateResource.Cache
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\obj\Debug\SunNet.PMNew.WinLogin.exe.manifest
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\obj\Debug\SunNet.PMNew.WinLogin.application
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\obj\Debug\SunNet.PMNew.WinLogin.exe
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinLogin\obj\Debug\SunNet.PMNew.WinLogin.pdb

@@ -1,0 +1,7 @@
+GO 
+ALTER TABLE dbo.ProposalTracker ADD Reminded INT NOT NULL DEFAULT 0;
+GO 
+UPDATE  dbo.ProposalTracker
+SET     Reminded = 5;
+GO
+ALTER TABLE dbo.ProposalTracker ADD RemindTime DATETIME NULL;

@@ -1,0 +1,6 @@
+﻿Dear, {Firstname} {Lastname}<br/>
+
+&nbsp;&nbsp;Test test test<br/><br/>
+
+Project Management - SunNet Solutions<br/>
+{EmailDate}<br/><br/>

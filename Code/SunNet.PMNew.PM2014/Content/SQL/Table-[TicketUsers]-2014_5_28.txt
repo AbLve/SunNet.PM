@@ -1,0 +1,2 @@
+﻿ALTER TABLE [dbo].[TicketUsers]
+ADD [Status] int not null default(0)

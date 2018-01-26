@@ -1,0 +1,11 @@
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinUpdate\bin\Debug\SunNet.PMNew.WinUpdate.exe.config
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinUpdate\bin\Debug\SunNet.PMNew.WinUpdate.exe
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinUpdate\bin\Debug\SunNet.PMNew.WinUpdate.pdb
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinUpdate\bin\Debug\SunNet.PMNew.WinLogin.exe
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinUpdate\bin\Debug\SunNet.PMNew.WinLogin.pdb
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinUpdate\obj\x86\Debug\SunNet.PMNew.WinUpdate.csprojResolveAssemblyReference.cache
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinUpdate\obj\x86\Debug\SunNet.Capline.WinUpdate.frmUpdate.resources
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinUpdate\obj\x86\Debug\SunNet.PMNew.WinUpdate.Properties.Resources.resources
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinUpdate\obj\x86\Debug\SunNet.PMNew.WinUpdate.csproj.GenerateResource.Cache
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinUpdate\obj\x86\Debug\SunNet.PMNew.WinUpdate.exe
+F:\TFS-Project\SunNet.PM\Code\SunNet.PMNew.WinUpdate\obj\x86\Debug\SunNet.PMNew.WinUpdate.pdb

@@ -1,0 +1,358 @@
+﻿ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!--
+ *@lhgdialog - Dialog Plugin v2.2.2 - Date : 2009-11-23
+ *@Copyright lhgcore (c) 2009 By LiHuiGang Reserved
+ -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script type="text/javascript">
+var W = frameElement._dlgargs.win, dlgcover = W.J.dialog.getCover(),
+doc = document, oid = frameElement.id.substr(4); window.$ = W.J;
+
+function A(){ return frameElement._dlgargs; };
+window.focus(); window.custom = A().cus; var E = {};
+
+if( $.browser.ie )
+    try{ document.execCommand('BackgroundImageCache',false,true); }catch(e){}
+
+//样式表文件路径，注意skins文件夹一定要和lhgdialog.html在同一目录下
+document.write( '<' + 'link href="skins/' + A().style + '/lhgdialog.css" type="text/css" rel="stylesheet"/>' );
+
+//修正IE6下窗口尺寸文件 - lhg_dlg_ie6.js
+if( $.browser.ie && !$.browser.i7 )
+    document.write( '<' + 'script type="text/javascript" src="skins/' + A().style + '/lhg_dlg_ie6.js"><' + '\/script>' );
+
+//用来计算加载内容页的iframe和窗口的尺寸
+var Sizer = function()
+{
+    var retval = {
+	    containS : function()
+		{
+		    var height = $('#contain',doc)[0].offsetHeight -
+			    $('#dfoot',doc)[0].offsetHeight;
+			
+			if( $('#frmain',doc)[0] )
+			    $('#frmain',doc).css( 'height', Math.max(height,0) );
+			else
+			    $('#dinner',doc).css( 'height', Math.max(height,0) );
+		},
+		
+		dialogS : function( width, height )
+		{
+		    $( window.frameElement ).css({
+			    'width': width, 'height': height
+			});
+			
+			if( $.isFunction(window.doretsize) )
+			    window.doretsize();
+		}
+	};
+	
+	if( $.browser.ie && !$.browser.i7 )
+	{
+	    var originalS = retval.containS;
+		retval.containS = function()
+		{
+		    return window.setTimeout( function(){ originalS.apply(retval); }, 1 );
+		};
+	}
+	
+	window.onresize = function(){ retval.containS(); };
+	
+	return retval;
+}();
+
+//被拖动的层，创建在最顶层页面
+var dragDiv = function( top, left, width, height )
+{
+	return $('<div/>',A().top.document).css({
+	    position: 'absolute', 'top': top, 'left': left, border: '1px solid #000', opacity: 0.30,
+		'width': width, 'height': height, zIndex: $.dialog.zIndex + 1, backgroundColor: '#999'
+	}).appendTo( A().top.document.body )[0];
+};
+
+//拖动操作代码
+var drag = function()
+{
+    var regwin = [], lacoor, curpos, divDark, screnS, scrollS;
+	
+	var clearUpHdl = function()
+	{
+	    for( var i = 0, l = regwin.length; i < l; i++ )
+		{
+			$.unbind( regwin[i].document, 'mousemove', moveHdl );
+			$.unbind( regwin[i].document, 'mouseup', upHdl );
+		}
+	};
+	
+	var moveHdl = function(evt)
+	{
+	    if( !lacoor ) return;
+		if( !evt ) evt = eDoc(this).parentWindow.event;
+		
+		var curcoor = { x : evt.screenX, y : evt.screenY };
+		curpos =
+		{
+		    x : curpos.x + ( curcoor.x - lacoor.x ),
+			y : curpos.y + ( curcoor.y - lacoor.y )
+		};
+		lacoor = curcoor;
+		
+		//限制在浏览器内拖动
+		if( A().rng )
+		{
+			//只限制了上和左2个方向
+			if( curpos.x < scrollS.x ) curpos.x = scrollS.x;
+			if( curpos.y < scrollS.y ) curpos.y = scrollS.y;
+		}
+		
+		$( divDark ).css({ left: curpos.x, top: curpos.y });
+	};
+	
+	var upHdl = function(evt)
+	{
+	    if( !lacoor ) return;
+		if( !evt ) evt = eDoc(this).parentWindow.event;
+		
+		if( $.browser.ie )
+		    divDark.releaseCapture();
+			
+		clearUpHdl(); $( divDark ).remove();
+		lacoor = null; divDark = null;
+		$( frameElement ).css({ left: curpos.x, top: curpos.y });
+	};
+	
+	return {
+	    downHdl : function(evt)
+		{
+			var view = null;
+			if( !evt )
+			{
+			    view = eDoc(this).parentWindow; evt = view.event;
+			}
+			else view = evt.view;
+			
+			var target = evt.srcElement || evt.target;
+			if( target.id == 'xbtn' ) return;
+			
+			var frmWidth = frameElement.offsetWidth, frmHeight = frameElement.offsetHeight;
+			screnS = $.dialog.client( A().top ); scrollS = $.dialog.scroll( A().top );
+			
+			curpos = { x : frameElement.offsetLeft, y : frameElement.offsetTop };
+			lacoor = { x : evt.screenX, y : evt.screenY };
+			
+			divDark = dragDiv( curpos.y, curpos.x, frmWidth, frmHeight );
+			
+			for( var i = 0, l = regwin.length; i < l; i++ )
+			{
+				$.bind( regwin[i].document, 'mousemove', moveHdl );
+				$.bind( regwin[i].document, 'mouseup', upHdl );
+			}
+			
+			evt.preventDefault ? evt.preventDefault() : (evt.returnValue = false);
+			
+			if( $.browser.ie ) divDark.setCapture();
+		},
+		
+		reghdl : function( win ){ regwin.push(win); }
+	};
+}();	
+
+(function()
+{
+	var loading = function( showIt )
+	{
+	    $( '#throbber', doc ).css( 'visibility', showIt ? '' : 'hidden' );
+	};
+	
+	window.eDoc = function( elem )
+	{
+		return elem.ownerDocument || elem.document;
+	};
+	
+	window.onload = function()
+	{
+	    loading(true); Sizer.containS(); loadinnIFrm();
+		
+		$(doc).bind( 'contextmenu', function(evt){
+		    evt.preventDefault ? evt.preventDefault() : (evt.returnValue = false);
+		});
+		
+		//是否显示页面底部状态栏
+		if( A().fot ) $('#dfoot',doc).css( 'display', 'none' );
+		
+		//设置窗口的z-index值，使被单击的窗口总在最前面。
+		if( $.browser.ie )
+			$.bind( doc, 'mousedown', setZIndex );
+		else
+		    $.bind( window, 'mousedown', setZIndex );
+		
+		//为窗口的调用页面的onunload事件绑定关闭窗口函数
+		//此代码主要作用是调用窗口的页面如果被跳转，创建的窗口也一定要被关闭
+		//因为在框架的项目调用窗口的页面和创建窗口的页面不是同一个页面，如不关闭窗口就会出错
+		if( W != A().top )
+		    $.bind( W, 'unload', function(){ if( typeof cancel === 'function' ) cancel(); } );
+		
+		//如果允许拖动则注册拖动事件
+		if( !A().drg )
+		{
+			$('#tc',doc).mousedown( drag.downHdl );
+			drag.reghdl( window ); drag.reghdl(W);
+			
+			if( A().top != W )
+			     drag.reghdl( A().top );
+		}
+		
+		//如果窗口使用link或html参数时隐藏等待层
+		if( A().link || A().html ) loading(); setButton();
+		
+		//设置窗口的document对象和window对象
+		//调用方式为：J.dialog.indoc['id'] - 窗口的document对象
+	    //            J.dialog.inwin['id'] - 窗口的window对象
+		//            J.dialog.infrm['id'] - 加载内容页的iframe对象
+		//些二个对象主要是用对窗口和页面、窗口和窗口之间的传值
+		$.dialog.indoc[oid] = document; $.dialog.inwin[oid] = window;
+		$.dialog.infrm[oid] = $('#frmain',doc)[0];
+		
+		//当使用html参数时，如果自定义参数为函数时，就执行函数
+		//此功能主要用于使用html参数时可以对窗口页面的元素进行操作
+		if( (A().html || A().link) && $.isFunction(custom) ) custom();
+	};
+	
+	//装入加载内容页的iframe
+	window.loadinnIFrm = function()
+	{
+		if( window.onresize ) window.onresize();
+		
+		if( A().html ) $('#dinner',doc).html( A().html );
+		else
+		{
+			var src = A().link ? A().link : A().page,
+			css = A().link ? '' : 'style="visibility:hidden;"';
+			
+			$('#dinner',doc).html( '<iframe id="frmain" src="' + src + '" name="frmain" ' +
+			    'frameborder="0" width="100%" height="100%" scrolling="auto" ' + css + '><\/iframe>');
+		}
+	};
+	
+	//内容页必须要调用函数，用于对窗口进行一些必要设置
+	window.loadinndlg = function()
+	{
+	    if( !frameElement.parentNode ) return null;
+		
+		var frmain = $('#frmain',doc)[0], innwin = frmain.contentWindow, inndoc = innwin.document;
+		
+		//设置加载窗口内容页的iframe对象的document和window对象
+		//调用方式为：J.dialog.inndoc['id'] - frmain的document对象
+		//            J.dialog.innwin['id'] - frmain的window对象
+		//只有在内容页里调用loadinndlg函数这2个对象才能使用
+		$.dialog.inndoc[oid] = inndoc; $.dialog.innwin[oid] = innwin;
+		
+		//隐藏等待层,如果在内容页不执行loadinndlg函数就会出现一直是等待页面的问题。
+		loading(); $( frmain ).css( 'visibility', '' );
+		
+		if( $.browser.ie )
+		    $( inndoc )[0].onmousedown = setZIndex;
+		else
+		    $( innwin )[0].onmousedown = setZIndex;
+		
+		//此函数最后返回的W指的是窗口插件调用页面的window对象
+		drag.reghdl( innwin ); Sizer.containS(); innwin.focus(); return W;
+	};
+	
+	//窗口的关闭函数
+	window.cancel = function(){ return closedlg(); };
+	window.closedlg = function()
+	{
+		if( $('#frmain',doc)[0] )
+		    $('#frmain',doc)[0].src = $.dialog.getvoid();
+		
+		loading(); $.dialog.close( window, dlgcover );
+	};
+	
+	//关闭窗口并刷新或跳转到指定的页面
+	//参数：win - 要刷新或跳转的页面
+	//      url - 跳转到的页面的url地址
+	//      type - 要跳转的对象的类型
+	window.reload = function( win, url, type )
+	{
+	    //如果不指定要刷新的页面，默认为窗口插件的调用页面
+		win = win ? win : W; cancel();
+		
+		if( !url )
+		    win.location.reload();
+		else
+		    type ? win.src = url : win.location.href = url;
+	};
+	
+	var setZIndex = function(evt)
+	{
+	    if( !evt )
+		    evt = event || this.parentWindow.event;
+		
+		$( frameElement ).css( 'zIndex', parseInt($.dialog.zIndex,10) + 1 );
+		$.dialog.zIndex = parseInt( frameElement.style.zIndex, 10 );
+		
+		evt.stopPropagation ? evt.stopPropagation() : (evt.cancelBubble = true);
+	};
+	
+	//设置窗口右上角的X关闭按钮事件，加载窗口的标题。
+	var setButton = function()
+	{
+		//xbtn为右上角的X关闭按钮的id
+		$('#xbtn',doc).hover(function(){
+		    $(this).addClass('xbtnover');
+		},function(){
+		    $(this).removeClass('xbtnover');
+		}).click( cancel );
+		
+		$('#txt',doc).html( A().tit );
+		
+		//创建取消按钮，如你不想插件有默认的取消按钮的话把下面这句代码删除即可
+		addBtn( 'cbtn', '取 消', cancel );
+	};
+	
+	//创建按钮函数，参数为id-按钮的id，txt-按钮的文本，fn-按钮单击绑定的函数
+	window.addBtn = function( id, txt, fn )
+	{
+	    if( $('#'+id,doc)[0] ){ $('#'+id,doc).html( '<span>' + txt + '</span>' ).click(fn); }
+		else
+		{
+			$('<li class="sbtn"></li>',doc).attr('id',id).hover(function(){
+			    $(this).addClass('btnover');
+			},function(){
+			    $(this).removeClass('btnover');
+			}).append( '<span>' + txt + '</span>' ).click(fn).appendTo('#btns');
+		}
+	};
+	
+	//移除指定的按钮
+	window.removeBtn = function(id)
+	{
+	    if( $('#'+id,doc)[0] )
+		    $('#'+id,doc).remove();
+	};
+})();
+	</script>
+</head>
+
+<body>
+    <div id="contain" class="contain">
+	    <div id="dinner" class="dlginner">abcde</div>
+		<div id="dfoot" class="dlgfoot"><ul id="btns"></ul></div>
+	</div>
+	<div class="tl"></div>
+	<div id="tc" class="tc">
+	    <div class="ico"></div><div id="txt"></div><div id="xbtn" class="xbtn"></div>
+	</div>
+	<div class="tr"></div>
+	<div class="ml"></div>
+	<div class="mr"></div>
+	<div class="bl"></div>
+	<div class="bc"></div>
+	<div id="br" class="br"></div>
+	<div id="throbber" style="position:absolute;visibility:hidden;">The window is loading, please wait ....</div>
+</body>
+</html>

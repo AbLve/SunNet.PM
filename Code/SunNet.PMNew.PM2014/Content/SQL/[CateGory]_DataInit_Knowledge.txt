@@ -1,0 +1,4 @@
+﻿insert into [CateGory] 
+ select [Title],[CreatedOn],[CreatedBy],[IsOnlyShowTody],[IsDelete]  FROM [CateGory] where [GID] = 1 and [CreatedBy] > 0
+ 
+update [CateGory] set [Title]= 'Knowledge Share', [CreatedBy] = 0,[IsOnlyShowTody]= 1,[IsDelete] = 0 where [GID] = 1

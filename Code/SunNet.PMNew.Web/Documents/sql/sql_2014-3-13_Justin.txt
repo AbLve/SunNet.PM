@@ -1,0 +1,10 @@
+﻿-- 2014-03-13
+IF OBJECT_ID('Tickets') IS NOT NULL
+BEGIN
+IF COL_LENGTH('Tickets', 'Source') IS NULL  
+	BEGIN
+	ALTER TABLE Tickets
+	ADD [Source] nvarchar(20)
+	END
+END
+

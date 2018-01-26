@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SunNet Solutions Project Management system</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans&subset=latin">
+    <link href="/content/styles/public.css" rel="stylesheet" type="text/css" />
+    <link href="/content/styles/forms.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div class="toploginInfo">Wecome David<span>|</span><a href="#">Logout</a></div>
+    <div class="topBox">
+        <div class="topBox_logo">
+            <img src="/Images/sunnet_logo.png" /></div>
+        <div class="topBox_menu">
+            <ul class="topmenu">
+                <a href="#">
+                    <li class="ticketsout">
+                        <img src="/Images/icons/tickets_white.png"><br />
+                        Tickets</li>
+                </a>
+                <a href="#">
+                    <li class="documentsout">
+                        <img src="/Images/icons/documents_white.png"><br />
+                        Documents</li>
+                </a>
+                <li class="eventsout">
+                    <img src="/Images/icons/events_white.png"><br />
+                    Events</li>
+                <li class="forumsout">
+                    <img src="/Images/icons/forums_white.png"><br />
+                    Forums</li>
+                <li class="profileout">
+                    <img src="/Images/icons/profile_white.png" /><br />
+                    Profile</li>
+            </ul>
+        </div>
+    </div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+        <tr>
+            <td class="mainleftTd">
+                <div class="leftmenuBox">
+                    <ul class="newticketBtn"><a href="#">
+                        <li>New Ticket</li>
+                    </a></ul>
+                    <ul class="leftMenu">
+                        <a href="ticketlist">
+                            <li>
+                                <img src="/Images/icons/dashboard_grey.png" />Dashboard</li>
+                        </a>
+                        <li>
+                            <img src="/Images/icons/waiting_grey.png" />Waiting for Response </li>
+                        <a href="ticketslist.html">
+                            <li>
+                                <img src="/Images/icons/ongoing_grey.png" />Ongoing Tickets </li>
+                        </a>
+                        <li>
+                            <img src="/Images/icons/draft_grey.png" />Draft Tickets</li>
+                        <li>
+                            <img src="/Images/icons/completed_grey.png" />Completed Tickets</li>
+                        <li>
+                            <img src="/Images/icons/cancelled_grey.png" />Cancelled Tickets</li>
+                        <li>
+                            <img src="/Images/icons/reports_grey.png" />Tickets Report</li>
+
+                    </ul>
+                </div>
+            </td>
+            <td class="mainrightTd">
+                <div class="mainrightBox">
+                    <div class="noticeBox noticeSuccess">
+                        <img src="/Images/icons/success.png" />Successfully saved.</div>
+                    <div class="noticeBox noticeFaile">
+                        <img src="/Images/icons/failed.png" />Failed saved.</div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Projects:<span class="noticeRed">*</span></label>
+                        <div class="col-right-1">
+                            <select class="selectw2">
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Type:<span class="noticeRed">*</span></label>
+                        <div class="col-right-1 righttext">
+                            <span class="rightItem">
+                                <input name="" type="radio">Request</span><span class="rightItem"><input name="" type="radio">Bug</span><span class="rightItem"><input name="" type="radio">Change</span><span class="rightItem"><input name="" type="radio">Risk</span><span class="rightItem"><input name="" type="radio">Issue</span><br />
+                            <div class="noticeRed2">This file is required! 默认不显示</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Priority:<span class="noticeRed">*</span></label>
+                        <div class="col-right-1 righttext">
+                            <span class="rightItem">
+                                <input name="" type="radio">Low</span><span class="rightItem">
+                                    <input name="" type="radio">Medium</span><span class="rightItem">
+                                        <input name="" type="radio">High</span><span class="rightItem"><input name="" type="radio">Emergency</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Estimation:</label>
+                        <div class="col-right-1 righttext"><span class="rightItem">
+                            <input name="" type="checkbox">Needed</span></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Title:<span class="noticeRed">*</span></label><div class="col-right-1">
+                            <input type="text" class="inputw2 inputnotice" />
+                            <div class="noticeRed2">This file is required! 默认不显示</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">URL:</span></label><div class="col-right-1">
+                            <input type="text" class="inputw2" /></div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Description:<span class="noticeRed">*</span></label><div class="col-right-1">
+                            <textarea rows="6" class="inputw2"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-left-1 lefttext">Upload a Files:</label>
+                        <div class="col-right-1 righttext">
+                            <input type="button" class="inlineBtn1" value="Choose Files">
+                            No file chosen
+                        </div>
+                    </div>
+                    <div class="buttonBox1">
+                        <input name="" type="button" class="saveBtn1 mainbutton" value="Save as Draft" />
+                        <input name="Input" type="button" class="saveBtn1 mainbutton" value="Submit &amp; New" />
+                        <input name="Input2" type="button" class="saveBtn1 mainbutton" value="Submit &amp; Close" />
+                        <input name="Input3" type="button" class="cancelBtn1 mainbutton" value="Cancel" />
+                    </div>
+                </div>
+                <div class="footerBox">
+                    <div class="footerBox_left"><a href="faq.html">FAQ</a> <span>|</span><a href="survey.html">Survey</a><span>|</span><a href="contact_us.html">Contact Us</a></div>
+                    <div class="footerBox_right">Copyright &copy; 2014 <a href="http://www.sunnet.us" target="_blank">SunNet Solutions</a>. </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

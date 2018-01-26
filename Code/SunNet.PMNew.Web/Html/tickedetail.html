@@ -1,0 +1,611 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>SunNet Project Management Application</title>
+    <link href="/styles/openwindow.css" rel="stylesheet" type="text/css">
+    <link href="/styles/public.css" rel="stylesheet" type="text/css" />
+    <link href="/styles/form.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/JavaScript">
+<!--
+        function MM_openBrWindow(theURL, winName, features) { //v2.0
+            window.open(theURL, winName, features);
+        }
+
+        function MM_findObj(n, d) { //v4.01
+            var p, i, x; if (!d) d = document; if ((p = n.indexOf("?")) > 0 && parent.frames.length) {
+                d = parent.frames[n.substring(p + 1)].document; n = n.substring(0, p);
+            }
+            if (!(x = d[n]) && d.all) x = d.all[n]; for (i = 0; !x && i < d.forms.length; i++) x = d.forms[i][n];
+            for (i = 0; !x && d.layers && i < d.layers.length; i++) x = MM_findObj(n, d.layers[i].document);
+            if (!x && d.getElementById) x = d.getElementById(n); return x;
+        }
+
+        function MM_showHideLayers() { //v6.0
+            var i, p, v, obj, args = MM_showHideLayers.arguments;
+            for (i = 0; i < (args.length - 2); i += 3) if ((obj = MM_findObj(args[i])) != null) {
+                v = args[i + 2];
+                if (obj.style) { obj = obj.style; v = (v == 'show') ? 'visible' : (v == 'hide') ? 'hidden' : v; }
+                obj.visibility = v;
+            }
+        }
+//-->
+    </script>
+
+</head>
+<body>
+    <div class="owBoxtwo">
+        <div class="mainTop">
+            <div class="owTopone">
+                <div class="owTopone_left2">
+                    Please Place Ticket Title to here
+                </div>
+                <div class="owTopone_right">
+                    <a href="#">
+                        <img src="/icons/15.gif" border="0" align="absmiddle">
+                        Close</a></div>
+            </div>
+        </div>
+        <div class="owtopMenu">
+            <div class="owtopMenu_left">
+                <ul>
+                    <li class="sepline">
+                        <img src="/images/owmenu_sep.gif"></li>
+                    <li class="currenttop"><a href="#">
+                        <img src="/icons/23.gif">
+                        Submit</a></li>
+                    <li class="sepline">
+                        <img src="/images/owmenu_sep.gif"></li>
+                    <li><a href="#">
+                        <img src="/icons/14.gif">
+                        Not a bug</a></li>
+                    <li class="sepline">
+                        <img src="/images/owmenu_sep.gif"></li>
+                    <li><a href="#">
+                        <img src="/icons/22.gif">Convert to Request</a></li>
+                    <li class="sepline">
+                        <img src="/images/owmenu_sep.gif"></li>
+                    <li><a href="#">
+                        <img src="/icons/21.gif">
+                        Deny Convert to Request</a></li>
+                    <li class="sepline">
+                        <img src="/images/owmenu_sep.gif"></li>
+                    <li><a href="#">
+                        <img src="/icons/20.gif">
+                        PM Reviewed</a></li>
+                    <li class="sepline">
+                        <img src="/images/owmenu_sep.gif"></li><li><a href="#">
+                            <img src="/icons/16.gif">
+                            Cancel</a></li>
+                    <li class="sepline">
+                        <img src="/images/owmenu_sep.gif"></li></ul>
+            </div>
+        </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td class="owmainBox_left">
+                    <ul class="owleftmenu">
+                        <li class="currentleft"><a href="#">Ticket Info</a></li>
+                        <li>Communication</li>
+                        <li>Users</li><li><a href="relations.html">Relations</a></li>
+                        <li><a href="tasks.html">Tasks</a></li>
+                        <li>Change History</li><li><a href="#">Workflow</a></li>
+                    </ul>
+                </td>
+                <td class="owmainBox_right">
+                    <div class="owmainrightBoxtwo">
+                        <div>
+                            <div class="owmainactionBox">
+                                <div class="tickettop_left">
+                                    Description</div>
+                                <div class="tickettop_right" onmouseover="MM_showHideLayers('category','','show')"
+                                    onmouseout="MM_showHideLayers('category','','hide')">
+                                    <img src="/icons/12.gif">
+                                    Add ticket to category<div class="categoryList" id="category" onmouseover="MM_showHideLayers('category','','show')"
+                                        onmouseout="MM_showHideLayers('category','','hide')">
+                                        <ul class="category">
+                                            <li><a href="#">09-27-2012</a></li><li><a href="#">09-27-2012</a></li><li><a href="#">
+                                                09-27-2012</a></li><li><a href="#">09-27-2012</a></li><li><a href="#">New Category</a></li></ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <table width="95%" border="0" align="center" cellpadding="5" cellspacing="0">
+                                <tr>
+                                    <td >
+                                        <span class="text">Allied, R001, Medium, Testing</span><span><a href="#"><img src="/icons/22.gif">
+                                            Covert</a></span><span> <a href="#">
+                                                <img src="/icons/21.gif">
+                                                Deny</a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="owmainTitle">
+                                        Allied, R001, Medium, Testing<span class="linkBtn"><a href="#" onclick="MM_openBrWindow('div_notabug.html','','width=455,height=250')"><img
+                                            src="/icons/14.gif">
+                                            Not a Bug</a></span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Created by: Jordan <span class="infogray">09/06/2012/18:09 </span>Updated by: Jordan
+                                        <span class="infogray">09/06/2012 18:09</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Estimation Needed: <span class="infogray">Yes</span>
+                                        <input name="Submit" type="submit" class="btnthree" onclick="MM_openBrWindow('div_assignuser.html','','width=455,height=250')"
+                                            value="Assign">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        QA Est. Time: 10 Hours <span class="infogray">(Suki qu)</span> Dev Est. Time: 10
+                                        Hours <span class="infogray">(Buring)</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        Schedule Start Date: <span class="infogray">09/06/2012</span> Schedule Due Date:
+                                        <span class="infogray">09/08/2012</span><input name="Submit2" type="submit" class="btnthree"
+                                            onclick="MM_openBrWindow('div_updatedate.html','','width=455,height=190')" value="Update">
+                                    </td>
+                                </tr>
+                            </table>
+                            <table width="95%" border="0" align="center" cellpadding="5" cellspacing="0">
+                                <tr>
+                                    <th width="11%">
+                                        Title:
+                                    </th>
+                                    <td width="89%">
+                                        <input name="textfield" type="text" class="input630">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        URL:
+                                    </th>
+                                    <td>
+                                        <input name="textfield2" type="text" class="input630">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>
+                                        Ticket Status:
+                                    </th>
+                                    <td>
+                                        <input name="Submit4" type="submit" class="btnthree" value="Testing Passed" onclick="MM_openBrWindow('div_changestatus.html','','width=455,height=250')">
+                                        <input name="Submit42" type="submit" class="btnthree" value="Testing Failed" onclick="MM_openBrWindow('div_changestatus.html','','width=455,height=250')">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th valign="top">
+                                        Description:
+                                    </th>
+                                    <td>
+                                        <textarea name="textarea" rows="5" class="input630"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th valign="top">
+                                        Screen Capture:
+                                    </th>
+                                    <td>
+                                        <div class="owscBox">
+                                            <div class="owscBox_top">
+                                                <span>
+                                                    <input name="Input" type="checkbox" value="">
+                                                    Select All</span><span><a href="#"><img src="/icons/16.gif" width="16" height="16"
+                                                        align="absmiddle">
+                                                        Delete All</a></span></div>
+                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                <tr>
+                                                    <td>
+                                                        <div class="owscpicBox">
+                                                            <img src="/images/picsample.jpg">
+                                                            <table width="100%" border="0" cellspacing="0" cellpadding="4">
+                                                                <tr>
+                                                                    <td>
+                                                                        <input name="checkbox2" type="checkbox" value="checkbox" checked="checked">
+                                                                    </td>
+                                                                    <td align="right">
+                                                                        <img src="/icons/18.gif" title="View Large Image">
+                                                                        <img src="/icons/17.gif" title="Delete">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="owscpicBox">
+                                                            <img src="/images/picsample.jpg">
+                                                            <table width="100%" border="0" cellspacing="0" cellpadding="4">
+                                                                <tr>
+                                                                    <td>
+                                                                        <input name="checkbox22" type="checkbox" value="checkbox" checked="checked">
+                                                                    </td>
+                                                                    <td align="right">
+                                                                        <img src="/icons/18.gif" title="View Large Image">
+                                                                        <img src="/icons/17.gif" title="Delete">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="owscpicBox">
+                                                            <img src="/images/picsample.jpg">
+                                                            <table width="100%" border="0" cellspacing="0" cellpadding="4">
+                                                                <tr>
+                                                                    <td>
+                                                                        <input name="checkbox222" type="checkbox" value="checkbox" checked="checked">
+                                                                    </td>
+                                                                    <td align="right">
+                                                                        <img src="/icons/18.gif" title="View Large Image">
+                                                                        <img src="/icons/17.gif" title="Delete">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="owscpicBox">
+                                                            <img src="/images/picsample.jpg">
+                                                            <table width="100%" border="0" cellspacing="0" cellpadding="4">
+                                                                <tr>
+                                                                    <td>
+                                                                        <input name="checkbox223" type="checkbox" value="checkbox" checked="checked">
+                                                                    </td>
+                                                                    <td align="right">
+                                                                        <img src="/icons/18.gif" title="View Large Image">
+                                                                        <img src="/icons/17.gif" title="Delete">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                        <div class="owscpicBox">
+                                                            <img src="/images/picsample.jpg">
+                                                            <table width="100%" border="0" cellspacing="0" cellpadding="4">
+                                                                <tr>
+                                                                    <td>
+                                                                        <input name="checkbox224" type="checkbox" value="checkbox" checked="checked">
+                                                                    </td>
+                                                                    <td align="right">
+                                                                        <img src="/icons/18.gif" title="View Large Image">
+                                                                        <img src="/icons/17.gif" title="Delete">
+                                                                    </td>
+                                                                </tr>
+                                                            </table>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                            <div class="owscpicMore">
+                                                <a href="#">&gt;&gt; Click here to upload extra Screen Captures</a></div>
+                                        </div>
+                                        <div class="owscpicMore">
+                                            <a href="#">
+                                                <img src="/icons/24.gif" align="absmiddle">
+                                                Click here to specify requirement change</a></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th valign="top">
+                                        Convert Reason:
+                                    </th>
+                                    <td>
+                                        <textarea name="textarea2" rows="5" class="input630"></textarea>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" valign="top">
+                                        <strong>Original Bug Description</strong>
+                                        <input name="checkbox" type="checkbox" class="checkboxone" value="checkbox">
+                                        Delete Original Bug
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="2" valign="top">
+                                        <table width="77%" border="0" cellpadding="0" cellspacing="0" class="oritickeInfo">
+                                            <tr>
+                                                <td>
+                                                    <table width="100%" border="0" align="left" cellpadding="5" cellspacing="0">
+                                                        <tr>
+                                                            <th>
+                                                                Title:
+                                                            </th>
+                                                            <td width="92%">
+                                                                <input name="textfield3" type="text" class="input630">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>
+                                                                URL:
+                                                            </th>
+                                                            <td>
+                                                                <input name="textfield22" type="text" class="input630">
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th valign="top">
+                                                                Description:
+                                                            </th>
+                                                            <td>
+                                                                <textarea name="textarea3" rows="5" class="input630"></textarea>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="btnBoxone">
+                                <input name="button" type="button" class="btnone" value="Save">
+                            </div>
+                        </div>
+                        <div>
+                            <div class="owmainactionBox">
+                                Communication</div>
+                            <div class="owlisttopone">
+                                <a href="#" onclick="MM_openBrWindow('div_addcommunication.html','','width=455,height=260')">
+                                    <img src="/icons/25.gif" align="absmiddle">
+                                    Add</a></div>
+                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="owlistone">
+                                <tr class="owlistTitle">
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Description
+                                    </th>
+                                    <th>
+                                        File
+                                    </th>
+                                    <th>
+                                        Created by
+                                    </th>
+                                    <th width="60">
+                                    Action</thd>
+                                </tr>
+                                <tr class="owlistrowone">
+                                    <td>
+                                        Reports &gt; Monitoring...
+                                    </td>
+                                    <td>
+                                        This report is by default incluold CLEAR...
+                                    </td>
+                                    <td>
+                                        <a href="#">PM Requirement Definitiont Mockups.docx</a>
+                                    </td>
+                                    <td>
+                                        Jordan 08/23/2012
+                                    </td>
+                                    <td>
+                                        <img src="/icons/27.gif" border="0" title="View">
+                                        <img src="/icons/26.gif" title="Delete">
+                                    </td>
+                                </tr>
+                                <tr class="owlistrowtwo">
+                                    <td>
+                                        Reports &amp;gt; Monitoring...
+                                    </td>
+                                    <td>
+                                        This report is by default incluold CLEAR...
+                                    </td>
+                                    <td>
+                                        <a href="#">PM Requirement Definitiont Mockups.docx</a>
+                                    </td>
+                                    <td>
+                                        Jordan 08/23/2012
+                                    </td>
+                                    <td>
+                                        <img src="/icons/27.gif" title="View">
+                                        <img src="/icons/26.gif" title="Delete">
+                                    </td>
+                                </tr>
+                                <tr class="owlistrowone">
+                                    <td>
+                                        Reports &amp;gt; Monitoring...
+                                    </td>
+                                    <td>
+                                        This report is by default incluold CLEAR...
+                                    </td>
+                                    <td>
+                                        <a href="#">PM Requirement Definitiont Mockups.docx</a>
+                                    </td>
+                                    <td>
+                                        Jordan 08/23/2012
+                                    </td>
+                                    <td>
+                                        <img src="/icons/27.gif" title="View">
+                                        <img src="/icons/26.gif" title="Delete">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <div class="owmainactionBox">
+                                Users
+                                <input name="Submit3" type="submit" class="btnfour" onclick="MM_openBrWindow('div_assignuser.html','','width=455,height=250')"
+                                    value="Assign">
+                            </div>
+                            <table width="95%" border="0" align="center" cellpadding="5" cellspacing="0" class="owUser">
+                                <tr>
+                                    <td width="12%">
+                                        <strong>Project Manager: </strong>
+                                    </td>
+                                    <td width="35%">
+                                        Jordan
+                                    </td>
+                                    <td width="8%">
+                                        <strong>Developers:</strong>
+                                    </td>
+                                    <td width="45%">
+                                        Sam, Lee, Buring, Jack
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <strong>Testers:</strong>
+                                    </td>
+                                    <td>
+                                        Susan, Suki, Helen
+                                    </td>
+                                    <td>
+                                        <strong>Others: </strong>
+                                    </td>
+                                    <td>
+                                        Aaron, Yoyo
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div>
+                            <div class="owmainactionBox">
+                                Relations & Tasks</div>
+                            <div class="owlisttopone">
+                                <span>Relation Tickets </span><a href="#" onclick="MM_openBrWindow('addrelation.html','','width=855,height=700')">
+                                    <img src="/icons/28.gif" align="absmiddle">
+                                    Add Associated Tickets for Requirement Change</a></div>
+                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="owlistone">
+                                <tr class="owlistTitle">
+                                    <th>
+                                        Ticket Code
+                                    </th>
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        Description
+                                    </th>
+                                    <th>
+                                        Created by
+                                    </th>
+                                    <th width="60">
+                                        Action
+                                    </th>
+                                </tr>
+                                <tr class="owlistrowone">
+                                    <td>
+                                        R880
+                                    </td>
+                                    <td>
+                                        This report is by default incluold CLEAR...
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Jordan 08/23/2012
+                                    </td>
+                                    <td>
+                                        <img src="/icons/27.gif" title="View">
+                                        <img src="/icons/26.gif" title="Delete">
+                                    </td>
+                                </tr>
+                                <tr class="owlistrowtwo">
+                                    <td>
+                                        R890
+                                    </td>
+                                    <td>
+                                        This report is by default incluold CLEAR...
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Jordan 08/23/2012
+                                    </td>
+                                    <td>
+                                        <img src="/icons/27.gif" title="View">
+                                        <img src="/icons/26.gif" title="Delete">
+                                    </td>
+                                </tr>
+                                <tr class="owlistrowone">
+                                    <td>
+                                        B917
+                                    </td>
+                                    <td>
+                                        This report is by default incluold CLEAR...
+                                    </td>
+                                    <td>
+                                        &nbsp;
+                                    </td>
+                                    <td>
+                                        Jordan 08/23/2012
+                                    </td>
+                                    <td>
+                                        <img src="/icons/27.gif" title="View">
+                                        <img src="/icons/26.gif" title="Delete">
+                                    </td>
+                                </tr>
+                            </table>
+                            <div class="owlisttopone">
+                                <span>Tasks </span>
+                            </div>
+                            <table width="95%" border="0" align="center" cellpadding="0" cellspacing="0" class="owlistone">
+                                <tr class="owlistTitle">
+                                    <th>
+                                        Title
+                                    </th>
+                                    <th>
+                                        User
+                                    </th>
+                                    <th>
+                                        Status
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </tr>
+                                <tr class="owlistrowone">
+                                    <td>
+                                        Reports &gt; Monitoring...
+                                    </td>
+                                    <td>
+                                        User Name
+                                    </td>
+                                    <td>
+                                        Done
+                                    </td>
+                                    <td>
+                                        <img src="/icons/27.gif" title="View">
+                                        <img src="/icons/26.gif" title="Delete">
+                                    </td>
+                                </tr>
+                                <tr class="owlistrowtwo">
+                                    <td>
+                                        Reports &amp;gt; Monitoring...
+                                    </td>
+                                    <td>
+                                        dsfafasfas
+                                    </td>
+                                    <td>
+                                        Done
+                                    </td>
+                                    <td>
+                                        <img src="/icons/27.gif" title="View">
+                                        <img src="/icons/26.gif" title="Delete">
+                                    </td>
+                                </tr>
+                                <tr class="owlistrowone">
+                                    <td>
+                                        Reports &amp;gt; Monitoring...
+                                    </td>
+                                    <td>
+                                        sfdafdsafsa
+                                    </td>
+                                    <td>
+                                        Done
+                                    </td>
+                                    <td>
+                                        <img src="/icons/27.gif" title="View">
+                                        <img src="/icons/26.gif" title="Delete">
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

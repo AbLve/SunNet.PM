@@ -1,0 +1,77 @@
+﻿ALTER PROCEDURE [dbo].[Tickets_GetListByCondition_count]
+(
+    @FeedBackID int = NULL OUTPUT,
+	@AssignedUser varchar(100) = NULL ,
+	@Client varchar(100) =null,
+	@ClientPriority varchar(100) = NULL,
+	@Company varchar(100) = NULL,
+	@KeyWord varchar(100) = NULL,
+	@IsInternal varchar(100) =null,
+	@Project varchar(1000) = NULL,
+	@Status varchar(1000) = NULL,
+	@Type varchar(100) = NULL,
+    @feedback varchar(max),
+	@PM int = 0
+
+	)
+AS
+	SET NOCOUNT ON
+    declare @sqlWhere nvarchar(max);	
+     set @sqlWhere = ' select count(*)  from Tickets where  ConvertDelete <=3'
+                       	
+         if(@Project<>'')
+            begin
+				set @sqlWhere = @sqlWhere + ' and ProjectID in (' + @Project + ') 'end    
+		 if(@Company<>'')
+            begin
+				set @sqlWhere = @sqlWhere + ' and CompanyID in(' + @Company + ') and ProjectID in ('
+				+ ' select ProjectID from ProjectUsers where UserID = (' + @Client + '))'	
+			end  
+
+		if(@PM > 0) --wait pm feedback 
+			begin
+				set @sqlWhere = @sqlWhere + ' and ticketId in (select ticketid from FeedBackMessages where waitpmfeedback > 0 and userid = ' 
+				+ cast( @PM as varchar) + ') '  
+			end
+		 else 
+			begin
+			 if(@Status<>'')
+				begin
+						set @sqlWhere = @sqlWhere + ' and (Status in (' +@Status+ ')  or additionalState in (' +@Status+ '))' 
+			    end 
+			 end
+
+		 if(@Type<>'')
+            begin
+				set @sqlWhere = @sqlWhere + ' and TicketType = ''' +  @Type  + ''' ' end  
+		 if(@KeyWord<>'')
+            begin
+				set @sqlWhere = @sqlWhere +
+					' and (Title like ''%' + @KeyWord + '%'' ' +
+					' or Description like ''%'+ @KeyWord + '%'' '+ 
+					' or ticketCode like ''%'+ @KeyWord + '%'' '+ 
+					' or url like ''%' + @KeyWord + '%'') ' end  
+		 if(@AssignedUser<>'')
+            begin
+				set @sqlWhere = @sqlWhere + ' and TicketID in (select TicketID from 
+				    dbo.TicketUsers  where UserID = ' + @AssignedUser + '  )'+ ' '	end  
+           
+		 if(@Client<>'')
+            begin
+				set @sqlWhere = @sqlWhere + ' and CreatedBy = ' + @Client + ' '  end  
+		 if(@ClientPriority<>'')
+            begin
+				set @sqlWhere = @sqlWhere + ' and Priority = ' + @ClientPriority + ' ' end
+		 if(@feedback <> '')
+			 begin
+			    set @sqlWhere = @sqlWhere + ' and TicketID in  (' +@feedback+ ') '  end  		 
+         if(@IsInternal <> '')
+			 begin
+			    set @sqlWhere = @sqlWhere + ' and IsInternal = ' + @IsInternal + ' ' end   
+			    
+    print(@sqlWhere);    
+	exec(@sqlWhere);    
+       		     	
+	SELECT @FeedBackID =ISNULL( SCOPE_IDENTITY(),0);
+
+	RETURN @@Error

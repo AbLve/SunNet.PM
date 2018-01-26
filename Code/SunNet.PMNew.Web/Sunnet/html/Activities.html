@@ -1,0 +1,333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1">
+    <title>Events </title>
+    <link type="text/css" rel="stylesheet" href="/Styles/main.master.css">
+
+    <script type="text/javascript" src="/do/js.ashx"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style type="text/css">
+        <!--
+        #showleft, #hideleft
+        {
+            clear: both;
+            cursor: pointer;
+            display: none;
+            height: 16px;
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            width: 16px;
+        }
+        --></style>
+</head>
+<body>
+    <iframe frameborder="0" style="display: none; overflow: hidden; width: 100%; height: 100%;"
+        id="frame_Main"></iframe>
+    <div class="mainTop">
+        <div class="mainTop_left">
+            <a target="_blank" href="http://www.sunnet.us">
+                <img src="/images/logomain.jpg" width="126" height="39" style="height: 39px; width: 126px;
+                    border-width: 0px;"></a>
+        </div>
+        <div class="mainTop_right">
+            <span class="mainTop_rightUser">Welcome&nbsp;&nbsp; <strong>Huang, David_Client</strong></span>
+            <span class=""><a href="#">FAQ</a>|<a href="#">Survey</a>|<a href="#">Contact us</a></span><a
+                href="#">Logout</a></div>
+    </div>
+    <div class="topMenu">
+        <div class="topMenu_left">
+            <ul>
+                <li class="sepline">
+                    <img src="/images/topsep.jpg"></li>
+                <li class="currenttop"><a href="#">Clients</a></li>
+                <li class="sepline">
+                    <img src="/images/topsep.jpg"></li>
+                <li class="none"><a href="/Sunnet/Profile/Profile.aspx">Profile</a></li>
+            </ul>
+        </div>
+    </div>
+    <table width="100%" cellspacing="0" cellpadding="0" border="0">
+        <tbody>
+            <tr>
+                <td rowspan="2" id="leftMMenuContainer" class="mainBox_left">
+                    <div id="leftTitle" class="topTitle_left">
+                        &nbsp;&nbsp;&nbsp; Events
+                      
+                    </div>
+                    <ul style="margin-top: 30px;" class="leftmenu" id="leftMenu">
+                        <li class="currentleft"><a href="Activities.html">Calendar</a></li>
+                        <li><a href="Activities_list.html">List</a></li>
+                    </ul>
+                </td>
+                <td valign="top">
+                    <table width="99%" border="0" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td width="74%" height="30">
+                                <div class="topTitle_right" style="width: 700px; padding-top: 6px;">
+                                    <div>
+                                        Family Portal > Events &gt; Calendar</div>
+                                </div>
+                            </td>
+                            <td width="26%" align="right">
+                                <strong>Projects:</strong>
+                                <select class="select205" id="ctl00_ContentPlaceHolder1_ddlProject" name="ctl00$ContentPlaceHolder1$ddlProject">
+                                    <option value="">Please select...</option>
+                                    <option value="68" selected="selected">Family Portal</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td vertical-align="top" style="border-bottom: 1px solid rgb(129, 186, 232);">
+                    <table width="97%" cellspacing="0" cellpadding="0" border="0" align="center" class="searchBox">
+                        <tbody>
+                            <tr>
+                                <td width="30">
+                                    Year:
+                                </td>
+                                <td width="120">
+                                    <select style="width: 120px;" class="select205" id="ctl00_ContentPlaceHolder1_ddlYears"
+                                        name="ctl00$ContentPlaceHolder1$ddlYears">
+                                        <option value="2013">2013</option>
+                                        <option value="2014" selected="selected">2014</option>
+                                        <option value="2015">2015</option>
+                                        <option value="2016">2016</option>
+                                        <option value="2017">2017</option>
+                                        <option value="2018">2018</option>
+                                    </select>
+                                </td>
+                                <td width="65" align="right">
+                                    Month:
+                                </td>
+                                <td width="120">
+                                    <select style="width: 120px;" class="select205" id="ctl00_ContentPlaceHolder1_ddlMonths"
+                                        name="ctl00$ContentPlaceHolder1$ddlMonths">
+                                        <option value="1" selected="selected">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                        <option value="7">7</option>
+                                        <option value="8">8</option>
+                                        <option value="9">9</option>
+                                        <option value="10">10</option>
+                                        <option value="11">11</option>
+                                        <option value="12">12</option>
+                                    </select>
+                                </td>
+                                <td width="60" align="right">
+                                    Users:
+                                </td>
+                                <td width="214">
+                                    <select class="select205" id="ctl00_ContentPlaceHolder1_ddlUsers" name="ctl00$ContentPlaceHolder1$ddlUsers">
+                                        <option value="8">buringj@sunnet.us (CN)</option>
+                                        <option value="27">davem@sunnet.us (CN)</option>
+                                        <option value="23">helenz@sunnet.us (CN)</option>
+                                        <option value="19">hr@sunnet.us (CN)</option>
+                                        <option value="22">jackz@sunnet.us (CN)</option>
+                                        <option value="32">justinw@sunnet.us (CN)</option>
+                                        <option value="33">kimyk@sunnet.us (CN)</option>
+                                        <option value="5">Lee@sunnet.us (CN)</option>
+                                        <option value="4">lynnm@sunnet.us (CN)</option>
+                                        <option value="3">magusw@sunnet.us (CN)</option>
+                                        <option value="18">sams@sunnet.us (CN)</option>
+                                        <option value="16" selected="selected">sukiq@sunnet.us (CN)</option>
+                                        <option value="13">susany@sunnet.us (CN)</option>
+                                        <option value="11">xiaowuq@sunnet.us (CN)</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <input type="image" style="border-width: 0px;" src="/images/search_btn.jpg" id="ctl00_ContentPlaceHolder1_iBtnSearch"
+                                        name="ctl00$ContentPlaceHolder1$iBtnSearch">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="mainactionBox">
+                        <div class="mainactionBox_left">
+                            <span><a href="#">
+                                <img src="/images/event.png" width="16" height="18" border="0" align="absmiddle">
+                                Create Event </a></span>
+                        </div>
+                        <div class="mainactionBox_right">
+                        </div>
+                    </div>
+                    <div class="mainrightBoxthree">
+                        <table width="100%" cellspacing="0" cellpadding="0" border="0" class="monthlyviewBox">
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <ul class="monthlyviewweek">
+                                            <li>Sunday</li><li>Monday</li><li>Tuesday</li><li>Wednesday</li><li>Thursday</li><li>
+                                                Friday</li><li>Saturday</li></ul>
+                                        <ul class="monthlyview">
+                                            <li class="dateDisable">29
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="dateDisable">30
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="dateDisable">31
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">1
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">2
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">3
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">4
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">5
+                                                <ul class="onscdTicket">
+                                                <li>Narrative Description of Target Systems</li>
+                                                </ul>
+                                            </li>
+                                            <li class="">6
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">7
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">8
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">9
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">10
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">11
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">12
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">13
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">14
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">15
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">16
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">17
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">18
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">19
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">20
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">21
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">22
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="">23
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="dateToday"><a onclick="OpenAddModuleDialog('01/25/2014');" style="display: inline-block;
+                                                width: 99%;" href="#">24</a>
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class=""><a onclick="OpenAddModuleDialog('01/25/2014');" style="display: inline-block;
+                                                width: 99%;" href="#">25</a>
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class=""><a onclick="OpenAddModuleDialog('01/26/2014');" style="display: inline-block;
+                                                width: 99%;" href="#">26</a>
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class=""><a onclick="OpenAddModuleDialog('01/27/2014');" style="display: inline-block;
+                                                width: 99%;" href="#">27</a>
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class=""><a onclick="OpenAddModuleDialog('01/28/2014');" style="display: inline-block;
+                                                width: 99%;" href="#">28</a>
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class=""><a onclick="OpenAddModuleDialog('01/29/2014');" style="display: inline-block;
+                                                width: 99%;" href="#">29</a>
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class=""><a onclick="OpenAddModuleDialog('01/30/2014');" style="display: inline-block;
+                                                width: 99%;" href="#">30</a>
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class=""><a onclick="OpenAddModuleDialog('01/31/2014');" style="display: inline-block;
+                                                width: 99%;" href="#">31</a>
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                            <li class="dateDisable"><a onclick="OpenAddModuleDialog('02/01/2014');" style="display: inline-block;
+                                                width: 99%;" href="#">1</a>
+                                                <ul class="onscdTicket">
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="footer">
+        Copyright &copy; 2014 SunNet Solutions.</div>
+    </form>
+</body>
+</html>

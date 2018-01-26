@@ -1,0 +1,109 @@
+﻿@{
+    Layout = "~/Views/Shared/_PopLayout.cshtml";
+    ViewBag.Title = "Move " + ViewBag.FileName;
+    ViewBag.Width = 432;
+}
+@Scripts.Render("~/bundles/documment/js")
+<script type="text/javascript">
+    var move_treeNodes = @(new MvcHtmlString(ViewBag.DefaultData));
+    function move_createtree(d) {
+        var list = '';
+        $.each(d, function (i, n) {
+            var cls = 'folder';
+
+            list += '<li><span class="' + cls + '" projectid="'+n.projectid+'" userid="' + n.userid + '" ref="' + n.id + '"  pid="' + n.parentid + '" id="' + n.id + '" >&nbsp;';
+            list += getSubTitle(n.text,40,15);
+            list += "</span>";
+            if (n.children.length > 0) {
+                list += "<ul>";
+                list += move_createtree(n.children);
+                list += "</ul>"
+            }
+
+            list += "</li>";
+        });
+        return list;
+    }
+
+    function move_initTree() {
+        $('#doc_tree_folder').empty().append(move_createtree(move_treeNodes));
+        $('body').data('ptree', move_treeNodes);
+        $('#doc_tree_folder .file').click(function () {
+            var id = $(this).attr("ref");
+            var txt = $(this).text();
+
+            $('#doc_tree_folder span>a').removeClass('current');
+
+            $(this).children('a').addClass('current');
+
+            $('form').data("treeid", { "id": id, "txt": txt });
+
+        });
+
+        $('#doc_tree_folder').treeview({
+            animated: "fast",
+            collapsed: true
+        });
+    }
+
+    function move_setLiBg() {
+        jQuery("#doc_tree_folder li>span").on("click",function(){
+            jQuery(".move_folder li.currenttreemenu").removeClass("currenttreemenu");
+            jQuery(this).parents("li").filter(":first").addClass("currenttreemenu");
+        });
+    }
+    function move_setRootBg(obj)
+    {
+        jQuery(".move_folder li.currenttreemenu").removeClass("currenttreemenu");
+        jQuery(obj).addClass("currenttreemenu");
+    }
+
+    function move_saveMoveTo()
+    {
+        var obj = jQuery(".move_folder li.currenttreemenu span:first");
+        var selectid = 0;
+        var projectId = 0;
+        if(obj !=undefined && obj.length>0)
+        {
+            selectid = obj.attr("id");
+            projectId = obj.attr("projectid");
+            if(selectid==@ViewBag.MoveID)
+            {
+                jQuery.alert("danger-move",messageobj.selecterrordir);
+                jQuery("#modalContext").modal("toggle");
+                return;
+            }
+        }
+    @*jQuery.post("MoveTo?a=b",{ projectid:projectId, movetoid: selectid, moveid: '@ViewBag.MoveID' },function(data){
+            _callbackMove(projectId,selectid,@ViewBag.MoveID);
+        });*@
+    _callbackMove(projectId,selectid,@ViewBag.MoveID);
+    }
+
+    $(function () {
+        move_initTree();
+        move_setLiBg();
+    });
+</script>
+<div class="alert alert-danger alert-danger-move fade hide">
+    <img src="/Images/icons/failed.png" />
+    <a class="close" data-dismiss="alert" href="###" aria-hidden="true">&times;</a>
+    Operation failed. 
+</div>
+<div class="mainowConbox">
+    <div class="content move_folder" style="border-top: 0px; min-height: 150px;">
+        @*<div id="folder_rootDoc" style="cursor: pointer;">
+            <ul class="treeMenu" style="margin-left: -10px;">
+                <li class="currenttreemenu" onclick="move_setRootBg(this)">
+                    <img src="/Images/document/folder.png" /><span id="0">My Document</span></li>
+            </ul>
+        </div>*@
+        <ul id="doc_tree_folder" class="filetree treeMenu">
+        </ul>
+    </div>
+    <div class="buttonBox2">
+        <button class="saveBtn1 mainbutton" id="saveObject" onclick="javascript:move_saveMoveTo()">
+            Save</button>
+        <input name="button23" type="button" value="Cancel" class="cancelBtn1 mainbutton" data-dismiss="modal" aria-hidden="true" />
+    </div>
+</div>

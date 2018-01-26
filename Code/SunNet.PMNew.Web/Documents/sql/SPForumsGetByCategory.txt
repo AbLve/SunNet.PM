@@ -1,0 +1,38 @@
+﻿
+
+ALTER PROCEDURE [dbo].[SPForumsGetByCategory]
+	@UserGroupId smallint=NULL,
+	@PMUserID int
+AS
+
+SELECT
+	F.ForumId
+	,F.ForumName
+	,F.ForumShortName
+	,F.ForumDescription
+	,F.UserId
+	,F.ForumCreationDate
+	,F.ForumTopicCount
+	,F.ForumMessageCount
+	,F.ForumOrder
+	,C.CategoryId
+	,C.CategoryName
+	,(select COUNT(*) from Topics where ForumId =F.ForumId
+	and DATEADD(dd,1,TopicCreationDate)>GETDATE() and Active=1) as TopicCountCurrentDay
+	,(select COUNT(*) from Messages where TopicId in 
+	(select TopicId from Topics where ForumId =F.ForumId and Active=1)
+	and DATEADD(dd,1,MessageCreationDate)>GETDATE() and Active=1) as MessageCountCurrentDay
+FROM
+	ForumsCategories C
+	INNER JOIN Forums F ON F.CategoryId = C.CategoryId
+WHERE
+	F.Active = 1
+	AND
+	ISNULL(F.ReadAccessGroupId,-1) <= ISNULL(@UserGroupId,-1)
+	AND
+	C.ProjectID in (select ProjectID from GetProjtctIDByPMUserID(@PMUserID))
+ORDER BY
+	C.CategoryOrder,
+	C.CategoryName asc,
+	F.ForumOrder
+	

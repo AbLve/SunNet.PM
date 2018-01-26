@@ -1,0 +1,1 @@
+﻿[[ProposalName]] payment for milestone#[Milestone],Invoice#[[InvoiceNo]],has been received.

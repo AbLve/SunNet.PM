@@ -1,0 +1,25 @@
+﻿if exists (select 1
+            from  sysobjects
+           where  id = object_id('ReminderHistory')
+            and   type = 'U')
+   drop table ReminderHistory
+go
+
+/*==============================================================*/
+/* Table: ReminderHistory                                       */
+/*==============================================================*/
+create table ReminderHistory (
+   Id                   int                  identity(1,1) not for replication,
+   RunStartTime         datetime             null,
+   RunEndTime           datetime             null,
+   RunDate              date                 not null default getdate(),
+   DataStartTime        datetime             null,
+   DataEndTime          datetime             null,
+   TotalCount           int                  not null default 0,
+   SuccessCount         int                  not null default 0,
+   FailCount            int                  not null default 0,
+   ErrorCount           int                  not null default 0,
+   State                int                  not null default 0,
+   CreateTime           datetime             not null default getdate(),
+   constraint PK_REMINDERHISTORY primary key (Id)
+)

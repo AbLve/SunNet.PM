@@ -1,0 +1,43 @@
+﻿ALTER PROCEDURE [dbo].[GetNeedAlertEvents]
+AS
+BEGIN
+IF OBJECT_ID('tempdb..#Out') is not null drop table #Out;
+    CREATE TABLE #Out
+	(
+	ID int,
+	Icon int,
+	Name nvarchar(500),
+	Details nvarchar(1000),
+	[Where] nvarchar(200),
+	AllDay bit,
+	FromDay datetime,
+	FromTime varchar(5),
+	FromTimeType int,
+	ToDay datetime,
+	ToTime varchar(5),
+	ToTimeType int,
+	Privacy INT,
+	CreatedBy INT,
+	CreatedOn DATETIME,
+	Highlight BIT,
+	Alert INT,
+	UpdatedOn DATETIME,
+	groupId NVARCHAR(50),
+	HasInvite BIT,
+	HasAlert bit,
+	ProjectID int,
+	IsNeedAlert bit,
+	CreateUserFirstName nvarchar(200),
+	CreateUserLastName nvarchar(200),
+	CreateUserEmail nvarchar(200)
+	
+	)
+	
+INSERT INTO #Out Select E.*, dbo.F_IsEventNeedAlert(FromDay,Alert,ToDay) IsNeedAlert
+,up.FirstName as CreateUserFirstName,up.LastName as CreateUserLastName,up.Email as CreateUserEmail from [Events] E
+inner join Users UP on e.CreatedBy=up.UserID
+
+SELECT  * from #Out 
+where IsNeedAlert >0
+IF OBJECT_ID('tempdb..#Out') is not null drop table #Out;
+END

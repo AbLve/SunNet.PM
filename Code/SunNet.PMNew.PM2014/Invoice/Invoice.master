@@ -1,0 +1,32 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Normal.master" AutoEventWireup="true" CodeBehind="Invoice.master.cs" Inherits="SunNet.PMNew.PM2014.Invoice.Invoice" %>
+
+<%@ Register Src="../UserControls/Invoice/InvoiceLeft.ascx" TagName="InvoiceLeftMenu" TagPrefix="uc1" %>
+<%@ Register Src="../UserControls/Footer.ascx" TagName="Footer" TagPrefix="uc2" %>
+<%@ Register Src="../UserControls/Messager.ascx" TagName="Messager" TagPrefix="uc3" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+        <tr>
+            <td class="mainleftTd">
+                <uc1:InvoiceLeftMenu ID="InvoiceLeftMenu1" runat="server" />
+            </td>
+            <td class="mainrightTd">
+                <div class="mainrightBox">
+                    <div class="limitwidth">
+                        <uc3:Messager ID="Messager1" runat="server" />
+                        <asp:ContentPlaceHolder ID="searchSection" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="dataSection" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="pagerSection" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <uc2:Footer ID="Footer1" runat="server" />
+            </td>
+        </tr>
+    </table>
+</asp:Content>

@@ -1,0 +1,6 @@
+﻿Dear, Kimy<br/>
+
+&nbsp;&nbsp;{Firstname} {Lastname} has submit timesheet on date: {Date}<br/><br/>
+
+Project Management - SunNet Solutions<br/>
+{EmailDate}<br/><br/>

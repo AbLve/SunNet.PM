@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<emails>
+  <email>
+    <subject>[IMPORTANT]--An Invoice Past Due Notification</subject>
+    <content>
+      <![CDATA[
+                 An invoice payment is {limit} days past due, if the payment has been received, please fill out the received day for it.<br/><br/>
+                 
+                 Project Title  : {ProjectTitle},<br/><br/>
+                 Proposal Title : {ProposalTitle},<br/><br/>
+                 Milestone      : {Milestone}.<br/><br/>
+                 
+                 <a href="https://pm.sunnet.us" target="_blank"> PM System</a>, {Date}
+        ]]>
+    </content>
+  </email>
+</emails>

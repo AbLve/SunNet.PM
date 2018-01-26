@@ -1,0 +1,47 @@
+GO
+
+/****** Object:  Table [dbo].[ProposalTracker]    Script Date: 2016.2.24 11:12:32 ******/
+SET ANSI_NULLS ON;
+GO
+
+SET QUOTED_IDENTIFIER ON;
+GO
+
+SET ANSI_PADDING ON;
+GO
+
+CREATE TABLE [dbo].[ProposalTracker]
+    (
+      [ProposalTrackerID] [INT] IDENTITY(1, 1)
+                                NOT NULL ,
+      [ProjectID] [INT] NOT NULL ,
+      [Status] [INT] NOT NULL ,
+      [Title] [VARCHAR](200) NOT NULL ,
+      [Description] [VARCHAR](500) NULL ,
+      [ProposalSentTo] [VARCHAR](200) NULL ,
+      [ProposalSentOn] [DATETIME] NULL ,
+      [PONo] [VARCHAR](200) NULL ,
+      [ApprovedBy] [VARCHAR](200) NULL ,
+      [ApprovedOn] [DATETIME] NULL ,
+      [InvoiceNo] [VARCHAR](200) NULL ,
+      [InvoiceSentOn] [DATETIME] NULL ,
+      [WorkScope] [NVARCHAR](200) NULL ,
+      [WorkScopeDisplayName] [NVARCHAR](200) NULL ,
+      [RequestNo] [NVARCHAR](200) NULL ,
+      [Payment] [INT] NULL ,
+      [DueDate] [DATETIME] NULL ,
+      [CreatedOn] [DATETIME] NULL ,
+      [CreatedBy] [INT] NULL ,
+      [ModifyOn] [DATETIME] NULL ,
+      [ModifyBy] [INT] NULL ,
+      CONSTRAINT [PK_ProposalTracker] PRIMARY KEY CLUSTERED
+        ( [ProposalTrackerID] ASC )
+        WITH ( PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF,
+               IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON,
+               ALLOW_PAGE_LOCKS = ON ) ON [PRIMARY]
+    )
+ON  [PRIMARY];
+
+GO
+
+SET ANSI_PADDING OFF;

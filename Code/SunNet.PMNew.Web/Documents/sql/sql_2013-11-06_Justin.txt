@@ -1,0 +1,15 @@
+﻿IF OBJECT_ID('Logs') IS NOT NULL
+DROP TABLE Logs
+GO
+CREATE TABLE Logs
+(
+	Id bigint identity(1,1) primary key,
+	CurrentUserId     int not null,
+	LogType   int not null,
+	OperatingTime datetime,
+	IPAddress      nvarchar(100),
+	Referrer      nvarchar(200),
+	[Description]   nvarchar(500),
+	IsSuccess      bit
+	
+)

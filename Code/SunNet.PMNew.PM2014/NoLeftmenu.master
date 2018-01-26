@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Normal.master" AutoEventWireup="true" CodeBehind="NoLeftmenu.master.cs" Inherits="SunNet.PMNew.PM2014.NoLeftmenu" %>
+<%@ Register TagPrefix="uc2" Src="~/UserControls/Footer.ascx" TagName="Footer" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <style type="text/css">
+        .mainTable {
+            min-width: 1240px;
+        }
+    </style>
+        <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="body" runat="server">
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" class="mainTable">
+        <tr>
+            <td class="mainrightTd">
+                <div class="mainrightBox">
+                    <div class="limitwidth">
+                        <div class="loading"></div>
+                        <asp:ContentPlaceHolder ID="searchSection" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="dataSection" runat="server">
+                        </asp:ContentPlaceHolder>
+                        <asp:ContentPlaceHolder ID="pagerSection" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+                </div>
+                <uc2:Footer ID="Footer1" runat="server" />
+            </td>
+        </tr>
+    </table>
+</asp:Content>
